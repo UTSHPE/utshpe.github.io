@@ -1,0 +1,148 @@
+@keyframes appear {
+    0% {
+        transform: translateY(-15%);
+        opacity: 0%;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 100%;
+    }
+}
+
+@keyframes appear2 {
+    0% {
+        transform: translateY(-15%);
+        opacity: 0%;
+    }
+    66% {
+        transform: translateY(-15%);
+        opacity: 0%;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 100%;
+    }
+}
+
+@keyframes line-appear {
+    0% {
+        width: 0%;
+    }
+    33% {
+        width: 0%;
+    }
+    100% {
+        width: calc(10em + 10vw);
+    }
+}
+
+#landing {
+    background-image: linear-gradient(to right, rgba(200, 200, 200, 0.7), 
+        rgba(200, 200, 200, 0.7)), url(../images/Website_Banner_Placeholder.png);
+    padding-top: 250px;
+    padding-bottom: 250px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+    font-family: 'Inter', sans-serif;
+}
+
+.header-text {
+    color: #1a2857;
+    font-size: calc(3rem + 3vw);
+    font-weight: bold;
+    transition: .15s;
+}
+
+.header-animation {
+    animation: 1s ease-out 0s 1 appear;
+}
+
+.subtext-animation {
+    animation: 3s ease-out 0s 1 appear2;
+}
+
+.header-logo {
+    width: calc(3rem + 3vw);
+    height: calc(3rem + 3vw);
+    transition: .15s;
+}
+
+.header-line {
+    animation: 1.5s ease-in-out 0s 1 line-appear;
+    color: black;
+    height: 2px;
+    border-width: 2px;
+    opacity: 100%;
+    width: calc(10em + 10vw);
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    transition: .15s;
+}
+
+#gm {
+    padding: 50px;
+    font-family: 'Inter', sans-serif;
+}
+
+.gm-flyer {
+    padding-left: auto;
+    padding-right: auto;
+}
+
+#photo1 {
+    background-image: url(../images/Website_Placeholder_2.jpg);
+    padding-bottom: 250px;
+    padding-top: 250px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    background-repeat: no-repeat;
+}
+
+#weekly-update {
+    padding: 15px;
+    padding-bottom: 30px;
+    font-family: 'Inter', sans-serif;
+}
+
+.event-flyer-container {
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.event-flyer {
+    max-width: 400px;
+    min-width: 100px;
+    transition: .15s;
+}
+
+.event-flyer:hover {
+    transform: scale(1.15);
+}
+
+#footer {
+    background-color: #1a2857;
+    padding: 25px;
+    padding-bottom: 0px;
+    font-family: 'Inter', sans-serif;
+    color: white;
+}
+
+.footer-info {
+    padding: 15px;
+}
+
+.social-logo {
+    font-size: 3em;
+    color:white;
+    padding: 5px;
+}
+
+.social-logo:hover {
+    color: #BF5700;
+}
