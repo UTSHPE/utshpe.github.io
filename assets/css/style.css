@@ -38,7 +38,7 @@
 
 #landing {
     background-image: linear-gradient(to right, rgba(200, 200, 200, 0.7), 
-        rgba(200, 200, 200, 0.7)), url(../images/Website_Banner_Placeholder.png);
+        rgba(200, 200, 200, 0.7)), url(../images/Website_Placeholder_3.jpg);
     padding-top: 250px;
     padding-bottom: 250px;
     background-repeat: no-repeat;
@@ -145,4 +145,22 @@
 
 .social-logo:hover {
     color: #BF5700;
+}
+
+@media (max-width: 767px) {
+    #landing {
+        margin-top: 57px;
+        padding-top: 65px;
+        padding-bottom: 45px;
+        height: 35vh;
+        background-attachment: scroll;
+    }
+
+    #photo1 {
+        margin-top: 57px;
+        padding-top: 45px;
+        padding-bottom: 45px;
+        height: 35vh;
+        background-attachment: scroll;
+    }
 }
