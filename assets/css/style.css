@@ -38,7 +38,7 @@
 
 #landing {
     background-image: linear-gradient(to right, rgba(200, 200, 200, 0.7), 
-        rgba(200, 200, 200, 0.7)), url(../images/Website_Placeholder_3.jpg);
+        rgba(200, 200, 200, 0.7)), url(../images/Website_Placeholder_2.jpg);
     padding-top: 250px;
     padding-bottom: 250px;
     background-repeat: no-repeat;
@@ -65,7 +65,7 @@
 }
 
 .header-logo {
-    width: calc(3rem + 3vw);
+    width: calc(3.1 * (3rem + 3vw));
     height: calc(3rem + 3vw);
     transition: .15s;
 }
@@ -93,7 +93,7 @@
 }
 
 #photo1 {
-    background-image: url(../images/Website_Placeholder_2.jpg);
+    background-image: url(../images/Website_Placeholder_3.jpg);
     padding-bottom: 250px;
     padding-top: 250px;
     background-size: cover;
@@ -101,6 +101,19 @@
     background-attachment: fixed;
     position: relative;
     background-repeat: no-repeat;
+}
+
+#photo2 {
+    background-image: linear-gradient(to right, rgba(200, 200, 200, 0.7), 
+        rgba(200, 200, 200, 0.7)), url(../images/Website_Placeholder_2.jpg);
+    padding-bottom: 250px;
+    padding-top: 250px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    background-repeat: no-repeat;
+    font-family: 'Inter', sans-serif;
 }
 
 #weekly-update {
@@ -123,6 +136,18 @@
 
 .event-flyer:hover {
     transform: scale(1.15);
+}
+
+#about {
+    padding: 15px;
+    padding-bottom: 30px;
+    font-family: 'Inter', sans-serif;
+}
+
+.alternate-header-text {
+    font-size: calc(2.5rem + 2vw);
+    font-weight: bold;
+    color:#1a2857;
 }
 
 #footer {
@@ -156,10 +181,15 @@
     }
 
     #photo1 {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        background-attachment: scroll;
+    }
+
+    #photo2 {
         margin-top: 57px;
-        padding-top: 45px;
-        padding-bottom: 45px;
-        height: 35vh;
+        padding-top: 65px;
+        padding-bottom: 65px;
         background-attachment: scroll;
     }
 }
