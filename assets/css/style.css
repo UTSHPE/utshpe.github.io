@@ -41,6 +41,7 @@
         rgba(200, 200, 200, 0.7)), url(../images/Website_Placeholder_2.jpg);
     padding-top: 250px;
     padding-bottom: 250px;
+    height: 50%;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -96,6 +97,7 @@
     background-image: url(../images/Website_Placeholder_3.jpg);
     padding-bottom: 250px;
     padding-top: 250px;
+    height: 50%;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -108,6 +110,7 @@
         rgba(200, 200, 200, 0.7)), url(../images/Website_Placeholder_2.jpg);
     padding-bottom: 250px;
     padding-top: 250px;
+    height: 50%;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
