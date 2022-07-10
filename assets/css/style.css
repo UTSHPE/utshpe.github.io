@@ -36,18 +36,24 @@
     }
 }
 
+.background-photo {
+    padding-bottom: 250px;
+    padding-top: 250px;
+    height: 50%;
+    background-size: cover;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    background-repeat: no-repeat;
+    font-family: 'Inter', sans-serif;
+}
+
 #landing {
     background-image: linear-gradient(to right, rgba(200, 200, 200, 0.7), 
         rgba(200, 200, 200, 0.7)), url(../images/Website_Placeholder_2.jpg);
-    padding-top: 250px;
-    padding-bottom: 250px;
-    height: 50%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
-    position: relative;
-    font-family: 'Inter', sans-serif;
 }
 
 .header-text {
@@ -95,28 +101,11 @@
 
 #photo1 {
     background-image: url(../images/Website_Placeholder_3.jpg);
-    padding-bottom: 250px;
-    padding-top: 250px;
-    height: 50%;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    position: relative;
-    background-repeat: no-repeat;
 }
 
 #photo2 {
     background-image: linear-gradient(to right, rgba(200, 200, 200, 0.7), 
         rgba(200, 200, 200, 0.7)), url(../images/Website_Placeholder_2.jpg);
-    padding-bottom: 250px;
-    padding-top: 250px;
-    height: 50%;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    position: relative;
-    background-repeat: no-repeat;
-    font-family: 'Inter', sans-serif;
 }
 
 #weekly-update {
@@ -175,19 +164,12 @@
     color: #BF5700;
 }
 
-@media screen and (max-width: 768px) {
-    #landing {
+@media screen and (max-device-width: 1024px) {
+    .background-photo {
         height: 35vh;
         margin-top: 57px;
         padding-top: 65px;
         padding-bottom: 85px;
-        background-attachment: scroll;
-    }
-
-    #photo1 {
-        height: 35vh;
-        padding-top: 100px;
-        padding-bottom: 100px;
         background-attachment: scroll;
     }
 
