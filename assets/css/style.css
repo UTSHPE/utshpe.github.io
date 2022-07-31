@@ -1,10 +1,16 @@
 @keyframes appear {
     0% {
         transform: translateY(-15%);
+        -webkit-transform: translateY(-15%);
+        -o-transform: translateY(-15%); 
+        -moz-transform: translateY(-15%);
         opacity: 0%;
     }
     100% {
         transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -o-transform: translateY(0); 
+        -moz-transform: translateY(0);
         opacity: 100%;
     }
 }
@@ -12,14 +18,23 @@
 @keyframes appear2 {
     0% {
         transform: translateY(-15%);
+        -webkit-transform: translateY(-15%);
+        -o-transform: translateY(-15%); 
+        -moz-transform: translateY(-15%);
         opacity: 0%;
     }
     66% {
         transform: translateY(-15%);
+        -webkit-transform: translateY(-15%);
+        -o-transform: translateY(-15%); 
+        -moz-transform: translateY(-15%);
         opacity: 0%;
     }
     100% {
         transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -o-transform: translateY(0); 
+        -moz-transform: translateY(0);
         opacity: 100%;
     }
 }
@@ -36,6 +51,7 @@
     }
 }
 
+/* Multiple use Classes */
 .background-photo {
     padding-bottom: 250px;
     padding-top: 250px;
@@ -48,9 +64,34 @@
     background-attachment: fixed;
     position: relative;
     background-repeat: no-repeat;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
+.section-header-text {
+    font-family: 'Impact', sans-serif;
+    color: #C35300;
+    font-size: clamp(1.75rem, 5vw ,3rem)
+}
+
+.section-subheader-text {
+    font-family: 'Impact', sans-serif;
+    color: #1a2857;
+    font-size: clamp(1.75rem, 5vw ,2rem);
+}
+
+.section-text {
+    font-size: clamp(1rem, 2vw, 2rem);
+    font-family: 'Lato', sans-serif;
+    color: black;
+}
+
+.center-vertical {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* One-time use classes */
+/* Home Page classes */
 #landing {
     background-image: linear-gradient(to right, rgba(200, 200, 200, 0.7), 
         rgba(200, 200, 200, 0.7)), url(../images/Website_Placeholder_2.jpg);
@@ -91,7 +132,6 @@
 
 #gm {
     padding: 50px;
-    font-family: 'Inter', sans-serif;
 }
 
 .gm-flyer {
@@ -108,10 +148,14 @@
         rgba(200, 200, 200, 0.7)), url(../images/Website_Placeholder_2.jpg);
 }
 
+#photo3 {
+    background-image: url(../images/Pillar\ Banner\ Photo\ Test.jpeg);
+}
+
 #weekly-update {
     padding: 15px;
     padding-bottom: 30px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
 .event-flyer-container {
@@ -130,23 +174,65 @@
     transform: scale(1.15);
 }
 
+/* About page classes */
 #about {
     padding: 15px;
     padding-bottom: 30px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
-.alternate-header-text {
-    font-size: calc(2.5rem + 2vw);
-    font-weight: bold;
-    color:#1a2857;
+.vertical-line-left {
+    border-left: 1px solid #1a2857;
 }
 
+.vertical-line-right {
+    border-right: 1px solid #1a2857;
+}
+
+/* Pillars Classes */
+.reveal-left {
+    position: relative;
+    transform: translateX(20px);
+    opacity: 0;
+    transition: 2s all ease;
+}
+
+.reveal-right {
+    position: relative;
+    transform: translateX(-20px);
+    opacity: 0;
+    transition: 2s all ease;
+}
+
+.reveal-left.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.reveal-right.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.card-title-text {
+    font-size: clamp(1.5rem, 3vw, 4rem);
+    font-family: 'Impact', sans-serif;
+    color: #C35300;
+}
+
+.card-body-text {
+    font-size: clamp(1rem, 2vw, 2.5rem);
+    font-family: 'Lato', sans-serif;
+    color: black;
+}
+
+
+/* Footer classes */
 #footer {
     background-color: #1a2857;
     padding: 25px;
     padding-bottom: 0px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Lato', sans-serif;
     color: white;
 }
 
@@ -162,6 +248,17 @@
 
 .social-logo:hover {
     color: #BF5700;
+}
+
+/* Media querys */
+@media screen and (max-width: 768px) {
+    .vertical-line-left {
+        border-left: none;
+    }
+
+    .vertical-line-right {
+        border-right: none;
+    }
 }
 
 @media screen and (max-device-width: 1024px) {
