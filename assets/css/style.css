@@ -55,7 +55,6 @@
 .background-photo {
     padding-bottom: 250px;
     padding-top: 250px;
-    height: 50%;
     background-size: cover;
     -webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -182,11 +181,23 @@
 }
 
 .vertical-line-left {
-    border-left: 1px solid #1a2857;
+    border-left: none;
 }
 
 .vertical-line-right {
-    border-right: 1px solid #1a2857;
+    border-right: none;
+}
+
+.left-about {
+    padding-left: 0vw; 
+    padding-right: 0vw; 
+    padding-top: 20px;
+}
+
+.right-about {
+    padding-left: 0vw; 
+    padding-right: 0vw; 
+    padding-top: 20px;
 }
 
 /* Pillars Classes */
@@ -251,13 +262,25 @@
 }
 
 /* Media querys */
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
     .vertical-line-left {
-        border-left: none;
+        border-left: 1px solid #1a2857;
     }
 
     .vertical-line-right {
-        border-right: none;
+        border-right: 1px solid #1a2857;
+    }
+
+    .left-about {
+        padding-left: 3vw; 
+        padding-right: 0vw; 
+        padding-top: 20px;
+    }
+
+    .right-about {
+        padding-left: 0vw; 
+        padding-right: 3vw; 
+        padding-top: 20px;
     }
 }
 
