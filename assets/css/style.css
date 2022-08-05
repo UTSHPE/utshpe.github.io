@@ -245,7 +245,7 @@
 
 .leader-card {
     width: 18rem;
-    height: 24rem;
+    height: 25rem;
     border-radius: calc(0.375rem - 1px);
     box-shadow: 5px;
     padding-top: 1rem;
@@ -277,7 +277,7 @@
     width: 90%;
     height: 90%;
     border-style: solid;
-    color: rgb(100, 100, 100);
+    color: #72abbf;
     border-width: 2px;
     padding-top: 1rem;
 }
