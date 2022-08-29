@@ -155,8 +155,16 @@
     background-image: url(../images/Leadership\ Banner\ Photo.JPG);
 }
 
+#photo5 {
+    background-image: url(../images/Sponsorship\ Banner\ Photo.jpeg);
+}
+
+#photo6 {
+    background-image: url(../images/Contact\ Us\ Banner1.jpg);
+}
+
 #weekly-update {
-    padding: 15px;
+    padding-top: 15px;
     padding-bottom: 30px;
     font-family: 'Lato', sans-serif;
 }
@@ -269,7 +277,7 @@
 
 .leader-card-text {
     color:#C35300;
-    font-family: 'Impact', sans-serif
+    font-family: 'Impact', sans-serif;
 }
 
 .leader-card-inner-border {
@@ -299,6 +307,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
+    border-radius: calc(0.375rem - 1px);
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
 }
@@ -314,10 +323,53 @@
     transform: rotateY(180deg);
 }
 
+/* Sponsorship Classes */
+.tier-text {
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
+    font-family: 'Lato', sans-serif;
+    color: white;
+}
+
+.sponsor-card {
+    width: 90%;
+    border-width: 2px;
+    border-radius: calc(0.375rem - 1px);
+    border-style: solid;
+
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    background-color: #011f5b;
+}
+
+.sponsor-card-inner-border {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    border-style: solid;
+    color: #72abbf;
+    border-width: 2px;
+    padding-top: 1rem;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/* Contact us Classes */
+.contact-social-logo {
+    font-size: 3em;
+    color:#011f5b;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.contact-social-logo:hover {
+    color:#BF5700;
+}
 
 /* Footer classes */
 #footer {
-    background-color: #1a2857;
+    background-color: #011f5b;
     padding: 25px;
     padding-bottom: 0px;
     font-family: 'Lato', sans-serif;
