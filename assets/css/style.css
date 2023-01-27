@@ -139,12 +139,12 @@
 }
 
 #photo1 {
-    background-image: url(../images/Website_Placeholder_3.jpg);
+    background-image: url(../images/Website_Placeholder_5.jpg);
 }
 
 #photo2 {
     background-image: linear-gradient(to right, rgba(200, 200, 200, 0.7), 
-        rgba(200, 200, 200, 0.7)), url(../images/Website_Placeholder_2.jpg);
+        rgba(200, 200, 200, 0.7)), url(../images/Website_Placeholder_4.jpg);
 }
 
 #photo3 {
