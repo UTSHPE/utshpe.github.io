@@ -93,7 +93,7 @@
 /* Home Page classes */
 #landing {
     background-image: linear-gradient(to right, rgba(200, 200, 200, 0.7), 
-        rgba(200, 200, 200, 0.7)), url(../images/Website_Placeholder_4.jpg);
+        rgba(200, 200, 200, 0.7)), url(../images/Website_Placeholder_5.JPG);
 }
 
 .header-text {
@@ -139,12 +139,12 @@
 }
 
 #photo1 {
-    background-image: url(../images/Website_Placeholder_5.jpg);
+    background-image: url(../images/Website_Placeholder_4.jpg);
 }
 
 #photo2 {
     background-image: linear-gradient(to right, rgba(200, 200, 200, 0.7), 
-        rgba(200, 200, 200, 0.7)), url(../images/Website_Placeholder_4.jpg);
+        rgba(200, 200, 200, 0.7)), url(../images/Website_Placeholder_5.JPG);
 }
 
 #photo3 {
