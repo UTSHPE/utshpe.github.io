@@ -271,10 +271,10 @@
 .leader-card-body {
     background-color: #011f5b;
     text-align: center;
-    padding-top: 5px;
+    padding-top: 15px;
     padding-bottom: 1rem;
     border-radius: calc(0.375rem - 1px);
-    max-height: 150px; 
+    max-height: 300px; 
     overflow: auto;
 }
 
