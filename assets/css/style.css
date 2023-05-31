@@ -263,21 +263,28 @@
 
 .leader-card-image {
     width: 10rem;
-    height: 10rem;
+    height: auto;
     border-radius: calc(0.375rem - 1px);
 }
+
 
 .leader-card-body {
     background-color: #011f5b;
     text-align: center;
-    padding-top: 15px;
+    padding-top: 5px;
     padding-bottom: 1rem;
     border-radius: calc(0.375rem - 1px);
+    max-height: 150px; 
+    overflow: auto;
 }
 
 .leader-card-text {
     color:#C35300;
     font-family: 'Impact', sans-serif;
+}
+
+.leader-card-text-size{
+    font-size: 12px;
 }
 
 .leader-card-inner-border {
