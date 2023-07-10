@@ -377,6 +377,69 @@
     padding-right: 5px;
 }
 
+
+
+
+.slide-in{
+    animation-name: slideIn;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-delay: 0.5s;
+}
+
+.sponsor-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .sponsor {
+    flex-basis: calc(50% - 10px);
+    margin-bottom: 10px;
+    border-radius: 5px;
+    column-count: 3;
+    animation-name: slideIn;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    animation-delay: 0.5s;
+  }
+  
+  .sponsor-content {
+    padding: 10px;
+    color: #fff;
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .sponsor {
+      flex-basis: 20%;
+      column-count: 2;
+    }
+  }
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
 /* Contact us Classes */
 .contact-social-logo {
     font-size: 3em;
