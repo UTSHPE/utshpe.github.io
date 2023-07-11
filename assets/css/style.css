@@ -391,7 +391,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
   }
   
   .sponsor {
@@ -408,6 +408,8 @@
   .sponsor-content {
     padding: 10px;
     color: #fff;
+    font-family: sans-serif;
+    overflow: hidden;
   }
   
   @keyframes slideIn {
