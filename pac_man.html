@@ -190,21 +190,21 @@ Pacman.Ghost = function (game, map, colour) {
 
     function draw(ctx) {
   
-        const pacmanImage = new Image();
-  pacmanImage.src = './assets/images/roge.jpg'; // Replace with your Pac-Man image URL
+//         const pacmanImage = new Image();
+//   pacmanImage.src = './assets/images/roge.jpg'; // Replace with your Pac-Man image URL
 
   // Wait for the image to load before drawing
-  pacmanImage.onload = function() {
+//   pacmanImage.onload = function() {
     // Get Pac-Man's position on the canvas
     var s = map.blockSize;
     var top = (position.y / 10) * s;
     var left = (position.x / 10) * s;
 
     // Draw the custom image on the canvas at Pac-Man's position
-    ctx.drawImage(pacmanImage, left, top, s, s);
+    // ctx.drawImage(pacmanImage, left, top, s, s);
 
     // Other parts of the original draw function may be removed since the image handles the rendering.
-  };
+//   };
     
         if (eatable && secondsAgo(eatable) > 8) {
             eatable = null;
