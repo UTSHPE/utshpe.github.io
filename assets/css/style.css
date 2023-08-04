@@ -51,6 +51,48 @@
     }
 }
 
+.animate-character {
+    text-transform: uppercase;
+    background-image: linear-gradient(-225deg, #2A6E86 0%, #FF4500 40%, #005CAF 70%, #C12400 100%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+    font-size: 190px;
+}
+
+    .animate-character.active {
+        background-image: linear-gradient(-225deg, #FF5500 0%, #404040 25%, #FFFFFF 40%, #FF5500 100%);
+        animation: textclip-active 2s linear infinite, colorChange 0.5s ease;
+    }
+
+    @keyframes textclip {
+        to {
+            background-position: 200% center;
+        }
+    }
+
+    @keyframes textclip-active {
+        to {
+            background-position: -200% center;
+        }
+    }
+
+    @keyframes colorChange {
+        from {
+            color: #FF5500;
+        }
+        to {
+            color: #FFFFFF;
+        }
+    }
+
+
 /* Multiple use Classes */
 .background-photo {
     padding-bottom: 250px;
