@@ -51,11 +51,11 @@
     }
 }
 /*for video collage editing*/
-#weareutshpe-img{
+/* #weareutshpe-img{
     background-image: linear-gradient( rgba(0, 0, 0, 0.7), 
     rgba(0, 0, 0, 0.7)), url(../images/Website_Placeholder_2.JPG);
     z-index: -1;
-}
+} */
 .title{
     /* font-family: "Cairo"; */
     text-align: center;
