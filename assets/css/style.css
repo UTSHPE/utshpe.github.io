@@ -51,13 +51,16 @@
     }
 }
 /*for video collage editing*/
-#weareutshpe-img{
-    background-image: linear-gradient( rgba(0, 0, 0, 0.7), 
+#weareutshpe-img,
+#weareutshpe-img2 {
+    position: relative;
+    background-image:linear-gradient( rgba(0, 0, 0, 0.7), 
     rgba(0, 0, 0, 0.7)), url(/assets/images/Website_Placeholder_2.jpg);
-    z-index: -1;
 }
-.title{
-    /* font-family: "Cairo"; */
+
+.title {
+    /* background-color: black; */
+    font-family: "Cairo";
     text-align: center;
     color: #FFF;
     display: flex;
@@ -67,24 +70,53 @@
     height: 100%;
     letter-spacing: 1px;
     line-height: 2;
-  }
-  
-  h1.weareutshpe {
-    background-image: url(https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2diZWM0Z3k2ZDhtZHF5NGx3dGQyaWJzczZ0aHY0YWF1NnB0cWtobiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/FE0WTM8BG754I/giphy.gif);
-    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+h1.weareutshpe {
     color: transparent;
-    -moz-background-clip: text;
-    -webkit-background-clip: text;
     text-transform: uppercase;
     font-size: 160px;
     margin: 10px 0;
-  }
-  
-@media(max-width: 700px){
-    h1.weareutshpe{
+    position: relative;
+    z-index: 1;
+    background-image: url(https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2diZWM0Z3k2ZDhtZHF5NGx3dGQyaWJzczZ0aHY0YWF1NnB0cWtobiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/FE0WTM8BG754I/giphy.gif);
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-transform: uppercase;
+    margin: 10px 0;
+    transition: background-size 0.3s ease-in-out;
+}
+
+h1.weareutshpe::before {
+    content: "";
+    background-image: url(https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2diZWM0Z3k2ZDhtZHF5NGx3dGQyaWJzczZ0aHY0YWF1NnB0cWtobiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/FE0WTM8BG754I/giphy.gif);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    mask-image: linear-gradient(transparent 50%, black 50%);
+    mask-composite: subtract;
+    z-index: 0;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+h1.weareutshpe:hover::before {
+    opacity: 1;
+}
+
+
+@media(max-width: 700px) {
+    h1.weareutshpe {
         font-size: 50px;
     }
 }
+
 
 /*for animating color change for nav links*/
 .animate-character {
