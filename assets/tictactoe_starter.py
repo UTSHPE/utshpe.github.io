@@ -25,7 +25,7 @@ def is_board_full(board): #checks each cell on your 3x3 board to see if there is
 def get_player_move(player, board):#this is a continuously running function that gets the input from the user to add their symbol to the board
     #TODO: Some code here
     while True:
-        print("While the user thinks about their move, what else should we think about?")
+        print("While the user thinks about their move, how can we make this game go smoothly?")
 
 def get_bot_move(board): #use (random), a function that will allow us to generate a random spot on the board if there is space
     #TODO:Some code here
@@ -34,7 +34,6 @@ def get_bot_move(board): #use (random), a function that will allow us to generat
 def tic_tac_toe():
     #TODO:your code goes here
     print("Hello World!")
-
 
 if __name__ == "__main__":
     tic_tac_toe() #Calls your game! :D
