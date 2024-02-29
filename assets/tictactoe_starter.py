@@ -27,9 +27,9 @@ def get_player_move(player, board):#this is a continuously running function that
     while True:
         print("While the user thinks about their move, how can we make this game go smoothly?")
 
-def get_bot_move(board): #use (random), a function that will allow us to generate a random spot on the board if there is space
-    #TODO:Some code here
-    print("Code something here!")
+def get_bot_move(board): #uses (random), a function that will allow us to generate a random spot on the board if there is space
+    empty_cells = [(i, j) for i in range(3) for j in range(3) if board[i][j] == ' ']
+    return random.choice(empty_cells)
 
 def tic_tac_toe():
     #TODO:your code goes here
