@@ -15,7 +15,9 @@ document.addEventListener("DOMContentLoaded", function() {
         // Create a chat <li> element with passed message and className
         const chatLi = document.createElement("li");
         chatLi.classList.add("chat", `${className}`);
-        let chatContent = className === "outgoing" ? `<p></p>` : `<span class="material-symbols-outlined">smart_toy</span><p></p>`;
+        let chatContent = className === "outgoing" ? `<p></p>` : `<span class="material-symbols-rounded">
+            <img src="assets/images/SHPE_logo.png" alt="Chatbot Logo" class="chatbot-logo"></span>
+          </span><p></p>`;
         chatLi.innerHTML = chatContent;
         chatLi.querySelector("p").textContent = message;
         return chatLi; // return chat <li> element

@@ -49,6 +49,35 @@ body.show-chatbot .chatbot-toggler .chatbot-logo {
   display: none;
 }
 
+.chatbox .chat .chatbot-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px; 
+  height: 32px; 
+  background: linear-gradient(-225deg, #2A6E86 0%, #FF4500 40%, #005CAF 70%, #C12400 100%);
+  background-size: 200% auto;
+  border-radius: 50%;
+  margin: 0 10px 7px 0; 
+  animation: rotateLogo 2.5s ease-in-out forwards infinite, 
+             logoBackgroundAnimation 10s ease infinite;
+}
+
+.chatbox .chat .chatbot-logo img {
+  max-width: 100%; /* Ensure the logo image fits within the container */
+  max-height: 100%; /* Ensure the logo image fits within the container */
+  border-radius: 50%; /* Ensure the logo image is circular */
+}
+
+@keyframes rotateLogo {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(720deg);
+  }
+}
+
 
 .chatbot {
   position: fixed;
@@ -71,14 +100,30 @@ body.show-chatbot .chatbot {
   pointer-events: auto;
   transform: scale(1);
 }
+
 .chatbot header {
   padding: 16px 0;
   position: relative;
   text-align: center;
   color: #fff;
-  background: #BF5700;
+  background: linear-gradient(-225deg, #2A6E86 0%, #FF4500 40%, #005CAF 70%, #C12400 100%);
+  background-size: 200% auto;
+  animation: headerAnimation 10s ease infinite;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
+
+@keyframes headerAnimation {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+
 .chatbot header span {
   position: absolute;
   right: 15px;
@@ -89,6 +134,7 @@ body.show-chatbot .chatbot {
 }
 header h2 {
   font-size: 1.4rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 .chatbot .chatbox {
   overflow-y: auto;
@@ -122,9 +168,23 @@ header h2 {
   text-align: center;
   line-height: 32px;
   align-self: flex-end;
-  background: #BF5700;
+  background: linear-gradient(-225deg, #2A6E86 0%, #FF4500 40%, #005CAF 70%, #C12400 100%);
+  background-size: 200% auto;
+  animation: logoBackgroundAnimation 10s ease infinite; /* Adjust duration as needed */
   border-radius: 4px;
   margin: 0 10px 7px 0;
+}
+
+@keyframes logoBackgroundAnimation {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
 }
 .chatbox .chat p {
   white-space: pre-wrap;
