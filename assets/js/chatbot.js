@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const sendChatBtn = document.querySelector(".chat-input span");
 
     let userMessage = null; // Variable to store user's message
-    const API_KEY = ""; // Paste your API key here
+    const API_KEY = ""; // Paste your API key here ---------------create an environmental variable in github later on or on a server
     const inputInitHeight = chatInput.scrollHeight;
 
     const createChatLi = (message, className) => {
@@ -76,16 +76,18 @@ document.addEventListener("DOMContentLoaded", function() {
         chatInput.style.height = `${chatInput.scrollHeight}px`;
     });
 
-    chatInput.addEventListener("keydown", (e) => {
-        // If Enter key is pressed without Shift key and the window 
-        // width is greater than 800px, handle the chat
-        if (e.key === "Enter" && !e.shiftKey && window.innerWidth > 800) {
-            e.preventDefault();
-            handleChat();
-        }
-    });
+    //uncomment this next section and sendChatBtn listener to take input and process later on
 
-    sendChatBtn.addEventListener("click", handleChat);
+    // chatInput.addEventListener("keydown", (e) => {
+    //     // If Enter key is pressed without Shift key and the window 
+    //     // width is greater than 800px, handle the chat
+    //     if (e.key === "Enter" && !e.shiftKey && window.innerWidth > 800) {
+    //         e.preventDefault();
+    //         handleChat();
+    //     }
+    // });
+
+    // sendChatBtn.addEventListener("click", handleChat);
     closeBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
     chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
 });
