@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const sendChatBtn = document.querySelector(".chat-input span");
 
     let userMessage = null; // Variable to store user's message
-    // const API_KEY = "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"; // Paste your API key here ---------------create an environmental variable in github later on or on a server
+    // const API_KEY = ""; // Paste your API key here ---------------create an environmental variable in github later on or on a server
     const inputInitHeight = chatInput.scrollHeight;
 
     const createChatLi = (message, className) => {
