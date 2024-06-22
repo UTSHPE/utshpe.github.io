@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const sendChatBtn = document.querySelector(".chat-input span");
 
     let userMessage = null; // Variable to store user's message
-    const API_KEY = ""; // Paste your API key here ---------------create an environmental variable in github later on or on a server
+    // const API_KEY = "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"; // Paste your API key here ---------------create an environmental variable in github later on or on a server
     const inputInitHeight = chatInput.scrollHeight;
 
     const createChatLi = (message, className) => {
@@ -36,7 +36,9 @@ document.addEventListener("DOMContentLoaded", function() {
             },
             body: JSON.stringify({
                 model: "gpt-3.5-turbo",
-                messages: [{ role: "user", content: userMessage }],
+                messages: [
+                    { role: "system", content: "You are an FAQ bot for the Society of Hispanic Professional Engineers (SHPE) for The University of Texas at Austin. Answer questions about SHPE, its mission, and other related topics. Don't answer any other questions for now not pertaining to the organization."},
+                    { role: "user", content: userMessage }],
             })
         }
 
