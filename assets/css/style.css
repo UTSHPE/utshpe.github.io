@@ -561,6 +561,36 @@
 }
 /*end of sponsors logo design*/
 
+/*start of styling for panning photo gallery*/
+.scrolling-gallery {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+  }
+
+  .scrolling-gallery img {
+    display: inline-block;
+    height: 200px;
+    width: auto;
+  }
+
+  .scrolling-gallery .scrolling-wrapper {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll 20s linear infinite;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+/*end of styling for panning photo gallery*/
+
 
   
   
