@@ -118,16 +118,7 @@
     </div>
 </div>
 
-<script>
-    function copyCode(codeId) {
-        const code = document.getElementById(codeId).innerText;
-        navigator.clipboard.writeText(code).then(() => {
-            alert('Code copied to clipboard!');
-        }).catch(err => {
-            console.error('Failed to copy code: ', err);
-        });
-    }
-</script>
+<script src="./assets/js/main.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
 </body>
 </html>

@@ -31,3 +31,13 @@ function reveal() {
 }
 
 window.addEventListener("scroll", reveal);
+
+//code_resources.html copy code function
+function copyCode(codeId) {
+  const code = document.getElementById(codeId).innerText;
+  navigator.clipboard.writeText(code).then(() => {
+      alert('Code copied to clipboard!');
+  }).catch(err => {
+      console.error('Failed to copy code: ', err);
+  });
+}
