@@ -706,7 +706,32 @@
     padding: 20px;
     border-radius: 4px;
 }
+.nav-tabs-left {
+    border-right: 1px solid #ddd;
+    height: 100vh; /* Full height */
+    position: fixed; /* Fixed position */
+    top: 60px; /* Adjust for navbar height */
+    left: 0;
+    width: 200px; /* Fixed width */
+    background-color: #f8f9fa;
+    padding-top: 10px; /* Adjust padding for the content */
+}
 
+.nav-tabs-left > li {
+    float: none;
+    margin-bottom: 5px;
+}
+
+.nav-tabs-left > li > a {
+    margin-right: 0;
+    display: block;
+    padding: 10px 15px;
+}
+
+.main-content {
+    margin-left: 210px; /* Adjust margin to match sidebar width */
+    padding: 20px;
+}
 /*end of code_resources page style*/
 
 

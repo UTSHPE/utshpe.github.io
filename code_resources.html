@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Coding Camps</title>
+    <title>UTSHPE Coding Camps</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -12,6 +12,8 @@
 </head>
 <body>
 
+        <!-- NOTE FOR BEGINNERS: open this page on your own browser to see how all elements are structured and note patterns of tag uses like <section>, <pre>, <p>, etc. -->
+
     <nav class="navbar fixed-top navbar-expand-lg bg-light shadow-sm">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html"><img src="assets/images/navigation_logo.png" width="160" height="30" class="d-inline-block align-text-top" alt="logo"></a>
@@ -19,56 +21,65 @@
     </nav>
 
 <div class="container">
-    <h3>UT SHPE Technical Development Center</h3>
-    <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-        <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Python <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><a data-toggle="tab" href="#python-syntax">Syntax</a></li>
-                <li><a data-toggle="tab" href="#python-functions">Basic Functions</a></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">HTML <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><a data-toggle="tab" href="#html-tags">Tags</a></li>
-                <li><a data-toggle="tab" href="#html-syntax">Syntax</a></li>
-                <li><a data-toggle="tab" href="#html-css">Using CSS</a></li>
-                <li><a data-toggle="tab" href="#html-js">Using JavaScript</a></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Personal Webpage <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><a data-toggle="tab" href="#personal-getting-started">Getting Started</a></li>
-                <li><a data-toggle="tab" href="#personal-structure">Understanding the Structure</a></li>
-                <li><a data-toggle="tab" href="#personal-editing">Editing and Inserting</a></li>
-                <li><a data-toggle="tab" href="#personal-effects">JavaScript Effects</a></li>
-                <li><a data-toggle="tab" href="#personal-deployment">Deployment</a></li>
-                <li><a data-toggle="tab" href="#personal-maintenance">Maintenance</a></li>
-            </ul>
-        </li>
-    </ul>
+    <h3 style="text-align: center;">UT SHPE Technical Development Center</h3>
+    <div class="row">
+    <div class="col-sm-3">
+        <ul class="nav nav-tabs nav-tabs-left">
+            <li class="active"><a data-toggle="tab" href="#home" data-title="Home">Home</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Python <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a data-toggle="tab" href="#python-syntax" data-title="Syntax">Syntax</a></li>
+                    <li><a data-toggle="tab" href="#python-functions" data-title="Basic Functions">Basic Functions</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">HTML <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a data-toggle="tab" href="#html-tags" data-title="Tags">Tags</a></li>
+                    <li><a data-toggle="tab" href="#html-syntax" data-title="Syntax">Syntax</a></li>
+                    <li><a data-toggle="tab" href="#html-css" data-title="Using CSS">Using CSS</a></li>
+                    <li><a data-toggle="tab" href="#html-js" data-title="Using JavaScript">Using JavaScript</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Personal Webpage <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a data-toggle="tab" href="#personal-getting-started" data-title="Getting Started">Getting Started</a></li>
+                    <li><a data-toggle="tab" href="#personal-structure" data-title="Understanding the Structure">Understanding the Structure</a></li>
+                    <li><a data-toggle="tab" href="#personal-editing" data-title="Editing and Inserting">Editing and Inserting</a></li>
+                    <li><a data-toggle="tab" href="#personal-effects" data-title="JavaScript Effects">JavaScript Effects</a></li>
+                    <li><a data-toggle="tab" href="#personal-deployment" data-title="Deployment">Deployment</a></li>
+                    <li><a data-toggle="tab" href="#personal-maintenance" data-title="Maintenance">Maintenance</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
 
-    <div class="tab-content">
+    <!-- using the ids we created above, below here we create a div with tab content where it will take a chunk of the webpage screen to display all of our information.
+     with it you see lots of divs and secions with ids like home, python-syntax, etc. these are the different sections where all of our content will go -->
+
+     <!-- For each subtab we have have navigation buttons, if the main tab only has one subtab then dont add any button, if there are 2 subtabs then only have one subtab contain a next btn while the next has a prev, if multiple then use both in middle pages -->
+     <div class="col-sm-9">
+     <div class="tab-content">
         <div id="home" class="tab-pane fade in active">
             <h3>Home</h3>
             <p>Welcome to UTSHPE's Coding Resource Center!😎 <br>
                 Want to get started on your coding journey? Get experience in different languages? Develop your own personal website? You are in the right place!
             </p>
         </div>
+        
         <div id="python-syntax" class="tab-pane fade">
-    <section>
-        <h3>Getting Started with Python Syntax</h3>
-        <p>Python is a high-level, interpreted programming language known for its readability and simplicity. It is widely used for web development, data analysis, artificial intelligence, scientific computing, and more. Here, you'll learn the basics of Python syntax, which will help you write clean and efficient code.</p>
-        
-        <h4>1. Basic Syntax</h4>
-        <p>Python uses indentation to define code blocks, making the code more readable. Each block of code is indented consistently. For example, functions, loops, and conditionals are all defined with indentation.</p>
-        
-        <h4>2. Variables and Data Types</h4>
-        <p>Variables in Python are dynamically typed, which means you don't need to declare their type explicitly. Common data types include integers, floats, strings, and lists. Here's how you can define variables:</p>
-        <pre class="code-snippet"><code class="language-python">
+            <section>
+                <h3>Getting Started with Python Syntax</h3>
+                <p>Python is a high-level, interpreted programming language known for its readability and simplicity. It is widely used for web development, data analysis, artificial intelligence, scientific computing, and more. Here, you'll learn the basics of Python syntax, which will help you write clean and efficient code.</p>
+                
+                <h4>1. Basic Syntax</h4>
+                <p>Python uses indentation to define code blocks, making the code more readable. Each block of code is indented consistently. For example, functions, loops, and conditionals are all defined with indentation.</p>
+                
+                <h4>2. Variables and Data Types</h4>
+                <p>Variables in Python are dynamically typed, which means you don't need to declare their type explicitly. Common data types include integers, floats, strings, and lists. Here's how you can define variables:</p>
+                <pre class="code-snippet"><code class="language-python">
 # Defining variables
 integer_var = 10
 float_var = 10.5
@@ -77,10 +88,10 @@ list_var = [1, 2, 3, 4, 5]
 
 print(integer_var, float_var, string_var, list_var)
 </code></pre>
-        
-        <h4>3. Control Structures</h4>
-        <p>Python supports various control structures, such as if statements, loops, and exception handling. Here's an example of a simple if statement and a for loop:</p>
-        <pre class="code-snippet"><code class="language-python">
+                
+                <h4>3. Control Structures</h4>
+                <p>Python supports various control structures, such as if statements, loops, and exception handling. Here's an example of a simple if statement and a for loop:</p>
+                <pre class="code-snippet"><code class="language-python">
 # If statement
 number = 10
 if number > 5:
@@ -90,28 +101,30 @@ if number > 5:
 for i in range(5):
     print("Loop iteration:", i)
 </code></pre>
-    </section>
-    
-    <section>
-        <h3>Python Syntax Example</h3>
-        <p>Below is a basic Python code snippet that demonstrates a simple print statement. This is one of the first things you'll learn in Python:</p>
-        <div class="code-container">
-            <button class="copy-button" onclick="copyCode('code-python-syntax')">Copy Code</button>
-            <pre class="code-snippet"><code class="language-python" id="code-python-syntax">print("Hello, Python!")</code></pre>
+            </section>
+            
+            <section>
+                <h3>Python Syntax Example</h3>
+                <p>Below is a basic Python code snippet that demonstrates a simple print statement. This is one of the first things you'll learn in Python:</p>
+                <div class="code-container">
+                    <button class="copy-button" onclick="copyCode('code-python-syntax')">Copy Code</button>
+                    <pre class="code-snippet"><code class="language-python" id="code-python-syntax">print("Hello, Python!")</code></pre>
+                </div>
+            </section>
+            
+            <section>
+                <h3>Common Errors and Debugging</h3>
+                <p>When starting with Python, you may encounter common syntax errors. Here are a few tips for debugging:</p>
+                <ul>
+                    <li><strong>Indentation Errors:</strong> Ensure that your code blocks are consistently indented.</li>
+                    <li><strong>Syntax Errors:</strong> Check for missing colons or incorrect use of keywords.</li>
+                    <li><strong>Name Errors:</strong> Ensure that variables are defined before use.</li>
+                </ul>
+                <p>Using a Python IDE or editor with built-in syntax checking can help catch these errors early.</p>
+            </section>
+
+            <button class="btn btn-primary" onclick="navigateToTab('#python-functions')">Next</button>
         </div>
-    </section>
-    
-    <section>
-        <h3>Common Errors and Debugging</h3>
-        <p>When starting with Python, you may encounter common syntax errors. Here are a few tips for debugging:</p>
-        <ul>
-            <li><strong>Indentation Errors:</strong> Ensure that your code blocks are consistently indented.</li>
-            <li><strong>Syntax Errors:</strong> Check for missing colons or incorrect use of keywords.</li>
-            <li><strong>Name Errors:</strong> Ensure that variables are defined before use.</li>
-        </ul>
-        <p>Using a Python IDE or editor with built-in syntax checking can help catch these errors early.</p>
-    </section>
-</div>
 
         <div id="python-functions" class="tab-pane fade">
             <section>
@@ -122,7 +135,10 @@ for i in range(5):
     return a + b</code></pre>
                 </div>
             </section>
+
+            <button class="btn btn-primary" onclick="navigateToTab('#python-syntax')">Previous</button>
         </div>
+
         <div id="html-tags" class="tab-pane fade">
             <section>
                 <h3>HTML Tags</h3>
@@ -131,6 +147,8 @@ for i in range(5):
                     <pre class="code-snippet"><code class="language-html" id="code-html-tags">&lt;p&gt;Hello, HTML!&lt;/p&gt;</code></pre>
                 </div>
             </section>
+
+            <button class="btn btn-primary" onclick="navigateToTab('#html-syntax')">Next</button>
         </div>
         <div id="html-syntax" class="tab-pane fade">
             <section>
@@ -149,6 +167,9 @@ for i in range(5):
 &lt;/html&gt;</code></pre>
                 </div>
             </section>
+
+            <button class="btn btn-primary" onclick="navigateToTab('#html-tags')">Previous</button>
+            <button class="btn btn-primary" onclick="navigateToTab('#html-css')">Next</button>
         </div>
         <div id="html-css" class="tab-pane fade">
             <section>
@@ -160,6 +181,9 @@ for i in range(5):
 }</code></pre>
                 </div>
             </section>
+
+            <button class="btn btn-primary" onclick="navigateToTab('#html-syntax')">Previous</button>
+            <button class="btn btn-primary" onclick="navigateToTab('#html-js')">Next</button>
         </div>
         <div id="html-js" class="tab-pane fade">
             <section>
@@ -169,7 +193,64 @@ for i in range(5):
                     <pre class="code-snippet"><code class="language-javascript" id="code-html-js">document.getElementById("demo").innerHTML = "Hello, JavaScript!";</code></pre>
                 </div>
             </section>
+
+            <button class="btn btn-primary" onclick="navigateToTab('#html-css')">Previous</button>
         </div>
+
+        <div id="personal-getting-started" class="tab-pane fade">
+            <section>
+                <h3>Getting Started</h3>
+                <p>Welcome to the Personal Webpage section. Here, you'll learn how to get started with creating your own personal website. This section will guide you through the initial setup and basic structure.</p>
+            </section>
+
+            <button class="btn btn-primary" onclick="navigateToTab('#personal-structure')">Next</button>
+        </div>
+        <div id="personal-structure" class="tab-pane fade">
+            <section>
+                <h3>Understanding the Structure</h3>
+                <p>In this section, you'll learn about the structure of a typical personal website. Understanding the layout and organization is crucial for building a functional and attractive website.</p>
+            </section>
+
+            <button class="btn btn-primary" onclick="navigateToTab('#personal-getting-started')">Previous</button>
+            <button class="btn btn-primary" onclick="navigateToTab('#personal-editing')">Next</button>
+        </div>
+        <div id="personal-editing" class="tab-pane fade">
+            <section>
+                <h3>Editing and Inserting</h3>
+                <p>This section covers how to edit your website's content and insert various elements like images, links, and text. These skills are essential for personalizing your site.</p>
+            </section>
+
+            <button class="btn btn-primary" onclick="navigateToTab('#personal-structure')">Previous</button>
+            <button class="btn btn-primary" onclick="navigateToTab('#personal-effects')">Next</button>
+        </div>
+        <div id="personal-effects" class="tab-pane fade">
+            <section>
+                <h3>JavaScript Effects</h3>
+                <p>Learn how to use JavaScript to add interactive effects to your website. This section will cover basic JavaScript techniques and examples.</p>
+            </section>
+
+            <button class="btn btn-primary" onclick="navigateToTab('#personal-editing')">Previous</button>
+            <button class="btn btn-primary" onclick="navigateToTab('#personal-deployment')">Next</button>
+        </div>
+        <div id="personal-deployment" class="tab-pane fade">
+            <section>
+                <h3>Deployment</h3>
+                <p>This section guides you through deploying your website so it can be accessed on the internet. You'll learn about different hosting options and how to upload your files.</p>
+            </section>
+
+            <button class="btn btn-primary" onclick="navigateToTab('#personal-effects')">Previous</button>
+            <button class="btn btn-primary" onclick="navigateToTab('#personal-maintenance')">Next</button>
+        </div>
+        <div id="personal-maintenance" class="tab-pane fade">
+            <section>
+                <h3>Maintenance</h3>
+                <p>Once your website is live, it's important to maintain it. This section covers how to keep your website up-to-date and troubleshoot common issues.</p>
+            </section>
+
+            <button class="btn btn-primary" onclick="navigateToTab('#personal-deployment')">Previous</button>
+        </div>
+    </div>
+     </div>
     </div>
 </div>
 
@@ -182,6 +263,32 @@ for i in range(5):
             console.error('Failed to copy code: ', err);
         });
     }
+
+    function navigateToTab(tabId) {
+    $('.nav-tabs a[href="' + tabId + '"]').tab('show');
+
+    // Get the active tab's index
+    const activeTab = $('.nav-tabs .active');
+    const activeIndex = activeTab.index();
+
+    // Get the previous and next tabs
+    const prevTab = $('.nav-tabs li').eq(activeIndex - 1).find('a');
+    const nextTab = $('.nav-tabs li').eq(activeIndex + 1).find('a');
+
+    // Update button text with data-title attribute
+    if (prevTab.length > 0) {
+        $('.btn-previous').text('Previous: ' + prevTab.data('title'));
+    } else {
+        $('.btn-previous').text('Previous');
+    }
+
+    if (nextTab.length > 0) {
+        $('.btn-next').text('Next: ' + nextTab.data('title'));
+    } else {
+        $('.btn-next').text('Next');
+    }
+}
+
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
 </body>
