@@ -8,16 +8,15 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
     <nav class="navbar fixed-top navbar-expand-lg bg-light shadow-sm">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><img src="assets\images\navigation_logo.png" width="160" height="30" class="d-inline-block align-text-top" alt="logo"></a>
+            <a class="navbar-brand" href="index.html"><img src="assets/images/navigation_logo.png" width="160" height="30" class="d-inline-block align-text-top" alt="logo"></a>
         </div>
     </nav>
-
 
 <div class="container">
     <h3>UT SHPE Technical Development Center</h3>
@@ -42,17 +41,15 @@
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Personal Webpage <span class="caret"></span></a>
             <ul class="dropdown-menu">
-                <li><a data-toggle="tab" href="#html-tags">Getting Started</a></li>
-                <li><a data-toggle="tab" href="#html-syntax">Understanding the Structure</a></li>
-                <li><a data-toggle="tab" href="#html-css">Editing and Inserting</a></li>
-                <li><a data-toggle="tab" href="#html-js">JavaScript Effects</a></li>
-                <li><a data-toggle="tab" href="#html-js">Deployment</a></li>
-                <li><a data-toggle="tab" href="#html-js">Maintenance</a></li>
+                <li><a data-toggle="tab" href="#personal-getting-started">Getting Started</a></li>
+                <li><a data-toggle="tab" href="#personal-structure">Understanding the Structure</a></li>
+                <li><a data-toggle="tab" href="#personal-editing">Editing and Inserting</a></li>
+                <li><a data-toggle="tab" href="#personal-effects">JavaScript Effects</a></li>
+                <li><a data-toggle="tab" href="#personal-deployment">Deployment</a></li>
+                <li><a data-toggle="tab" href="#personal-maintenance">Maintenance</a></li>
             </ul>
         </li>
     </ul>
-
-<!--contents for each tab, TODO: convert each main tab(not subtabs) into its own html page(python tab and its subtabs in one html file| html tab and its subtabs in another html file)-->
 
     <div class="tab-content">
         <div id="home" class="tab-pane fade in active">
@@ -62,32 +59,85 @@
             </p>
         </div>
         <div id="python-syntax" class="tab-pane fade">
-            <!-- <h3>Python Syntax</h3>
-            <div class="code-container">
-                <button class="copy-button" onclick="copyCode('code-python-syntax')">Copy Code</button>
-                <pre class="code-snippet"><code class="language-python" id="code-python-syntax">print("Hello, Python!")</code></pre>
-            </div> -->
+    <section>
+        <h3>Getting Started with Python Syntax</h3>
+        <p>Python is a high-level, interpreted programming language known for its readability and simplicity. It is widely used for web development, data analysis, artificial intelligence, scientific computing, and more. Here, you'll learn the basics of Python syntax, which will help you write clean and efficient code.</p>
+        
+        <h4>1. Basic Syntax</h4>
+        <p>Python uses indentation to define code blocks, making the code more readable. Each block of code is indented consistently. For example, functions, loops, and conditionals are all defined with indentation.</p>
+        
+        <h4>2. Variables and Data Types</h4>
+        <p>Variables in Python are dynamically typed, which means you don't need to declare their type explicitly. Common data types include integers, floats, strings, and lists. Here's how you can define variables:</p>
+        <pre class="code-snippet"><code class="language-python">
+# Defining variables
+integer_var = 10
+float_var = 10.5
+string_var = "Hello, Python!"
+list_var = [1, 2, 3, 4, 5]
+
+print(integer_var, float_var, string_var, list_var)
+</code></pre>
+        
+        <h4>3. Control Structures</h4>
+        <p>Python supports various control structures, such as if statements, loops, and exception handling. Here's an example of a simple if statement and a for loop:</p>
+        <pre class="code-snippet"><code class="language-python">
+# If statement
+number = 10
+if number > 5:
+    print("Number is greater than 5")
+
+# For loop
+for i in range(5):
+    print("Loop iteration:", i)
+</code></pre>
+    </section>
+    
+    <section>
+        <h3>Python Syntax Example</h3>
+        <p>Below is a basic Python code snippet that demonstrates a simple print statement. This is one of the first things you'll learn in Python:</p>
+        <div class="code-container">
+            <button class="copy-button" onclick="copyCode('code-python-syntax')">Copy Code</button>
+            <pre class="code-snippet"><code class="language-python" id="code-python-syntax">print("Hello, Python!")</code></pre>
         </div>
+    </section>
+    
+    <section>
+        <h3>Common Errors and Debugging</h3>
+        <p>When starting with Python, you may encounter common syntax errors. Here are a few tips for debugging:</p>
+        <ul>
+            <li><strong>Indentation Errors:</strong> Ensure that your code blocks are consistently indented.</li>
+            <li><strong>Syntax Errors:</strong> Check for missing colons or incorrect use of keywords.</li>
+            <li><strong>Name Errors:</strong> Ensure that variables are defined before use.</li>
+        </ul>
+        <p>Using a Python IDE or editor with built-in syntax checking can help catch these errors early.</p>
+    </section>
+</div>
+
         <div id="python-functions" class="tab-pane fade">
-            <h3>Python Basic Functions</h3>
-            <div class="code-container">
-                <button class="copy-button" onclick="copyCode('code-python-functions')">Copy Code</button>
-                <pre class="code-snippet"><code class="language-python" id="code-python-functions">def add(a, b):
+            <section>
+                <h3>Python Basic Functions</h3>
+                <div class="code-container">
+                    <button class="copy-button" onclick="copyCode('code-python-functions')">Copy Code</button>
+                    <pre class="code-snippet"><code class="language-python" id="code-python-functions">def add(a, b):
     return a + b</code></pre>
-            </div>
+                </div>
+            </section>
         </div>
         <div id="html-tags" class="tab-pane fade">
-            <h3>HTML Tags</h3>
-            <div class="code-container">
-                <button class="copy-button" onclick="copyCode('code-html-tags')">Copy Code</button>
-                <pre class="code-snippet"><code class="language-html" id="code-html-tags">&lt;p&gt;Hello, HTML!&lt;/p&gt;</code></pre>
-            </div>
+            <section>
+                <h3>HTML Tags</h3>
+                <div class="code-container">
+                    <button class="copy-button" onclick="copyCode('code-html-tags')">Copy Code</button>
+                    <pre class="code-snippet"><code class="language-html" id="code-html-tags">&lt;p&gt;Hello, HTML!&lt;/p&gt;</code></pre>
+                </div>
+            </section>
         </div>
         <div id="html-syntax" class="tab-pane fade">
-            <h3>HTML Syntax</h3>
-            <div class="code-container">
-                <button class="copy-button" onclick="copyCode('code-html-syntax')">Copy Code</button>
-                <pre class="code-snippet"><code class="language-html" id="code-html-syntax">&lt;!DOCTYPE html&gt;
+            <section>
+                <h3>HTML Syntax</h3>
+                <div class="code-container">
+                    <button class="copy-button" onclick="copyCode('code-html-syntax')">Copy Code</button>
+                    <pre class="code-snippet"><code class="language-html" id="code-html-syntax">&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
@@ -97,23 +147,28 @@
     &lt;h1&gt;Hello, World!&lt;/h1&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-            </div>
+                </div>
+            </section>
         </div>
         <div id="html-css" class="tab-pane fade">
-            <h3>Using CSS in HTML</h3>
-            <div class="code-container">
-                <button class="copy-button" onclick="copyCode('code-html-css')">Copy Code</button>
-                <pre class="code-snippet"><code class="language-css" id="code-html-css">body {
+            <section>
+                <h3>Using CSS in HTML</h3>
+                <div class="code-container">
+                    <button class="copy-button" onclick="copyCode('code-html-css')">Copy Code</button>
+                    <pre class="code-snippet"><code class="language-css" id="code-html-css">body {
     background-color: #f4f4f4;
 }</code></pre>
-            </div>
+                </div>
+            </section>
         </div>
         <div id="html-js" class="tab-pane fade">
-            <h3>Using JavaScript in HTML</h3>
-            <div class="code-container">
-                <button class="copy-button" onclick="copyCode('code-html-js')">Copy Code</button>
-                <pre class="code-snippet"><code class="language-javascript" id="code-html-js">document.getElementById("demo").innerHTML = "Hello, JavaScript!";</code></pre>
-            </div>
+            <section>
+                <h3>Using JavaScript in HTML</h3>
+                <div class="code-container">
+                    <button class="copy-button" onclick="copyCode('code-html-js')">Copy Code</button>
+                    <pre class="code-snippet"><code class="language-javascript" id="code-html-js">document.getElementById("demo").innerHTML = "Hello, JavaScript!";</code></pre>
+                </div>
+            </section>
         </div>
     </div>
 </div>
@@ -127,10 +182,6 @@
             console.error('Failed to copy code: ', err);
         });
     }
-
-    $(document).ready(function () {
-            $("#python-syntax").load("python_resources.html");
-        });
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
 </body>
