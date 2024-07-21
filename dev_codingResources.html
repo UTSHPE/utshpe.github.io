@@ -10,21 +10,22 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body class="bg-light">
 
         <!-- NOTE FOR BEGINNERS: open this page on your own browser to see how all elements are structured and note patterns of tag uses like <section>, <pre>, <p>, etc. -->
 
-    <nav class="navbar fixed-top navbar-expand-lg bg-light shadow-sm">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><img src="assets/images/navigation_logo.png" width="160" height="30" class="d-inline-block align-text-top" alt="logo"></a>
-        </div>
-    </nav>
+    
 
 <div class="container">
     <h3 style="text-align: center;">UT SHPE Technical Development Center</h3>
     <div class="row">
     <div class="col-sm-3">
         <ul class="nav nav-tabs nav-tabs-left">
+            <nav class="navbar fixed-top navbar-expand-lg bg-light shadow-sm">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="index.html"><img src="assets/images/navigation_logo.png" width="160" height="30" class="d-inline-block align-text-top" alt="logo"></a>
+                </div>
+            </nav>
             <li class="active"><a data-toggle="tab" href="#home" data-title="Home">Home</a></li>
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Python <span class="caret"></span></a>
@@ -288,6 +289,11 @@ for i in range(5):
         $('.btn-next').text('Next');
     }
 }
+
+// if (window.top === window.self) {
+//             // Not in an iframe, redirect to a different page
+//             window.location.replace("https://utshpe.us/codingResources.html");
+//         }
 
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>

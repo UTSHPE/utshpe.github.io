@@ -708,13 +708,13 @@
 }
 .nav-tabs-left {
     border-right: 1px solid #ddd;
-    height: 100vh; /* Full height */
-    position: fixed; /* Fixed position */
-    top: 60px; /* Adjust for navbar height */
+    height: 100vh; /* make it full height */
+    position: fixed; /* position it fixed */
+    top: 0;
     left: 0;
-    width: 200px; /* Fixed width */
+    width: 200px; /* fixed width */
+    padding-top: 60px; /* adjust for navbar */
     background-color: #f8f9fa;
-    padding-top: 10px; /* Adjust padding for the content */
 }
 
 .nav-tabs-left > li {
@@ -729,9 +729,33 @@
 }
 
 .main-content {
-    margin-left: 210px; /* Adjust margin to match sidebar width */
+    margin-left: 200px; /* Adjust margin to match sidebar width */
     padding: 20px;
 }
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .nav-tabs-left {
+        position: static; /* Stack below the content */
+        width: 100%; /* Full width for smaller screens */
+        height: auto; /* Auto height for dynamic content */
+        border-right: none; /* Remove border */
+        border-bottom: 1px solid #ddd; /* Add bottom border */
+    }
+
+    .main-content {
+        margin-left: 0; /* No margin for smaller screens */
+    }
+
+    .nav-tabs-left > li {
+        margin-bottom: 0; /* Remove margin for better stacking */
+    }
+
+    .nav-tabs-left > li > a {
+        padding: 10px; /* Adjust padding for touch screens */
+    }
+}
+
 /*end of code_resources page style*/
 
 
