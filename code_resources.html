@@ -62,11 +62,11 @@
             </p>
         </div>
         <div id="python-syntax" class="tab-pane fade">
-            <h3>Python Syntax</h3>
+            <!-- <h3>Python Syntax</h3>
             <div class="code-container">
                 <button class="copy-button" onclick="copyCode('code-python-syntax')">Copy Code</button>
                 <pre class="code-snippet"><code class="language-python" id="code-python-syntax">print("Hello, Python!")</code></pre>
-            </div>
+            </div> -->
         </div>
         <div id="python-functions" class="tab-pane fade">
             <h3>Python Basic Functions</h3>
@@ -118,7 +118,20 @@
     </div>
 </div>
 
-<script src="./assets/js/main.js"></script>
+<script>
+    function copyCode(codeId) {
+        const code = document.getElementById(codeId).innerText;
+        navigator.clipboard.writeText(code).then(() => {
+            alert('Code copied to clipboard!');
+        }).catch(err => {
+            console.error('Failed to copy code: ', err);
+        });
+    }
+
+    $(document).ready(function () {
+            $("#python-syntax").load("python_resources.html");
+        });
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
 </body>
 </html>
