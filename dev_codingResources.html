@@ -21,11 +21,11 @@
     <div class="row">
     <div class="col-sm-3">
         <ul class="nav nav-tabs nav-tabs-left">
-            <nav class="navbar fixed-top navbar-expand-lg bg-light shadow-sm">
+            <!-- <nav class="navbar fixed-top navbar-expand-lg bg-light shadow-sm">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="index.html"><img src="assets/images/navigation_logo.png" width="160" height="30" class="d-inline-block align-text-top" alt="logo"></a>
                 </div>
-            </nav>
+            </nav> -->
             <li class="active"><a data-toggle="tab" href="#home" data-title="Home">Home</a></li>
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Python <span class="caret"></span></a>
@@ -238,62 +238,234 @@ for i in range(5):
         <div id="html-syntax" class="tab-pane fade">
             <section>
                 <h3>HTML Syntax</h3>
-                <p>Here is a basic structure of an HTML document. This structure is essential for creating any webpage:</p>
+                <p>HTML (HyperText Markup Language) is the standard language for creating web pages. Every HTML document follows a specific structure, which is essential for the correct rendering of web content. Here's a basic structure of an HTML document:</p>
+        
                 <div class="code-container">
                     <button class="copy-button" onclick="copyCode('code-html-syntax')">Copy Code</button>
                     <pre class="code-snippet"><code class="language-html" id="code-html-syntax">&lt;!DOCTYPE html&gt;
         &lt;html lang="en"&gt;
         &lt;head&gt;
             &lt;meta charset="UTF-8"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
             &lt;title&gt;HTML Syntax&lt;/title&gt;
         &lt;/head&gt;
         &lt;body&gt;
             &lt;h1&gt;Hello, World!&lt;/h1&gt;
+            &lt;p&gt;This is a basic HTML structure.&lt;/p&gt;
         &lt;/body&gt;
         &lt;/html&gt;</code></pre>
                 </div>
+        
+                <p><strong>Explanation:</strong></p>
+                <ul>
+                    <li><code>&lt;!DOCTYPE html&gt;</code>: This declaration tells the browser that the document is using HTML5, which is the latest version of HTML.</li>
+                    <li><code>&lt;html lang="en"&gt;</code>: The <code>html</code> tag wraps the entire content of the webpage, and the <code>lang="en"</code> attribute specifies the language of the document (English, in this case).</li>
+                    <li><code>&lt;head&gt;</code>: The <code>head</code> section contains metadata about the webpage, such as the title, character encoding, and viewport settings for responsive design. This content is not displayed on the page itself.</li>
+                    <li><code>&lt;meta charset="UTF-8"&gt;</code>: This meta tag defines the character encoding as UTF-8, which supports a wide range of characters and symbols.</li>
+                    <li><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>: This tag ensures that the webpage is displayed correctly on different devices, making the page responsive.</li>
+                    <li><code>&lt;title&gt;</code>: The text inside the <code>title</code> tag is what appears on the browser tab for the webpage.</li>
+                    <li><code>&lt;body&gt;</code>: The body tag contains all the visible content of the webpage, such as text, images, and other media elements.</li>
+                </ul>
+        
+                <h4>Additional Examples of HTML Syntax</h4>
+                <p>Here are a few more commonly used HTML elements that can be added to the body of a webpage:</p>
+                <h5>Adding a List</h5>
+                <p>You can create ordered and unordered lists using the <code>&lt;ol&gt;</code> and <code>&lt;ul&gt;</code> tags:</p>
+        
+                <div class="code-container">
+                    <button class="copy-button" onclick="copyCode('code-html-list')">Copy Code</button>
+                    <pre class="code-snippet"><code class="language-html" id="code-html-list">&lt;h2&gt;Ordered List Example&lt;/h2&gt;
+        &lt;ol&gt;
+            &lt;li&gt;First item&lt;/li&gt;
+            &lt;li&gt;Second item&lt;/li&gt;
+            &lt;li&gt;Third item&lt;/li&gt;
+        &lt;/ol&gt;
+        
+        &lt;h2&gt;Unordered List Example&lt;/h2&gt;
+        &lt;ul&gt;
+            &lt;li&gt;First item&lt;/li&gt;
+            &lt;li&gt;Second item&lt;/li&gt;
+            &lt;li&gt;Third item&lt;/li&gt;
+        &lt;/ul&gt;</code></pre>
+                </div>
+                
+                <p>In this example:</p>
+                <ul>
+                    <li>The <code>&lt;ol&gt;</code> tag creates an ordered (numbered) list, while the <code>&lt;ul&gt;</code> tag creates an unordered (bulleted) list.</li>
+                    <li>The <code>&lt;li&gt;</code> tag represents each list item.</li>
+                </ul>
+        
+                <h5>Adding Images</h5>
+                <p>You can also add images using the <code>&lt;img&gt;</code> tag:</p>
+        
+                <div class="code-container">
+                    <button class="copy-button" onclick="copyCode('code-html-img')">Copy Code</button>
+                    <pre class="code-snippet"><code class="language-html" id="code-html-img">&lt;img src="image.jpg" alt="A descriptive text" width="300" height="200"&gt;</code></pre>
+                </div>
+        
                 <p>Explanation:</p>
                 <ul>
-                    <li><code>&lt;!DOCTYPE html&gt;</code>: Declares the document type as HTML5.</li>
-                    <li><code>&lt;html&gt;</code>: The root element that wraps all content on the page.</li>
-                    <li><code>&lt;head&gt;</code>: Contains metadata like the page title and character set.</li>
-                    <li><code>&lt;body&gt;</code>: Contains the visible content of the webpage.</li>
+                    <li><code>src</code>: The source attribute specifies the URL or path to the image file.</li>
+                    <li><code>alt</code>: The alternative text for the image, which is displayed if the image fails to load and helps with accessibility.</li>
+                    <li><code>width</code> and <code>height</code>: Define the dimensions of the image in pixels.</li>
+                </ul>
+        
+                <h5>Adding Links</h5>
+                <p>Links are created using the <code>&lt;a&gt;</code> tag. Here's how to add a hyperlink:</p>
+        
+                <div class="code-container">
+                    <button class="copy-button" onclick="copyCode('code-html-link')">Copy Code</button>
+                    <pre class="code-snippet"><code class="language-html" id="code-html-link">&lt;a href="https://www.example.com" target="_blank"&gt;Visit Example&lt;/a&gt;</code></pre>
+                </div>
+        
+                <p>Explanation:</p>
+                <ul>
+                    <li><code>href</code>: The URL or web address the link points to.</li>
+                    <li><code>target="_blank"</code>: Opens the link in a new tab.</li>
                 </ul>
             </section>
+        
             <button class="btn btn-primary" onclick="navigateToTab('#html-tags')">Previous</button>
             <button class="btn btn-primary" onclick="navigateToTab('#html-css')">Next</button>
         </div>
         
+        
         <div id="html-css" class="tab-pane fade">
             <section>
                 <h3>Using CSS in HTML</h3>
-                <p>CSS is used to style HTML elements. Here's a simple example of how to set the background color of a webpage:</p>
+                <p>CSS (Cascading Style Sheets) is used to style HTML elements and control the layout of web pages. It allows you to separate content (HTML) from presentation (CSS). Here's a simple example of how to set the background color of a webpage:</p>
+                
                 <div class="code-container">
                     <button class="copy-button" onclick="copyCode('code-html-css')">Copy Code</button>
                     <pre class="code-snippet"><code class="language-css" id="code-html-css">body {
             background-color: #f4f4f4;
         }</code></pre>
                 </div>
+        
                 <p>In this example, the <code>background-color</code> property changes the background color of the entire webpage to light gray.</p>
+                
+                <h4>Adding Color to Text</h4>
+                <p>In addition to changing background colors, you can also style text by changing its color. Here's an example:</p>
+                
+                <div class="code-container">
+                    <button class="copy-button" onclick="copyCode('code-html-text-color')">Copy Code</button>
+                    <pre class="code-snippet"><code class="language-css" id="code-html-text-color">p {
+            color: blue;
+        }</code></pre>
+                </div>
+                
+                <p>This code will make all paragraphs <code>&lt;p&gt;</code> appear in blue. You can also use HEX values or RGB to define custom colors:</p>
+        
+                <ul>
+                    <li><strong>HEX value</strong>: <code>#3498db</code> for a specific shade of blue.</li>
+                    <li><strong>RGB</strong>: <code>rgb(52, 152, 219)</code> to define the same color using red, green, and blue values.</li>
+                </ul>
+        
+                <h4>Styling Fonts</h4>
+                <p>CSS allows you to control how text appears on the page. You can change the font family, size, and more. Here's an example:</p>
+        
+                <div class="code-container">
+                    <button class="copy-button" onclick="copyCode('code-html-font-style')">Copy Code</button>
+                    <pre class="code-snippet"><code class="language-css" id="code-html-font-style">p {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+        }</code></pre>
+                </div>
+        
+                <p>Explanation:</p>
+                <ul>
+                    <li><strong>font-family</strong>: Defines the font type. In this case, Arial will be used, and if it's not available, it will default to any <code>sans-serif</code> font.</li>
+                    <li><strong>font-size</strong>: Sets the size of the font to 16px.</li>
+                    <li><strong>font-weight</strong>: Makes the font bold.</li>
+                </ul>
+        
+                <h4>Box Model in CSS</h4>
+                <p>The CSS box model controls the spacing, padding, and borders of HTML elements. Here's an example:</p>
+                
+                <div class="code-container">
+                    <button class="copy-button" onclick="copyCode('code-html-box-model')">Copy Code</button>
+                    <pre class="code-snippet"><code class="language-css" id="code-html-box-model">div {
+            width: 300px;
+            padding: 10px;
+            border: 2px solid black;
+            margin: 20px;
+        }</code></pre>
+                </div>
+        
+                <p>Explanation:</p>
+                <ul>
+                    <li><strong>width</strong>: Sets the width of the <code>&lt;div&gt;</code> to 300px.</li>
+                    <li><strong>padding</strong>: Adds 10px of space inside the border.</li>
+                    <li><strong>border</strong>: Adds a solid black border with a thickness of 2px.</li>
+                    <li><strong>margin</strong>: Adds 20px of space outside the border to separate the element from others.</li>
+                </ul>
             </section>
+        
             <button class="btn btn-primary" onclick="navigateToTab('#html-syntax')">Previous</button>
             <button class="btn btn-primary" onclick="navigateToTab('#html-js')">Next</button>
         </div>
         
+        
         <div id="html-js" class="tab-pane fade">
             <section>
                 <h3>Using JavaScript in HTML</h3>
-                <p>JavaScript is a programming language used to make web pages interactive. Here's an example that changes the content of a paragraph:</p>
+                <p>JavaScript is a programming language used to make web pages interactive. It allows you to respond to user actions, update content dynamically, and handle browser events. Here's a simple example that changes the content of a paragraph when the page loads:</p>
+        
                 <div class="code-container">
                     <button class="copy-button" onclick="copyCode('code-html-js')">Copy Code</button>
                     <pre class="code-snippet"><code class="language-javascript" id="code-html-js">document.getElementById("demo").innerHTML = "Hello, JavaScript!";</code></pre>
                 </div>
-                <p>Explanation: This JavaScript code finds an element with the id "demo" and changes its content to "Hello, JavaScript!"</p>
+        
+                <p>Explanation: This JavaScript code finds an HTML element with the id <code>demo</code> and changes its content to "Hello, JavaScript!".</p>
+        
                 <p>HTML for this code:</p>
                 <pre class="code-snippet"><code class="language-html">&lt;p id="demo"&gt;Original Text&lt;/p&gt;</code></pre>
+        
+                <h4>Event Handling in JavaScript</h4>
+                <p>JavaScript allows you to handle events such as clicks, key presses, or page loads. Here's an example where a button click changes the content of a paragraph:</p>
+        
+                <div class="code-container">
+                    <button class="copy-button" onclick="copyCode('code-html-js-event')">Copy Code</button>
+                    <pre class="code-snippet"><code class="language-javascript" id="code-html-js-event">function changeText() {
+            document.getElementById("demo").innerHTML = "You clicked the button!";
+        }</code></pre>
+                </div>
+        
+                <p>The HTML for the button and paragraph would look like this:</p>
+                <pre class="code-snippet"><code class="language-html">&lt;p id="demo"&gt;Original Text&lt;/p&gt;
+        &lt;button onclick="changeText()"&gt;Click Me&lt;/button&gt;</code></pre>
+        
+                <p>Explanation:</p>
+                <ul>
+                    <li><strong>onclick</strong>: This event attribute in the button tag calls the JavaScript function <code>changeText()</code> when the button is clicked.</li>
+                    <li><strong>changeText()</strong>: This function changes the content of the paragraph with id <code>demo</code>.</li>
+                </ul>
+        
+                <h4>Manipulating CSS with JavaScript</h4>
+                <p>JavaScript can also be used to change CSS styles dynamically. Here's an example where clicking a button changes the background color of a <code>&lt;div&gt;</code>:</p>
+        
+                <div class="code-container">
+                    <button class="copy-button" onclick="copyCode('code-html-js-css')">Copy Code</button>
+                    <pre class="code-snippet"><code class="language-javascript" id="code-html-js-css">function changeBackgroundColor() {
+            document.getElementById("colorBox").style.backgroundColor = "lightblue";
+        }</code></pre>
+                </div>
+        
+                <p>The HTML for this would look like this:</p>
+                <pre class="code-snippet"><code class="language-html">&lt;div id="colorBox" style="width: 100px; height: 100px; background-color: lightgray;"&gt;&lt;/div&gt;
+        &lt;button onclick="changeBackgroundColor()"&gt;Change Color&lt;/button&gt;</code></pre>
+        
+                <p>Explanation:</p>
+                <ul>
+                    <li><strong>style.backgroundColor</strong>: This JavaScript property allows you to modify the CSS background color of an element.</li>
+                    <li><strong>onclick</strong>: Clicking the button triggers the <code>changeBackgroundColor()</code> function, which updates the background color of the <code>&lt;div&gt;</code>.</li>
+                </ul>
             </section>
+        
             <button class="btn btn-primary" onclick="navigateToTab('#html-css')">Previous</button>
         </div>
+        
 
 
 <!--------------- END OF HTML CONTENT --------------->
