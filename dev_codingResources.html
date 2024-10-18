@@ -140,63 +140,157 @@ for i in range(5):
             <button class="btn btn-primary" onclick="navigateToTab('#python-syntax')">Previous</button>
         </div>
 
+
+
+
         <div id="html-tags" class="tab-pane fade">
             <section>
                 <h3>HTML Tags</h3>
+                <p>HTML tags are used to structure content on a webpage. Below are some commonly used HTML tags with examples:</p>
+        
+                <!-- Paragraph Tag -->
+                <h4>Paragraph Tag</h4>
+                <p>The <code>&lt;p&gt;</code> tag defines a paragraph:</p>
                 <div class="code-container">
-                    <button class="copy-button" onclick="copyCode('code-html-tags')">Copy Code</button>
-                    <pre class="code-snippet"><code class="language-html" id="code-html-tags">&lt;p&gt;Hello, HTML!&lt;/p&gt;</code></pre>
+                    <button class="copy-button" onclick="copyCode('code-html-paragraph')">Copy Code</button>
+                    <pre class="code-snippet"><code class="language-html" id="code-html-paragraph">&lt;p&gt;This is a paragraph.&lt;/p&gt;</code></pre>
                 </div>
+        
+                <!-- Heading Tags -->
+                <h4>Heading Tags</h4>
+                <p>HTML provides six levels of headings, from <code>&lt;h1&gt;</code> (the largest) to <code>&lt;h6&gt;</code> (the smallest):</p>
+                <div class="code-container">
+                    <button class="copy-button" onclick="copyCode('code-html-headings')">Copy Code</button>
+                    <pre class="code-snippet"><code class="language-html" id="code-html-headings">
+        &lt;h1&gt;Heading 1&lt;/h1&gt;
+        &lt;h2&gt;Heading 2&lt;/h2&gt;
+        &lt;h3&gt;Heading 3&lt;/h3&gt;
+        &lt;h4&gt;Heading 4&lt;/h4&gt;
+        &lt;h5&gt;Heading 5&lt;/h5&gt;
+        &lt;h6&gt;Heading 6&lt;/h6&gt;</code></pre>
+                </div>
+        
+                <!-- Link Tag -->
+                <h4>Link Tag</h4>
+                <p>The <code>&lt;a&gt;</code> tag is used to create hyperlinks. Here's an example of linking to another page:</p>
+                <div class="code-container">
+                    <button class="copy-button" onclick="copyCode('code-html-link')">Copy Code</button>
+                    <pre class="code-snippet"><code class="language-html" id="code-html-link">&lt;a href="https://example.com"&gt;Visit Example&lt;/a&gt;</code></pre>
+                </div>
+        
+                <!-- Image Tag -->
+                <h4>Image Tag</h4>
+                <p>The <code>&lt;img&gt;</code> tag is used to display images on a webpage. You must specify the image source and can include alternate text for accessibility:</p>
+                <div class="code-container">
+                    <button class="copy-button" onclick="copyCode('code-html-img')">Copy Code</button>
+                    <pre class="code-snippet"><code class="language-html" id="code-html-img">&lt;img src="image.jpg" alt="Description of the image" /&gt;</code></pre>
+                </div>
+        
+                <!-- List Tags -->
+                <h4>List Tags</h4>
+                <p>HTML offers two types of lists: ordered (<code>&lt;ol&gt;</code>) and unordered (<code>&lt;ul&gt;</code>):</p>
+                <div class="code-container">
+                    <button class="copy-button" onclick="copyCode('code-html-lists')">Copy Code</button>
+                    <pre class="code-snippet"><code class="language-html" id="code-html-lists">
+        &lt;ul&gt;
+            &lt;li&gt;Item 1&lt;/li&gt;
+            &lt;li&gt;Item 2&lt;/li&gt;
+        &lt;/ul&gt;
+        
+        &lt;ol&gt;
+            &lt;li&gt;First Item&lt;/li&gt;
+            &lt;li&gt;Second Item&lt;/li&gt;
+        &lt;/ol&gt;</code></pre>
+                </div>
+        
+                <!-- Table Tag -->
+                <h4>Table Tag</h4>
+                <p>The <code>&lt;table&gt;</code> tag is used to create tables. Here’s a simple example:</p>
+                <div class="code-container">
+                    <button class="copy-button" onclick="copyCode('code-html-table')">Copy Code</button>
+                    <pre class="code-snippet"><code class="language-html" id="code-html-table">&lt;table&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Name&lt;/th&gt;
+                &lt;th&gt;Age&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;John&lt;/td&gt;
+                &lt;td&gt;30&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Jane&lt;/td&gt;
+                &lt;td&gt;25&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;</code></pre>
+                </div>
+        
             </section>
-
             <button class="btn btn-primary" onclick="navigateToTab('#html-syntax')">Next</button>
         </div>
+        
+        
         <div id="html-syntax" class="tab-pane fade">
             <section>
                 <h3>HTML Syntax</h3>
+                <p>Here is a basic structure of an HTML document. This structure is essential for creating any webpage:</p>
                 <div class="code-container">
                     <button class="copy-button" onclick="copyCode('code-html-syntax')">Copy Code</button>
                     <pre class="code-snippet"><code class="language-html" id="code-html-syntax">&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;HTML Syntax&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1&gt;Hello, World!&lt;/h1&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+        &lt;html lang="en"&gt;
+        &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;title&gt;HTML Syntax&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;h1&gt;Hello, World!&lt;/h1&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;</code></pre>
                 </div>
+                <p>Explanation:</p>
+                <ul>
+                    <li><code>&lt;!DOCTYPE html&gt;</code>: Declares the document type as HTML5.</li>
+                    <li><code>&lt;html&gt;</code>: The root element that wraps all content on the page.</li>
+                    <li><code>&lt;head&gt;</code>: Contains metadata like the page title and character set.</li>
+                    <li><code>&lt;body&gt;</code>: Contains the visible content of the webpage.</li>
+                </ul>
             </section>
-
             <button class="btn btn-primary" onclick="navigateToTab('#html-tags')">Previous</button>
             <button class="btn btn-primary" onclick="navigateToTab('#html-css')">Next</button>
         </div>
+        
         <div id="html-css" class="tab-pane fade">
             <section>
                 <h3>Using CSS in HTML</h3>
+                <p>CSS is used to style HTML elements. Here's a simple example of how to set the background color of a webpage:</p>
                 <div class="code-container">
                     <button class="copy-button" onclick="copyCode('code-html-css')">Copy Code</button>
                     <pre class="code-snippet"><code class="language-css" id="code-html-css">body {
-    background-color: #f4f4f4;
-}</code></pre>
+            background-color: #f4f4f4;
+        }</code></pre>
                 </div>
+                <p>In this example, the <code>background-color</code> property changes the background color of the entire webpage to light gray.</p>
             </section>
-
             <button class="btn btn-primary" onclick="navigateToTab('#html-syntax')">Previous</button>
             <button class="btn btn-primary" onclick="navigateToTab('#html-js')">Next</button>
         </div>
+        
         <div id="html-js" class="tab-pane fade">
             <section>
                 <h3>Using JavaScript in HTML</h3>
+                <p>JavaScript is a programming language used to make web pages interactive. Here's an example that changes the content of a paragraph:</p>
                 <div class="code-container">
                     <button class="copy-button" onclick="copyCode('code-html-js')">Copy Code</button>
                     <pre class="code-snippet"><code class="language-javascript" id="code-html-js">document.getElementById("demo").innerHTML = "Hello, JavaScript!";</code></pre>
                 </div>
+                <p>Explanation: This JavaScript code finds an element with the id "demo" and changes its content to "Hello, JavaScript!"</p>
+                <p>HTML for this code:</p>
+                <pre class="code-snippet"><code class="language-html">&lt;p id="demo"&gt;Original Text&lt;/p&gt;</code></pre>
             </section>
-
             <button class="btn btn-primary" onclick="navigateToTab('#html-css')">Previous</button>
         </div>
+        
+
+        
 
         <div id="personal-getting-started" class="tab-pane fade">
             <section>
@@ -289,11 +383,6 @@ for i in range(5):
         $('.btn-next').text('Next');
     }
 }
-
-// if (window.top === window.self) {
-//             // Not in an iframe, redirect to a different page
-//             window.location.replace("https://utshpe.us/codingResources.html");
-//         }
 
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
