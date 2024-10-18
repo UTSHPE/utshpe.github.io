@@ -18,13 +18,21 @@
     <script src="assets/js/chatbot.js"></script>
 
     <style>
-        .iframe-container {
+       /* Ensures the body takes the full height of the viewport */
+body {
+    margin: 0; /* Remove default margin */
+    height: 100vh; /* Full viewport height */
+}
+
+/* The iframe container for responsive design */
+.iframe-container {
     position: relative; /* Set relative positioning for the container */
     width: 100%; /* Full width of the parent container */
-    padding-top: 56.25%; /* Aspect ratio (16:9) */
+    height: 100vh; /* Full viewport height */
     overflow: hidden; /* Hide overflow */
 }
 
+/* Style for the iframe */
 .iframe-container iframe {
     position: absolute; /* Absolute positioning inside the container */
     top: 0; /* Align to the top */
@@ -33,6 +41,7 @@
     height: 100%; /* Full height */
     border: none; /* Remove border */
 }
+
     </style>
 </head>
 
@@ -74,6 +83,7 @@
 
     <!-- Main Content with Iframe -->
     <div class="container mt-5 pt-5">
+        <!-- adjust iframe container if needed to fill the whole screen -->
         <div class="iframe-container">
             <iframe src="dev_codingResources.html" title="Code Resources">
                 Your browser does not support iframes.

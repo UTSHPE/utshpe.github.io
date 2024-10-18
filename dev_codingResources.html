@@ -17,7 +17,7 @@
     
 
 <div class="container">
-    <h3 style="text-align: center;">UT SHPE Technical Development Center</h3>
+    <!-- <h3 style="text-align: center;">UT SHPE Technical Development Center</h3> -->
     <div class="row">
     <div class="col-sm-3">
         <ul class="nav nav-tabs nav-tabs-left">
@@ -32,8 +32,12 @@
                 <ul class="dropdown-menu">
                     <li><a data-toggle="tab" href="#python-syntax" data-title="Syntax">Syntax</a></li>
                     <li><a data-toggle="tab" href="#python-functions" data-title="Basic Functions">Basic Functions</a></li>
+                    <li><a data-toggle="tab" href="#python-oop" data-title="OOP">Object-Oriented Programming</a></li>
+                    <li><a data-toggle="tab" href="#python-modules" data-title="Modules">Modules</a></li>
+                    <li><a data-toggle="tab" href="#python-advanced" data-title="Advanced Concepts">Advanced Concepts</a></li>
                 </ul>
             </li>
+            
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">HTML <span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -64,26 +68,28 @@
      <div class="col-sm-9">
      <div class="tab-content">
         <div id="home" class="tab-pane fade in active">
-            <h3>Home</h3>
-            <p>Welcome to UTSHPE's Coding Resource Center!😎 <br>
-                Want to get started on your coding journey? Get experience in different languages? Develop your own personal website? You are in the right place!
-            </p>
+            <div class="home-container">
+                <h3>Welcome to UTSHPE's Coding Resource Center! 😎</h3>
+                <p>Want to get started on your coding journey? Experience different programming languages? Or develop your own personal website? You're in the right place!</p>
+                <p class="highlighted-text">Explore, learn, and build with the resources we’ve prepared for you.</p>
+            </div>
         </div>
+        
 
 
 <!--------------- START OF PYTHON CONTENT --------------->
         
-        <div id="python-syntax" class="tab-pane fade">
-            <section>
-                <h3>Getting Started with Python Syntax</h3>
-                <p>Python is a high-level, interpreted programming language known for its readability and simplicity. It is widely used for web development, data analysis, artificial intelligence, scientific computing, and more. Here, you'll learn the basics of Python syntax, which will help you write clean and efficient code.</p>
-                
-                <h4>1. Basic Syntax</h4>
-                <p>Python uses indentation to define code blocks, making the code more readable. Each block of code is indented consistently. For example, functions, loops, and conditionals are all defined with indentation.</p>
-                
-                <h4>2. Variables and Data Types</h4>
-                <p>Variables in Python are dynamically typed, which means you don't need to declare their type explicitly. Common data types include integers, floats, strings, and lists. Here's how you can define variables:</p>
-                <pre class="code-snippet"><code class="language-python">
+<div id="python-syntax" class="tab-pane fade">
+    <section>
+        <h3>Getting Started with Python Syntax</h3>
+        <p>Python is a high-level, interpreted programming language known for its readability and simplicity. It is widely used for web development, data analysis, artificial intelligence, scientific computing, and more. Here, you'll learn the basics of Python syntax, which will help you write clean and efficient code.</p>
+        
+        <h4>1. Basic Syntax</h4>
+        <p>Python uses indentation to define code blocks, making the code more readable. Each block of code is indented consistently. For example, functions, loops, and conditionals are all defined with indentation.</p>
+        
+        <h4>2. Variables and Data Types</h4>
+        <p>Variables in Python are dynamically typed, which means you don't need to declare their type explicitly. Common data types include integers, floats, strings, and lists. Here's how you can define variables:</p>
+        <pre class="code-snippet"><code class="language-python">
 # Defining variables
 integer_var = 10
 float_var = 10.5
@@ -92,10 +98,10 @@ list_var = [1, 2, 3, 4, 5]
 
 print(integer_var, float_var, string_var, list_var)
 </code></pre>
-                
-                <h4>3. Control Structures</h4>
-                <p>Python supports various control structures, such as if statements, loops, and exception handling. Here's an example of a simple if statement and a for loop:</p>
-                <pre class="code-snippet"><code class="language-python">
+        
+        <h4>3. Control Structures</h4>
+        <p>Python supports various control structures, such as if statements, loops, and exception handling. Here's an example of a simple if statement and a for loop:</p>
+        <pre class="code-snippet"><code class="language-python">
 # If statement
 number = 10
 if number > 5:
@@ -105,46 +111,197 @@ if number > 5:
 for i in range(5):
     print("Loop iteration:", i)
 </code></pre>
-            </section>
-            
-            <section>
-                <h3>Python Syntax Example</h3>
-                <p>Below is a basic Python code snippet that demonstrates a simple print statement. This is one of the first things you'll learn in Python:</p>
-                <div class="code-container">
-                    <button class="copy-button" onclick="copyCode('code-python-syntax')">Copy Code</button>
-                    <pre class="code-snippet"><code class="language-python" id="code-python-syntax">print("Hello, Python!")</code></pre>
-                </div>
-            </section>
-            
-            <section>
-                <h3>Common Errors and Debugging</h3>
-                <p>When starting with Python, you may encounter common syntax errors. Here are a few tips for debugging:</p>
-                <ul>
-                    <li><strong>Indentation Errors:</strong> Ensure that your code blocks are consistently indented.</li>
-                    <li><strong>Syntax Errors:</strong> Check for missing colons or incorrect use of keywords.</li>
-                    <li><strong>Name Errors:</strong> Ensure that variables are defined before use.</li>
-                </ul>
-                <p>Using a Python IDE or editor with built-in syntax checking can help catch these errors early.</p>
-            </section>
-
-            <button class="btn btn-primary" onclick="navigateToTab('#python-functions')">Next</button>
+    </section>
+    
+    <section>
+        <h3>Python Syntax Example</h3>
+        <p>Below is a basic Python code snippet that demonstrates a simple print statement. This is one of the first things you'll learn in Python:</p>
+        <div class="code-container">
+            <button class="copy-button" onclick="copyCode('code-python-syntax')">Copy Code</button>
+            <pre class="code-snippet"><code class="language-python" id="code-python-syntax">print("Hello, Python!")</code></pre>
         </div>
+    </section>
+    
+    <section>
+        <h3>Common Errors and Debugging</h3>
+        <p>When starting with Python, you may encounter common syntax errors. Here are a few tips for debugging:</p>
+        <ul>
+            <li><strong>Indentation Errors:</strong> Ensure that your code blocks are consistently indented.</li>
+            <li><strong>Syntax Errors:</strong> Check for missing colons or incorrect use of keywords.</li>
+            <li><strong>Name Errors:</strong> Ensure that variables are defined before use.</li>
+        </ul>
+        <p>Using a Python IDE or editor with built-in syntax checking can help catch these errors early.</p>
+    </section>
 
-        <div id="python-functions" class="tab-pane fade">
-            <section>
-                <h3>Python Basic Functions</h3>
-                <div class="code-container">
-                    <button class="copy-button" onclick="copyCode('code-python-functions')">Copy Code</button>
-                    <pre class="code-snippet"><code class="language-python" id="code-python-functions">def add(a, b):
-    return a + b</code></pre>
-                </div>
-            </section>
+    <button class="btn btn-primary" onclick="navigateToTab('#python-functions')">Next</button>
+</div>
 
-            <button class="btn btn-primary" onclick="navigateToTab('#python-syntax')">Previous</button>
+<div id="python-functions" class="tab-pane fade">
+    <section>
+        <h3>Python Functions</h3>
+        <p>Functions in Python allow you to write reusable blocks of code that perform a specific task. Functions can take inputs, process them, and return results. Here's a basic function:</p>
+        <div class="code-container">
+            <button class="copy-button" onclick="copyCode('code-python-functions')">Copy Code</button>
+            <pre class="code-snippet"><code class="language-python" id="code-python-functions">def add(a, b):
+    return a + b
+
+result = add(5, 3)
+print("Sum:", result)
+</code></pre>
         </div>
+        
+        <h4>1. Function Parameters and Return Values</h4>
+        <p>Functions can take parameters, and they can return a value. Here's an example of a function with parameters and a return value:</p>
+        <pre class="code-snippet"><code class="language-python">
+def multiply(x, y):
+    return x * y
 
+result = multiply(4, 7)
+print("Product:", result)
+</code></pre>
 
-<!--------------- START OF PYTHON CONTENT --------------->
+        <h4>2. Default Parameters</h4>
+        <p>Functions in Python can have default values for parameters, which will be used if no arguments are passed:</p>
+        <pre class="code-snippet"><code class="language-python">
+def greet(name="User"):
+    print("Hello,", name)
+
+greet()  # Will use the default value 'User'
+greet("Alice")  # Will use 'Alice' as the name
+</code></pre>
+    </section>
+
+    <button class="btn btn-primary" onclick="navigateToTab('#python-syntax')">Previous</button>
+    <button class="btn btn-primary" onclick="navigateToTab('#python-oop')">Next</button>
+</div>
+
+<div id="python-oop" class="tab-pane fade">
+    <section>
+        <h3>Object-Oriented Programming (OOP) in Python</h3>
+        <p>Object-Oriented Programming (OOP) is a programming paradigm based on the concept of objects, which are instances of classes. Python allows you to define classes and create objects to model real-world entities.</p>
+        
+        <h4>1. Defining a Class</h4>
+        <p>A class in Python is defined using the <code>class</code> keyword. Here's an example:</p>
+        <pre class="code-snippet"><code class="language-python">
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def bark(self):
+        print(f"{self.name} is barking")
+
+# Create an object (instance) of the Dog class
+my_dog = Dog("Buddy", 3)
+my_dog.bark()  # Output: Buddy is barking
+</code></pre>
+
+        <h4>2. Inheritance</h4>
+        <p>Inheritance allows one class to inherit the properties and methods of another class. Here's an example:</p>
+        <pre class="code-snippet"><code class="language-python">
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        print(f"{self.name} makes a sound")
+
+class Dog(Animal):
+    def speak(self):
+        print(f"{self.name} barks")
+
+dog = Dog("Rex")
+dog.speak()  # Output: Rex barks
+</code></pre>
+    </section>
+
+    <button class="btn btn-primary" onclick="navigateToTab('#python-functions')">Previous</button>
+    <button class="btn btn-primary" onclick="navigateToTab('#python-modules')">Next</button>
+</div>
+
+<div id="python-modules" class="tab-pane fade">
+    <section>
+        <h3>Working with Python Modules</h3>
+        <p>Modules in Python allow you to organize your code by breaking it into separate files. You can import a module in another file and use its functions or classes.</p>
+        
+        <h4>1. Importing Modules</h4>
+        <p>Python comes with many built-in modules, such as <code>math</code> and <code>datetime</code>. You can also create your own modules. Here's an example:</p>
+        <pre class="code-snippet"><code class="language-python">
+# Importing a built-in module
+import math
+
+print(math.sqrt(16))  # Output: 4.0
+
+# Importing a custom module
+# Assume you have a file named 'my_module.py' with a function 'greet'
+from my_module import greet
+
+greet("Alice")  # Output: Hello, Alice
+</code></pre>
+
+        <h4>2. Creating Your Own Module</h4>
+        <p>To create your own module, simply write a Python file with functions or classes, and then import it into other files. Here's an example of a module:</p>
+        <pre class="code-snippet"><code class="language-python">
+# my_module.py
+def greet(name):
+    print(f"Hello, {name}")
+
+# main.py
+from my_module import greet
+
+greet("Alice")
+</code></pre>
+    </section>
+
+    <button class="btn btn-primary" onclick="navigateToTab('#python-oop')">Previous</button>
+    <button class="btn btn-primary" onclick="navigateToTab('#python-advanced')">Next</button>
+</div>
+
+<div id="python-advanced" class="tab-pane fade">
+    <section>
+        <h3>Advanced Python Concepts</h3>
+        <p>Now that you've learned the basics of Python, it's time to explore more advanced topics. These concepts will help you write more efficient and powerful code.</p>
+
+        <h4>1. List Comprehensions</h4>
+        <p>List comprehensions provide a concise way to create lists. Here's an example:</p>
+        <pre class="code-snippet"><code class="language-python">
+# Traditional way
+squares = []
+for i in range(10):
+    squares.append(i**2)
+
+# Using list comprehension
+squares = [i**2 for i in range(10)]
+</code></pre>
+
+        <h4>2. Lambda Functions</h4>
+        <p>Lambda functions are anonymous, inline functions that can take any number of arguments but have only one expression. Here's an example:</p>
+        <pre class="code-snippet"><code class="language-python">
+# Lambda function
+square = lambda x: x ** 2
+
+print(square(5))  # Output: 25
+</code></pre>
+
+        <h4>3. Generators</h4>
+        <p>Generators allow you to iterate over large datasets without storing the entire dataset in memory. They yield one item at a time:</p>
+        <pre class="code-snippet"><code class="language-python">
+def count_up_to(max):
+    count = 1
+    while count <= max:
+        yield count
+        count += 1
+
+counter = count_up_to(5)
+for num in counter:
+    print(num)
+</code></pre>
+    </section>
+
+    <button class="btn btn-primary" onclick="navigateToTab('#python-modules')">Previous</button>
+</div>
+
+<!--------------- END OF PYTHON CONTENT --------------->
 
 
 <!--------------- START OF HTML CONTENT --------------->
@@ -473,58 +630,361 @@ for i in range(5):
 
 <!--------------- START OF Webpage CONTENT --------------->
 
-        <div id="personal-getting-started" class="tab-pane fade">
-            <section>
-                <h3>Getting Started</h3>
-                <p>Welcome to the Personal Webpage section. Here, you'll learn how to get started with creating your own personal website. This section will guide you through the initial setup and basic structure.</p>
-            </section>
+<div id="personal-getting-started" class="tab-pane fade">
+    <section>
+        <h3>Getting Started</h3>
+        <p>Welcome! Let's begin by understanding the key parts of your <code>index.html</code> file. You'll be editing the following areas:</p>
+        <h4>1. Head Section</h4>
+        <p>This is where you include metadata, links to stylesheets, and set the title of your website.</p>
+        <pre><code>&lt;head&gt;
+    &lt;!-- Meta Data --&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
 
-            <button class="btn btn-primary" onclick="navigateToTab('#personal-structure')">Next</button>
-        </div>
-        <div id="personal-structure" class="tab-pane fade">
-            <section>
-                <h3>Understanding the Structure</h3>
-                <p>In this section, you'll learn about the structure of a typical personal website. Understanding the layout and organization is crucial for building a functional and attractive website.</p>
-            </section>
+    &lt;!-- Fonts --&gt;
+    &lt;link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300" rel="stylesheet"&gt;
 
-            <button class="btn btn-primary" onclick="navigateToTab('#personal-getting-started')">Previous</button>
-            <button class="btn btn-primary" onclick="navigateToTab('#personal-editing')">Next</button>
-        </div>
-        <div id="personal-editing" class="tab-pane fade">
-            <section>
-                <h3>Editing and Inserting</h3>
-                <p>This section covers how to edit your website's content and insert various elements like images, links, and text. These skills are essential for personalizing your site.</p>
-            </section>
+    &lt;!-- Title --&gt;
+    &lt;title&gt;Your Website Name&lt;/title&gt;
 
-            <button class="btn btn-primary" onclick="navigateToTab('#personal-structure')">Previous</button>
-            <button class="btn btn-primary" onclick="navigateToTab('#personal-effects')">Next</button>
-        </div>
-        <div id="personal-effects" class="tab-pane fade">
-            <section>
-                <h3>JavaScript Effects</h3>
-                <p>Learn how to use JavaScript to add interactive effects to your website. This section will cover basic JavaScript techniques and examples.</p>
-            </section>
+    &lt;!-- CSS Files --&gt;
+    &lt;link rel="stylesheet" href="assets/css/style.css"&gt;
+&lt;/head&gt;</code></pre>
+        <p><strong>What to Edit:</strong></p>
+        <ul>
+            <li>Change the title to your name or site name:</li>
+            <pre><code>&lt;title&gt;John Doe Portfolio&lt;/title&gt;</code></pre>
+            <li>Add or modify font links to customize typography.</li>
+        </ul>
+    </section>
+    <button class="btn btn-primary" onclick="navigateToTab('#personal-structure')">Next</button>
+</div>
 
-            <button class="btn btn-primary" onclick="navigateToTab('#personal-editing')">Previous</button>
-            <button class="btn btn-primary" onclick="navigateToTab('#personal-deployment')">Next</button>
-        </div>
-        <div id="personal-deployment" class="tab-pane fade">
-            <section>
-                <h3>Deployment</h3>
-                <p>This section guides you through deploying your website so it can be accessed on the internet. You'll learn about different hosting options and how to upload your files.</p>
-            </section>
+<div id="personal-structure" class="tab-pane fade">
+    <section>
+        <h3>Understanding the Structure</h3>
+        <p>The structure of your website is defined by various HTML sections. Let's look at key sections you'll likely edit:</p>
+        <h4>1. Navigation Bar</h4>
+        <p>This is your site's main menu.</p>
+        <pre><code>&lt;nav class="navbar navbar-default bootsnav navbar-fixed dark no-background"&gt;
+    &lt;div class="container"&gt;
+        &lt;!-- Navbar Header --&gt;
+        &lt;div class="navbar-header"&gt;
+            &lt;!-- Mobile Menu Button --&gt;
+            &lt;button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu"&gt;
+                &lt;i class="fa fa-bars"&gt;&lt;/i&gt;
+            &lt;/button&gt;
+            &lt;!-- Logo --&gt;
+            &lt;a class="navbar-brand" href="index.html"&gt;Your Name&lt;/a&gt;
+        &lt;/div&gt;
 
-            <button class="btn btn-primary" onclick="navigateToTab('#personal-effects')">Previous</button>
-            <button class="btn btn-primary" onclick="navigateToTab('#personal-maintenance')">Next</button>
-        </div>
-        <div id="personal-maintenance" class="tab-pane fade">
-            <section>
-                <h3>Maintenance</h3>
-                <p>Once your website is live, it's important to maintain it. This section covers how to keep your website up-to-date and troubleshoot common issues.</p>
-            </section>
+        &lt;!-- Navbar Menu --&gt;
+        &lt;div class="collapse navbar-collapse" id="navbar-menu"&gt;
+            &lt;ul class="nav navbar-nav navbar-right"&gt;
+                &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#education"&gt;Education&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#experience"&gt;Experience&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#projects"&gt;Projects&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+        <p><strong>What to Edit:</strong></p>
+        <ul>
+            <li>Replace <code>Your Name</code> in the logo area with your actual name or logo image.</li>
+            <li>Modify navigation links if you add or remove sections.</li>
+        </ul>
 
-            <button class="btn btn-primary" onclick="navigateToTab('#personal-deployment')">Previous</button>
-        </div>
+        <h4>2. Welcome Hero Section</h4>
+        <p>This is the first section visitors see.</p>
+        <pre><code>&lt;section id="welcome-hero" class="welcome-hero"&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="row"&gt;
+            &lt;div class="col-md-12 text-center"&gt;
+                &lt;div class="header-text"&gt;
+                    &lt;h2&gt;hi &lt;span&gt;,&lt;/span&gt; i am &lt;br&gt; Your Name &lt;br&gt;&lt;/h2&gt;
+                    &lt;p&gt;Your Profession&lt;/p&gt;
+                    &lt;a href="assets/downloadables/Your_Resume.pdf" download&gt;download resume&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+        <p><strong>What to Edit:</strong></p>
+        <ul>
+            <li>Change <code>Your Name</code> to your actual name.</li>
+            <li>Update <code>Your Profession</code> to reflect what you do (e.g., "Web Developer").</li>
+            <li>Replace the resume link with your own resume file.</li>
+        </ul>
+    </section>
+    <button class="btn btn-primary" onclick="navigateToTab('#personal-getting-started')">Previous</button>
+    <button class="btn btn-primary" onclick="navigateToTab('#personal-editing')">Next</button>
+</div>
+
+<div id="personal-editing" class="tab-pane fade">
+    <section>
+        <h3>Editing and Inserting</h3>
+        <p>Now let's personalize your content.</p>
+        <h4>1. About Me Section</h4>
+        <pre><code>&lt;section id="about" class="about"&gt;
+    &lt;div class="section-heading text-center"&gt;
+        &lt;h2&gt;about me&lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="about-content"&gt;
+            &lt;div class="row"&gt;
+                &lt;div class="col-sm-6"&gt;
+                    &lt;div class="single-about-txt"&gt;
+                        &lt;h3&gt;Brief Introduction&lt;/h3&gt;
+                        &lt;p&gt;Detailed description about yourself.&lt;/p&gt;
+                        &lt;!-- Contact Info --&gt;
+                        &lt;div class="row"&gt;
+                            &lt;div class="col-sm-4"&gt;
+                                &lt;div class="single-about-add-info"&gt;
+                                    &lt;h3&gt;phone&lt;/h3&gt;
+                                    &lt;p&gt;Your Phone Number&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="col-sm-4"&gt;
+                                &lt;div class="single-about-add-info"&gt;
+                                    &lt;h3&gt;email&lt;/h3&gt;
+                                    &lt;p&gt;Your Email&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="col-sm-4"&gt;
+                                &lt;div class="single-about-add-info"&gt;
+                                    &lt;h3&gt;LinkedIn&lt;/h3&gt;
+                                    &lt;p&gt;&lt;a href="Your LinkedIn URL"&gt;LinkedIn Profile&lt;/a&gt;&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="col-sm-5"&gt;
+                    &lt;div class="single-about-img"&gt;
+                        &lt;img src="assets/images/about/your_photo.jpg" alt="profile_image"&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+        <p><strong>What to Edit:</strong></p>
+        <ul>
+            <li>Update the <code>&lt;h3&gt;</code> and <code>&lt;p&gt;</code> tags with your own introduction and details.</li>
+            <li>Replace contact information with your own.</li>
+            <li>Change the <code>src</code> attribute of the <code>&lt;img&gt;</code> tag to your profile picture.</li>
+        </ul>
+
+        <h4>2. Education Section</h4>
+        <p>Add your educational background here.</p>
+        <pre><code>&lt;section id="education" class="education"&gt;
+    &lt;div class="section-heading text-center"&gt;
+        &lt;h2&gt;education&lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="education-horizontal-timeline"&gt;
+            &lt;div class="row"&gt;
+                &lt;div class="col-sm-4"&gt;
+                    &lt;div class="single-horizontal-timeline"&gt;
+                        &lt;div class="experience-time"&gt;
+                            &lt;h2&gt;2015 - 2019&lt;/h2&gt;
+                            &lt;h3&gt;Bachelor of Science &lt;span&gt;in&lt;/span&gt; Computer Science&lt;/h3&gt;
+                        &lt;/div&gt;
+                        &lt;div class="timeline-content"&gt;
+                            &lt;h4 class="title"&gt;University Name&lt;/h4&gt;
+                            &lt;h5&gt;City, Country&lt;/h5&gt;
+                            &lt;p class="description"&gt;Brief description of your studies.&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;!-- Add more entries as needed --&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+        <p><strong>What to Edit:</strong></p>
+        <ul>
+            <li>Update the dates, degree, and field of study.</li>
+            <li>Replace the university name, location, and description.</li>
+        </ul>
+
+        <h4>3. Experience Section</h4>
+        <p>Showcase your professional experience.</p>
+        <pre><code>&lt;section id="experience" class="experience"&gt;
+    &lt;div class="section-heading text-center"&gt;
+        &lt;h2&gt;experience&lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="experience-content"&gt;
+            &lt;div class="main-timeline"&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;
+                        &lt;div class="single-timeline-box"&gt;
+                            &lt;div class="row"&gt;
+                                &lt;div class="col-md-5"&gt;
+                                    &lt;div class="experience-time text-right"&gt;
+                                        &lt;h2&gt;2020 - Present&lt;/h2&gt;
+                                        &lt;h3&gt;Software Engineer&lt;/h3&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class="col-md-5"&gt;
+                                    &lt;div class="timeline-content"&gt;
+                                        &lt;h4 class="title"&gt;Company Name&lt;/h4&gt;
+                                        &lt;h5&gt;City, Country&lt;/h5&gt;
+                                        &lt;p class="description"&gt;Brief description of your role and achievements.&lt;/p&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/li&gt;
+                    &lt;!-- Add more entries as needed --&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+        <p><strong>What to Edit:</strong></p>
+        <ul>
+            <li>Update job titles, company names, dates, and descriptions.</li>
+            <li>Add or remove entries to match your experience.</li>
+        </ul>
+
+        <h4>4. Projects Section</h4>
+        <p>Display your projects with images and descriptions.</p>
+        <pre><code>&lt;section id="projects" class="portfolio"&gt;
+    &lt;div class="section-heading text-center"&gt;
+        &lt;h2&gt;Projects&lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="portfolio-content"&gt;
+            &lt;div class="row"&gt;
+                &lt;div class="col-sm-4"&gt;
+                    &lt;div class="item"&gt;
+                        &lt;img src="assets/images/portfolio/project1.jpg" alt="Project 1"&gt;
+                        &lt;div class="isotope-overlay"&gt;
+                            &lt;a href="Project1_URL"&gt;
+                                Project Title
+                            &lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;!-- Add more projects as needed --&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+        <p><strong>What to Edit:</strong></p>
+        <ul>
+            <li>Replace image sources with your project images.</li>
+            <li>Update project titles and links.</li>
+        </ul>
+    </section>
+    <button class="btn btn-primary" onclick="navigateToTab('#personal-structure')">Previous</button>
+    <button class="btn btn-primary" onclick="navigateToTab('#personal-effects')">Next</button>
+</div>
+
+<div id="personal-effects" class="tab-pane fade">
+    <section>
+        <h3>JavaScript Effects</h3>
+        <p>Enhance your site with interactive effects.</p>
+        <h4>1. Smooth Scrolling</h4>
+        <p>Add smooth scrolling to your navigation links.</p>
+        <pre><code>&lt;!-- Include jQuery --&gt;
+&lt;script src="assets/js/jquery.js"&gt;&lt;/script&gt;
+
+&lt;!-- Custom JS --&gt;
+&lt;script&gt;
+    $(document).ready(function(){
+        $('a[href^="#"]').on('click',function (e) {
+            e.preventDefault();
+
+            var target = this.hash;
+            $('html, body').animate({
+                scrollTop: $(target).offset().top
+            }, 1000);
+        });
+    });
+&lt;/script&gt;</code></pre>
+
+        <h4>2. Custom Animations</h4>
+        <p>Use CSS classes to add animations.</p>
+        <pre><code>&lt;!-- In your HTML --&gt;
+&lt;div class="animated fadeIn"&gt;Your Content&lt;/div&gt;
+
+&lt;!-- In your CSS --&gt;
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+.fadeIn {
+    animation-name: fadeIn;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}</code></pre>
+
+        <p><strong>Note:</strong> You can adjust the animation effects by editing or adding classes.</p>
+    </section>
+    <button class="btn btn-primary" onclick="navigateToTab('#personal-editing')">Previous</button>
+    <button class="btn btn-primary" onclick="navigateToTab('#personal-deployment')">Next</button>
+</div>
+
+<div id="personal-deployment" class="tab-pane fade">
+    <section>
+        <h3>Deployment</h3>
+        <p>Now, let's deploy your website using GitHub Pages. This free service allows you to host your personal website directly from a GitHub repository.</p>
+
+        <h4>Step-by-Step Guide:</h4>
+        <ol>
+            <li><strong>Initialize a Git Repository:</strong> In your project folder, open your terminal and run the following commands to initialize the repository and commit your files:
+                <pre><code>git init
+git add .
+git commit -m "Initial commit"</code></pre>
+            </li>
+            <li><strong>Create a GitHub Repository:</strong> Go to <a href="https://github.com" target="_blank">GitHub</a> and create a new repository named <code>username.github.io</code> (replace "username" with your GitHub username).</li>
+            <li><strong>Push Your Code:</strong> Connect your local repository to GitHub and push your code by running the following commands:
+                <pre><code>git remote add origin https://github.com/username/username.github.io.git
+git branch -M main
+git push -u origin main</code></pre>
+            </li>
+            <li><strong>Access Your Site:</strong> After pushing your code, your website will be live at <code>https://username.github.io</code>.</li>
+        </ol>
+
+        <p>For more detailed instructions on deploying with GitHub Pages, check out the official documentation at <a href="https://pages.github.com/" target="_blank">GitHub Pages Documentation</a>.</p>
+
+        <p><strong>Additional Tips:</strong></p>
+        <ul>
+            <li>Ensure all your asset paths (CSS, images, JS) are relative, so they work correctly when hosted on GitHub Pages.</li>
+            <li>If your website isn't displaying as expected, verify your repository's settings under "Settings" &gt; "Pages".</li>
+        </ul>
+    </section>
+    <button class="btn btn-primary" onclick="navigateToTab('#personal-effects')">Previous</button>
+    <button class="btn btn-primary" onclick="navigateToTab('#personal-maintenance')">Next</button>
+</div>
+
+
+<div id="personal-maintenance" class="tab-pane fade">
+    <section>
+        <h3>Maintenance</h3>
+        <p>Keep your website updated and running smoothly.</p>
+        <h4>1. Content Updates</h4>
+        <p>Regularly update your site with new projects, experiences, or skills.</p>
+
+        <h4>2. Monitoring and Bug Fixes</h4>
+        <p>Check your site periodically for any issues such as broken links or images.</p>
+
+        <h4>3. Version Control</h4>
+        <p>Use Git to manage changes. Commit and push updates to GitHub to keep your site current.</p>
+
+        <h4>4. Enhancements</h4>
+        <p>Add new features or redesign your site as your skills grow.</p>
+    </section>
+    <button class="btn btn-primary" onclick="navigateToTab('#personal-deployment')">Previous</button>
+</div>
 
 <!--------------- END OF Webpage CONTENT --------------->
 
