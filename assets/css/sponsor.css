@@ -1,0 +1,203 @@
+.sponsor-page {
+  background: #fff;
+}
+
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.sponsor-hero{
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 36px;
+  align-items: stretch;
+}
+
+.card-blue {
+  background: #0B4DA2;
+  color: #fff;
+  border-radius: 24px;
+  padding: 32px 28px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+}
+
+.hero-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: .3px;
+  margin: 4px 0 10px;
+}
+
+.hero-text {
+  font-size: clamp( 1rem, 1.6vw, 1.2rem);
+  line-height: 1.65;
+  margin: 12px 0;
+}
+
+.hero-right {
+  display: flex;
+}
+
+.sponsor-slideshow {
+  position: relative;
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+  background: #ddd;
+  aspect-ratio: 4 / 3;
+  --dur: 24s;
+  --count: 3;
+  --step: calc(var(--dur) / var(--count));
+}
+
+.sponsor-slideshow img {
+  position: absolute; 
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: sponsorFade var(--dur) linear infinite;
+  animation-delay: calc(var(--i) * var(--step));
+  will-change: opacity;
+}
+
+@keyframes sponsorFade{
+  0%, 8%   { opacity:0; }
+  12%, 38% { opacity:1; }
+  42%,100% { opacity:0; }
+}
+
+.nav-link.active {
+    color: #BF5700; 
+    font-weight: bold;
+}
+
+.section-title {
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  text-align: center;
+  margin: 4px 0 18px;
+  color: #BF5700;
+}
+
+.sponsor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.logo-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.logo-card img {
+  max-width: 80%;
+  max-height: 80%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.cta-sponsor { padding-top: 12px; padding-bottom: 60px; }
+
+.cta-card{
+  background:#fff;
+  border-radius:24px;
+  box-shadow:0 16px 36px rgba(0,0,0,.08);
+  padding:36px 28px;
+  text-align:center;
+}
+
+.cta-title{
+  font-size:clamp(2rem, 4.8vw, 3.2rem);
+  font-weight:900;
+  color:#A35A23;           /* burnt orange vibe for headline */
+  letter-spacing:.3px;
+  margin:0 0 6px;
+}
+
+.cta-rule{
+  width:min(820px, 70%);
+  height:2px;
+  background:#d9d9d9;
+  border:0;
+  margin:8px auto 18px;
+}
+
+.cta-text{
+  max-width: 980px;
+  margin: 0 auto 22px;
+  font-size:clamp(1.05rem, 1.8vw, 1.35rem);
+  line-height:1.65;
+  color:#111;
+}
+
+.cta-link{
+  color:#A35A23;
+  font-weight:800;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+/* Button */
+.btn-csp{
+  display:inline-flex;
+  align-items:center;
+  gap:.6rem;
+  padding:14px 20px;
+  border-radius:999px;
+  background:#BF5700;     /* UT burnt orange */
+  color:#fff;
+  font-weight:800;
+  letter-spacing:.2px;
+  text-decoration:none;
+  box-shadow:0 10px 24px rgba(191,87,0,.25);
+  transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
+}
+.btn-csp:hover{
+  background:#a64c00;
+  transform:translateY(-2px);
+  box-shadow:0 14px 28px rgba(191,87,0,.28);
+}
+.btn-csp:active{ transform:translateY(0); box-shadow:0 8px 20px rgba(191,87,0,.20); }
+.btn-csp i{ font-size:1.1em; }
+
+
+@media (max-width: 768px) {
+  .sponsor-page .section { padding: 16px !important; }
+
+  /* Tiers / grids */
+  .sponsor-tiers, .tiers-grid, .csp-grid {
+    display: grid; grid-template-columns: 1fr !important; gap: 16px !important;
+  }
+  .tier-card, .csp-card { width: 100% !important; }
+
+  /* Logo walls wrap nicely */
+  .sponsor-wall, .logo-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
+  }
+  @supports (grid-template-columns: 1fr) {
+    .sponsor-wall, .logo-grid { grid-template-columns: 1fr; }
+  }
+  .sponsor-wall img, .logo-grid img { max-width: 100%; height: auto; object-fit: contain; }
+
+  /* CTA */
+  .btn-csp, .btn { width: 100%; }
+  .cta { padding: 20px 16px !important; text-align: left; }
+}
+
+
+  
+  

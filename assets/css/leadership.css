@@ -1,0 +1,209 @@
+.leader-page { 
+  background:#fff; 
+}
+/* Reuse your .section container width from other pages */
+.section { 
+  max-width:1100px; 
+  margin:0 auto; 
+  padding: 0 20px; 
+}
+
+
+.leader-hero img{
+  width:100%;
+  height:clamp(260px, 36vw, 520px);   
+  object-fit:cover;
+  display:block;
+}
+
+
+.leader-title{
+  text-align:center;
+  color:#BF5700;        
+  font-weight:900;
+  letter-spacing:.3px;
+  margin:28px 0 10px;
+  font-size:clamp(2.2rem, 5vw, 4rem);
+  line-height:1.1;
+}
+
+
+.leader-rule{
+  width:min(580px, 60%);
+  height:2px;
+  margin:10px auto 0;
+  background:#cfcfcf;   
+}
+
+
+.leader-text{
+  max-width:1000px;
+  margin:20px auto 34px;
+  text-align:center;
+  font-size:clamp(1.05rem, 1.4vw, 1.35rem);
+  line-height:1.75;
+  color:#222;
+}
+
+.nav-link.active {
+    color: #BF5700; 
+    font-weight: bold;
+}
+
+.leader-section {
+  padding: 18px 0 4px;
+}
+
+.leader-h2 {
+  text-align: center;
+  color: #BF5700;
+  font-weight: 800;
+  margin: 0 0 12px;
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+}
+
+.leader-grid {
+  display: flex;
+  max-width: 1200px;
+  flex-wrap: nowrap;  /* keeps all items on one line */
+  justify-content: center;  /* centers them horizontally */
+  gap: 20px;  /* adds spacing between images */
+  overflow-x: auto;  /* lets users scroll if they don’t fit */
+}
+
+.officer-card {
+  background: #0E2244;
+  border: 1px solid #0b1a33;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.officer-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.10);
+}
+
+.officer-card img{
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.officer-body {
+  padding: 14px 16px 16px;
+}
+
+.officer-name {
+  margin: 0 0 2px;
+  font-weight: 800;
+  font-size: 1.12rem;
+  color: #fff;
+}
+
+.officer-pronouns{
+  margin:0 0 6px;          
+  color:#fff;
+}
+
+.officer-role{
+  margin:0 0 6px;
+  color:#BF5700;
+  font-weight:700;
+  font-size:.98rem;
+}
+
+.officer-major{
+  margin:0;
+  color:#fff;
+  font-size:.95rem;
+}
+
+.leader-grid.bod {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px 28px;
+  justify-items: center;
+}
+
+.leader-grid.bod .officer-card{
+  width: 260px;
+  max-width: 100%;
+  border-radius: 16px;
+}
+
+.leader-grid.bod > .officer-card:nth-child(5) {
+  grid-column: 2;
+}
+
+.leader-grid.bod > .officer-card:nth-child(6) {
+  grid-column: 3;
+}
+.leader-grid.bod > .officer-card:nth-child(7) {
+  grid-column: 4;
+}
+
+:root { --card-w: 200px; }             
+.leader-grid .officer-card { 
+  width: var(--card-w);
+}
+
+.leader-grid.bod .officer-card { 
+  width: var(--card-w);
+}
+
+.leader-grid:not(.bod) .officer-card {  
+  flex: 0 0 var(--card-w);               
+}
+
+
+.leader-grid.bod {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr); 
+  gap: 32px 28px;
+  justify-items: center;
+}
+
+
+.leader-grid.bod .officer-card { 
+  grid-column: span 2;
+}
+
+
+.leader-grid.bod > .officer-card:nth-child(5) { grid-column: 2 / span 2; }
+.leader-grid.bod > .officer-card:nth-child(6) { grid-column: 4 / span 2; }
+.leader-grid.bod > .officer-card:nth-child(7) { grid-column: 6 / span 2; }
+
+
+/* 
+   MOBILE (<=768px) — LEADERSHIP
+*/
+@media (max-width: 768px) {
+  .leader-page .section { padding: 16px !important; }
+
+  /* Officer grid to single column */
+  .officer-grid, .leaders, .board-grid {
+    display: grid; grid-template-columns: 1fr !important; gap: 16px !important;
+  }
+
+  .officer-card, .leader-card, .advisor-card {
+    width: 100% !important; margin: 0 !important;
+  }
+
+  .officer-card img, .leader-card img, .advisor-card img {
+    width: 100% !important; height: auto !important; object-fit: cover;
+  }
+
+  .officer-meta, .leader-meta { display: grid; gap: 6px; text-align: left; }
+
+  /* Filters / chips stack */
+  .filters, .chips, .toolbar {
+    display: grid !important; grid-template-columns: 1fr !important; gap: 8px;
+  }
+}
+
+

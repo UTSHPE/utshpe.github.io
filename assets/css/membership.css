@@ -1,0 +1,195 @@
+.membership-page { background:#fff; color:#1a1a1a; }
+.section { max-width:1100px; margin:0 auto; padding: clamp(18px, 4vw, 40px) 20px; }
+.h2 { font-size: clamp(1.6rem, 3.4vw, 2.2rem); margin: 0 0 14px; line-height:1.15; }
+
+a { color: inherit; text-decoration: none; }
+.btn { display:inline-block; padding:12px 18px; border-radius:999px; border:2px solid #BF5700; font-weight:700; }
+.btn.primary { background:#BF5700; color:#fff; }
+.btn.outline { color:#BF5700; background:#fff; }
+.btn:hover { transform: translateY(-1px); }
+
+.member-hero { background:linear-gradient(180deg, #fff 0%, #fff5ef 100%); border-bottom:1px solid #eee; }
+.member-hero .member-subtitle { max-width: 780px; color:#333; }
+.member-hero h1.member-subtitle { color:#BF5700; font-size: clamp(2rem, 6vw, 3.2rem); line-height:1.05; margin: 6px 0 10px; }
+
+.hero-grid{ display:grid; grid-template-columns: 1.1fr 0.9fr; align-items:center; gap: clamp(16px, 4vw, 36px); position:relative; }
+.hero-copy { display:flex; flex-direction:column; gap:12px; }
+
+.member-highlights{ list-style: none; padding-left: 0; margin: 12px 0 2px; color:#444; font-size: clamp(.98rem, 2.3vw, 1.05rem); line-height:1.4; }
+.member-highlights li{ position: relative; padding-left: 1.6rem; margin: 6px 0; }
+.member-highlights li::before{ content: "✓"; position: absolute; left: 0; top: 0; transform: translateY(1px); font-weight: 800; color: #BF5700; }
+
+.hero-media.slideshow-js{ position:relative; min-height:360px; isolation:isolate; }
+.hero-media.slideshow-js img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; border-radius:18px; border:3px solid #fff; box-shadow:0 12px 30px rgba(0,0,0,.12); opacity:0; transition: opacity 900ms ease; }
+.hero-media.slideshow-js img.active{ opacity:1; }
+.hero-media.slideshow-js::before{ content:""; position:absolute; inset:auto -8% -8% auto; width:70%; height:70%; background: radial-gradient(70% 70% at 70% 30%, #ffd9c4 0%, #fff5ef 70%, transparent 100%); filter: blur(6px); border-radius:50%; z-index:0; }
+
+@media (prefers-reduced-motion: reduce){
+  .hero-media.slideshow-js img{ transition:none; }
+}
+
+.join-steps .steps { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:16px; margin: 10px 0 10px; padding:0; list-style:none; }
+.join-steps .steps li { background:#fafafa; border:1px solid #eee; border-radius:14px; padding:16px; }
+.join-steps h3 { margin:0 0 6px; font-size:1.05rem; color:#222; }
+.step-links a { font-weight:700; }
+.step-links a:hover { text-decoration: underline; }
+
+.spotlights .spotlights-grid{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+  column-gap: 160px;
+  row-gap: 40px;
+  align-items:start;
+}
+
+.spotlight-card{
+  position:relative;
+  border:1px solid #eee;
+  border-radius:16px;
+  overflow:hidden;
+  background:#fff;
+  box-shadow: 0 8px 18px rgba(0,0,0,.05);
+}
+.spotlight-photo{ width:100%; height:240px; object-fit:cover; display:block; }
+.spotlight-body{ padding:14px; }
+.spotlight-name{ margin:4px 0 2px; font-size:1.15rem; }
+.spotlight-meta{ margin:0 0 8px; color:#666; font-size:.95rem; }
+.spotlight-fact{ margin:4px 0; }
+.badge{ position:absolute; transform: translate(12px,12px); background:#BF5700; color:#fff; font-size:.8rem; padding:6px 10px; border-radius:999px; }
+.badge.alt{ background:#1a1a1a; }
+
+.ig-embed{
+  border:1px solid #eee;
+  border-radius:16px;
+  background:#fff;
+  padding:12px;
+  box-shadow: 0 8px 18px rgba(0,0,0,.05);
+  grid-column: 1 / -1;
+  grid-row: 2;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.ig-title{ margin:6px 8px 4px; font-size:1.05rem; }
+.ig-embed blockquote.instagram-media{ width:100% !important; min-width:0 !important; margin:0 !important; }
+
+.nav-link.active { color: #BF5700; font-weight: bold; }
+.nav-link.active:hover { color: #BF5700; }
+
+.join-steps .steps a{ color:#BF5700; font-weight:700; text-decoration:none; }
+.join-steps .steps a:hover,
+.join-steps .steps a:focus{ text-decoration:underline; outline:none; }
+
+hero-media.slideshow-js { position: relative; }
+.hero-media.slideshow-js img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  opacity: 0; transition: opacity .4s ease;
+}
+.hero-media.slideshow-js img.active { opacity: 1; position: absolute; }
+
+
+/* turn the spotlights area into a 2-column row on desktop */
+.spotlights .spotlights-grid{
+  display: grid;
+  grid-template-columns: minmax(420px, 1fr) 520px; /* left grows, right fixed */
+  column-gap: 40px;
+  row-gap: 32px;
+  align-items: start;
+}
+
+/* (Optional) a simple card for your Points Leaderboard */
+.points-card{
+  border: 1px solid #eee;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 8px 18px rgba(0,0,0,.05);
+  padding: 14px;
+  max-height: 640px;        /* keep it reasonable */
+  overflow: auto;           /* scroll the table inside like your screenshot */
+}
+
+
+.ig-embed{
+  grid-column: 2;           /* sit in the right column */
+  align-self: start;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  background: #fff;
+  padding: 12px;
+  box-shadow: 0 8px 18px rgba(0,0,0,.05);
+  max-width: 520px;        
+  margin-left: auto;        
+}
+
+/
+.ig-embed blockquote.instagram-media{
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+
+  
+  transform: scale(.90);
+  transform-origin: top center;
+
+  
+  width: 111.2% !important;
+}
+
+
+.ig-embed{
+  --ig-max-h: 620px;        
+}
+.ig-embed iframe{
+  max-height: var(--ig-max-h) !important;
+  border-radius: 12px;
+}
+
+/* Title inside the IG card */
+.ig-title{ margin: 6px 8px 4px; font-size: 1.05rem; }
+
+
+:root{
+  /* tune these bounds to taste */
+  --spot-img-h: clamp(280px, 32vw, 420px);
+}
+
+.spotlight-photo{
+  height: var(--spot-img-h);   /* was 240px */
+  object-fit: cover;
+  width: 100%;
+  display: block;
+}
+
+
+/* 
+   MOBILE 
+ */
+@media (max-width: 768px) {
+  .membership-page .section { padding: 16px !important; }
+
+  
+  .member-hero { padding: 28px 16px !important; }
+  .member-hero .member-subtitle { max-width: 100% !important; }
+
+  
+  .pricing, .tiers, .benefits {
+    display: grid; grid-template-columns: 1fr !important; gap: 16px !important;
+  }
+  .pricing-card, .tier-card, .benefit-card { width: 100% !important; }
+
+
+  .faq, .accordion { width: 100% !important; }
+  .accordion .item { padding: 12px; }
+  .accordion .item + .item { margin-top: 8px; }
+
+
+  form .row { display: grid; grid-template-columns: 1fr !important; gap: 10px; }
+  input, select, textarea { width: 100% !important; }
+
+ 
+  .hero-media.slideshow, .hero-media img { width: 100% !important; height: auto !important; }
+}
+
+
