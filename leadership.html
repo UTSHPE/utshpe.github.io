@@ -1,445 +1,234 @@
 <!DOCTYPE html>
-<!-- Template Page That contains the navbar and footer -->
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>UT SHPE - Leadership</title>
-        <link rel="icon" href="assets/images/SHPE_logo.png">
-        <link rel="stylesheet" href="assets/css/style.css"/>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
-        <script src="https://kit.fontawesome.com/8366d6bad0.js" crossorigin="anonymous"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="assets/js/main.js"></script>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>UT SHPE</title>
+    <link rel="icon" href="assets/images/SHPE_logo.png"> 
+    <link rel="stylesheet" href="assets/css/style.css"> <!-- linkage to css code -->
+    <link rel="stylesheet" href="assets/css/leadership.css">
+    <!-- Icons for footer -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <script src="assets/javascript/leadership.js" defer></script>
+</head>
 
-    <body class="bg-light">
-        <!-- Navbar -->
-        <nav class="navbar fixed-top navbar-expand-lg bg-light shadow-sm">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="index.html"><img src="assets\images\navigation_logo.png" width="160" height="30" class="d-inline-block align-text-top" alt="logo"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link animate-character" aria-current="page" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link animate-character" href="about.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link animate-character" href="6_pillars.html">Pillars</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link animate-character active" href="#">Leadership</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link animate-character" href="sponsorship.html">Sponsorship</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link animate-character" href="contact_us.html">Contact Us</a>
-                        </li>
-                    </ul>
-                  </div>
-            </div>
+<body>
+    <!-- Navbar-->
+    <header class="nav">
+        <a class="brand" href="index.html"> 
+            <img src="assets/images/navbar_logo.png"> <!-- clickable logo -->
+        </a>
+
+        <!-- Navbar menu links -->
+        <nav class="menu">
+            <a href="About_Us.html" class="nav-link">About Us</a>
+            <a href="leadership.html" class="nav-link active">Leadership</a>
+            <a href="sponsorship.html" class="nav-link">Sponsorship</a>
+            <!-- special case for shpetinas, will be bold pink-->
+            <a href="shpetinas.html" class="nav-link shpetinas">SHPEtinas</a>
+            <a href="membership.html" class="nav-link">Membership</a>
+            <a href="resources.html" class="nav-link">Resources</a>                
         </nav>
-        
-        <!-- Banner Photo Container -->
-        <div class="container-fluid background-photo" id="photo4"></div>
+    </header>
 
-        <!-- Leadership Description container -->
-        <div class="container newback bg-light">
-            <div class="row">
-                <div class="col-md-12 text-center" style="padding-top: 20px;">
-                    <h1 class="section-header-text">Meet UT-SHPE's 2024-2025 Leadership Team!
-                    </h1>
-                    <hr style="opacity: 90%; width:80%; margin-inline-start: auto; margin-inline-end: auto;">
-                    <p class="section-text">These are the amazing, determined individuals who make up our leaderSHPE (get it?) team! Each of them are tasked with vital responsibilities that not only sustain our chapter’s vision and mission, but also lead by example with their perseverance and dedication.</p>
-                </div>
+    <main class="leader-page" role="main">
+        <section class="leader-hero">
+            <img src="assets/images/Leadership/Leadershipteam.png" alt="UT SHPE Leadership">
+        </section>
+
+        <section class="leader-intro section">
+            <h1 class="leader-title">Meet UT-SHPE's 2025-2026 LeaderSHPE Team!</h1>
+            <div class="leader-rule" aria-hidden="true"></div>
+            <p class="leader-text">
+                These are the amazing, determined individuals who make up our leaderSHPE team! Each of them carries
+                vital responsibilities that sustain our chapter's vision and mission, and they lead by example with
+                perserverance, dedication, and a passion for service.
+            </p>
+        </section>
+
+        <section class="leader-section section">
+            <h2 class="leader-h2">Executive Board</h2>
+            <div class="leader-grid">
+                <!-- Genesis -->
+                <article class="officer-card">
+                    <img src="assets/images/Leadership/Genesis.png">
+                    <div class="officer-body">
+                        <h3 class="officer-name">Genesis Aguirre</h3>
+                        <p class="officer-pronouns">She/Her</p>
+                        <p class="officer-role">President</p>
+                        <p class="officer-major">Civil Engineering</p>
+                    </div>
+                </article>
+
+                <!-- Alberto -->
+                 <article class="officer-card">
+                    <img src="assets/images/Leadership/Alberto.png">
+                    <div class="officer-body">
+                        <h3 class="officer-name">Alberto Rayon Cardenas</h3>
+                        <p class="officer-pronouns">He/Him</p>
+                        <p class="officer-role">Vice President External</p>
+                        <p class="officer-major">Mechanical Engineering</p>
+                    </div>
+                </article>
+
+                <!-- Julieta -->
+                 <article class="officer-card">
+                    <img src="assets/images/Leadership/Julieta.png">
+                    <div class="officer-body">
+                        <h3 class="officer-name">Julieta Rodriguez</h3>
+                        <p class="officer-pronouns">She/Her</p>
+                        <p class="officer-role">Vice President Internal</p>
+                        <p class="officer-major">Computer Science</p>
+                    </div>
+                </article>
+
+                <!-- Elysha -->
+                 <article class="officer-card">
+                    <img src="assets/images/Leadership/Elysha.png">
+                    <div class="officer-body">
+                        <h3 class="officer-name">Elysha Orozco</h3>
+                        <p class="officer-pronouns">She/Her</p>
+                        <p class="officer-role">Secretary</p>
+                        <p class="officer-major">Petroleum Engineering</p>
+                    </div>
+                </article>
+
+                <!-- Treasure -->
+                 <article class="officer-card">
+                    <img src="assets/images/Leadership/Xitlali.png">
+                    <div class="officer-body">
+                        <h3 class="officer-name">Xitlali Cardenas</h3>
+                        <p class="officer-pronouns">She/Her</p>
+                        <p class="officer-role">Treasurer</p>
+                        <p class="officer-major">Computer Science</p>
+                    </div>
+                </article>
+
             </div>
+        </section>
+
+        <!-- Board of Directors -->
+        <section class="section leader-section">
+            <h2 class="leader-h2">Board of Directors</h2>
+            <div class="leader-grid bod">
+                <!-- David -->
+                <article class="officer-card">
+                    <img src="assets/images/Leadership/David.png">
+                    <div class="officer-body">
+                        <h3 class="officer-name">David Jasso</h3>
+                        <p class="officer-pronouns">He/Him</p>
+                        <p class="officer-role">Academic Director</p>
+                        <p class="officer-major">Chemical Engineering</p>
+                    </div>
+                </article>
+
+                <!-- Chris -->
+                <article class="officer-card">
+                    <img src="assets/images/Leadership/Chris.png">
+                    <div class="officer-body">
+                        <h3 class="officer-name">Chris Garcia</h3>
+                        <p class="officer-pronouns">He/Him</p>
+                        <p class="officer-role">Chapter Director</p>
+                        <p class="officer-major">Civil Engineering</p>
+                    </div>
+                </article>
+
+                <!-- Alejandro -->
+                <article class="officer-card">
+                    <img src="assets/images/Leadership/Alejandro.png">
+                    <div class="officer-body">
+                        <h3 class="officer-name">Alejandro Ontriveros</h3>
+                        <p class="officer-pronouns">He/Him</p>
+                        <p class="officer-role">Community Outreach Director</p>
+                        <p class="officer-major">Electrical & Computer Engineering</p>
+                    </div>
+                </article>
+
+                <!-- Yessenia -->
+                <article class="officer-card">
+                    <img src="assets/images/Leadership/Yessenia.png">
+                    <div class="officer-body">
+                        <h3 class="officer-name">Yessenia Martin</h3>
+                        <p class="officer-pronouns">She/Her</p>
+                        <p class="officer-role">Leadership Director</p>
+                        <p class="officer-major">Computer Science</p>
+                    </div>
+                </article>
+
+                <!-- ALexandra -->
+                <article class="officer-card">
+                    <img src="assets/images/Leadership/Alexandra.png">
+                    <div class="officer-body">
+                        <h3 class="officer-name">Alexandra Galindo</h3>
+                        <p class="officer-pronouns">She/Her</p>
+                        <p class="officer-role">Professional Director</p>
+                        <p class="officer-major">Electrical & Computer Engineering</p>
+                    </div>
+                </article>
+
+                <!-- Eve -->
+                <article class="officer-card">
+                    <img src="assets/images/Leadership/Evelyn.png">
+                    <div class="officer-body">
+                        <h3 class="officer-name">Evelyn Flores</h3>
+                        <p class="officer-pronouns">She/Her</p>
+                        <p class="officer-role">SHPEtina Director</p>
+                        <p class="officer-major">Areospace Engineering</p>
+                    </div>
+                </article>
+
+                <!-- Kevin -->
+                <article class="officer-card">
+                    <img src="assets/images/Leadership/Kevin.png">
+                    <div class="officer-body">
+                        <h3 class="officer-name">Kevin Contreras</h3>
+                        <p class="officer-pronouns">He/Him</p>
+                        <p class="officer-role">Technical Director</p>
+                        <p class="officer-major">Mechanical Engineering</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div class="site-footer">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h4>Contact Us</h4>
+            <p>
+              Primary Email:
+              <a href="mailto:shpe.ut.president@gmail.com">shpe.ut.president@gmail.com</a>
+            </p>
+            <p>
+              Corporate Email:
+              <a href="mailto:utshpe@gmail.com">utshpe@gmail.com</a>
+            </p>
+          </div>
+    
+          <div class="footer-col">
+            <h4>Follow us on Social Media</h4>
+            <div class="socials">
+              <a href="https://www.facebook.com/shpeut/" aria-label="Facebook"><i class="fa-brands fa-facebook-square"></i></a>
+              <a href="https://twitter.com/utshpe?lang=en" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="https://www.tiktok.com/@utshpe" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+              <a href="https://www.instagram.com/utshpe/?hl=en" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/company/utshpe" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="https://github.com/UTSHPE" aria-label="GitHub"><i class="fa-brands fa-github-square"></i></a>
+            </div>
+          </div>
+    
+          <div class="footer-col">
+            <h4>Find more UT-SHPE resources at our</h4>
+            <h4><a class="linktree" href="https://linktr.ee/UTSHPE">Linktree</a></h4>
+          </div>
         </div>
-
-        <!-- Executive board container -->
-        <div class="container newback bg-light" style="margin-bottom: 25px;">
-            <div class="row">
-                <div class="col-md-12 center-vertical" style="padding-top: 15px;">
-                    <h1 class="section-subheader-text">Executive Board</h1>
-                </div>
-            </div>
-            <div class="row">
-                <!-- Vice President External -->
-                <div class="col-lg-4 col-md-6 center-vertical">
-                    <div class="leader-card">
-                        <div class="leader-card-inner">
-                            <div class="leader-card-front center-vertical">
-                                <div class="leader-card-inner-border text-center">
-                                    <img src="assets/images/leadership_card_images/gabriel_banda.jpg" class="leader-card-image" alt="Gabriel Banda">
-                                    <div class="leader-card-body leader-card-text">
-                                        <h5>Gabriel Banda</h5>
-                                        <h6>He/Him</h6>
-                                        <h6>Vice President External</h6>
-                                        <h6>Electrical & Computer Engineering</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="leader-card-back center-vertical">
-                                <div class="leader-card-inner-border text-center">
-                                    <!---<img src="assets/images/leadership_card_logo.jpg" class="leader-card-image" alt="SHPE Logo">-->
-                                    <div class="leader-card-body leader-card-text">
-                                        <h5 class = "leader-card-text-size">Why I joined SHPE:</h5>
-                                        <h6 class = "leader-card-text-size"></h6>
-                                        <h5 class = "leader-card-text-size">Favorite SHPE Memory:</h5>
-                                        <h6 class = "leader-card-text-size"></h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- President -->
-                <div class="col-lg-4 col-md-6 center-vertical">
-                    <div class="leader-card">
-                        <div class="leader-card-inner">
-                            <div class="leader-card-front center-vertical">
-                                <div class="leader-card-inner-border text-center">
-                                    <img src="assets/images/leadership_card_images/jaime_salas.jpg" class="leader-card-image" alt="Jaime Salas">
-                                    <div class="leader-card-body leader-card-text">
-                                        <h5>Jaime Salas</h5>
-                                        <h6>He/Him</h6>
-                                        <h6>President</h6>
-                                        <h6>Mechanical Engineering</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="leader-card-back center-vertical">
-                                <div class="leader-card-inner-border text-center">
-                                   <!--- <img src="assets/images/leadership_card_logo.jpg" class="leader-card-image" alt="SHPE Logo">-->
-                                    <div class="leader-card-body leader-card-text">
-                                        <h5 class = "leader-card-text-size">Why I joined SHPE:</h5>
-                                        <h6 class = "leader-card-text-size"></h6>
-                                        <h5 class = "leader-card-text-size">Favorite SHPE Memory:</h5>
-                                        <h6 class = "leader-card-text-size"></h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Vice President Internal -->
-                <div class="col-lg-4 col-md-6 center-vertical">
-                    <div class="leader-card">
-                        <div class="leader-card-inner">
-                            <div class="leader-card-front center-vertical">
-                                <div class="leader-card-inner-border text-center">
-                                    <img src="assets/images/leadership_card_images/jimena_casas.jpg" class="leader-card-image" alt="Jimena Casas">
-                                    <div class="leader-card-body leader-card-text">
-                                        <h5>Jimena Casas</h5>
-                                        <h6>She/Her</h6>
-                                        <h6>Vice President Internal</h6>
-                                        <h6>Electrical & Computer Engineering</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="leader-card-back center-vertical">
-                                <div class="leader-card-inner-border text-center">
-                                    <!---<img src="assets/images/leadership_card_logo.jpg" class="leader-card-image" alt="SHPE Logo">-->
-                                    <div class="leader-card-body leader-card-text">
-                                        <h5 class = "leader-card-text-size">Why I joined SHPE:</h5>
-                                        <h6 class = "leader-card-text-size"></h6>
-                                        <h5 class = "leader-card-text-size">Favorite SHPE Memory:</h5>
-                                        <h6 class = "leader-card-text-size" style="color: white"></h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Secretary -->
-                <div class="col-lg-6 col-md-6 center-vertical">
-                    <div class="leader-card">
-                        <div class="leader-card-inner">
-                            <div class="leader-card-front center-vertical">
-                                <div class="leader-card-inner-border text-center">
-                                    <img src="assets/images/leadership_card_images/jasmine_tran.jpg" class="leader-card-image" alt="Jasmine Tran">
-                                    <div class="leader-card-body leader-card-text">
-                                        <h5>Jasmine Tran</h5>
-                                        <h6>She/Her</h6>
-                                        <h6>Secretary</h6>
-                                        <h6>Mechanical Engineering</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="leader-card-back center-vertical">
-                                <div class="leader-card-inner-border text-center">
-                                   <!--- <img src="assets/images/leadership_card_logo.jpg" class="leader-card-image" alt="SHPE Logo">-->
-                                    <div class="leader-card-body leader-card-text">
-                                        <h5 class = "leader-card-text-size">Why I joined SHPE:</h5>
-                                        <h6 class = "leader-card-text-size"></h6>
-                                        <h5 class = "leader-card-text-size">Favorite SHPE Memory:</h5>
-                                        <h6 class = "leader-card-text-size"></h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Treasurer -->
-                <div class="col-lg-6 col-md-12 center-vertical">
-                    <div class="leader-card">
-                        <div class="leader-card-inner">
-                            <div class="leader-card-front center-vertical">
-                                <div class="leader-card-inner-border text-center">
-                                    <!-- add picture of alberto -->
-                                    <img src="assets/images/leadership_card_images/alberto_martinez.jpg" class="leader-card-image" alt="Alberto Martinez">
-                                    <div class="leader-card-body leader-card-text">
-                                        <h5>Alberto Martinez</h5>
-                                        <h6>He/Him</h6>
-                                        <h6>Treasurer</h6>
-                                        <h6>Electrical & Computer Engineering</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="leader-card-back center-vertical">
-                                <div class="leader-card-inner-border text-center">
-                                    <!---<img src="assets/images/leadership_card_logo.jpg" class="leader-card-image" alt="SHPE Logo">-->
-                                    <div class="leader-card-body leader-card-text">
-                                        <h5 class = "leader-card-text-size">Why I joined SHPE:</h5>
-                                        <h6 class = "leader-card-text-size"></h6>
-                                        <h5 class = "leader-card-text-size">Favorite SHPE Memory:</h5>
-                                        <h6 class = "leader-card-text-size"></h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Board of Directors container -->
-        <div class="container newback bg-light" style="margin-bottom: 25px;">
-            <div class="row">
-                <div class="col-md-12 center-vertical" style="padding-top: 15px;">
-                    <h1 class="section-subheader-text">Board of Directors</h1>
-                </div>
-            </div>
-            <div class="row">
-                <!-- Academic Director -->
-                <div class="col-lg-4 col-md-6 center-vertical">
-                    <div class="leader-card">
-                        <div class="leader-card-inner">
-                            <div class="leader-card-front center-vertical">
-                                <div class="leader-card-inner-border text-center">
-                                    <!-- add picture of Preston -->
-                                    <img src="assets/images/leadership_card_images/preston_alvarez.png" class="leader-card-image" alt="Preston E. Alvarez">
-                                    <div class="leader-card-body leader-card-text">
-                                        <h5>Preston E. Alvarez</h5>
-                                        <h6>He/Him</h6>
-                                        <h6>Academic Director</h6>
-                                        <h6>Aerospace Engineering</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="leader-card-back center-vertical">
-                                <div class="leader-card-inner-border text-center">
-                                   <!--- <img src="assets/images/leadership_card_logo.jpg" class="leader-card-image" alt="...">-->
-                                    <div class="leader-card-body leader-card-text">
-                                        <h5 class = "leader-card-text-size">Why I joined SHPE:</h5>
-                                        <h6 class = "leader-card-text-size"></h6>
-                                        <h5 class = "leader-card-text-size">Favorite SHPE Memory:</h5>
-                                        <h6 class = "leader-card-text-size"></h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Chapter Director -->
-                <div class="col-lg-4 col-md-6 center-vertical">
-                    <div class="leader-card">
-                        <div class="leader-card-inner">
-                            <div class="leader-card-front center-vertical">
-                                <div class="leader-card-inner-border text-center">
-                                    <img src="assets/images/leadership_card_images/genesis_aguirre.jpg" class="leader-card-image" alt="Genesis Aguirre">
-                                    <div class="leader-card-body leader-card-text">
-                                        <h5>Genesis Aguirre</h5>
-                                        <h6>She/Her</h6>
-                                        <h6>Chapter Director</h6>
-                                        <h6>Civil Engineering</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="leader-card-back center-vertical">
-                                <div class="leader-card-inner-border text-center">
-                                   <!--- <img src="assets/images/leadership_card_logo.jpg" class="leader-card-image" alt="...">-->
-                                    <div class="leader-card-body leader-card-text">
-                                        <h5 class = "leader-card-text-size">Why I joined SHPE:</h5>
-                                        <h6 class = "leader-card-text-size"></h6>
-                                        <h5 class = "leader-card-text-size">Favorite SHPE Memory:</h5>
-                                        <h6 class = "leader-card-text-size"></h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Outreach Director -->
-                <div class="col-lg-4 col-md-6 center-vertical">
-                    <div class="leader-card">
-                        <div class="leader-card-inner">
-                            <div class="leader-card-front center-vertical">
-                                <div class="leader-card-inner-border text-center">
-                                    <img src="assets/images/leadership_card_images/alejandro_ontiveros.jpg" class="leader-card-image" alt="Alejandro Ontiveros">
-                                    <div class="leader-card-body leader-card-text">
-                                        <h5>Alejandro Ontiveros</h5>
-                                        <h6>He/Him</h6>
-                                        <h6>Outreach Director</h6>
-                                        <h6>Electrical & Computer Engineering</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="leader-card-back center-vertical">
-                                <div class="leader-card-inner-border text-center">
-                                   <!--- <img src="assets/images/leadership_card_logo.jpg" class="leader-card-image" alt="...">-->
-                                    <div class="leader-card-body leader-card-text">
-                                        <h5 class = "leader-card-text-size">Why I joined SHPE:</h5>
-                                        <h6 class = "leader-card-text-size"></h6>
-                                        <h5 class = "leader-card-text-size">Favorite SHPE Memory:</h5>
-                                        <h6 class = "leader-card-text-size"></h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Leadership Director -->
-                <div class="col-lg-4 col-md-6 center-vertical">
-                    <div class="leader-card">
-                        <div class="leader-card-inner">
-                            <div class="leader-card-front center-vertical">
-                                <div class="leader-card-inner-border text-center">
-                                    <img src="assets/images/leadership_card_images/elysha_orozco.jpg" class="leader-card-image" alt="Elysha Orozco">
-                                    <div class="leader-card-body leader-card-text">
-                                        <h5>Elysha Orozco</h5>
-                                        <h6>She/Her</h6>
-                                        <h6>Leadership Director</h6>
-                                        <h6>Petroleum Engineering</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="leader-card-back center-vertical">
-                                <div class="leader-card-inner-border text-center">
-                                   <!--- <img src="assets/images/leadership_card_logo.jpg" class="leader-card-image" alt="...">-->
-                                    <div class="leader-card-body leader-card-text">
-                                        <h5 class = "leader-card-text-size">Why I joined SHPE:</h5>
-                                        <h6 class = "leader-card-text-size"></h6>
-                                        <h5 class = "leader-card-text-size">Favorite SHPE Memory:</h5>
-                                        <h6 class = "leader-card-text-size"></h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Professional Director -->
-                <div class="col-lg-4 col-md-6 center-vertical">
-                    <div class="leader-card">
-                        <div class="leader-card-inner">
-                            <div class="leader-card-front center-vertical">
-                                <div class="leader-card-inner-border text-center">
-                                    <img src="assets/images/leadership_card_images/sebastian_alatorre.jpg" class="leader-card-image" alt="Sebastian Alatorre">
-                                    <div class="leader-card-body leader-card-text">
-                                        <h5>Sebastian Alatorre</h5>
-                                        <h6>He/Him</h6>
-                                        <h6>Professional Director</h6>
-                                        <h6>Civil Engineering</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="leader-card-back center-vertical">
-                                <div class="leader-card-inner-border text-center">
-                                  <!---  <img src="assets/images/leadership_card_logo.jpg" class="leader-card-image" alt="...">-->
-                                    <div class="leader-card-body leader-card-text">
-                                        <h5 class = "leader-card-text-size">Why I joined SHPE:</h5>
-                                        <h6 class = "leader-card-text-size"></h6>
-                                        <h5 class = "leader-card-text-size">Favorite SHPE Memory:</h5>
-                                        <h6 class = "leader-card-text-size"></h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Technical Director -->
-                <div class="col-lg-4 col-md-6 center-vertical">
-                    <div class="leader-card">
-                        <div class="leader-card-inner">
-                            <div class="leader-card-front center-vertical">
-                                <div class="leader-card-inner-border text-center">
-                                    <img src="assets/images/leadership_card_images/kevin_contreras.jpg" class="leader-card-image" alt="Kevin Contreras">
-                                    <div class="leader-card-body leader-card-text">
-                                        <h5>Kevin Contreras</h5>
-                                        <h6>He/Him</h6>
-                                        <h6>Technical Director</h6>
-                                        <h6>Mechanical Engineering</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="leader-card-back center-vertical">
-                                <div class="leader-card-inner-border text-center">
-                                   <!--- <img src="assets/images/leadership_card_logo.jpg" class="leader-card-image" alt="...">-->
-                                    <div class="leader-card-body leader-card-text">
-                                        <h5 class = "leader-card-text-size">Why I joined SHPE:</h5>
-                                        <h6 class = "leader-card-text-size"></h6>
-                                        <h5 class = "leader-card-text-size">Favorite SHPE Memory:</h5>
-                                        <h6 class = "leader-card-text-size"></h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Footer Container -->
-        <div class="containter newback" id="footer">
-            <div class="row">
-                <div class="col-md-4 footer-info" style="text-align: center;">
-                    <h4>Contact Us</h4>
-                    <p>Primary Email: <a href="mailto:shpe@engr.utexas.edu" style="color: #BF5700">shpe.ut.president@gmail.com</a></p>
-                    <p>Corporate Email: <a href="mailto:utshpe@gmail.com" style="color: #BF5700">utshpe@gmail.com</a></p>
-                </div>
-                <div class="col-md-4 footer-info" style="text-align: center;">
-                    <h4>Follow us on Social Media</h4>
-                    <a href="https://www.facebook.com/shpeut/"><i class="fa-brands fa-facebook-square social-logo"></i></a>
-                    <a href="https://twitter.com/utshpe?lang=en"><i class="fa-brands fa-twitter-square social-logo"></i></a>
-                    <a href="https://www.tiktok.com/@utshpe"><i class="fa-brands fa-tiktok social-logo"></i></a>
-                    <a href="https://www.instagram.com/utshpe/?hl=en"><i class="fa-brands fa-instagram-square social-logo"></i></a>
-                    <a href="https://www.linkedin.com/company/utshpe"><i class="fa-brands fa-linkedin social-logo"></i></a>
-                    <a href="https://github.com/UTSHPE"><i class="fa-brands fa-github-square social-logo"></i></a>
-                </div>
-                <div class="col-md-4 footer-info" style="text-align: center;">
-                    <h4>Find more of UT-SHPE at our</h4>
-                    <h4><a href="https://linktr.ee/UTSHPE" style="color: #BF5700">Linktree</a></h4>
-                </div>
-                <div class="col-md-12" style="padding: 15px">
-                    <hr style="opacity: 100%; width:90%; margin-inline-start: auto; margin-inline-end: auto;">
-                </div>
-            </div>
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    </body>
+    
+        <hr class="footer-rule" />
+      </div>
+</body>
 </html>
+
+
+    

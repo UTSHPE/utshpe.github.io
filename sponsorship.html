@@ -1,386 +1,135 @@
 <!DOCTYPE html>
-<!-- Template Page That contains the navbar and footer -->
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>UT SHPE - Sponsorship</title>
-        <link rel="icon" href="assets/images/SHPE_logo.png">
-        <link rel="stylesheet" href="assets/css/style.css"/>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
-        <script src="https://kit.fontawesome.com/8366d6bad0.js" crossorigin="anonymous"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="assets/js/main.js"></script>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>UT SHPE</title>
+    <link rel="icon" href="assets/images/SHPE_logo.png"> 
+    <link rel="stylesheet" href="assets/css/style.css"> <!-- linkage to css code -->
+    <link rel="stylesheet" href="assets/css/sponsor.css">
+    <!-- Icons for footer -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <script src="assets/javascript/sponsor.js" defer></script>
+</head>
 
-    <body class="bg-light">
-        <!-- Navbar -->
-        <nav class="navbar fixed-top navbar-expand-lg bg-light shadow-sm">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="index.html"><img src="assets\images\navigation_logo.png" width="160" height="30" class="d-inline-block align-text-top" alt="logo"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link animate-character" aria-current="page" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link animate-character" href="about.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link animate-character" href="6_pillars.html">Pillars</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link animate-character" href="leadership.html">Leadership</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link animate-character active" href="#">Sponsorship</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link animate-character" href="contact_us.html">Contact Us</a>
-                        </li>
-                    </ul>
-                  </div>
-            </div>
+<body>
+    <!-- Navbar-->
+    <header class="nav">
+        <a class="brand" href="index.html"> 
+            <img src="assets/images/navbar_logo.png"> <!-- clickable logo -->
+        </a>
+
+        <!-- Navbar menu links -->
+        <nav class="menu">
+            <a href="About_Us.html" class="nav-link">About Us</a>
+            <a href="leadership.html" class="nav-link">Leadership</a>
+            <a href="sponsorship.html" class="nav-link active">Sponsorship</a>
+            <!-- special case for shpetinas, will be bold pink-->
+            <a href="shpetinas.html" class="nav-link shpetinas">SHPEtinas</a>
+            <a href="membership.html" class="nav-link">Membership</a>
+            <a href="resources.html" class="nav-link">Resources</a>                
         </nav>
+    </header>
+
+    <!-- Sponsors section -->
+    <main class="sponsor-page" role="main">
+        <section class="section sponsor-hero">
+            <div class="hero-left card-blue">
+                <h2 class="hero-title">Thank You to Our Sponsors!</h2>
+                <p class="hero-text">
+                    A special thank you to all companies who have supported us this year! Your commitment in
+                    empowering Hispanics in STEM is one-of-a-kind and will provide lots of opportunities for our
+                    members. Your support represents the hope and the desire for a better future. Our chapter and
+                    leadership team gratefully appreciate you for believing in us! 
+                </p>
+            </div>
+
+            <div class="hero-right">
+                <div class="sponsor-slideshow" aria-label="Sponsor event photos">
+                    <img src="assets/images/sponsors/Sponsorpage.jpg">
+                    <img src="assets/images/sponsors/Sponsorspage2.jpg">
+                    <img src="assets/images/sponsors/Sponsorspage3.jpg">
+                </div>
+            </div>
+        </section>
+
+        <!-- Our sponsors section -->
+        <section class="section all-sponsors">
+            <h2 class="section-title">Our Sponsors</h2>
+            <div class="sponsor-grid">
+
+                <article class="logo-card"><img src="assets/images/sponsors/ARM_logo.png"></article>
+                <article class="logo-card"><img src="assets/images/sponsors/Accenture_logo.png"></article>
+                <article class="logo-card"><img src="assets/images/sponsors/BP_logo.png"></article>
+                <article class="logo-card"><img src="assets/images/sponsors/Dell_logo.png"></article>
+                <article class="logo-card"><img src="assets/images/sponsors/LPL_Financial_logo.png"></article>
+                <article class="logo-card"><img src="assets/images/sponsors/Micron_logo.png"></article>
+                <article class="logo-card"><img src="assets/images/sponsors/PG_logo.png"></article>
+                <article class="logo-card"><img src="assets/images/sponsors/Spectrum_logo.png"></article>
+                <article class="logo-card"><img src="assets/images/sponsors/Tesla_logo.png"></article>
+                <article class="logo-card"><img src="assets/images/sponsors/Texas_Instruments_logo.png"></article>
+                <article class="logo-card"><img src="assets/images/sponsors/lockheedmartin_logo.png"></article>
+            </div>
+        </section>
+
+        <section class="section cta-sponsor">
+            <div class="cta-card">
+                <h2 class="cta-title">Become a Sponsor Today</h2>
+                <hr class="cta-rule">
+                <p class="cta-text">
+                    Become a sponsor by contacting our Corporate Director at
+                    <a class="cta-link" href="mailto:utshpe@gmail.com">utshpe@gmail.com</a>.
+                    Your support helps UT SHPE students drive toward their goals. We’re happy to answer any
+                    questions you have, including specific event donations.
+                </p>
+                <a class="btn-csp" href="assets/files/UT-SHPE 25-26 Corporate Solicitation Packet.pdf" target="_blank" rel="noopener">
+                  <i class="fa-solid fa-file-pdf"></i>
+                  View Corporate Sponsorship Packet (PDF)
+                </a>
+            </div>
+        </section>
+    </main>
+    
+
         
-        <!-- Banner Photo Container -->
-        <div class="container-fluid background-photo" id="photo5"></div>
-
-        <!-- Sponsor thank you container -->
-        <div class="container reveal-left">
-            <div class="row">
-                <div class="col-md-12 text-center" style="padding-top: 15px;">
-                    <h1 class="section-header-text">Thank You to our Sponsors!</h1>
-                    <hr style="opacity: 90%; width:80%; margin-inline-start: auto; margin-inline-end: auto;">
-                </div>
-                <div class="col-md-12 text-center">
-                    <p class="section-text">A special thank you to all companies who have supported us this year! Your commitment in empowering Hispanics in STEM is one-of-a-kind and will provide lots of opportunities for our members. Your support represents the hope and the desire for a better future. Our chapter and leadershpe team gratefully appreciate you for believing in us!
-                    </p>
-                    <h1 class="slide-in">Package Sponsors</h1>
-                    <div class="sponsor">
-                    
-                        <div class="row">
-                            <div class="column">
-                              <div class="card">
-                                <img src="assets/images/sponsors/Dell-Logo.png" alt="Dell" style="width:100%">
-                                <div class="container">
-                                  <!-- <h2>Dell</h2> -->
-                                  <p class="title">Silver Package Sponsor</p>
-                                </div>
-                              </div>
-                            </div>
-                          
-                            <div class="column">
-                              <div class="card">
-                                <img src="assets/images/sponsors/GonzalezShahSmith_logo.png" alt="gonzalez" style="width:100%">
-                                <div class="container">
-                                  <!-- <h2>Gonzalez Shah Smith</h2> -->
-                                  <p class="title">Silver Package Sponsor</p>
-                                </div>
-                              </div>
-                            </div>
-                          
-                            <div class="column">
-                              <div class="card">
-                                <img src="assets/images/sponsors/pepsico_logo.png" alt="pepsico" style="width:100%">
-                                <div class="container">
-                                  <!-- <h2>Pepsico</h2> -->
-                                  <p class="title">Silver Package Sponsor</p>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div class="column">
-                                <div class="card">
-                                  <img src="assets/images/sponsors/Navistar_logo.png" alt="navistar" style="width:100%">
-                                  <div class="container">
-                                    <!-- <h2>Navistar</h2> -->
-                                    <p class="title">Silver Package Sponsor</p>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div class="column">
-                                <div class="card">
-                                  <img src="assets/images/sponsors/Eli_Lilly_logo.png" alt="eli" style="width:100%">
-                                  <div class="container">
-                                    <!-- <h2>Pepsico</h2> -->
-                                    <p class="title">Silver Package Sponsor</p>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div class="column">
-                                <div class="card">
-                                  <img src="assets/images/sponsors/Accenture_logo.jpg" alt="accenture" style="width:100%">
-                                  <div class="container">
-                                    <!-- <h2>Pepsico</h2> -->
-                                    <p class="title">Bronze Package Sponsor</p>
-                                  </div>
-                                </div>
-                              </div>
-                        </div>
-                    </div>
-
-                    <h1 class="slide-in">General Meeting Sponsors</h1>
-                    <div class="sponsor">
-                        <div class="row">
-                            <div class="column">
-                              <div class="card">
-                                <img src="assets/images/sponsors/ExxonMobil_logo.png" alt="Exxon" style="width:100%">
-                                <div class="container">
-                                  <!-- <h2>Dell</h2> -->
-                                  <!-- <p class="title">Silver Package Sponsor</p> -->
-                                </div>
-                              </div>
-                            </div>
-                          
-                            <div class="column">
-                              <div class="card">
-                                <img src="assets/images/sponsors/lockheedmartin_logo.png" alt="lockheed" style="width:100%">
-                                <div class="container">
-                                  <!-- <h2>Gonzalez Shah Smith</h2> -->
-                                  <!-- <p class="title">Silver Package Sponsor</p> -->
-                                </div>
-                              </div>
-                            </div>
-                          
-                            <div class="column">
-                              <div class="card">
-                                <img src="assets/images/sponsors/Chevron_logo.png" alt="chevron" style="width:100%">
-                                <div class="container">
-                                  <!-- <h2>Pepsico</h2> -->
-                                  <!-- <p class="title">Silver Package Sponsor</p> -->
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                </div>
-
-                    <h1 class="slide-in">Corporate Event Sponsors</h1>
-                    <div class="sponsor">
-                        <div class="row">
-                            <div class="column">
-                                <div class="card">
-                                <img src="assets/images/sponsors/warnerbros_logo.png" alt="warner" style="width:100%">
-                                <div class="container">
-                                </div>
-                                </div>
-                            </div>
-                            
-                            <div class="column">
-                                <div class="card">
-                                <img src="assets/images/sponsors/hp_logo.jpeg" alt="hp" style="width:100%">
-                                <div class="container">
-                                </div>
-                                </div>
-                            </div>
-                            
-                            <div class="column">
-                                <div class="card">
-                                <img src="assets/images/sponsors/boeing_logo.png" alt="boeing" style="width:100%">
-                                <div class="container">
-                                </div>
-                                </div>
-                            </div>
-                            <div class="column">
-                                <div class="card">
-                                <img src="assets/images/sponsors/Form-logo.png" alt="formenergy" style="width:100%">
-                                <div class="container">
-                                </div>
-                                </div>
-                            </div>
-                            
-                            <!-- <div class="column">
-                                <div class="card">
-                                    <img src="assets/images/sponsors/cdm_smith_logo.jpg" alt="CDM">
-                                    <div class="container">
-                                    </div>
-                                </div>
-                            </div>                             -->
-                            
-                            <div class="column">
-                                <div class="card">
-                                <img src="assets/images/sponsors/schmidtfutures_logo.png" alt="schidt" style="width:100%">
-                                <div class="container">
-                                </div>
-                                </div>
-                            </div>
-                            <div class="column">
-                                <div class="card">
-                                <img src="assets/images/sponsors/squarespace_logo.png" alt="squarespace" style="width:100%">
-                                <div class="container">
-                                </div>
-                                </div>
-                            </div>
-                            
-                            <div class="column">
-                                <div class="card">
-                                <img src="assets/images/sponsors/nike_logo.png" alt="nike" style="width:100%">
-                                <div class="container">
-                                </div>
-                                </div>
-                            </div>
-                            
-                            <div class="column">
-                                <div class="card">
-                                <img src="assets/images/sponsors/fletcheryoder_logo.jpg" alt="fletcher" style="width:100%">
-                                <div class="container">
-                                </div>
-                                </div>
-                            </div>
-                            <div class="column">
-                                <div class="card">
-                                <img src="assets/images/sponsors/Silicon_Labs_logo.png" alt="silicon" style="width:100%">
-                                <div class="container">
-                                </div>
-                                </div>
-                            </div>
-                            
-                            <div class="column">
-                                <div class="card">
-                                <img src="assets/images/sponsors/amd_logo.png" alt="amd" style="width:100%">
-                                <div class="container">
-                                </div>
-                                </div>
-                            </div>
-                            
-                            <div class="column">
-                                <div class="card">
-                                <img src="assets/images/sponsors/samsung_logo.png" alt="samsung" style="width:100%">
-                                <div class="container">
-                                </div>
-                                </div>
-                            </div>
-
-                            <div class="column">
-                                <div class="card">
-                                <img src="assets/images/sponsors/harvestmidstream_logo.jpg" alt="harvest" style="width:100%">
-                                <div class="container">
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-                <h1 class="slide-in">Chapter Athletics Sponsor</h1>
-                    <div class="sponsor" style="overflow: auto; align-items: center;">
-                        <div class="row" style="overflow: auto;">
-                            <!-- <div class="column">
-                                <div class="card">
-                                  <img src="assets/images/sponsors/blank_screen.jpg" alt="webber" style="width:100%; object-fit: cover;">
-                                  <div class="container">
-                                  </div>
-                                </div>
-                              </div> -->
-                            <div class="column">
-                              <div class="card">
-                                <img src="assets/images/sponsors/webber.jpg" alt="webber" style="width:100%;">
-                              </div>
-                            </div>
-                            <div class="column">
-                                <div class="card">
-                                  <img src="assets/images/sponsors/blank_screen.jpg" alt="webber" style="width:100%;">
-                                </div>
-                              </div>
-                        </div>
-                    </div>
-                </div>
-                </div>
-
+    <!-- Footer -->
+    <div class="site-footer">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h4>Contact Us</h4>
+            <p>
+              Primary Email:
+              <a href="mailto:shpe.ut.president@gmail.com">shpe.ut.president@gmail.com</a>
+            </p>
+            <p>
+              Corporate Email:
+              <a href="mailto:utshpe@gmail.com">utshpe@gmail.com</a>
+            </p>
+          </div>
+    
+          <div class="footer-col">
+            <h4>Follow us on Social Media</h4>
+            <div class="socials">
+              <a href="https://www.facebook.com/shpeut/" aria-label="Facebook"><i class="fa-brands fa-facebook-square"></i></a>
+              <a href="https://twitter.com/utshpe?lang=en" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="https://www.tiktok.com/@utshpe" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+              <a href="https://www.instagram.com/utshpe/?hl=en" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/company/utshpe" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="https://github.com/UTSHPE" aria-label="GitHub"><i class="fa-brands fa-github-square"></i></a>
             </div>
+          </div>
+    
+          <div class="footer-col">
+            <h4>Find more UT-SHPE resources at our</h4>
+            <h4><a class="linktree" href="https://linktr.ee/UTSHPE">Linktree</a></h4>
+          </div>
         </div>
-
-        <!-- Sponsor tiers container -->
-        <div class="container reveal-left">
-            <div class="row">
-                <div class="col-md-12 text-center" style="padding-top: 45px;">
-                    <h1 class="section-header-text">Become a Sponsor Today</h1>
-                    <hr style="opacity: 90%; width:80%; margin-inline-start: auto; margin-inline-end: auto;">
-                </div>
-                <div class="col-md-12 text-center">
-                    <p class="section-text">Become a sponsor today by contacting our Corporate Director at <span><a style="color: #BF5700" href="mailto:utshpe@gmail.com">utshpe@gmail.com</a></span> and help UT SHPE students drive towards their goals. Please communicate any questions you have including specific event donations.
-                    </p>
-                </div>
-            </div>
-            <div class="row" style="padding-top: 15px;">
-                <div class="col-md-6 center-vertical">
-                    <div class="sponsor-card text-center center-vertical">
-                        <div class="sponsor-card-inner-border">
-                            <h1 class="section-subheader-text" style="color:#BF5700">Bronze Tier</h1>
-                            <p class="section-text" style="color:white;">$500</p>
-                            <p class="tier-text">1 Corporate Event or 1 Social Event</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 center-vertical">
-                    <div class="sponsor-card text-center center-vertical">
-                        <div class="sponsor-card-inner-border">
-                            <h1 class="section-subheader-text" style="color:#BF5700">Silver Tier</h1>
-                            <p class="section-text" style="color:white;">$2,100</p>
-                            <p class="tier-text">1 General Meeting</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 center-vertical">
-                    <div class="sponsor-card text-center center-vertical">
-                        <div class="sponsor-card-inner-border">
-                            <h1 class="section-subheader-text" style="color:#BF5700">Gold Tier</h1>
-                            <p class="section-text" style="color:white;">$2,400</p>
-                            <p class="tier-text">1 General Meeting w/ 1 Corporate Event</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 center-vertical">
-                    <div class="sponsor-card text-center center-vertical">
-                        <div class="sponsor-card-inner-border">
-                            <h1 class="section-subheader-text" style="color:#BF5700">Platinum Tier</h1>
-                            <p class="section-text" style="color:white;">$2,400</p>
-                            <p class="tier-text">1 VIP General Meeting</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 center-vertical">
-                    <div class="sponsor-card text-center center-vertical">
-                        <div class="sponsor-card-inner-border">
-                            <h1 class="section-subheader-text" style="color:#BF5700">Diamond Tier</h1>
-                            <p class="section-text" style="color:white;">$2,600</p>
-                            <p class="tier-text">1 VIP General Meeting w/ 1 Corporate Event</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Footer Container -->
-        <div class="containter newback" id="footer">
-            <div class="row">
-                <div class="col-md-4 footer-info" style="text-align: center;">
-                    <h4>Contact Us</h4>
-                    <p>Primary Email: <a href="mailto:shpe@engr.utexas.edu" style="color: #BF5700">shpe.ut.president@gmail.com</a></p>
-                    <p>Corporate Email: <a href="mailto:utshpe@gmail.com" style="color: #BF5700">utshpe@gmail.com</a></p>
-                </div>
-                <div class="col-md-4 footer-info" style="text-align: center;">
-                    <h4>Follow us on Social Media</h4>
-                    <a href="https://www.facebook.com/shpeut/"><i class="fa-brands fa-facebook-square social-logo"></i></a>
-                    <a href="https://twitter.com/utshpe?lang=en"><i class="fa-brands fa-twitter-square social-logo"></i></a>
-                    <a href="https://www.tiktok.com/@utshpe"><i class="fa-brands fa-tiktok social-logo"></i></a>
-                    <a href="https://www.instagram.com/utshpe/?hl=en"><i class="fa-brands fa-instagram-square social-logo"></i></a>
-                    <a href="https://www.linkedin.com/company/utshpe"><i class="fa-brands fa-linkedin social-logo"></i></a>
-                    <a href="https://github.com/UTSHPE"><i class="fa-brands fa-github-square social-logo"></i></a>
-                </div>
-                <div class="col-md-4 footer-info" style="text-align: center;">
-                    <h4>Find more of UT-SHPE at our</h4>
-                    <h4><a href="https://linktr.ee/UTSHPE" style="color: #BF5700">Linktree</a></h4>
-                </div>
-                <div class="col-md-12" style="padding: 15px">
-                    <hr style="opacity: 100%; width:90%; margin-inline-start: auto; margin-inline-end: auto;">
-                </div>
-            </div>
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    </body>
+    
+        <hr class="footer-rule" />
+      </div>
+</body>
 </html>
+
+
+    
+
