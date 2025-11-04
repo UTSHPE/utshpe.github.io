@@ -21,7 +21,7 @@ function setupPolaroidFader({ frameSelector, images, intervalMs = 3500, fadeMs =
   const frame = document.querySelector(frameSelector);
   if (!frame || !images || images.length === 0) return;
 
-  // Ensure the frame can stack images
+ 
   Object.assign(frame.style, {
     position: frame.style.position || "relative",
     overflow: "hidden"
@@ -48,7 +48,7 @@ function setupPolaroidFader({ frameSelector, images, intervalMs = 3500, fadeMs =
     img.loading = "eager";
   });
 
-  // Order: B on top of A
+  
   frame.innerHTML = "";
   frame.appendChild(imgA);
   frame.appendChild(imgB);
@@ -56,11 +56,10 @@ function setupPolaroidFader({ frameSelector, images, intervalMs = 3500, fadeMs =
   let idx = 0;
   let showingA = true;
 
-  // Start with first image visible
+ 
   imgA.src = images[idx];
   imgA.style.opacity = 1;
 
-  // Preload the rest quietly
   images.slice(1).forEach((src) => {
     const p = new Image();
     p.src = src;
@@ -73,7 +72,6 @@ function setupPolaroidFader({ frameSelector, images, intervalMs = 3500, fadeMs =
     const bottomImg= showingA ? imgA : imgB; // will fade out
 
     topImg.src = images[idx];
-    // Ensure the browser has applied the new src before fading
     requestAnimationFrame(() => {
       topImg.style.opacity = 1;
       bottomImg.style.opacity = 0;
@@ -84,7 +82,7 @@ function setupPolaroidFader({ frameSelector, images, intervalMs = 3500, fadeMs =
   let timer = setInterval(next, intervalMs);
 }
 
-// Event Flyers Carousel (Next/Prev + swipe + resize-safe)
+
 document.addEventListener("DOMContentLoaded", () => {
   initEventCarousel(".next-event .event-carousel");
 });
@@ -165,14 +163,13 @@ function initEventCarousel(rootSel) {
   goTo(0);
 }
 
-// ===============================
+
 // Sponsors auto-scrolling wheel
-// ===============================
 document.addEventListener("DOMContentLoaded", () => {
   setupSponsorsAutoScroll({
     railSelector: ".sponsor-carousel",
-    speedPxPerFrame: 1.0,   // adjust scroll speed here
-    targetMultiple: 2.2     // how much content width vs. visible width
+    speedPxPerFrame: 1.0,   
+    targetMultiple: 2.2     
   });
 });
 
@@ -180,20 +177,18 @@ function setupSponsorsAutoScroll({ railSelector, speedPxPerFrame = 0.6, targetMu
   const rail = document.querySelector(railSelector);
   if (!rail) return;
 
-  // Safety styles (your CSS already sets most of this)
+  // Safety styles 
   rail.style.overflow = "hidden";
 
-  // Snapshot originals so we never clone clones
   const originals = Array.from(rail.children);
   originals.forEach(el => {
     el.style.flex = "0 0 auto";
     el.style.display = el.style.display || "flex";
   });
 
-  // Wait one frame so layout has real sizes, then fill & start
+  
   requestAnimationFrame(() => {
-    // Duplicate originals linearly until we have enough width
-    const maxPasses = 20; // safety cap
+    const maxPasses = 20; 
     let passes = 0;
 
     const needsMore = () => rail.scrollWidth < rail.clientWidth * targetMultiple;
@@ -202,10 +197,10 @@ function setupSponsorsAutoScroll({ railSelector, speedPxPerFrame = 0.6, targetMu
       passes++;
     }
 
-    // Respect reduced motion users
+    
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    // Calculate wrap distance = width of just the originals (including gap)
+    
     const gapPx = getFlexGapPx(rail);
     const originalsWidth =
       originals.reduce((sum, el, i) => {
@@ -213,11 +208,11 @@ function setupSponsorsAutoScroll({ railSelector, speedPxPerFrame = 0.6, targetMu
         return sum + w + (i > 0 ? gapPx : 0);
       }, 0);
 
-    // Continuous scroll + seamless wrap
+    
     function tick() {
       rail.scrollLeft += speedPxPerFrame;
 
-      // When we've scrolled past one originals-width, wrap back by that amount
+      
       if (rail.scrollLeft >= originalsWidth) {
         rail.scrollLeft -= originalsWidth;
       }
@@ -231,8 +226,35 @@ function setupSponsorsAutoScroll({ railSelector, speedPxPerFrame = 0.6, targetMu
 function getFlexGapPx(rail) {
   const cs = getComputedStyle(rail);
   let gap = cs.columnGap || cs.gap || "0px";
-  if (gap.includes(" ")) gap = gap.split(" ")[0]; // handle "row col"
+  if (gap.includes(" ")) gap = gap.split(" ")[0]; 
   const val = parseFloat(gap);
   return Number.isFinite(val) ? val : 0;
 }
 
+(function(){
+  const btn  = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('#site-menu');
+  if(!btn || !menu) return;
+
+  btn.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.body.classList.toggle('no-scroll', open);
+  });
+
+  menu.addEventListener('click', (e) => {
+    if(e.target.closest('a.nav-link') && menu.classList.contains('open')){
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+      document.body.classList.remove('no-scroll');
+    }
+  });
+
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Escape' && menu.classList.contains('open')){
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+      document.body.classList.remove('no-scroll');
+    }
+  });
+})();
