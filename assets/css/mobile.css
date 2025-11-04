@@ -1,1 +1,153 @@
+html, body { overflow-x: hidden; }
+img, video, iframe { max-width: 100%; height: auto; display: block; }
+.nav + .info { margin-top: -2px; }
+
+@media (max-width: 768px){
+  .nav{
+    padding: 10px 14px !important;
+    gap: 10px !important;
+    justify-content: space-between;
+  }
+
+  .menu-toggle{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px; height: 42px;
+    border: 0; border-radius: 10px;
+    background: #fff;
+    font-size: 22px; line-height: 1;
+    box-shadow: 0 2px 6px rgba(0,0,0,.12);
+  }
+
+  .menu{
+    position: fixed;
+    top: 64px; left: 0; right: 0;
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    padding: 8px 12px;
+    gap: 6px;
+    max-height: calc(100vh - 64px);
+    overflow: auto;
+    border-top: 1px solid rgba(0,0,0,.06);
+    box-shadow: 0 12px 24px rgba(0,0,0,.12);
+    z-index: 1200;
+  }
+  .menu.open{ display: flex; }
+  .nav-link{
+    padding: 14px 10px;
+    font-size: 18px;
+    border-radius: 8px;
+  }
+  body.no-scroll{ overflow: hidden; }
+
+  .section, .container, .wrapper { padding: 16px !important; max-width: 100% !important; }
+  .grid, .row { display: grid; grid-template-columns: 1fr !important; gap: 16px !important; }
+
+  .info{
+    grid-template-columns: 1fr !important;
+    align-items: start;
+    gap: 16px !important;
+    padding: 20px 16px !important;
+  }
+  .info-left{
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  .info h1{ font-size: clamp(1.8rem, 6vw, 2.4rem); }
+  .info .sub{ font-size: 1.05rem; }
+  .info .mission{ font-size: 1rem; }
+
+  .polaroid{ margin: 8px 0 0 !important; }
+  .polaroid .frame{
+    max-width: 100% !important;
+    aspect-ratio: auto !important;
+    padding: 8px;
+  }
+  .polaroid .frame img{
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .next-event{
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .next-event .section-title{ font-size: 1.5rem; }
+  .event-carousel{
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 4 / 5;
+    border-radius: 12px;
+  }
+  .event-track{ gap: 0 !important; }
+  .event-track img{
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 12px;
+  }
+  .carousel-btn{ width: 34px; height: 34px; }
+
+  .sponsor-header{
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+    margin: 0 16px 8px !important;
+  }
+  .sponsor-cta{ margin: 0 !important; justify-self: center !important; }
+  .sponsors-slideshow{ padding: 12px 16px 28px !important; }
+  .sponsor-carousel{ gap: 12px !important; }
+  .sponsor{
+    width: 130px !important;
+    height: 90px !important;
+    padding: 10px !important;
+  }
+
+  .calendar{ padding: 12px 12px 28px !important; }
+  .calendar-frame{ width: 100% !important; border-radius: 10px; }
+  .calendar-frame iframe{ height: 540px !important; }
+
+  #office-hours{ padding: 36px 0 !important; }
+  #office-hours h2{ font-size: 1.9rem !important; }
+
+  .site-footer{ padding: 28px 16px !important; }
+  .footer-grid{
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    text-align: left !important;
+    max-width: 100% !important;
+  }
+  .footer-col:nth-child(2),
+  .footer-col:nth-child(3){
+    margin-left: 0 !important;
+    text-align: left !important;
+  }
+  .socials{ justify-content: flex-start !important; }
+
+  .sponsor-page .section { padding: 16px !important; }
+  .sponsor-hero{ grid-template-columns: 1fr !important; gap: 14px !important; }
+  .sponsor-slideshow{ aspect-ratio: 16/10; }
+  .sponsor-grid{ grid-template-columns: 1fr 1fr !important; gap: 12px !important; }
+  @supports (grid-template-columns: 1fr) { .sponsor-grid{ grid-template-columns: 1fr !important; } }
+
+  .about-split, .promo-split{ grid-template-columns: 1fr !important; }
+  .committee .grid{ grid-template-columns: 1fr !important; }
+  .shpetina-month img{ height: auto !important; }
+
+  .leader-page .section { padding: 16px !important; }
+  .leader-grid{ display: grid !important; grid-template-columns: 1fr !important; gap: 16px !important; overflow: visible !important; }
+  :root { --card-w: 100% !important; }
+
+  .pillars-grid{ grid-template-columns: 1fr !important; gap: 12px !important; }
+  .pillars-figure{ height: auto !important; }
+
+  .spotlights .spotlights-grid{ grid-template-columns: 1fr !important; column-gap: 0 !important; }
+  .ig-embed{ grid-column: 1 !important; max-width: 100% !important; }
+
+  .sponsor-cta, .polaroid, .next-event { margin-left: 0 !important; margin-right: 0 !important; }
+  [style*="margin-right:-"], [style*="margin-left:-"]{ margin: 0 !important; }
+}
 
