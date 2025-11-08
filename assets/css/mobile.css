@@ -59,7 +59,6 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
   .info .sub{ font-size: 1.05rem; }
   .info .mission{ font-size: 1rem; }
 
-  /* Fixed main slideshow sizing */
   .polaroid{
     margin: 12px 0 0 !important;
     width: 100% !important;
@@ -171,19 +170,55 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
   }
   .socials{ justify-content: flex-start !important; }
 
-  .about-split, .promo-split{ grid-template-columns: 1fr !important; }
-  .committee .grid{ grid-template-columns: 1fr !important; }
-  .shpetina-month img{ height: auto !important; }
+  /* ABOUT US: Mission & Vision */
+  .mission, .vision{
+    flex-direction: column !important;
+    height: auto !important;
+    gap: 20px !important;
+  }
+  .mission-text, .vision-text{
+    width: 100% !important;
+    order: 1 !important;
+    text-align: center !important;
+    padding: 28px 22px !important;
+  }
+  .mission img, .vision img{
+    width: 100% !important;
+    order: 2 !important;
+    height: auto !important;
+    border-radius: 14px !important;
+  }
 
-  .leader-page .section { padding: 16px !important; }
-  .leader-grid{ display: grid !important; grid-template-columns: 1fr !important; gap: 16px !important; overflow: visible !important; }
-  :root { --card-w: 100% !important; }
+  /* ABOUT US: 6 Pillars fix */
+  .pillars-grid{
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .pillars-tabs{
+    grid-template-columns: repeat(3, 1fr) !important;
+    flex-wrap: wrap !important;
+    row-gap: 8px !important;
+  }
+  .pillars-tab{
+    min-height: 70px !important;
+    font-size: 0.95rem !important;
+    padding: 10px !important;
+    word-break: break-word !important;
+  }
+  .pillars-content{
+    padding: 20px 16px !important;
+  }
+  .pillars-figure{
+    width: 100% !important;
+    height: 260px !important;
+  }
 
-  .pillars-grid{ grid-template-columns: 1fr !important; gap: 12px !important; }
-  .pillars-figure{ height: auto !important; }
-
-  .spotlights .spotlights-grid{ grid-template-columns: 1fr !important; column-gap: 0 !important; }
-  .ig-embed{ grid-column: 1 !important; max-width: 100% !important; }
+  .history{
+    padding: 40px 16px !important;
+  }
+  .history .section{
+    padding: 20px !important;
+  }
 
   .sponsor-cta, .polaroid, .next-event { margin-left: 0 !important; margin-right: 0 !important; }
   [style*="margin-right:-"], [style*="margin-left:-"]{ margin: 0 !important; }
