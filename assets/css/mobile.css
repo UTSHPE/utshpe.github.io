@@ -59,17 +59,35 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
   .info .sub{ font-size: 1.05rem; }
   .info .mission{ font-size: 1rem; }
 
-  /* Keep absolute stacking so the fade works; keep the white frame */
-  .polaroid{ margin: 8px 0 0 !important; }
+  /* --- HERO SLIDESHOW FIX --- */
+  .polaroid{
+    margin: 12px 0 0 !important;
+    width: 100% !important;
+  }
   .polaroid .frame{
+    position: relative !important;
+    width: 100% !important;
     max-width: 100% !important;
-    aspect-ratio: 16 / 11 !important;
+    height: auto !important;
+    aspect-ratio: 16 / 13 !important;   /* taller aspect ratio for mobile */
+    min-height: 380px !important;       /* ensures proper vertical height */
     padding: 12px !important;
     background: #fff !important;
     border-radius: 10px !important;
     overflow: hidden !important;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15) !important;
+  }
+  .polaroid .frame img{
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+    display: block !important;
   }
 
+  /* --- UPCOMING EVENTS --- */
   .next-event{
     width: 100% !important;
     margin: 0 !important;
@@ -91,32 +109,46 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
   }
   .carousel-btn{ width: 34px; height: 34px; }
 
+  /* --- OUR SPONSORS FIX --- */
   .sponsor-header{
-    grid-template-columns: 1fr !important;
-    gap: 8px !important;
-    margin: 0 16px 8px !important;
-    text-align: left !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0 16px !important;
+    margin-bottom: 10px !important;
+  }
+  .sponsors-slideshow .section-title{
+    text-align: center !important;
+    flex: 1 !important;
+    color: #BF5700 !important;
+    font-size: 1.8rem !important;
   }
   .sponsor-cta{
-    margin: 0 !important;
     justify-self: start !important;
-    align-self: start !important;
-    width: fit-content !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
   }
 
   .sponsors-slideshow{ padding: 12px 16px 28px !important; }
   .sponsor-carousel{
     gap: 12px !important;
     align-items: center !important;
+    justify-content: center !important;
     flex-wrap: nowrap !important;
     overflow: hidden !important;
   }
   .sponsor{
-    width: 130px !important;
-    height: 90px !important;
-    padding: 10px !important;
+    width: 150px !important;
+    height: 100px !important;
+    padding: 12px !important;
+  }
+  .sponsor img{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
   }
 
+  /* --- CALENDAR --- */
   .calendar{ padding: 12px 12px 28px !important; }
   .calendar-frame{ width: 100% !important; border-radius: 10px; }
   .calendar-frame iframe{ height: 540px !important; }
@@ -124,6 +156,7 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
   #office-hours{ padding: 36px 0 !important; }
   #office-hours h2{ font-size: 1.9rem !important; }
 
+  /* --- FOOTER --- */
   .site-footer{ padding: 28px 16px !important; }
   .footer-grid{
     grid-template-columns: 1fr !important;
@@ -138,12 +171,7 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
   }
   .socials{ justify-content: flex-start !important; }
 
-  .sponsor-page .section { padding: 16px !important; }
-  .sponsor-hero{ grid-template-columns: 1fr !important; gap: 14px !important; }
-  .sponsor-slideshow{ aspect-ratio: 16/10; }
-  .sponsor-grid{ grid-template-columns: 1fr 1fr !important; gap: 12px !important; }
-  @supports (grid-template-columns: 1fr) { .sponsor-grid{ grid-template-columns: 1fr !important; } }
-
+  /* --- MISC PAGES --- */
   .about-split, .promo-split{ grid-template-columns: 1fr !important; }
   .committee .grid{ grid-template-columns: 1fr !important; }
   .shpetina-month img{ height: auto !important; }
