@@ -151,15 +151,48 @@ hero-media.slideshow-js { position: relative; }
 
 
 :root{
-  /* tune these bounds to taste */
   --spot-img-h: clamp(280px, 32vw, 420px);
 }
 
 .spotlight-photo{
-  height: var(--spot-img-h);   /* was 240px */
+  height: var(--spot-img-h);   
   object-fit: cover;
   width: 100%;
   display: block;
+}
+
+
+.ig-embed{
+  border:1px solid #eee;
+  border-radius:16px;
+  background:#fff;
+  padding:12px;
+  box-shadow:0 8px 18px rgba(0,0,0,.05);
+  max-width:520px;
+  margin-left:auto;
+
+ 
+  --ig-max-h: 820px;           
+}
+
+
+.ig-embed blockquote.instagram-media{
+  width:100% !important;
+  min-width:0 !important;
+  margin:0 !important;
+  transform:none !important;    
+}
+
+
+.ig-embed iframe{
+  max-height:none !important;
+  height: var(--ig-max-h) !important;  
+  border-radius:12px !important;
+}
+
+
+@media (max-width:768px){
+  .ig-embed{ --ig-max-h: 700px; }
 }
 
 
