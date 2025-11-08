@@ -289,3 +289,72 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
 }
 
 
+@media (max-width: 768px){
+
+  
+  .membership-page .hero-grid{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    align-items: start !important;
+  }
+  .membership-page .hero-copy{ order: 1 !important; }
+  .membership-page .hero-media{ order: 2 !important; }
+
+  
+  .membership-page .hero-media.slideshow-js{
+    min-height: 360px !important;   
+    border-radius: 16px !important;
+  }
+  .membership-page .hero-media.slideshow-js img{
+    border-radius: 16px !important;
+  }
+
+  
+  .membership-page .join-steps .steps{
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  
+  .membership-page .spotlights .spotlights-grid{
+    grid-template-columns: 1fr !important;
+    column-gap: 16px !important;
+    row-gap: 16px !important;
+  }
+  .membership-page .ig-embed{
+    grid-column: 1 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* Spotlight cards keep photo height reasonable on phones */
+  .membership-page .spotlight-photo{
+    height: 260px !important;       
+    object-fit: cover !important;
+  }
+
+  
+  .membership-page .ig-embed blockquote.instagram-media{
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+  .membership-page .ig-embed iframe{
+    max-width: 100% !important;
+    max-height: 620px !important;   
+    border-radius: 12px !important;
+  }
+
+  
+  .membership-page .member-highlights{
+    font-size: 1rem !important;
+  }
+  .membership-page .badge{
+    transform: translate(10px,10px) !important;
+  }
+}
+
+
+
