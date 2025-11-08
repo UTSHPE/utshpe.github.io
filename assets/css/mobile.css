@@ -106,23 +106,29 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
   }
   .carousel-btn{ width: 34px; height: 34px; }
 
-  /* Fixed “Our Sponsors” header alignment */
+  /* Centered “Our Sponsors” section */
   .sponsor-header{
-    display: grid !important;
-    grid-template-columns: auto 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
     align-items: center !important;
-    justify-content: space-between !important;
-    margin: 0 16px 12px !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    margin: 0 auto 12px !important;
+    text-align: center !important;
   }
+
   .sponsors-slideshow .section-title{
     text-align: center !important;
-    justify-self: center !important;
     margin: 0 auto !important;
     color: #BF5700 !important;
+    font-size: 1.8rem !important;
   }
+
   .sponsor-cta{
-    justify-self: start !important;
     margin: 0 !important;
+    justify-self: center !important;
+    align-self: center !important;
+    width: fit-content !important;
   }
 
   .sponsors-slideshow{ padding: 12px 16px 28px !important; }
@@ -131,11 +137,17 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
     align-items: center !important;
     flex-wrap: nowrap !important;
     overflow: hidden !important;
+    justify-content: center !important;
   }
   .sponsor{
     width: 130px !important;
     height: 90px !important;
     padding: 10px !important;
+  }
+  .sponsor img{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
   }
 
   .calendar{ padding: 12px 12px 28px !important; }
