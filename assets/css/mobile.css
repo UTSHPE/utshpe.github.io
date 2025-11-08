@@ -245,23 +245,39 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
   }
 
   /* Leadership cards stack vertically */
+  /*Leadership force single-column stack and cancel desktop css */
   .leader-grid,
   .leader-grid.bod,
-  .officer-grid,
   .leaders,
-  .board-grid{
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 16px !important;
+  .board-grid,
+  .officer-grid{
+    display: block !important;        
     overflow: visible !important;
-  }
-  :root{ --card-w: 100% !important; }
-  .leader-grid .officer-card,
-  .leader-grid.bod .officer-card,
-  .officer-card{
-    width: 100% !important;
+    flex-wrap: unset !important;       
   }
 
+  .leader-grid > .officer-card,
+  .leader-grid.bod > .officer-card,
+  .leaders > .officer-card,
+  .board-grid > .officer-card,
+  .officer-grid > .officer-card{
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 16px 0 !important;
+    flex: unset !important;            
+    grid-column: auto !important;      
+  }
+
+  
+  .leader-grid.bod > .officer-card:nth-child(n){
+    grid-column: auto !important;
+  }
+
+  /* keep photos from making the cards super tall on phones */
+  .officer-card img{
+    height: auto !important;
+    aspect-ratio: auto !important;
+  }
   
   .hero{ margin-top: 12px !important; }
   .hero .hero-wrap > div:first-child{
@@ -271,3 +287,5 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
     --hero-focus-y: 45% !important;    
   }
 }
+
+
