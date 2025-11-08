@@ -3,12 +3,12 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
 .nav + .info { margin-top: -2px; }
 
 @media (max-width: 768px){
+  /* Nav */
   .nav{
     padding: 10px 14px !important;
     gap: 10px !important;
     justify-content: space-between;
   }
-
   .menu-toggle{
     display: inline-flex;
     align-items: center;
@@ -19,7 +19,6 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
     font-size: 22px; line-height: 1;
     box-shadow: 0 2px 6px rgba(0,0,0,.12);
   }
-
   .menu{
     position: fixed;
     top: 64px; left: 0; right: 0;
@@ -42,6 +41,7 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
   }
   body.no-scroll{ overflow: hidden; }
 
+  /* Generic stackdowns */
   .section, .container, .wrapper { padding: 16px !important; max-width: 100% !important; }
   .grid, .row { display: grid; grid-template-columns: 1fr !important; gap: 16px !important; }
 
@@ -51,18 +51,13 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
     gap: 16px !important;
     padding: 20px 16px !important;
   }
-  .info-left{
-    width: 100% !important;
-    margin: 0 !important;
-  }
+  .info-left{ width: 100% !important; margin: 0 !important; }
   .info h1{ font-size: clamp(1.8rem, 6vw, 2.4rem); }
   .info .sub{ font-size: 1.05rem; }
   .info .mission{ font-size: 1rem; }
 
-  .polaroid{
-    margin: 12px 0 0 !important;
-    width: 100% !important;
-  }
+  /* Home slideshow container sizing */
+  .polaroid{ margin: 12px 0 0 !important; width: 100% !important; }
   .polaroid .frame{
     position: relative !important;
     width: 100% !important;
@@ -84,28 +79,40 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
     display: block !important;
   }
 
-  .next-event{
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
+  /* Events carousel (home) */
+  .next-event{ width: 100% !important; margin: 0 !important; padding: 0 !important; }
   .next-event .section-title{ font-size: 1.5rem; }
-  .event-carousel{
-    width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 4 / 5;
-    border-radius: 12px;
-  }
+  .event-carousel{ width: 100% !important; aspect-ratio: 4 / 5; border-radius: 12px; }
   .event-track{ gap: 0 !important; }
-  .event-track img{
-    flex: 0 0 100% !important;
-    width: 100% !important;
-    height: auto !important;
-    border-radius: 12px;
-  }
+  .event-track img{ flex: 0 0 100% !important; width: 100% !important; height: auto !important; border-radius: 12px; }
   .carousel-btn{ width: 34px; height: 34px; }
 
-  /* Centered “Our Sponsors” section */
+  /* ====== SPONSORSHIP PAGE (stack + fix slideshow) ====== */
+  .sponsor-hero{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    align-items: start !important;
+  }
+  .sponsor-hero .hero-left{ order: 1 !important; }
+  .sponsor-hero .hero-right{ order: 2 !important; }
+
+  /* Mobile sizing for slideshow card */
+  .sponsor-slideshow{
+    width: 100% !important;
+    aspect-ratio: 16 / 10 !important;
+    border-radius: 16px !important;
+  }
+
+  /* Make the CSS-only slideshow actually advance without inline --i */
+  .sponsor-slideshow img:nth-child(1){ --i: 0; }
+  .sponsor-slideshow img:nth-child(2){ --i: 1; }
+  .sponsor-slideshow img:nth-child(3){ --i: 2; }
+  .sponsor-slideshow img:nth-child(4){ --i: 3; }
+  .sponsor-slideshow img:nth-child(5){ --i: 4; }
+  .sponsor-slideshow img:nth-child(6){ --i: 5; }
+
+  /* Centered “Our Sponsors” header block on mobile */
   .sponsor-header{
     display: flex !important;
     flex-direction: column !important;
@@ -115,14 +122,12 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
     margin: 0 auto 12px !important;
     text-align: center !important;
   }
-
   .sponsors-slideshow .section-title{
     text-align: center !important;
     margin: 0 auto !important;
     color: #BF5700 !important;
     font-size: 1.8rem !important;
   }
-
   .sponsor-cta{
     margin: 0 !important;
     justify-self: center !important;
@@ -130,6 +135,7 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
     width: fit-content !important;
   }
 
+  /* Sponsor logo row */
   .sponsors-slideshow{ padding: 12px 16px 28px !important; }
   .sponsor-carousel{
     gap: 12px !important;
@@ -149,28 +155,36 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
     object-fit: contain !important;
   }
 
-  .calendar{ padding: 12px 12px 28px !important; }
-  .calendar-frame{ width: 100% !important; border-radius: 10px; }
-  .calendar-frame iframe{ height: 540px !important; }
-
-  #office-hours{ padding: 36px 0 !important; }
-  #office-hours h2{ font-size: 1.9rem !important; }
-
-  .site-footer{ padding: 28px 16px !important; }
-  .footer-grid{
+  /* ====== SHPETINAS PAGE (stack sections) ====== */
+  /* About split: text first, highlights second */
+  .about-split{
+    display: grid !important;
     grid-template-columns: 1fr !important;
-    gap: 12px !important;
-    text-align: left !important;
-    max-width: 100% !important;
+    gap: 14px !important;
   }
-  .footer-col:nth-child(2),
-  .footer-col:nth-child(3){
-    margin-left: 0 !important;
-    text-align: left !important;
-  }
-  .socials{ justify-content: flex-start !important; }
+  .about-split .pink-panel{ order: 1 !important; }
+  .about-split .highlights-card{ order: 2 !important; }
 
-  /* ABOUT US: Mission & Vision */
+  /* Committee cards — one per row */
+  .committee .grid{ grid-template-columns: 1fr !important; gap: 16px !important; }
+  .committee .card .photo{ height: auto !important; }
+
+  /* Auto events slider already responsive via .ev-auto */
+
+  /* Merch + SHPEtina of the Month stacked */
+  .promo-split{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+  .promo-split .tshirt-card{ order: 1 !important; }
+  .promo-split .shpetina-month{
+    order: 2 !important;
+    /* Keep image readable on phones */
+    --shpetina-img-h: 220px;
+  }
+
+  /* ====== ABOUT (already good) — keep vertical rhythm just in case ====== */
   .mission, .vision{
     flex-direction: column !important;
     height: auto !important;
@@ -189,37 +203,33 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
     border-radius: 14px !important;
   }
 
-  /* ABOUT US: 6 Pillars fix */
-  .pillars-grid{
+  /* Pillars grid shows tabs + image stacked */
+  .pillars-grid{ grid-template-columns: 1fr !important; gap: 24px !important; }
+  .pillars-tabs{ grid-template-columns: repeat(3, 1fr) !important; row-gap: 8px !important; }
+  .pillars-tab{ min-height: 70px !important; font-size: 0.95rem !important; padding: 10px !important; word-break: break-word !important; }
+  .pillars-content{ padding: 20px 16px !important; }
+  .pillars-figure{ width: 100% !important; height: 260px !important; }
+
+  /* Calendar + Footer */
+  .calendar{ padding: 12px 12px 28px !important; }
+  .calendar-frame{ width: 100% !important; border-radius: 10px; }
+  .calendar-frame iframe{ height: 540px !important; }
+
+  .site-footer{ padding: 28px 16px !important; }
+  .footer-grid{
     grid-template-columns: 1fr !important;
-    gap: 24px !important;
+    gap: 12px !important;
+    text-align: left !important;
+    max-width: 100% !important;
   }
-  .pillars-tabs{
-    grid-template-columns: repeat(3, 1fr) !important;
-    flex-wrap: wrap !important;
-    row-gap: 8px !important;
+  .footer-col:nth-child(2),
+  .footer-col:nth-child(3){
+    margin-left: 0 !important;
+    text-align: left !important;
   }
-  .pillars-tab{
-    min-height: 70px !important;
-    font-size: 0.95rem !important;
-    padding: 10px !important;
-    word-break: break-word !important;
-  }
-  .pillars-content{
-    padding: 20px 16px !important;
-  }
-  .pillars-figure{
-    width: 100% !important;
-    height: 260px !important;
-  }
+  .socials{ justify-content: flex-start !important; }
 
-  .history{
-    padding: 40px 16px !important;
-  }
-  .history .section{
-    padding: 20px !important;
-  }
-
+  /* Clean margins */
   .sponsor-cta, .polaroid, .next-event { margin-left: 0 !important; margin-right: 0 !important; }
   [style*="margin-right:-"], [style*="margin-left:-"]{ margin: 0 !important; }
 }
