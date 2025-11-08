@@ -356,5 +356,84 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
   }
 }
 
+@media (max-width: 768px){
+
+  
+  .membership-page .hero-grid{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    align-items: start !important;
+  }
+  .membership-page .hero-copy{ order: 1 !important; }
+  .membership-page .hero-media{ order: 2 !important; }
+
+  
+  .membership-page .hero-media{
+    width: 100% !important;
+    overflow: hidden !important;
+    border-radius: 16px !important;
+    margin: 0 !important;            
+  }
+  .membership-page .hero-media.slideshow-js{
+    min-height: 360px !important;     
+  }
+  .membership-page .hero-media img{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    border-radius: 16px !important;
+  }
+
+  
+  .membership-page .two-col,
+  .membership-page .split,
+  .membership-page .columns,
+  .membership-page .columns-2,
+  .membership-page .benefits,
+  .membership-page .tiers,
+  .membership-page .join-steps .steps,
+  .membership-page .spotlights .spotlights-grid,
+  .membership-page .faq-grid,
+  .membership-page .partners-row,
+  .membership-page .timeline,
+  .membership-page .points-req,
+  .membership-page .cta-row{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  
+  .membership-page .card,
+  .membership-page .panel,
+  .membership-page .tier,
+  .membership-page .benefit{
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+  .membership-page img,
+  .membership-page video{
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  
+  .membership-page .ig-embed{ overflow: hidden !important; }
+  .membership-page .ig-embed blockquote.instagram-media{
+    width: 100% !important; min-width: 0 !important; margin: 0 !important; transform: none !important;
+  }
+  .membership-page .ig-embed iframe{
+    width: 100% !important; max-width: 100% !important; max-height: 620px !important; border-radius: 12px !important;
+  }
+
+ 
+  .membership-page .btn, .membership-page .button{
+    width: 100% !important; max-width: 520px !important; margin-inline: auto !important;
+  }
+}
+
 
 
