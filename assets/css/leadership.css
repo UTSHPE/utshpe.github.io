@@ -178,6 +178,23 @@
 .leader-grid.bod > .officer-card:nth-child(6) { grid-column: 4 / span 2; }
 .leader-grid.bod > .officer-card:nth-child(7) { grid-column: 6 / span 2; }
 
+.officer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.officer-socials a {
+    color: #bf5700; 
+    font-size: 1.4rem;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.officer-socials a:hover {
+    color: #8c3f00;
+    transform: translateY(-2px);
+}
 
 /* 
    MOBILE (<=768px) — LEADERSHIP
