@@ -96,6 +96,9 @@
 
 .officer-body {
   padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .officer-name {
@@ -182,17 +185,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 12px;
-    margin-top: 14px;
-    padding-top: 10px;
-    width: 100%;
-    border-top: 1px solid rgba(255,255,255,0.12);
+    gap: 16px;
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .officer-socials a {
     color: #ffffff;
-    font-size: 1.15rem;
-    opacity: 0.85;
+    font-size: 1.4rem;
+    opacity: 0.9;
     transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
