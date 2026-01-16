@@ -165,6 +165,10 @@
   margin: 6px 8px 10px;
 }
 
+.nav-link.active {
+    color: #BF5700; 
+    font-weight: bold;
+}
 
 .ig-embed blockquote.instagram-media {
   width: 100% !important;
