@@ -1,6 +1,6 @@
-iframe-container {
+.iframe-container {
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 10rem); /* compensates for mt-5 + pt-5 */
   overflow: hidden;
 }
 
