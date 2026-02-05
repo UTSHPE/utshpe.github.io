@@ -1,6 +1,6 @@
 .iframe-container {
   width: 100%;
-  height: calc(100vh - 10rem); /* compensates for mt-5 + pt-5 */
+  height: calc(100vh - 10rem);
   overflow: hidden;
 }
 
@@ -9,4 +9,5 @@
   height: 100%;
   border: none;
   display: block;
+  overflow-y: auto;
 }
