@@ -1,8 +1,14 @@
+.nav-link.active {
+    color: #BF5700; 
+    font-weight: bold;
+}
+
 .iframe-container {
   width: 100%;
   height: calc(100vh - 10rem);
   overflow: hidden;
 }
+
 
 .iframe-container iframe {
   width: 100%;
