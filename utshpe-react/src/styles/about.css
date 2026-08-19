@@ -1,0 +1,713 @@
+/* ========================================
+   ABOUT PAGE
+======================================== */
+
+/* ========================================
+   MISSION & VISION
+======================================== */
+
+.mission-vision {
+  background-color: #fff;
+  padding: 40px 20px;
+}
+
+.mission-vision .section {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mission,
+.vision {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  height: 350px;
+}
+
+/*
+   The original site used row-reverse for both.
+   This preserves that layout.
+*/
+.mission {
+  flex-direction: row-reverse;
+}
+
+.vision {
+  flex-direction: row-reverse;
+}
+
+.mission img,
+.vision img {
+  width: 40%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.mission-text,
+.vision-text {
+  width: 50%;
+  background-color: #bf5700;
+  color: #fff;
+  border-radius: 20px;
+  padding: 40px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  min-height: 250px;
+}
+
+.mission-text h2,
+.vision-text h2 {
+  color: #fff;
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.mission-text p,
+.vision-text p {
+  color: #fff;
+  font-size: 1.1em;
+  line-height: 1.8;
+}
+
+
+/* ========================================
+   UT SHPE IN NUMBERS
+======================================== */
+
+.numbers-section {
+  background-color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.numbers-section .section-title {
+  font-size: 2.2em;
+  color: #bf5700;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.stat {
+  background-color: #fff7f5;
+  border-radius: 12px;
+  padding: 30px 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.stat:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.stat h3 {
+  color: #bf5700;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.stat p {
+  font-size: 1.1em;
+  color: #444;
+}
+
+
+/* ========================================
+   SHARED SECTION WRAPPER
+======================================== */
+
+.about-page .section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+/* ========================================
+   ACTIVE NAVBAR LINK
+======================================== */
+
+.nav-link.active {
+  color: #bf5700;
+  font-weight: bold;
+}
+
+.nav-link.active:hover {
+  color: #bf5700;
+}
+
+
+/* ========================================
+   SIX PILLARS
+======================================== */
+
+.pillars {
+  --band: clamp(110px, 13vw, 150px);
+
+  position: relative;
+  background: #fff7f0;
+  padding: 0 20px 72px;
+  isolation: isolate;
+}
+
+.pillars::before {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  height: var(--band);
+
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.06) 0 18px,
+      rgba(255, 255, 255, 0.02) 18px 36px
+    ),
+    linear-gradient(135deg, #0e2244, #142d5e);
+
+  box-shadow: inset 0 10px 30px rgba(0, 0, 0, 0.12);
+
+  z-index: 0;
+}
+
+.pillars .section-title {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: var(--band);
+
+  margin: 0;
+
+  line-height: 1.1;
+
+  font-weight: 800;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+
+  color: #bf5700;
+
+  letter-spacing: 0.5px;
+  padding: 0;
+}
+
+.pillars-wrap {
+  max-width: 1200px !important;
+  margin: 0 auto;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.pillars-panel {
+  background: #fff;
+  border-radius: 18px;
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+
+/* ========================================
+   PILLAR TABS
+======================================== */
+
+.pillars-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+
+  padding: 6px 6px 0;
+
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
+}
+
+.pillars-tab {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 18px 14px;
+
+  min-height: 84px;
+
+  border: 0;
+  background: #fff;
+
+  font: inherit;
+
+  cursor: pointer;
+
+  color: #111;
+
+  transition:
+    background 0.15s,
+    color 0.15s,
+    box-shadow 0.15s,
+    transform 0.15s;
+
+  box-shadow: inset 0 -3px 0 transparent;
+
+  outline-offset: 3px;
+}
+
+.pillars-tab:hover {
+  background: #f3f3f3;
+}
+
+.pillars-tab.is-active {
+  color: #bf5700;
+  background: #fff;
+
+  box-shadow: inset 0 -3px 0 #bf5700;
+}
+
+.pillars-tab:focus-visible {
+  outline: 3px solid #1457c3;
+  background: #fff;
+}
+
+
+/* ========================================
+   PILLAR ICONS
+======================================== */
+
+.pillars-icon {
+  width: 22px;
+  height: 22px;
+
+  display: inline-block;
+
+  background-color: currentColor;
+
+  /*
+     Using mask allows the icon to inherit
+     the active tab's orange color.
+  */
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
+
+  opacity: 0.85;
+
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+}
+
+.pillars-tab.is-active .pillars-icon {
+  opacity: 1;
+}
+
+.pillars-tab:hover .pillars-icon {
+  transform: translateY(-1px);
+}
+
+
+/*
+   React version uses backgroundImage instead
+   of the old CSS --icon variable.
+*/
+.pillars-tab .pillars-icon {
+  -webkit-mask: none;
+  mask: none;
+
+  background-color: transparent;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+/* ========================================
+   PILLAR CONTENT
+======================================== */
+
+.pillars-content {
+  padding: 28px 28px 34px;
+
+  border-top: 1px solid rgba(15, 23, 42, 0.06);
+
+  background:
+    linear-gradient(
+      to right,
+      rgba(191, 87, 0, 0.12),
+      rgba(191, 87, 0, 0)
+    )
+    top / 100% 3px no-repeat,
+    #fff;
+
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+}
+
+.pillars-content h3 {
+  margin: 0 0 10px;
+
+  font-size: 1.6rem;
+
+  color: #0f172a;
+}
+
+.pillars-content p {
+  margin: 0;
+
+  line-height: 1.7;
+
+  color: #444;
+}
+
+
+/* ========================================
+   PILLAR IMAGE
+======================================== */
+
+.pillars-figure {
+  position: relative;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  min-height: 0;
+
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.16);
+
+  height: 380px;
+
+  margin: 0;
+}
+
+.pillars-figure img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: opacity 0.25s ease;
+}
+
+
+/* ========================================
+   HISTORY
+======================================== */
+
+.history {
+  background: #fff7f0;
+  padding: 60px 20px;
+}
+
+.history .section {
+  position: relative;
+
+  max-width: 1000px !important;
+
+  margin: 0 auto;
+
+  padding: 32px 28px 28px;
+
+  border-radius: 18px;
+
+  background: #eaf2ff;
+
+  border: 1px solid #d9e6ff;
+
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+}
+
+.history-title {
+  text-align: center;
+
+  color: #bf5700;
+
+  font-weight: 800;
+
+  margin: 0 0 14px;
+
+  font-size: clamp(2rem, 3vw, 2.4rem);
+}
+
+.history-text {
+  max-width: 900px;
+
+  margin: 0 auto 22px;
+
+  line-height: 1.75;
+
+  color: #2b2b2b;
+
+  text-align: center;
+
+  font-size: 1.06rem;
+}
+
+
+/* ========================================
+   HISTORY BUTTONS
+======================================== */
+
+.history-cta {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  justify-content: center;
+
+  margin-top: 8px;
+}
+
+.history .btn {
+  display: inline-block;
+
+  padding: 12px 18px;
+
+  border-radius: 999px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  line-height: 1;
+
+  transition:
+    transform 0.12s,
+    box-shadow 0.12s,
+    background 0.12s,
+    color 0.12s;
+}
+
+.history .btn:hover {
+  transform: translateY(-1px);
+}
+
+.history .btn:active {
+  transform: none;
+}
+
+.history .btn-outline {
+  background: #fff;
+
+  color: #0f172a;
+
+  border: 2px solid #e8e8e8;
+}
+
+.history .btn-outline:hover {
+  border-color: #bf5700;
+
+  color: #bf5700;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+  /* Mission / Vision */
+
+  .mission-vision {
+    padding: 20px 16px;
+  }
+
+  .mission-vision .section {
+    gap: 20px;
+    padding: 0 !important;
+  }
+
+  .mission,
+  .vision {
+    flex-direction: column !important;
+    height: auto !important;
+    gap: 20px;
+
+    align-items: stretch;
+  }
+
+  .mission img,
+  .vision img {
+    width: 100%;
+    height: auto;
+    order: 2;
+  }
+
+  .mission-text,
+  .vision-text {
+    width: 100%;
+
+    order: 1;
+
+    padding: 28px 22px;
+
+    min-height: 0;
+  }
+
+  .mission-text h2,
+  .vision-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .mission-text p,
+  .vision-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+
+  /* Numbers */
+
+  .numbers-section {
+    padding: 50px 16px;
+  }
+
+  .numbers-section .section {
+    padding: 0 !important;
+  }
+
+  .numbers-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .stat {
+    padding: 24px 12px;
+  }
+
+  .stat h3 {
+    font-size: 2rem;
+  }
+
+  .stat p {
+    font-size: 0.95rem;
+  }
+
+
+  /* Pillars */
+
+  .pillars {
+    padding: 0 16px 40px;
+  }
+
+  .pillars .section {
+    padding: 0 !important;
+  }
+
+  .pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .pillars-tabs {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 8px;
+  }
+
+  .pillars-tab {
+    min-height: 70px;
+
+    font-size: 0.85rem;
+
+    padding: 10px 6px;
+
+    flex-direction: column;
+
+    gap: 6px;
+  }
+
+  .pillars-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .pillars-content {
+    padding: 20px 16px;
+  }
+
+  .pillars-content h3 {
+    font-size: 1.35rem;
+  }
+
+  .pillars-content p {
+    font-size: 0.95rem;
+  }
+
+  .pillars-figure {
+    width: 100%;
+    height: 260px;
+  }
+
+
+  /* History */
+
+  .history {
+    padding: 40px 16px;
+  }
+
+  .history .section {
+    padding: 28px 20px !important;
+  }
+
+  .history-text {
+    font-size: 1rem;
+  }
+
+  .history-cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .history .btn {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .numbers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pillars-tabs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pillars .section-title {
+    font-size: 2rem;
+  }
+}

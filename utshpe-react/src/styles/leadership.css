@@ -1,0 +1,385 @@
+/* =========================================================
+   LEADERSHIP PAGE
+   ========================================================= */
+
+.leader-page {
+  background: #fff;
+}
+
+
+/* =========================================================
+   SHARED SECTION CONTAINER
+   ========================================================= */
+
+.leader-page .section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.leader-hero img {
+  width: 100%;
+  height: clamp(260px, 36vw, 520px);
+  object-fit: cover;
+  display: block;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+   ========================================================= */
+
+.leader-title {
+  text-align: center;
+  color: #BF5700;
+  font-weight: 900;
+  letter-spacing: 0.3px;
+  margin: 28px 0 10px;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.1;
+}
+
+.leader-rule {
+  width: min(580px, 60%);
+  height: 2px;
+  margin: 10px auto 0;
+  background: #cfcfcf;
+}
+
+.leader-text {
+  max-width: 1000px;
+  margin: 20px auto 34px;
+  text-align: center;
+  font-size: clamp(1.05rem, 1.4vw, 1.35rem);
+  line-height: 1.75;
+  color: #222;
+}
+
+
+/* =========================================================
+   ACTIVE NAVBAR LINK
+   ========================================================= */
+
+.nav-link.active {
+  color: #BF5700;
+  font-weight: bold;
+}
+
+
+/* =========================================================
+   LEADERSHIP SECTIONS
+   ========================================================= */
+
+.leader-section {
+  padding: 18px 0 4px;
+}
+
+.leader-h2 {
+  text-align: center;
+  color: #BF5700;
+  font-weight: 800;
+  margin: 0 0 12px;
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+}
+
+
+/* =========================================================
+   OFFICER GRID
+   ========================================================= */
+
+.leader-grid {
+  display: flex;
+  max-width: 1200px;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 20px;
+  overflow-x: auto;
+  margin: 0 auto;
+  padding: 10px 0 20px;
+}
+
+
+/* =========================================================
+   OFFICER CARD
+   ========================================================= */
+
+:root {
+  --card-w: 200px;
+}
+
+.officer-card {
+  width: var(--card-w);
+  flex: 0 0 var(--card-w);
+
+  background: #0E2244;
+  border: 1px solid #0b1a33;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease;
+}
+
+.officer-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================================
+   OFFICER IMAGE
+   ========================================================= */
+
+.officer-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* =========================================================
+   OFFICER INFORMATION
+   ========================================================= */
+
+.officer-body {
+  padding: 14px 16px 16px;
+
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+}
+
+.officer-name {
+  margin: 0 0 2px;
+  font-weight: 800;
+  font-size: 1.12rem;
+  color: #fff;
+}
+
+.officer-pronouns {
+  margin: 0 0 6px;
+  color: #fff;
+}
+
+.officer-role {
+  margin: 0 0 6px;
+  color: #BF5700;
+  font-weight: 700;
+  font-size: 0.98rem;
+}
+
+.officer-major {
+  margin: 0;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+
+/* =========================================================
+   OFFICER SOCIAL LINKS
+   ========================================================= */
+
+.officer-socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  margin-top: auto;
+  padding-top: 12px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.officer-socials a {
+  color: #ffffff;
+  font-size: 1.4rem;
+  opacity: 0.9;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.officer-socials a:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   BOARD OF DIRECTORS
+   ========================================================= */
+
+.leader-grid.bod {
+  display: grid;
+
+  grid-template-columns: repeat(8, 1fr);
+
+  gap: 32px 28px;
+
+  justify-items: center;
+
+  overflow: visible;
+  padding-bottom: 30px;
+}
+
+.leader-grid.bod .officer-card {
+  width: var(--card-w);
+  max-width: 100%;
+  flex: none;
+
+  grid-column: span 2;
+
+  border-radius: 16px;
+}
+
+
+/*
+   First four cards:
+   
+   [ David ] [ Chris ] [ Alejandro ] [ Yessenia ]
+   
+   Next three:
+   
+        [ Alexandra ] [ Evelyn ] [ Kevin ]
+*/
+
+.leader-grid.bod > .officer-card:nth-child(5) {
+  grid-column: 2 / span 2;
+}
+
+.leader-grid.bod > .officer-card:nth-child(6) {
+  grid-column: 4 / span 2;
+}
+
+.leader-grid.bod > .officer-card:nth-child(7) {
+  grid-column: 6 / span 2;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .leader-page .section {
+    padding: 16px !important;
+  }
+
+
+  /* -------------------------
+     Hero
+     ------------------------- */
+
+  .leader-hero img {
+    height: 260px;
+  }
+
+
+  /* -------------------------
+     Title
+     ------------------------- */
+
+  .leader-title {
+    font-size: 2.2rem;
+  }
+
+  .leader-rule {
+    width: 80%;
+  }
+
+
+  /* -------------------------
+     Intro text
+     ------------------------- */
+
+  .leader-text {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+
+  /* -------------------------
+     Executive Board
+     ------------------------- */
+
+  .leader-grid.executive-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    overflow: visible;
+  }
+
+  .leader-grid.executive-grid .officer-card {
+    width: 100%;
+    flex: none;
+  }
+
+
+  /* -------------------------
+     Board of Directors
+     ------------------------- */
+
+  .leader-grid.bod {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+
+    overflow: visible;
+  }
+
+  .leader-grid.bod .officer-card {
+    width: 100%;
+    grid-column: auto !important;
+  }
+
+
+  /* -------------------------
+     Officer images
+     ------------------------- */
+
+  .officer-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+
+  /* -------------------------
+     Officer information
+     ------------------------- */
+
+  .officer-body {
+    padding: 16px;
+  }
+
+  .officer-name {
+    font-size: 1.2rem;
+  }
+
+  .officer-role {
+    font-size: 1rem;
+  }
+
+  .officer-major {
+    font-size: 1rem;
+  }
+}

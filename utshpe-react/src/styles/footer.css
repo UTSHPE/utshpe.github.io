@@ -1,0 +1,179 @@
+
+.site-footer {
+  display: block;
+  align-items: center;
+  
+  width: 100%;
+
+  margin: 0;
+  margin-left: 0;
+
+  padding: 40px 6% 28px;
+
+  background: #003A70;
+  color: #fff;
+
+  box-sizing: border-box;
+}
+
+
+/* Footer links */
+
+.site-footer a {
+  color: #E57200;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: #E57200;
+}
+
+
+/* Footer content */
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1.2fr;
+  column-gap: 36px;
+
+  align-items: start;
+
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+
+/* Footer columns */
+
+.footer-col h4 {
+  font-size: 1.25rem;
+  margin: 0 0 10px;
+  font-weight: 700;
+}
+
+.footer-col p {
+  margin: 6px 0;
+  line-height: 1.6;
+}
+
+
+/* Social media column */
+
+.footer-col:nth-child(2) {
+  text-align: center;
+  margin-left: 24px;
+}
+
+.footer-col:nth-child(2) .socials {
+  justify-content: center;
+}
+
+
+/* Social icons */
+
+.socials {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.socials a {
+  display: inline-flex;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.socials i {
+  font-size: 20px;
+  color: #fff;
+}
+
+.socials a:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.socials a:hover i {
+  color: #E57200;
+}
+
+
+/* Linktree */
+
+.footer-col:nth-child(3) {
+  text-align: center;
+}
+
+.linktree {
+  font-weight: 700;
+}
+
+
+/* Bottom rule */
+
+.footer-rule {
+  border: none;
+
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.25);
+
+  width: 90%;
+
+  margin: 24px auto 0;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .site-footer {
+    width: 100%;
+    padding: 28px 16px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+
+    width: 100%;
+    max-width: 100%;
+
+    text-align: left;
+  }
+
+  .footer-col:nth-child(1),
+  .footer-col:nth-child(2),
+  .footer-col:nth-child(3) {
+    margin-left: 0;
+    text-align: left;
+  }
+
+  .footer-col:nth-child(2) .socials {
+    justify-content: flex-start;
+  }
+
+  .socials {
+    justify-content: flex-start;
+  }
+
+  .footer-rule {
+    width: 100%;
+  }
+}

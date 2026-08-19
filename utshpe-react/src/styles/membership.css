@@ -1,0 +1,370 @@
+/* ================================
+   MEMBERSHIP PAGE
+================================ */
+
+.membership-page {
+  background: #fff;
+  color: #1a1a1a;
+}
+
+
+/* ================================
+   GENERAL SECTION
+================================ */
+
+.membership-page .section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(18px, 4vw, 40px) 20px;
+}
+
+.membership-page .h2 {
+  font-size: clamp(1.6rem, 3.4vw, 2.2rem);
+  margin: 0 0 14px;
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.member-hero {
+  background: linear-gradient(
+    180deg,
+    #fff 0%,
+    #fff5ef 100%
+  );
+
+  border-bottom: 1px solid #eee;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.hero-copy {
+  min-width: 0;
+}
+
+.member-subtitle {
+  max-width: 780px;
+}
+
+.member-hero h1.member-subtitle {
+  color: #bf5700;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  line-height: 1.1;
+  margin: 0 0 18px;
+}
+
+.hero-copy p.member-subtitle {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+/* ================================
+   HERO BULLET LIST
+================================ */
+
+.member-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 0;
+}
+
+.member-highlights li {
+  padding-left: 1.6rem;
+  position: relative;
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+.member-highlights li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #bf5700;
+  font-weight: bold;
+}
+
+
+/* ================================
+   HERO SLIDESHOW
+================================ */
+
+.hero-media {
+  position: relative;
+  min-height: 360px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.hero-media img {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  opacity: 0;
+  transition: opacity 0.6s ease;
+
+  border-radius: 18px;
+}
+
+.hero-media img.active {
+  opacity: 1;
+}
+
+
+/* ================================
+   HOW TO JOIN
+================================ */
+
+.join-steps {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.join-steps .steps {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 16px;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.join-steps li {
+  background: #fafafa;
+
+  border: 1px solid #eee;
+  border-radius: 14px;
+
+  padding: 16px;
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.join-steps li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.join-steps h3 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.join-steps a {
+  color: #bf5700;
+  font-weight: 700;
+}
+
+
+/* ================================
+   SPOTLIGHTS
+================================ */
+
+.spotlights {
+  padding-top: 32px;
+  padding-bottom: 60px;
+}
+
+.spotlights-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 32px 40px;
+
+  align-items: start;
+}
+
+
+/* ================================
+   SPOTLIGHT CARD
+================================ */
+
+.spotlight-card {
+  position: relative;
+
+  border: 1px solid #eee;
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  background: #fff;
+
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.05);
+}
+
+.spotlight-photo {
+  display: block;
+
+  width: 100%;
+  height: 320px;
+
+  object-fit: cover;
+}
+
+.spotlight-body {
+  padding: 14px;
+}
+
+.spotlight-name {
+  margin: 0 0 4px;
+  font-size: 1.2rem;
+}
+
+.spotlight-meta {
+  margin: 0 0 10px;
+
+  color: #616161;
+
+  font-size: 0.95rem;
+}
+
+.spotlight-fact {
+  margin: 5px 0;
+
+  font-size: 0.95rem;
+}
+
+
+/* ================================
+   BADGES
+================================ */
+
+.badge {
+  position: absolute;
+  z-index: 2;
+
+  background: #bf5700;
+  color: #fff;
+
+  padding: 6px 10px;
+
+  border-radius: 999px;
+
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  transform: translate(12px, 12px);
+}
+
+.badge.alt {
+  background: #1a1a1a;
+}
+
+
+/* ================================
+   INSTAGRAM / LEADERBOARD
+================================ */
+
+.ig-embed {
+  border: 1px solid #eee;
+  border-radius: 16px;
+
+  background: #fff;
+
+  padding: 12px;
+
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.05);
+
+  width: 100%;
+  max-width: none;
+
+  overflow: visible;
+}
+
+.ig-title {
+  font-size: 1.05rem;
+  margin: 6px 8px 10px;
+}
+
+.ig-embed blockquote.instagram-media {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.ig-embed iframe {
+  display: block;
+
+  width: 100%;
+  height: 450px;
+
+  border: none;
+  border-radius: 12px;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 900px) {
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-media {
+    min-height: 360px;
+  }
+
+  .join-steps .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .spotlights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ig-embed {
+    grid-column: 1;
+    max-width: 100%;
+  }
+
+  .ig-embed iframe {
+    height: 600px;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .membership-page .section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .member-hero h1.member-subtitle {
+    font-size: 2.2rem;
+  }
+
+  .hero-media {
+    min-height: 280px;
+  }
+
+  .spotlight-photo {
+    height: 280px;
+  }
+}

@@ -1,0 +1,729 @@
+/* =========================================================
+   SHPETINAS PAGE
+   ========================================================= */
+
+.shpetinas-page {
+  --shpetinas-ut-orange: #BF5700;
+  --shpetinas-ut-blue: #0B4DA2;
+  --shpetinas-ink: #1a1a1a;
+  --shpetinas-bg: #ffffff;
+  --shpetinas-cream: #FFF5EF;
+  --shpetinas-rule: #e7e7e7;
+  --shpetinas-muted: #616161;
+  --shpetinas-chip-bg: #fff0f6;
+  --shpetinas-chip-border: #ffc4e3;
+  --shpetinas-pink: #E84B88;
+
+  background: var(--shpetinas-bg);
+  color: var(--shpetinas-ink);
+  line-height: 1.5;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.shpetinas-hero {
+  position: relative;
+  margin: 0 0 34px;
+  padding: 0;
+  background: transparent;
+  overflow: hidden;
+}
+
+.shpetinas-hero-wrap {
+  position: relative;
+  padding: 0;
+}
+
+
+/* Hero title */
+
+.shpetinas-hero-title {
+  position: absolute;
+  z-index: 3;
+
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: min(1100px, 92vw);
+
+  top: clamp(36px, 9vw, 86px);
+
+  margin: 0;
+  padding: 0;
+
+  background: transparent;
+}
+
+.shpetinas-hero-title h1 {
+  color: #fff;
+
+  font-size: clamp(2.2rem, 6.2vw, 4rem);
+
+  line-height: 1.05;
+
+  margin: 6px 0 10px;
+
+  text-shadow:
+    0 3px 14px rgba(0, 0, 0, 0.35);
+}
+
+
+/* Hero image */
+
+.shpetinas-hero-img {
+  position: relative;
+
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 100vw;
+
+  height: clamp(420px, 52vw, 720px);
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(232, 75, 136, 0.40) 0%,
+      rgba(232, 75, 136, 0.26) 40%,
+      rgba(232, 75, 136, 0.16) 75%,
+      rgba(232, 75, 136, 0.10) 100%
+    );
+}
+
+.shpetinas-hero-img img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: 50% 35%;
+
+  display: block;
+
+  opacity: 0.78;
+
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Dark overlay */
+
+.shpetinas-hero-img::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 2;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.15) 45%,
+      rgba(0, 0, 0, 0) 80%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.18) 0%,
+      rgba(0, 0, 0, 0) 50%
+    );
+}
+
+
+/* =========================================================
+   ABOUT + PROGRAM HIGHLIGHTS
+   ========================================================= */
+
+.shpetinas-about-split {
+  max-width: 1100px;
+
+  margin: 34px auto 20px;
+
+  padding: 0 20px;
+
+  display: grid;
+
+  grid-template-columns: 1.2fr 0.9fr;
+
+  gap: 28px;
+
+  align-items: stretch;
+}
+
+
+/* About panel */
+
+.shpetinas-pink-panel {
+  background: #ffe9f2;
+
+  border-radius: 20px;
+
+  padding: clamp(18px, 3vw, 28px);
+
+  box-shadow:
+    0 18px 40px rgba(232, 75, 136, 0.12);
+}
+
+.shpetinas-pink-panel h2 {
+  color: #fff;
+
+  font-size: clamp(2rem, 6vw, 3.5rem);
+
+  line-height: 1.05;
+
+  margin: 4px 0 8px;
+
+  text-shadow:
+    0 3px 14px rgba(0, 0, 0, 0.15);
+}
+
+.shpetinas-big-about {
+  color: #fff;
+
+  font-weight: 700;
+
+  font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+
+  line-height: 1.45;
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Chips */
+
+.shpetinas-chips {
+  display: flex;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+
+  margin-top: 14px;
+}
+
+.shpetinas-chip {
+  display: inline-block;
+
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  background: var(--shpetinas-chip-bg);
+
+  border: 1.5px solid var(--shpetinas-chip-border);
+
+  color: #9b0d5a;
+
+  font-weight: 700;
+
+  font-size: 15px;
+}
+
+
+/* Program highlights */
+
+.shpetinas-highlights-card {
+  background: #fff;
+
+  border: 1px solid #eee;
+
+  border-radius: 18px;
+
+  padding: 20px;
+
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+.shpetinas-highlights-card h3 {
+  margin: 0 0 8px;
+
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+}
+
+.shpetinas-highlight-list {
+  list-style: none;
+
+  padding: 0;
+
+  margin: 14px 0 0;
+
+  display: grid;
+
+  gap: 14px;
+}
+
+.shpetinas-highlight-list li {
+  display: flex;
+
+  gap: 12px;
+
+  align-items: flex-start;
+}
+
+.shpetinas-highlight-list i {
+  color: #b4156d;
+
+  font-size: 1.15rem;
+
+  line-height: 1.2;
+}
+
+
+/* =========================================================
+   SHARED SECTION
+   ========================================================= */
+
+.shpetinas-section {
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  padding: 32px 20px;
+}
+
+.shpetinas-h2 {
+  font-size: 28px;
+
+  margin: 0 0 10px;
+
+  line-height: 1.15;
+
+  letter-spacing: 0.2px;
+
+  text-align: center;
+
+  color: var(--shpetinas-ut-orange);
+}
+
+.shpetinas-rule {
+  width: 580px;
+
+  max-width: 60%;
+
+  height: 2px;
+
+  background: var(--shpetinas-rule);
+
+  margin: 10px auto 18px;
+}
+
+
+/* =========================================================
+   COMMITTEE
+   ========================================================= */
+
+.shpetinas-committee-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 24px;
+}
+
+.shpetinas-card {
+  border: 1px solid var(--shpetinas-rule);
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  background: #FFB6C1;
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+
+  box-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.shpetinas-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.shpetinas-card-photo {
+  width: 100%;
+
+  height: 280px;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+.shpetinas-card-pad {
+  padding: 14px 14px 18px;
+}
+
+.shpetinas-card-pad h3 {
+  margin: 6px 0 4px;
+
+  font-size: 18px;
+
+  color: #fff;
+}
+
+.shpetinas-role {
+  margin: 0;
+
+  color: var(--shpetinas-muted);
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   EVENTS SLIDESHOW
+   ========================================================= */
+
+.shpetinas-events {
+  margin-top: 10px;
+}
+
+.shpetinas-event-slider {
+  position: relative;
+
+  height: clamp(260px, 42vw, 520px);
+
+  border: 1px solid var(--shpetinas-rule);
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  background: #fff;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.06);
+
+  touch-action: pan-y;
+}
+
+.shpetinas-event-slider img {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  opacity: 0;
+
+  transition: opacity 0.8s ease;
+
+  pointer-events: none;
+}
+
+.shpetinas-event-slider img.is-active {
+  opacity: 1;
+}
+
+
+/* Slideshow indicators */
+
+.shpetinas-slide-indicators {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 14px;
+}
+
+.shpetinas-slide-indicators button {
+  width: 9px;
+  height: 9px;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #d6d6d6;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.shpetinas-slide-indicators button:hover {
+  transform: scale(1.2);
+}
+
+.shpetinas-slide-indicators button.active {
+  background: var(--shpetinas-pink);
+
+  transform: scale(1.25);
+}
+
+
+/* =========================================================
+   PROMO SECTION
+   ========================================================= */
+
+.shpetinas-promo-split {
+  max-width: 1100px;
+
+  margin: 18px auto 32px;
+
+  padding: 0 20px;
+
+  display: grid;
+
+  grid-template-columns: 1.1fr 0.9fr;
+
+  gap: 20px;
+
+  align-items: start;
+}
+
+
+/* Merch */
+
+.shpetinas-tshirt-card {
+  background: #fff;
+
+  border: 1px solid #eee;
+
+  border-radius: 18px;
+
+  padding: 12px;
+
+  display: flex;
+
+  gap: 8px;
+
+  align-items: center;
+}
+
+.shpetinas-tshirt-title {
+  margin: 0 0 6px;
+
+  font-size: 1rem;
+
+  font-weight: 800;
+
+  line-height: 1.2;
+}
+
+.shpetinas-tshirt-card img {
+  height: clamp(220px, 28vw, 360px);
+
+  width: 100%;
+
+  object-fit: contain;
+
+  object-position: center top;
+
+  border-radius: 12px;
+}
+
+
+/* SHPEtina of the Month */
+
+.shpetinas-month {
+  background: #fff;
+
+  border: 1px solid #eee;
+
+  border-radius: 12px;
+
+  padding: 6px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+
+  box-shadow:
+    0 10px 26px rgba(232, 75, 136, 0.10);
+
+  align-self: start;
+}
+
+.shpetinas-badge {
+  align-self: flex-start;
+
+  background: var(--shpetinas-pink);
+
+  color: #fff;
+
+  font-weight: 800;
+
+  font-size: 0.68rem;
+
+  padding: 3px 7px;
+
+  border-radius: 999px;
+}
+
+.shpetinas-month img {
+  width: 100%;
+
+  height: clamp(180px, 22vw, 300px);
+
+  object-fit: cover;
+
+  object-position: 50% 30%;
+
+  border-radius: 10px;
+
+  display: block;
+}
+
+.shpetinas-name {
+  margin: 1px 0 0;
+
+  font-size: 1rem;
+
+  line-height: 1.2;
+}
+
+.shpetinas-meta {
+  margin: 0;
+
+  color: #6b6b6b;
+
+  font-size: 0.85rem;
+
+  line-height: 1.2;
+}
+
+.shpetinas-facts {
+  list-style: none;
+
+  margin: 2px 0 0;
+
+  padding: 0;
+}
+
+.shpetinas-facts li {
+  margin: 1px 0;
+
+  font-size: 0.9rem;
+
+  line-height: 1.2;
+}
+
+.shpetinas-facts strong {
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .shpetinas-about-split {
+    grid-template-columns: 1fr;
+
+    margin-top: 20px;
+
+    padding: 0 16px;
+  }
+
+  .shpetinas-hero-title {
+    width: calc(100% - 32px);
+
+    top: 35px;
+  }
+
+  .shpetinas-hero-img {
+    height: clamp(350px, 75vw, 550px);
+  }
+
+  .shpetinas-section {
+    padding: 24px 16px;
+  }
+
+  .shpetinas-committee-grid {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+  .shpetinas-card-photo {
+    height: auto;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+  }
+
+  .shpetinas-promo-split {
+    grid-template-columns: 1fr;
+
+    padding: 0 16px;
+
+    margin-bottom: 24px;
+  }
+
+  .shpetinas-tshirt-card {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .shpetinas-tshirt-card img {
+    height: auto;
+
+    max-height: 400px;
+  }
+
+  .shpetinas-month img {
+    height: auto;
+
+    max-height: 400px;
+  }
+
+  .shpetinas-rule {
+    max-width: 80%;
+  }
+
+  .shpetinas-h2 {
+    font-size: 24px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .shpetinas-card,
+  .shpetinas-slide-indicators button,
+  .shpetinas-event-slider img {
+    transition: none;
+  }
+
+}
