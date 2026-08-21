@@ -1,143 +1,252 @@
+/* =========================================
+   NAVBAR
+   ========================================= */
+
 .nav {
   position: fixed;
+
   top: 0;
   left: 0;
+
   width: 100%;
   height: 64px;
 
   display: flex;
   align-items: center;
-  gap: 30px;
 
-  padding: 11px 21px;
+  padding: 10px 24px;
 
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.10);
 
   z-index: 1000;
 }
 
 
-/* Logo */
+/* =========================================
+   LOGO
+   ========================================= */
 
 .nav .brand {
   display: flex;
+
   align-items: center;
+
+  flex-shrink: 0;
+
   text-decoration: none;
 }
 
 .nav .brand img {
   display: block;
-  height: 30px;
+
+  height: 34px;
   width: auto;
 }
 
 
-/* Navigation menu */
+/* =========================================
+   DESKTOP NAVIGATION
+   ========================================= */
 
 .menu {
   display: flex;
+
   align-items: center;
-  gap: 20px;
+
+  gap: 24px;
+
+  margin-left: auto;
 }
 
 
-/* Navigation links */
+/* =========================================
+   NAVIGATION LINKS
+   ========================================= */
 
 .nav-link {
-  text-decoration: none;
-  color: #000;
+  position: relative;
 
+  padding: 6px 0;
+
+  text-decoration: none;
+
+  color: #000000;
+
+  font-size: 15px;
   font-weight: 500;
-  font-size: 16px;
+
+  white-space: nowrap;
 
   transition:
-    color 0.3s ease,
-    font-weight 0.3s ease;
+    color 0.2s ease;
+}
+
+
+/* Orange underline */
+
+.nav-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 2px;
+
+  background: #bf5700;
+
+  transition:
+    width 0.2s ease;
 }
 
 
 /* Normal hover */
 
 .nav-link:hover {
-  color: #BF5700;
-  font-weight: bold;
+  color: #bf5700;
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
 
 
-/* SHPEtinas hover */
+/* SHPEtinas */
 
 .nav-link.shpetinas:hover {
   color: #ff1493;
-  font-weight: bold;
+}
+
+.nav-link.shpetinas::after {
+  background: #ff1493;
 }
 
 
-/* ---------------------------------------------------------
-   Mobile Menu Button
-   --------------------------------------------------------- */
-
-/* Hidden on desktop */
+/* =========================================
+   MOBILE MENU BUTTON
+   ========================================= */
 
 .menu-toggle {
   display: none;
+
+  position: relative;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 9px;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  flex-shrink: 0;
+
+  z-index: 1300;
 }
 
 
-/* ---------------------------------------------------------
-   Mobile Navbar
-   --------------------------------------------------------- */
+/* Hamburger lines */
 
-@media (max-width: 768px) {
+.menu-toggle span {
+  position: absolute;
+
+  left: 10px;
+
+  width: 22px;
+  height: 2px;
+
+  border-radius: 2px;
+
+  background: #003a70;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.2s ease;
+}
+
+.menu-toggle span:nth-child(1) {
+  top: 13px;
+}
+
+.menu-toggle span:nth-child(2) {
+  top: 20px;
+}
+
+.menu-toggle span:nth-child(3) {
+  top: 27px;
+}
+
+
+/* =========================================
+   OPEN HAMBURGER → X
+   ========================================= */
+
+.menu-toggle.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* =========================================
+   BUTTON HOVER / FOCUS
+   ========================================= */
+
+.menu-toggle:hover {
+  background: #f5f5f5;
+}
+
+.menu-toggle:focus-visible {
+  outline: 3px solid #bf5700;
+  outline-offset: 2px;
+}
+
+
+/* =========================================
+   MOBILE NAVIGATION
+   ========================================= */
+
+@media (max-width: 850px) {
 
   .nav {
     height: 64px;
 
-    padding: 10px 14px;
-
-    gap: 10px;
+    padding: 9px 16px;
 
     justify-content: space-between;
   }
 
 
-  /* Mobile menu button */
+  /* Logo */
+
+  .nav .brand img {
+    height: 32px;
+  }
+
+
+  /* Show hamburger */
 
   .menu-toggle {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    width: 42px;
-    height: 42px;
-
-    border: 0;
-    border-radius: 10px;
-
-    background: #fff;
-
-    font-size: 22px;
-    line-height: 1;
-
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
-
-    cursor: pointer;
+    display: block;
   }
 
 
-  .menu-toggle:hover {
-    background: #f5f5f5;
-  }
-
-
-  .menu-toggle:focus-visible {
-    outline: 3px solid #BF5700;
-    outline-offset: 2px;
-  }
-
-
-  /* Mobile dropdown menu */
+  /* Hide desktop menu */
 
   .menu {
     position: fixed;
@@ -146,54 +255,128 @@
     left: 0;
     right: 0;
 
-    display: none;
+    display: flex;
 
     flex-direction: column;
 
-    background: #fff;
+    align-items: stretch;
 
-    padding: 8px 12px;
+    gap: 4px;
 
-    gap: 6px;
+    margin: 0;
 
-    max-height: calc(100vh - 64px);
+    padding: 12px 16px 18px;
+
+    background: #ffffff;
+
+    border-top:
+      1px solid rgba(0, 0, 0, 0.06);
+
+    box-shadow:
+      0 12px 25px rgba(0, 0, 0, 0.12);
+
+    max-height:
+      calc(100vh - 64px);
 
     overflow-y: auto;
 
-    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    /*
+      Hidden by default.
+      Visibility/opacity makes the opening feel
+      smoother than simply display:none.
+    */
 
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    visibility: hidden;
+
+    opacity: 0;
+
+    transform: translateY(-8px);
+
+    pointer-events: none;
+
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease,
+      visibility 0.2s ease;
 
     z-index: 1200;
   }
 
 
-  /* React adds this class when the menu is open */
+  /* Open menu */
 
   .menu.menu-open {
-    display: flex;
+    visibility: visible;
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+    pointer-events: auto;
   }
 
 
-  /* Mobile navigation links */
+  /* =========================================
+     MOBILE LINKS
+     ========================================= */
 
   .nav-link {
     width: 100%;
 
-    padding: 14px 10px;
-
-    font-size: 18px;
+    padding: 15px 12px;
 
     border-radius: 8px;
+
+    font-size: 17px;
+
+    color: #1a1a1a;
+  }
+
+
+  .nav-link::after {
+    display: none;
   }
 
 
   .nav-link:hover {
-    background-color: #f5f5f5;
+    background: #f7f7f7;
+
+    color: #bf5700;
   }
 
 
   .nav-link.shpetinas:hover {
-    background-color: #fff0f7;
+    background: #fff0f7;
+
+    color: #ff1493;
   }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+   ========================================= */
+
+@media (max-width: 500px) {
+
+  .nav {
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+
+  .nav .brand img {
+    height: 30px;
+  }
+
+  .menu-toggle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .menu {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
 }

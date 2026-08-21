@@ -1,125 +1,537 @@
-/* =========================================
+/* =========================================================
    HOME PAGE
-   ========================================= */
+   ========================================================= */
+
+.home-page {
+  width: 100%;
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+  background: #ffffff;
+  color: #1a1a1a;
+
+  box-sizing: border-box;
+
+  /*
+    Navbar is fixed, so give the page enough space
+    at the top.
+  */
+  padding-top: 64px;
+}
+
+.home-page *,
+.home-page *::before,
+.home-page *::after {
+  box-sizing: border-box;
+}
 
 
-/* =========================================
-   HERO / INFO SECTION
-   ========================================= */
+/* =========================================================
+   HERO
+   ========================================================= */
 
-.info {
+.home-hero {
   position: relative;
+
+  width: 100%;
+
+  min-height: 650px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #003a70 0%,
+      #002f5d 55%,
+      #002442 100%
+    );
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   HERO BACKGROUND DECORATION
+   ========================================================= */
+
+.home-hero-background {
+  position: absolute;
+
+  width: 700px;
+  height: 700px;
+
+  right: -250px;
+  top: -300px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(191, 87, 0, 0.65) 0%,
+      rgba(191, 87, 0, 0.20) 48%,
+      transparent 72%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO CONTENT CONTAINER
+   ========================================================= */
+
+.home-hero-inner {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1350px;
+
+  margin: 0 auto;
+
+  padding:
+    80px 6%;
+
   display: grid;
-  grid-template-columns: 320px minmax(420px, 560px) 260px;
-  align-items: start;
-  gap: 40px;
 
-  padding: 56px 10% 32px 6%;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(400px, 0.85fr);
 
-  background-color: #BF5700;
-  color: #fff;
+  gap: 70px;
+
+  align-items: center;
 }
 
 
-/* Left information card */
+/* =========================================================
+   HERO TEXT
+   ========================================================= */
 
-.info-left {
-  width: 320px;
-
-  background: #003A70;
-  color: #fff;
-
-  padding: 24px 28px 28px;
-
-  border-radius: 12px;
-
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
-}
-
-.info-left .btn {
-  display: block;
-  width: fit-content;
-  margin: 16px auto 0;
-}
-
-.info h1 {
-  font-size: 3rem;
-  margin: 0 0 14px;
-}
-
-.info .sub {
-  font-size: 1.3rem;
-  margin-bottom: 18px;
-}
-
-.info .mission {
-  font-size: 1.1rem;
-  margin-bottom: 24px;
-  line-height: 1.8;
+.hero-content {
+  width: 100%;
+  max-width: 650px;
 }
 
 
-/* =========================================
-   BUTTONS
-   ========================================= */
+.hero-eyebrow {
+  margin: 0 0 18px;
 
-.btn {
-  display: inline-block;
+  color: #ffb067;
 
-  padding: 12px 24px;
+  font-size: 0.85rem;
 
-  border-radius: 6px;
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+}
+
+
+.hero-title {
+  margin: 0;
+
+  font-size:
+    clamp(4rem, 8vw, 7rem);
+
+  line-height: 0.9;
+
+  letter-spacing: -0.055em;
+
+  font-weight: 800;
+}
+
+
+.hero-title span {
+  color: #e57200;
+}
+
+
+/* Orange divider */
+
+.hero-divider {
+  width: 65px;
+  height: 4px;
+
+  margin:
+    28px 0 24px;
+
+  border-radius: 999px;
+
+  background: #e57200;
+}
+
+
+.hero-tagline {
+  margin: 0 0 18px;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(1.7rem, 3vw, 2.5rem);
+
+  line-height: 1.15;
+
+  font-weight: 600;
+
+  letter-spacing: -0.02em;
+}
+
+
+.hero-description {
+  max-width: 600px;
+
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.82);
+
+  font-size: 1.08rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+   ========================================================= */
+
+.hero-buttons {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 14px;
+
+  margin-top: 32px;
+}
+
+
+.hero-buttons .btn-primary,
+.hero-buttons .btn-outline {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+
+  padding:
+    12px 24px;
+
+  border-radius: 8px;
+
+  font-size: 0.95rem;
+
+  font-weight: 700;
 
   text-decoration: none;
-  font-weight: bold;
 
-  transition: all 0.3s ease;
-
-  width: fit-content;
-
-  margin: 12px auto 0;
-}
-
-.btn-primary {
-  background-color: #E57200;
-  color: #fff;
-  border: none;
-}
-
-.btn-primary:hover {
-  background-color: #9B4F00;
-  color: #fff;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 
-/* =========================================
-   HOME IMAGE SLIDESHOW
-   ========================================= */
+.hero-buttons .btn-primary {
+  background: #e57200;
+
+  color: #ffffff;
+
+  border: 1px solid #e57200;
+}
+
+
+.hero-buttons .btn-primary:hover {
+  background: #f17f13;
+
+  border-color: #f17f13;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.22);
+}
+
+
+.hero-buttons .btn-outline {
+  background:
+    rgba(255, 255, 255, 0.04);
+
+  color: #ffffff;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.45);
+}
+
+
+.hero-buttons .btn-outline:hover {
+  background:
+    rgba(255, 255, 255, 0.12);
+
+  border-color:
+    rgba(255, 255, 255, 0.75);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   HERO META
+   ========================================================= */
+
+.hero-meta {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 35px;
+
+  color:
+    rgba(255, 255, 255, 0.55);
+
+  font-size: 0.78rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.04em;
+}
+
+
+/* =========================================================
+   HERO IMAGE AREA
+   ========================================================= */
+
+.home-hero-media {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Orange offset behind the image */
+.hero-image-accent {
+  position: absolute;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 16 / 10;
+  border-radius: 24px;
+  background: #e57200;
+  transform: translate(18px, 18px);
+  z-index: 1;
+}
+
+/* Main image container */
+.hero-image-frame {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+
+  /* IMPORTANT:
+     Match the actual landscape image instead of
+     forcing a tall 4/5 box. */
+  aspect-ratio: 16 / 10;
+
+  border-radius: 24px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 8px solid rgba(255, 255, 255, 0.92);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.30);
+
+  z-index: 2;
+}
+
+/*
+  Make the slideshow occupy the entire frame.
+*/
+.hero-image-frame > div {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+/*
+  Images inside ImageSlideshow.
+*/
+.hero-image-frame img {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  /*
+    Cover the frame without stretching.
+  */
+  object-fit: cover;
+
+  border-radius: 15px;
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+   ========================================================= */
+
+.home-section {
+  width: 100%;
+
+  padding:
+    85px 6%;
+}
+
+
+/* =========================================================
+   SECTION HEADERS
+   ========================================================= */
+
+.centered-section-header {
+  width: 100%;
+  max-width: 760px;
+
+  margin:
+    0 auto 48px;
+
+  text-align: center;
+}
+
+
+.home-section-title {
+  margin: 0 0 14px;
+
+  color: #003a70;
+
+  font-size:
+    clamp(2rem, 4vw, 2.8rem);
+
+  line-height: 1.15;
+
+  font-weight: 750;
+
+  letter-spacing: -0.025em;
+}
+
+
+.home-section-description {
+  max-width: 700px;
+
+  margin: 0 auto;
+
+  color: #606060;
+
+  font-size: 1.04rem;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   UPCOMING EVENTS
+   ========================================================= */
+
+.events-section {
+  background: #ffffff;
+}
+
+
+.events-grid {
+  width: 100%;
+
+  max-width: 1120px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    320px;
+
+  gap: 55px;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   EVENT IMAGE
+   ========================================================= */
+
+.events-image {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  min-width: 0;
+}
+
 
 .polaroid {
-  margin-top: 44px;
-  margin-left: 40px;
-  margin-right: 12px;
+  width: 100%;
+  max-width: 600px;
+
+  margin: 0;
 }
+
 
 .polaroid .frame {
   position: relative;
 
   width: 100%;
-  max-width: 560px;
 
-  aspect-ratio: 16 / 14;
+  aspect-ratio: 16 / 10;
 
-  padding: 14px;
+  padding: 9px;
 
-  background: #fff;
+  background: #ffffff;
 
-  border-radius: 10px;
-
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
 
   overflow: hidden;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.12);
 }
+
+
+.polaroid .frame > div {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+}
+
 
 .polaroid .frame img {
   position: absolute;
@@ -129,218 +541,232 @@
   width: 100%;
   height: 100%;
 
+  display: block;
+
   object-fit: cover;
 
-  border-radius: 8px;
+  border-radius: 10px;
 
   opacity: 0;
 
-  transition: opacity 700ms ease;
+  transition:
+    opacity 700ms ease;
 }
+
 
 .polaroid .frame img.active {
   opacity: 1;
 }
 
 
-/* =========================================
-   UPCOMING EVENTS
-   ========================================= */
+/* =========================================================
+   EVENT CAROUSEL
+   ========================================================= */
 
 .next-event {
-  width: 260px;
+  width: 100%;
 
-  background: transparent;
+  margin: 0;
 
   text-align: center;
-
-  padding: 0;
-
-  z-index: 1;
-
-  margin-left: 56px;
 }
+
 
 .next-event .section-title {
-  display: block;
+  margin:
+    0 0 16px;
 
-  margin: 0 0 8px;
+  color: #003a70;
 
-  font-size: 1.8rem;
+  font-size: 1.7rem;
+
   font-weight: 700;
 
-  color: #fff;
+  text-align: center;
 }
+
 
 .event-carousel {
   position: relative;
 
-  width: 260px;
-  height: 320px;
+  width: 100%;
+  max-width: 320px;
+
+  height: 390px;
+
+  margin: 0 auto;
 
   overflow: hidden;
 
-  border-radius: 12px;
+  border-radius: 16px;
 
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  background: #ffffff;
 
-  background: #fff;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.12);
 }
+
 
 .event-track {
   display: flex;
 
-  gap: 0;
-
+  width: 100%;
   height: 100%;
 
-  transition: transform 0.3s ease;
+  gap: 0;
+
+  transition:
+    transform 0.3s ease;
 }
 
+
 .event-track img {
-  flex: 0 0 100%;
+  flex:
+    0 0 100%;
 
   width: 100%;
-  height: 320px;
+  height: 100%;
+
+  display: block;
 
   object-fit: cover;
 
-  border-radius: 12px;
-
-  display: block;
+  border-radius: 16px;
 }
 
 
-/* Carousel buttons */
+/* =========================================================
+   CAROUSEL BUTTONS
+   ========================================================= */
 
 .carousel-btn {
   position: absolute;
 
   top: 50%;
 
-  transform: translateY(-50%);
+  transform:
+    translateY(-50%);
 
   width: 36px;
   height: 36px;
 
-  border-radius: 999px;
+  display: grid;
 
-  background: #fff;
+  place-items: center;
+
+  padding: 0;
 
   border: none;
 
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.18);
 
   cursor: pointer;
 
   font-size: 18px;
-  line-height: 36px;
 
-  display: grid;
-  place-items: center;
+  line-height: 1;
 
   z-index: 2;
 }
 
+
 .carousel-btn.prev {
-  left: 8px;
+  left: 10px;
 }
+
 
 .carousel-btn.next {
-  right: 8px;
+  right: 10px;
 }
+
 
 .carousel-btn:hover {
-  background: #eee;
+  background: #f1f1f1;
 }
+
 
 .carousel-btn:focus-visible {
-  outline: 3px solid #BF5700;
+  outline:
+    3px solid #bf5700;
+
+  outline-offset: 2px;
 }
 
 
-/* =========================================
-   GENERAL SECTION TITLES
-   ========================================= */
-
-.section-title {
-  font-size: 1.8rem;
-}
-
-
-/* =========================================
-   HORIZONTAL RULES
-   ========================================= */
-
-.info + hr {
-  margin-top: 0;
-}
-
-hr {
-  border: none;
-
-  height: 1px;
-
-  background: rgba(0, 0, 0, 0.08);
-
-  margin: 28px 10%;
-}
-
-
-/* =========================================
+/* =========================================================
    SPONSORS
-   ========================================= */
+   ========================================================= */
 
-.sponsors-slideshow {
+.sponsors-section {
+  background: #f7f8fa;
+
   text-align: center;
-
-  padding: 12px 10% 40px;
 }
+
 
 .sponsor-header {
-  display: grid;
+  width: 100%;
+  max-width: 760px;
 
-  grid-template-columns: 1fr auto 1fr;
+  margin:
+    0 auto 42px;
 
-  align-items: end;
-
-  gap: 16px;
-
-  margin: 0 10% 8px;
-}
-
-.sponsor-header .section-title {
-  grid-column: 2;
-
-  justify-self: center;
-
-  font-size: 2rem;
-
-  color: #BF5700;
-
-  margin: 0;
-}
-
-.section-rule {
-  height: 2px;
-
-  background: #222;
-
-  margin: 4px 10% 24px;
-
-  border-radius: 2px;
-}
-
-.sponsor-cta {
-  justify-self: end;
-
-  margin-right: -200px;
+  text-align: center;
 }
 
 
-/* Sponsor marquee */
+.sponsor-header .home-section-title {
+  margin-bottom: 14px;
+}
 
-.sponsor-carousel {
+
+.sponsor-header .btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 46px;
+
+  margin-top: 24px;
+
+  padding:
+    11px 22px;
+
+  border-radius: 8px;
+
+  background: #e57200;
+
+  color: #ffffff;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.sponsor-header .btn:hover {
+  background: #f17f13;
+
+  transform:
+    translateY(-2px);
+}
+
+
+/* =========================================================
+   SPONSOR MARQUEE
+   ========================================================= */
+
+.sponsors-section .sponsor-carousel {
   width: 100%;
 
   overflow: hidden;
@@ -348,7 +774,8 @@ hr {
   display: block;
 }
 
-.sponsor-track {
+
+.sponsors-section .sponsor-track {
   display: flex;
 
   align-items: center;
@@ -360,15 +787,13 @@ hr {
   will-change: transform;
 }
 
-.sponsor {
-  flex: 0 0 auto;
+
+.sponsors-section .sponsor {
+  flex:
+    0 0 auto;
 
   width: 160px;
   height: 110px;
-
-  background: #fff;
-
-  border-radius: 10px;
 
   display: flex;
 
@@ -377,12 +802,29 @@ hr {
 
   padding: 14px;
 
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.06);
+
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
 }
 
-.sponsor img {
+
+.sponsors-section .sponsor:hover {
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.10);
+}
+
+
+.sponsors-section .sponsor img {
   max-width: 100%;
   max-height: 80%;
 
@@ -390,33 +832,196 @@ hr {
 }
 
 
-/* =========================================
-   CALENDAR
-   ========================================= */
+/* =========================================================
+   MEMBER POINTS
+   ========================================================= */
 
-.calendar {
-  text-align: center;
-
-  padding: 12px 4% 48px;
+.points-section {
+  background: #ffffff;
 }
 
-.calendar .section-title {
-  color: #BF5700;
 
-  margin-bottom: 12px;
-}
-
-.calendar-frame {
-  width: clamp(960px, 92vw, 1280px);
+.points-container {
+  width: 100%;
+  max-width: 1150px;
 
   margin: 0 auto;
 
-  border-radius: 12px;
+  display: grid;
+
+  grid-template-columns:
+    0.8fr
+    1.2fr;
+
+  gap: 60px;
+
+  align-items: center;
+}
+
+
+.points-copy {
+  width: 100%;
+  max-width: 500px;
+}
+
+
+.points-copy .eyebrow {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  color: #bf5700;
+
+  font-size: 0.78rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+}
+
+
+.points-copy h2 {
+  margin: 0 0 18px;
+
+  color: #003a70;
+
+  font-size:
+    clamp(2rem, 4vw, 3rem);
+
+  line-height: 1.1;
+
+  letter-spacing: -0.025em;
+}
+
+
+.points-copy p {
+  margin: 0;
+
+  color: #5c5c5c;
+
+  font-size: 1.04rem;
+
+  line-height: 1.7;
+}
+
+
+.points-copy .btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 46px;
+
+  margin-top: 25px;
+
+  padding:
+    11px 22px;
+
+  border-radius: 8px;
+
+  background: #e57200;
+
+  color: #ffffff;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.points-copy .btn:hover {
+  background: #f17f13;
+
+  transform:
+    translateY(-2px);
+}
+
+
+/* =========================================================
+   POINTS CARD
+   ========================================================= */
+
+.points-card {
+  width: 100%;
+
+  padding: 22px;
+
+  background: #ffffff;
+
+  border:
+    1px solid #e6e6e6;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.08);
+
+  overflow: hidden;
+}
+
+
+.points-card h3 {
+  margin:
+    0 0 16px;
+
+  color: #003a70;
+
+  font-size: 1.2rem;
+
+  text-align: center;
+}
+
+
+.points-card iframe {
+  display: block;
+
+  width: 100%;
+
+  height: 500px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #f7f7f7;
+}
+
+
+/* =========================================================
+   CALENDAR
+   ========================================================= */
+
+.calendar-section {
+  background: #f7f8fa;
+
+  text-align: center;
+}
+
+
+.calendar-frame {
+  width: 100%;
+  max-width: 1200px;
+
+  margin:
+    0 auto;
 
   overflow: hidden;
 
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.10);
 }
+
 
 .calendar-frame iframe {
   display: block;
@@ -428,250 +1033,551 @@ hr {
   border: 0;
 }
 
+
 .calendar-caption {
-  margin-top: 10px;
+  margin:
+    16px auto 0;
 
-  color: #555;
+  color: #666666;
 
-  font-size: 1.3rem;
+  font-size: 0.95rem;
 }
 
 
-/* =========================================
-   OFFICE HOURS
-   ========================================= */
+/* =========================================================
+   MEET THE FAMILIA
+   ========================================================= */
 
-.office-hours {
-  padding: 60px 0;
+.office-hours-section {
+  background: #ffffff;
 
   text-align: center;
 }
 
-.office-hours h2 {
-  color: #8B4513;
 
-  font-size: 2.5rem;
-
-  margin-bottom: 30px;
-}
-
-.office-hours img {
+.office-hours-image {
   display: block;
 
-  margin: 0 auto;
-
-  width: 90%;
-  max-width: 1400px;
+  width: 100%;
+  max-width: 1200px;
 
   height: auto;
 
-  border-radius: 8px;
+  margin:
+    0 auto;
 
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-}
+  border-radius: 18px;
 
-.office-hours p {
-  margin: 20px auto 0;
-
-  font-size: 1.1rem;
-
-  color: #333;
-
-  max-width: 900px;
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.12);
 }
 
 
-/* =========================================
-   MOBILE
-   ========================================= */
+.office-hours-text {
+  width: 100%;
+  max-width: 750px;
 
-@media (max-width: 768px) {
+  margin:
+    24px auto 0;
+
+  color: #555555;
+
+  font-size: 1.04rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
 
   /* Hero */
 
-  .info {
+  .home-hero-inner {
     grid-template-columns: 1fr;
 
-    align-items: start;
+    gap: 55px;
 
-    gap: 16px;
-
-    padding: 20px 16px;
-  }
-
-  .info-left {
-    width: 100%;
-
-    margin: 0;
-  }
-
-  .info h1 {
-    font-size: clamp(1.8rem, 6vw, 2.4rem);
-  }
-
-  .info .sub {
-    font-size: 1.05rem;
-  }
-
-  .info .mission {
-    font-size: 1rem;
+    padding:
+      70px 7%;
   }
 
 
-  /* Slideshow */
+  .hero-content {
+    max-width: 700px;
 
-  .polaroid {
-    margin: 12px 0 0;
+    margin: 0 auto;
 
-    width: 100%;
+    text-align: center;
   }
 
-  .polaroid .frame {
-    width: 100%;
 
-    aspect-ratio: 16 / 10;
+  .hero-divider {
+    margin:
+      25px auto 22px;
+  }
 
-    min-height: 220px;
 
-    padding: 12px;
+  .hero-description {
+    margin:
+      0 auto;
+  }
+
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+
+  .hero-meta {
+    justify-content: center;
+  }
+
+
+  .hero-image-frame {
+    max-width: 500px;
+  }
+
+
+  .hero-image-accent {
+    max-width: 500px;
   }
 
 
   /* Events */
 
+  .events-grid {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+
+  .events-image {
+    order: 1;
+  }
+
+
   .next-event {
-    width: 100%;
-
-    margin: 0;
-
-    padding: 0;
-  }
-
-  .next-event .section-title {
-    font-size: 1.5rem;
-  }
-
-  .event-carousel {
-    width: 100%;
-
-    aspect-ratio: 3 / 4;
-
-    min-height: 480px;
-  }
-
-  .event-track img {
-    flex: 0 0 100%;
-
-    width: 100%;
-
-    height: 100%;
-  }
-
-  .carousel-btn {
-    width: 34px;
-    height: 34px;
+    order: 2;
   }
 
 
-  /* Sponsors */
+  /* Points */
 
-  .sponsors-slideshow {
-    padding: 12px 16px 28px;
+  .points-container {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
   }
 
-  .sponsor-header {
-    display: flex;
 
-    flex-direction: column;
+  .points-copy {
+    max-width: 700px;
 
-    align-items: center;
-    justify-content: center;
-
-    gap: 10px;
-
-    margin: 0 auto 12px;
+    margin:
+      0 auto;
 
     text-align: center;
-  }
-
-  .sponsor-header .section-title {
-    text-align: center;
-
-    margin: 0;
-
-    font-size: 1.8rem;
-  }
-
-  .sponsor-cta {
-    margin: 0;
-
-    justify-self: center;
-
-    align-self: center;
-  }
-
-  .sponsor-track {
-    gap: 12px;
-  }
-
-  .sponsor {
-    width: 130px;
-    height: 90px;
-
-    padding: 10px;
-  }
-
-  .sponsor img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
   }
 
 
   /* Calendar */
 
-  .calendar {
-    padding: 12px 12px 28px;
+  .calendar-frame {
+    max-width: 100%;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  /* =======================================================
+     GENERAL
+     ======================================================= */
+
+  .home-section {
+    padding:
+      60px 18px;
   }
 
-  .calendar-frame {
+
+  .centered-section-header {
+    margin-bottom: 34px;
+  }
+
+
+  .home-section-title {
+    font-size:
+      clamp(1.9rem, 9vw, 2.4rem);
+  }
+
+
+  .home-section-description {
+    font-size: 0.97rem;
+
+    line-height: 1.6;
+  }
+
+
+  /* =======================================================
+     HERO
+     ======================================================= */
+
+  .home-hero {
+    min-height: auto;
+  }
+
+
+  .home-hero-inner {
+    padding:
+      52px 20px 70px;
+
+    gap: 42px;
+  }
+
+
+  .hero-eyebrow {
+    margin-bottom: 14px;
+
+    font-size: 0.70rem;
+
+    letter-spacing: 0.12em;
+  }
+
+
+  .hero-title {
+    font-size:
+      clamp(3.5rem, 18vw, 5rem);
+  }
+
+
+  .hero-divider {
+    width: 50px;
+
+    height: 3px;
+
+    margin:
+      22px auto 20px;
+  }
+
+
+  .hero-tagline {
+    font-size: 1.55rem;
+
+    line-height: 1.2;
+  }
+
+
+  .hero-description {
+    font-size: 0.98rem;
+
+    line-height: 1.6;
+  }
+
+
+  /* Buttons */
+
+  .hero-buttons {
     width: 100%;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-top: 26px;
+  }
+
+
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-outline {
+    width: 100%;
+  }
+
+
+  .hero-meta {
+    justify-content: center;
+
+    margin-top: 27px;
+
+    font-size: 0.68rem;
+
+    line-height: 1.5;
+
+    text-align: center;
+  }
+
+
+ /* =======================================================
+   HERO IMAGE
+   ======================================================= */
+
+.home-hero-media {
+  width: 100%;
+  padding: 0 5px;
+}
+
+.hero-image-frame {
+  width: 100%;
+  max-width: none;
+
+  /* Match the landscape image */
+  aspect-ratio: 16 / 10;
+
+  padding: 6px;
+  border-radius: 18px;
+  border-width: 6px;
+
+  box-shadow:
+    0 18px 35px rgba(0, 0, 0, 0.25);
+}
+
+.hero-image-frame > div {
+  border-radius: 12px;
+}
+
+.hero-image-frame img {
+  border-radius: 12px;
+}
+
+.hero-image-accent {
+  width: calc(100% - 10px);
+  max-width: none;
+
+  aspect-ratio: 16 / 10;
+
+  border-radius: 18px;
+  transform: translate(9px, 9px);
+}
+
+
+  /* =======================================================
+     EVENTS
+     ======================================================= */
+
+  .events-grid {
+    gap: 35px;
+  }
+
+
+  .polaroid .frame {
+    aspect-ratio: 16 / 10;
+
+    padding: 7px;
+
+    border-radius: 14px;
+  }
+
+
+  .polaroid .frame > div {
+    border-radius: 9px;
+  }
+
+
+  .polaroid .frame img {
+    border-radius: 9px;
+  }
+
+
+  .next-event .section-title {
+    font-size: 1.55rem;
+  }
+
+
+  .event-carousel {
+    width: 100%;
+
+    max-width: 340px;
+
+    height: 420px;
+
+    border-radius: 14px;
+  }
+
+
+  .event-track img {
+    border-radius: 14px;
+  }
+
+
+  /* =======================================================
+     SPONSORS
+     ======================================================= */
+
+  .sponsor-header {
+    margin-bottom: 32px;
+  }
+
+
+  .sponsors-section .sponsor {
+    width: 135px;
+
+    height: 90px;
+
+    padding: 10px;
 
     border-radius: 10px;
   }
 
-  .calendar-frame iframe {
-    height: 540px;
+
+  .sponsors-section .sponsor-track {
+    gap: 12px;
   }
 
 
-  /* Office hours */
+  /* =======================================================
+     POINTS
+     ======================================================= */
 
-  .office-hours {
-    padding: 40px 16px;
+  .points-container {
+    gap: 30px;
   }
 
-  .office-hours h2 {
-    font-size: 2rem;
+
+  .points-copy h2 {
+    font-size:
+      clamp(2rem, 10vw, 2.5rem);
   }
 
-  .office-hours img {
+
+  .points-copy p {
+    font-size: 0.97rem;
+  }
+
+
+  .points-copy .btn {
     width: 100%;
   }
 
-  .office-hours p {
-    font-size: 1rem;
+
+  .points-card {
+    padding: 14px;
+
+    border-radius: 14px;
   }
 
 
-  /* Remove desktop negative margins */
+  .points-card h3 {
+    font-size: 1.05rem;
 
-  .sponsor-cta,
-  .polaroid,
-  .next-event {
-    margin-left: 0;
+    margin-bottom: 12px;
+  }
 
-    margin-right: 0;
+
+  .points-card iframe {
+    height: 480px;
+
+    border-radius: 8px;
+  }
+
+
+  /* =======================================================
+     CALENDAR
+     ======================================================= */
+
+  .calendar-section {
+    padding-left: 10px;
+
+    padding-right: 10px;
+  }
+
+
+  .calendar-frame {
+    border-radius: 10px;
+  }
+
+
+  .calendar-frame iframe {
+    height: 550px;
+  }
+
+
+  .calendar-caption {
+    padding:
+      0 10px;
+
+    font-size: 0.88rem;
+
+    line-height: 1.5;
+  }
+
+
+  /* =======================================================
+     MEET THE FAMILIA
+     ======================================================= */
+
+  .office-hours-section {
+    padding:
+      60px 16px;
+  }
+
+
+  .office-hours-image {
+    width: 100%;
+
+    border-radius: 12px;
+  }
+
+
+  .office-hours-text {
+    font-size: 0.97rem;
+
+    line-height: 1.6;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+  .home-section {
+    padding:
+      50px 14px;
+  }
+
+
+  .home-hero-inner {
+    padding:
+      45px 16px 60px;
+  }
+
+
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+
+  .hero-tagline {
+    font-size: 1.4rem;
+  }
+
+
+  .hero-description {
+    font-size: 0.93rem;
+  }
+
+
+  .hero-meta {
+    font-size: 0.65rem;
+  }
+
+
+  .event-carousel {
+    height: 380px;
+  }
+
+
+  .calendar-frame iframe {
+    height: 500px;
   }
 }

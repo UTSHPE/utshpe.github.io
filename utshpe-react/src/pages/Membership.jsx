@@ -44,8 +44,6 @@ function MembershipSlideshow() {
 function Membership() {
   return (
     <>
-      <Navbar />
-
       <main className="membership-page">
 
         {/* HERO */}
@@ -85,7 +83,7 @@ function Membership() {
               <h3>
                 1) Fill out the{" "}
                 <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSefYEFS5tTWalPaEtvPx3zCT-vfP-uMf6iC-OQVeqNwporoNg/viewform?usp=header"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSfpFsfzYCDaP52RhzU70rrBwR49V1JNfCJbOojF0uce5uLG3w/viewform"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -178,8 +176,8 @@ function Membership() {
               </div>
             </article>
 
-            {/* Instagram */}
-            <aside className="ig-embed">
+            {/* Instagram, changed from aside to div */}
+            <div className="ig-embed">
               <h3 className="ig-title">
                 Latest on Instagram
               </h3>
@@ -189,9 +187,9 @@ function Membership() {
                 data-instgrm-permalink="https://www.instagram.com/utshpe/?hl=en"
                 data-instgrm-version="14"
               />
-            </aside>
-
-            {/* Points Leaderboard */}
+            </div>
+            
+            {/* Points Leaderboard 
             <aside className="ig-embed">
               <h3 className="ig-title">
                 Points Leaderboard
@@ -204,13 +202,12 @@ function Membership() {
                 scrolling="yes"
               />
             </aside>
-
+            */}
           </div>
         </section>
 
       </main>
 
-      <Footer />
     </>
   );
 }

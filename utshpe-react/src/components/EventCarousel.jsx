@@ -26,7 +26,7 @@ function EventCarousel() {
 
   return (
     <section className="next-event">
-      <h2 className="section-title">Upcoming Events</h2>
+
 
       <div
         className="event-carousel"
