@@ -29,42 +29,49 @@ function SHPEtinas() {
     },
   ];
 
+  // TODO: fill in each member's major below (currently blank placeholders)
   const committee = [
     {
-      name: "Evelyn Flores",
+      name: "Natalia Martinez",
       role: "SHPEtina Director",
-      image: "/assets/images/shpetinas/Eve_shpetina.jpg",
+      major: "Civil Engineering",
+      image: "/assets/images/shpetinas/natalia.jpg",
       alt: "SHPEtina Director",
     },
     {
-      name: "Natalia Morales",
-      role: "Fundraising Coordinator Chair",
-      image: "/assets/images/shpetinas/NataliaMorales.jpg",
-      alt: "Fundraising Coordinator Chair",
+      name: "Camila Hueyotenco",
+      role: "Social Co-Chair",
+      major: "Electrical and Computer Engineering",
+      image: "/assets/images/shpetinas/camila.jpg",
+      alt: "Social Co-Chair",
     },
     {
-      name: "Destiny Licon",
-      role: "Finance Coordinator Chair",
-      image: "/assets/images/shpetinas/Destiny.jpg",
-      alt: "Finance Coordinator Chair",
-    },
-    {
-      name: "Natalia Martinez",
-      role: "Marketing Chair",
-      image: "/assets/images/shpetinas/NataliaMartinez.jpg",
-      alt: "Marketing Chair",
-    },
-    {
-      name: "Lizbeth Garcia",
-      role: "Publicity Chair",
-      image: "/assets/images/shpetinas/Lizbeth.jpg",
-      alt: "Publicity Chair",
+      name: "Marya Silva",
+      role: "Finance Coordination Chair",
+      major: "Civil Engineering",
+      image: "/assets/images/shpetinas/marya.jpg",
+      alt: "Finance Coordination Chair",
     },
     {
       name: "Lourdes Ybarra",
-      role: "Internal Affairs Liaison Chair",
-      image: "/assets/images/shpetinas/Lou.jpg",
-      alt: "Internal Affairs Liaison Chair",
+      role: "SHPEtina Social Co-Chair",
+      major: "Civil Engineering",
+      image: "/assets/images/shpetinas/lourdes.jpg",
+      alt: "SHPEtina Social Co-Chair",
+    },
+    {
+      name: "Natalie Gamboa",
+      role: "Personal Relations Chair",
+      major: "Mechanical Engineering",
+      image: "/assets/images/shpetinas/natalie.jpg",
+      alt: "Personal Relations Chair",
+    },
+    {
+      name: "Alexis Rodriguez",
+      role: "SHPEtina Philanthropy Chair",
+      major: "Mechanical Engineering",
+      image: "/assets/images/shpetinas/alexis.jpg",
+      alt: "SHPEtina Philanthropy Chair",
     },
   ];
 
@@ -132,6 +139,7 @@ function SHPEtinas() {
         <div className="shpetinas-hero-wrap">
 
           <div className="shpetinas-hero-title">
+            <span className="shpetinas-eyebrow">SHPE at UT Austin</span>
             <h1>SHPEtinas</h1>
           </div>
 
@@ -153,6 +161,10 @@ function SHPEtinas() {
 
         {/* About */}
         <div className="shpetinas-pink-panel">
+
+          <span className="shpetinas-panel-icon" aria-hidden="true">
+            <i className="fa-solid fa-heart"></i>
+          </span>
 
           <h2>About SHPEtinas</h2>
 
@@ -253,6 +265,7 @@ function SHPEtinas() {
       <section className="shpetinas-section shpetinas-committee">
 
         <h2 className="shpetinas-h2">
+          <i className="fa-solid fa-people-group" aria-hidden="true"></i>
           SHPEtinas Committee
         </h2>
 
@@ -276,6 +289,12 @@ function SHPEtinas() {
                 <p className="shpetinas-role">
                   {member.role}
                 </p>
+                {member.major && (
+                  <span className="shpetinas-major-badge">
+                    <i className="fa-solid fa-graduation-cap" aria-hidden="true" />
+                    {member.major}
+                  </span>
+                )}
               </div>
             </article>
           ))}
@@ -294,6 +313,7 @@ function SHPEtinas() {
       >
 
         <h2 className="shpetinas-h2">
+          <i className="fa-solid fa-images" aria-hidden="true"></i>
           Our Events
         </h2>
 
@@ -351,6 +371,7 @@ function SHPEtinas() {
         <article className="shpetinas-tshirt-card">
 
           <h3 className="shpetinas-tshirt-title">
+            <i className="fa-solid fa-shirt" aria-hidden="true"></i>
             Our Merch
           </h3>
 

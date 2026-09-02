@@ -847,21 +847,20 @@
 
   margin: 0 auto;
 
-  display: grid;
-
-  grid-template-columns:
-    0.8fr
-    1.2fr;
-
-  gap: 60px;
+  display: flex;
+  flex-direction: column;
 
   align-items: center;
+
+  gap: 40px;
 }
 
 
 .points-copy {
   width: 100%;
-  max-width: 500px;
+  max-width: 700px;
+
+  text-align: center;
 }
 
 
@@ -897,7 +896,9 @@
 
 
 .points-copy p {
-  margin: 0;
+  margin: 0 auto;
+
+  max-width: 620px;
 
   color: #5c5c5c;
 
@@ -1167,12 +1168,6 @@
 
 
   /* Points */
-
-  .points-container {
-    grid-template-columns: 1fr;
-
-    gap: 40px;
-  }
 
 
   .points-copy {

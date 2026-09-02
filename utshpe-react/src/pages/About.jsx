@@ -156,21 +156,33 @@ function About() {
 
           <div className="numbers-grid">
             <div className="stat">
+              <span className="stat-icon" aria-hidden="true">
+                <i className="fa-solid fa-people-group"></i>
+              </span>
               <h3>300+</h3>
               <p>Active Members</p>
             </div>
 
             <div className="stat">
+              <span className="stat-icon" aria-hidden="true">
+                <i className="fa-solid fa-chalkboard-user"></i>
+              </span>
               <h3>210+</h3>
               <p>Average General Meeting Attendance</p>
             </div>
 
             <div className="stat">
+              <span className="stat-icon" aria-hidden="true">
+                <i className="fa-solid fa-calendar-days"></i>
+              </span>
               <h3>35+</h3>
               <p>Social &amp; Networking Events Each Year</p>
             </div>
 
             <div className="stat">
+              <span className="stat-icon" aria-hidden="true">
+                <i className="fa-solid fa-briefcase"></i>
+              </span>
               <h3>30+</h3>
               <p>Corporate Workshops and Tech Events</p>
             </div>
@@ -271,6 +283,7 @@ function About() {
               target="_blank"
               rel="noopener noreferrer"
             >
+              <i className="fa-solid fa-file-lines" aria-hidden="true"></i>
               Bylaws
             </a>
 
@@ -280,6 +293,7 @@ function About() {
               target="_blank"
               rel="noopener noreferrer"
             >
+              <i className="fa-solid fa-scroll" aria-hidden="true"></i>
               Constitution
             </a>
 
@@ -289,6 +303,7 @@ function About() {
               target="_blank"
               rel="noopener noreferrer"
             >
+              <i className="fa-solid fa-heart" aria-hidden="true"></i>
               Donate
             </a>
           </div>

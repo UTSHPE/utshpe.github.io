@@ -2,6 +2,7 @@ import ImageSlideshow from "../components/ImageSlideshow";
 import EventCarousel from "../components/EventCarousel";
 import SponsorMarquee from "../components/SponsorMarquee";
 import UpcomingEvents from "../components/UpcomingEvents";
+import Leaderboard from "../components/Leaderboard";
 
 import "../styles/home.css";
 
@@ -190,16 +191,7 @@ function Home() {
 
           <div className="points-card">
 
-            <h3>
-              Member Points Leaderboard
-            </h3>
-
-            <iframe
-              src="https://script.google.com/macros/s/AKfycbyf5sua5ZE-7MxAZBWglR3zv1gu6vQkzEkb1qr1e9unAb7k5qu15DjEj79YyswheQNz/exec"
-              title="UT SHPE Member Points Leaderboard"
-              loading="lazy"
-              scrolling="yes"
-            />
+            <Leaderboard />
 
           </div>
 

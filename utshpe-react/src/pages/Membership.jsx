@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../styles/membership.css";
@@ -11,6 +11,13 @@ const membershipImages = [
   "/assets/images/membership/membership5.jpg",
   "/assets/images/membership/membership6.jpg",
   "/assets/images/membership/membership7.jpg",
+];
+
+
+const instagramPosts = [
+  "https://www.instagram.com/p/DNg3R0MR3lX/?hl=en&img_index=1",
+  "https://www.instagram.com/p/DcrBpuKhV9z/?hl=en",
+  "https://www.instagram.com/p/Dcj2u90GdS2/?hl=en&img_index=1",
 ];
 
 function MembershipSlideshow() {
@@ -37,6 +44,79 @@ function MembershipSlideshow() {
           className={index === currentImage ? "active" : ""}
         />
       ))}
+    </div>
+  );
+}
+
+/*
+ * Loads Instagram's embed.js once, then re-processes any
+ * instagram-media blockquotes on the page whenever `deps` changes
+ * (e.g. after the post list renders). Without this, React never
+ * triggers Instagram's own auto-init and the blockquotes stay blank.
+ */
+function useInstagramEmbed(deps) {
+  useEffect(() => {
+    const process = () => {
+      if (window.instgrm) {
+        window.instgrm.Embeds.process();
+      }
+    };
+
+    const existingScript = document.querySelector(
+      'script[src="https://www.instagram.com/embed.js"]'
+    );
+
+    if (existingScript) {
+      process();
+    } else {
+      const script = document.createElement("script");
+      script.src = "https://www.instagram.com/embed.js";
+      script.async = true;
+      script.onload = process;
+      document.body.appendChild(script);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, deps);
+}
+
+function InstagramFeed() {
+  useInstagramEmbed([instagramPosts.length]);
+
+  return (
+    <div className="ig-embed">
+      <h3 className="ig-title">
+        <i className="fa-brands fa-instagram" aria-hidden="true"></i>
+        Latest on Instagram
+      </h3>
+
+      {instagramPosts.length > 0 ? (
+        <div className="ig-post-grid">
+          {instagramPosts.map((permalink) => (
+            <blockquote
+              key={permalink}
+              className="instagram-media"
+              data-instgrm-permalink={permalink}
+              data-instgrm-version="14"
+            />
+          ))}
+        </div>
+      ) : (
+        <div className="ig-empty">
+          <p>
+            Add a few post links in <code>instagramPosts</code> to show
+            them here, or follow along in the meantime.
+          </p>
+          <a
+            href="https://www.instagram.com/utshpe/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ig-follow-link"
+          >
+            <i className="fa-brands fa-instagram" aria-hidden="true"></i>
+            @utshpe on Instagram
+          </a>
+        </div>
+      )}
     </div>
   );
 }
@@ -80,6 +160,10 @@ function Membership() {
 
           <ol className="steps">
             <li>
+              <span className="step-icon" aria-hidden="true">
+                <i className="fa-solid fa-file-signature"></i>
+              </span>
+
               <h3>
                 1) Fill out the{" "}
                 <a
@@ -93,10 +177,18 @@ function Membership() {
             </li>
 
             <li>
+              <span className="step-icon" aria-hidden="true">
+                <i className="fa-solid fa-hand-holding-dollar"></i>
+              </span>
+
               <h3>2) Pay membership dues</h3>
             </li>
 
             <li>
+              <span className="step-icon" aria-hidden="true">
+                <i className="fa-solid fa-comments"></i>
+              </span>
+
               <h3>
                 3) Join our Slack and follow our Instagram to keep up with
                 upcoming events!
@@ -104,6 +196,10 @@ function Membership() {
             </li>
 
             <li>
+              <span className="step-icon" aria-hidden="true">
+                <i className="fa-solid fa-people-group"></i>
+              </span>
+
               <h3>4) Get involved!</h3>
             </li>
           </ol>
@@ -176,19 +272,8 @@ function Membership() {
               </div>
             </article>
 
-            {/* Instagram, changed from aside to div */}
-            <div className="ig-embed">
-              <h3 className="ig-title">
-                Latest on Instagram
-              </h3>
+            <InstagramFeed />
 
-              <blockquote
-                className="instagram-media"
-                data-instgrm-permalink="https://www.instagram.com/utshpe/?hl=en"
-                data-instgrm-version="14"
-              />
-            </div>
-            
             {/* Points Leaderboard 
             <aside className="ig-embed">
               <h3 className="ig-title">

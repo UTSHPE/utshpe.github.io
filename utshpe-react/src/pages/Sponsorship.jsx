@@ -92,6 +92,10 @@ function Sponsorship() {
         {/* Hero / Thank You Section */}
         <section className="section sponsor-hero">
           <div className="hero-left card-blue">
+            <span className="hero-icon" aria-hidden="true">
+              <i className="fa-solid fa-handshake"></i>
+            </span>
+
             <h2 className="hero-title">
               Thank You to Our Sponsors!
             </h2>
@@ -135,6 +139,10 @@ function Sponsorship() {
         {/* Become a Sponsor */}
         <section className="section cta-sponsor">
           <div className="cta-card">
+            <span className="cta-icon" aria-hidden="true">
+              <i className="fa-solid fa-star"></i>
+            </span>
+
             <h2 className="cta-title">
               Become a Sponsor Today
             </h2>
