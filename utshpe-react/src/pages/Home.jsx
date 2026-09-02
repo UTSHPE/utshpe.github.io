@@ -3,6 +3,7 @@ import EventCarousel from "../components/EventCarousel";
 import SponsorMarquee from "../components/SponsorMarquee";
 import UpcomingEvents from "../components/UpcomingEvents";
 import Leaderboard from "../components/Leaderboard";
+import { Link } from "react-router-dom";
 
 import "../styles/home.css";
 
@@ -48,12 +49,12 @@ function Home() {
 
             <div className="hero-buttons">
 
-              <a
-                href="/membership"
+              <Link
+                to="/membership"
                 className="btn-primary"
               >
                 Join the Familia
-              </a>
+              </Link>
 
               <a
                 href="#events"
@@ -132,12 +133,9 @@ function Home() {
             the next generation of Hispanic engineers and STEM leaders.
           </p>
 
-          <a
-            className="btn"
-            href="/sponsorship"
-          >
+          <Link className="btn" to="/sponsorship">
             Become a Sponsor
-          </a>
+          </Link>
 
         </div>
 
@@ -177,12 +175,9 @@ function Home() {
               earn points throughout the semester.
             </p>
 
-            <a
-              href="/membership"
-              className="btn"
-            >
+            <Link to="/membership" className="btn">
               Learn More
-            </a>
+            </Link>
 
           </div>
 
