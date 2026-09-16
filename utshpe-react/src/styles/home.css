@@ -1074,6 +1074,19 @@
 }
 
 
+.office-hours-embed {
+  max-width: 720px;
+
+  aspect-ratio: 1080 / 1350;
+
+  border: 0;
+
+  background: #ffffff;
+
+  overflow: hidden;
+}
+
+
 .office-hours-text {
   width: 100%;
   max-width: 750px;

@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>LeaderSHPE Office Hours — UT SHPE</title>
+<script>if (/[?&]embed\b/.test(location.search)) document.documentElement.classList.add("embed");</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -60,6 +61,11 @@
     transform:scale(tan(atan2(100cqw, 1080px)));
     transform:scale(calc(100cqw / 1080px));
   }
+
+  /* Embed mode (?embed): the artboard fills the iframe edge to edge. */
+  html.embed, html.embed body{ overflow:hidden; }
+  html.embed body{ padding:0; background:#fff; }
+  html.embed .stage{ width:100vw; }
 
   /* ---------- Header ---------- */
   .head{

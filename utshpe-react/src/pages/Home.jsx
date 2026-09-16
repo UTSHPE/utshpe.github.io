@@ -252,10 +252,11 @@ function Home() {
         </div>
 
 
-        <img
-          className="office-hours-image"
-          src="/assets/images/Home_Page/LeadershipOH.png"
-          alt="UT SHPE Leadership Office Hours"
+        <iframe
+          className="office-hours-image office-hours-embed"
+          src="/office-hours.html?embed"
+          title="UT SHPE LeaderSHPE office hours schedule"
+          loading="lazy"
         />
 
 
