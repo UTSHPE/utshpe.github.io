@@ -243,12 +243,7 @@ function Home() {
           <h2 className="home-section-title">
             Meet the Familia
           </h2>
-
-          <p className="home-section-description">
-            Connect with our leadership team, learn about our pillars,
-            and find ways to get involved with UT SHPE.
-          </p>
-
+          
         </div>
 
 
