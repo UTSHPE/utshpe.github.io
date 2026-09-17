@@ -164,7 +164,7 @@ function Sponsorship() {
 
             <a
               className="btn-csp"
-              href="/assets/files/UT-SHPE 26-27 Corporate Solicitation Packet.pdf"
+              href="/assets/files/UT SHPE 26-27 Corporate Solicitation Packet.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
