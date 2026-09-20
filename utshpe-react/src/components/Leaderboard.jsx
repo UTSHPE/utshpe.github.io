@@ -19,6 +19,41 @@ function getInitials(name) {
 }
 
 /*
+ * Supabase/PostgREST caps a single response at 1000 rows, so a plain
+ * select() silently drops everything past that — which made the
+ * leaderboard freeze on stale totals once sign_ins outgrew 1000 rows.
+ *
+ * Page through the table instead so every sign-in is counted. We order
+ * by created_at with id as a stable tie-break so the pages don't
+ * overlap or skip rows between requests.
+ */
+const PAGE_SIZE = 1000;
+
+async function fetchAllSignIns() {
+  const rows = [];
+
+  for (let from = 0; ; from += PAGE_SIZE) {
+    const { data, error } = await supabase
+      .from("sign_ins")
+      .select("eid, points_earned, created_at")
+      .is("deleted_at", null)
+      .order("created_at", { ascending: true })
+      .order("id", { ascending: true })
+      .range(from, from + PAGE_SIZE - 1);
+
+    if (error) throw error;
+    if (!data || data.length === 0) break;
+
+    rows.push(...data);
+
+    // A short page means we've reached the end of the table.
+    if (data.length < PAGE_SIZE) break;
+  }
+
+  return rows;
+}
+
+/*
  * sign_ins has one row per event a member checked into.
  *
  * We:
@@ -46,12 +81,7 @@ function getInitials(name) {
  * at 8:00, while Bob reached 15 points at 8:30.
  */
 async function fetchLeaderboard() {
-  const { data: signIns, error: signInsError } = await supabase
-    .from("sign_ins")
-    .select("eid, points_earned, created_at")
-    .is("deleted_at", null);
-
-  if (signInsError) throw signInsError;
+  const signIns = await fetchAllSignIns();
 
   /*
    * Sort all sign-ins from earliest to latest.
