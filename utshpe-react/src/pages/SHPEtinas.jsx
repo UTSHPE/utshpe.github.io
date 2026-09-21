@@ -46,7 +46,7 @@ function SHPEtinas() {
       alt: "Social Co-Chair",
     },
     {
-      name: "Marya Silva",
+      name: "Mayra Silva",
       role: "Finance Coordination Chair",
       major: "Civil Engineering",
       image: "/assets/images/shpetinas/marya.jpg",
