@@ -265,7 +265,7 @@ function LeaderboardRow({ member }) {
   );
 }
 
-function Leaderboard() {
+function Leaderboard({ showHeader = true }) {
   const { members, status } = useLeaderboardData();
 
   const sorted = [...members].sort((a, b) => a.rank - b.rank);
@@ -278,9 +278,11 @@ function Leaderboard() {
 
   return (
     <section className="leaderboard-section" id="leaderboard">
-      <div className="leaderboard-header">
-        <h2 className="h2">Leaderboard</h2>
-      </div>
+      {showHeader && (
+        <div className="leaderboard-header">
+          <h2 className="h2">Leaderboard</h2>
+        </div>
+      )}
 
       {status === "loading" && (
         <p className="leaderboard-status">

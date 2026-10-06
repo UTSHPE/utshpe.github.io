@@ -459,6 +459,289 @@
 }
 
 
+/*
+  Upcoming events (left) and leaderboard (right).
+  Each column is a two-row subgrid (header, body) so the
+  headers line up and both bodies stretch to equal height.
+*/
+
+.events-leaderboard-grid {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 3fr)
+    minmax(0, 2fr);
+
+  grid-template-rows:
+    auto 1fr;
+
+  column-gap: 40px;
+  row-gap: 24px;
+
+  align-items: stretch;
+}
+
+
+.events-column,
+.leaderboard-column {
+  min-width: 0;
+
+  display: grid;
+
+  grid-row: span 2;
+
+  grid-template-rows: subgrid;
+}
+
+
+.leaderboard-column {
+  /* Lets the leaderboard adapt to its column width. */
+  container-type: inline-size;
+}
+
+
+.column-header .home-section-title {
+  margin-bottom: 10px;
+}
+
+
+.column-header .home-section-description {
+  margin: 0;
+}
+
+
+.column-header .btn {
+  margin-top: 18px;
+}
+
+
+/* Events body */
+
+.events-panel {
+  min-width: 0;
+
+  padding: 22px;
+
+  background: #f7f8fa;
+
+  border-radius: 20px;
+}
+
+
+.events-panel .upcoming-events {
+  max-width: none;
+}
+
+
+/* Leaderboard body */
+
+.leaderboard-column .leaderboard-section {
+  width: 100%;
+  max-width: none;
+
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+.leaderboard-column .leaderboard-cta {
+  align-self: flex-start;
+
+  margin-top: auto;
+}
+
+
+/*
+  Side-by-side only: fit the leaderboard into its column.
+  Once stacked (<= 900px), leaderboard.css handles mobile.
+*/
+
+@media (min-width: 901px) {
+
+  .leaderboard-column .leaderboard-section {
+    padding: 26px 22px;
+
+    border-radius: 20px;
+  }
+
+
+  .leaderboard-column .podium-grid {
+    gap: 10px;
+
+    margin-bottom: 24px;
+  }
+
+
+  .leaderboard-column .podium-card {
+    height: 220px;
+
+    padding: 24px 10px 18px;
+  }
+
+
+  .leaderboard-column .podium-card.place-1 {
+    transform: scale(1.04);
+  }
+
+
+  .leaderboard-column .podium-card.place-1:hover {
+    transform: scale(1.04) translateY(-4px);
+  }
+
+
+  .leaderboard-column .podium-avatar {
+    width: 50px;
+    height: 50px;
+
+    font-size: 1rem;
+  }
+
+
+  .leaderboard-column .place-1 .podium-avatar {
+    width: 58px;
+    height: 58px;
+  }
+
+
+  .leaderboard-column .podium-name,
+  .leaderboard-column .place-1 .podium-name {
+    font-size: 0.95rem;
+  }
+
+
+  /*
+    Cap the ranked list so one long column doesn't
+    dwarf the other; the rest scrolls.
+  */
+
+  .leaderboard-column .leaderboard-list {
+    max-height: 340px;
+
+    overflow-y: auto;
+
+    margin-bottom: 24px;
+
+    padding-right: 6px;
+  }
+
+
+  /*
+    Narrow leaderboard column (roughly 900-1150px viewports):
+    the 3-across podium gets too tight, so the top 3 become
+    wide rows that keep their podium colors.
+  */
+
+  @container (max-width: 440px) {
+
+    .leaderboard-column .podium-grid {
+      grid-template-columns: 1fr;
+
+      gap: 8px;
+    }
+
+
+    .leaderboard-column .podium-card,
+    .leaderboard-column .podium-card.place-1 {
+      height: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        auto auto minmax(0, 1fr) auto;
+
+      grid-template-areas:
+        "rank avatar name points"
+        "rank avatar major points";
+
+      align-items: center;
+
+      column-gap: 12px;
+
+      padding: 12px 16px;
+
+      text-align: left;
+
+      transform: none;
+    }
+
+
+    /* Podium markup is ordered 2-1-3; list them 1-2-3. */
+
+    .leaderboard-column .podium-card.place-1 {
+      order: 1;
+    }
+
+
+    .leaderboard-column .podium-card.place-2 {
+      order: 2;
+    }
+
+
+    .leaderboard-column .podium-card.place-3 {
+      order: 3;
+    }
+
+
+    .leaderboard-column .podium-card.place-1:hover {
+      transform: translateY(-4px);
+    }
+
+
+    .leaderboard-column .podium-rank {
+      position: static;
+
+      grid-area: rank;
+    }
+
+
+    .leaderboard-column .podium-avatar,
+    .leaderboard-column .place-1 .podium-avatar {
+      grid-area: avatar;
+
+      width: 40px;
+      height: 40px;
+
+      margin: 0;
+
+      font-size: 0.85rem;
+    }
+
+
+    .leaderboard-column .podium-name,
+    .leaderboard-column .place-1 .podium-name {
+      grid-area: name;
+
+      height: auto;
+
+      margin: 0;
+    }
+
+
+    .leaderboard-column .podium-major {
+      grid-area: major;
+
+      height: auto;
+
+      margin: 0;
+
+      -webkit-line-clamp: 1;
+    }
+
+
+    .leaderboard-column .podium-points {
+      grid-area: points;
+    }
+  }
+}
+
+
 .events-grid {
   width: 100%;
 
@@ -726,14 +1009,22 @@
 
 
 .sponsor-header .btn {
+  margin-top: 24px;
+}
+
+
+/* =========================================================
+   BUTTON
+   Shared by the sponsors, leaderboard, and This Week sections.
+   ========================================================= */
+
+.home-page .btn {
   display: inline-flex;
 
   align-items: center;
   justify-content: center;
 
   min-height: 46px;
-
-  margin-top: 24px;
 
   padding:
     11px 22px;
@@ -754,7 +1045,7 @@
 }
 
 
-.sponsor-header .btn:hover {
+.home-page .btn:hover {
   background: #f17f13;
 
   transform:
@@ -829,169 +1120,6 @@
   max-height: 80%;
 
   object-fit: contain;
-}
-
-
-/* =========================================================
-   MEMBER POINTS
-   ========================================================= */
-
-.points-section {
-  background: #ffffff;
-}
-
-
-.points-container {
-  width: 100%;
-  max-width: 1150px;
-
-  margin: 0 auto;
-
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
-
-  gap: 40px;
-}
-
-
-.points-copy {
-  width: 100%;
-  max-width: 700px;
-
-  text-align: center;
-}
-
-
-.points-copy .eyebrow {
-  display: inline-block;
-
-  margin-bottom: 10px;
-
-  color: #bf5700;
-
-  font-size: 0.78rem;
-
-  font-weight: 800;
-
-  letter-spacing: 0.15em;
-
-  text-transform: uppercase;
-}
-
-
-.points-copy h2 {
-  margin: 0 0 18px;
-
-  color: #003a70;
-
-  font-size:
-    clamp(2rem, 4vw, 3rem);
-
-  line-height: 1.1;
-
-  letter-spacing: -0.025em;
-}
-
-
-.points-copy p {
-  margin: 0 auto;
-
-  max-width: 620px;
-
-  color: #5c5c5c;
-
-  font-size: 1.04rem;
-
-  line-height: 1.7;
-}
-
-
-.points-copy .btn {
-  display: inline-flex;
-
-  align-items: center;
-  justify-content: center;
-
-  min-height: 46px;
-
-  margin-top: 25px;
-
-  padding:
-    11px 22px;
-
-  border-radius: 8px;
-
-  background: #e57200;
-
-  color: #ffffff;
-
-  font-weight: 700;
-
-  text-decoration: none;
-
-  transition:
-    transform 0.2s ease,
-    background 0.2s ease;
-}
-
-
-.points-copy .btn:hover {
-  background: #f17f13;
-
-  transform:
-    translateY(-2px);
-}
-
-
-/* =========================================================
-   POINTS CARD
-   ========================================================= */
-
-.points-card {
-  width: 100%;
-
-  padding: 22px;
-
-  background: #ffffff;
-
-  border:
-    1px solid #e6e6e6;
-
-  border-radius: 18px;
-
-  box-shadow:
-    0 10px 35px rgba(0, 0, 0, 0.08);
-
-  overflow: hidden;
-}
-
-
-.points-card h3 {
-  margin:
-    0 0 16px;
-
-  color: #003a70;
-
-  font-size: 1.2rem;
-
-  text-align: center;
-}
-
-
-.points-card iframe {
-  display: block;
-
-  width: 100%;
-
-  height: 500px;
-
-  border: none;
-
-  border-radius: 10px;
-
-  background: #f7f7f7;
 }
 
 
@@ -1190,24 +1318,38 @@
   }
 
 
-  /* Points */
-
-
-  .points-copy {
-    max-width: 700px;
-
-    margin:
-      0 auto;
-
-    text-align: center;
-  }
-
-
   /* Calendar */
 
   .calendar-frame {
     max-width: 100%;
   }
+}
+
+
+/* =========================================================
+   EVENTS + LEADERBOARD STACK
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .events-leaderboard-grid {
+    grid-template-columns: 1fr;
+
+    grid-template-rows: none;
+
+    row-gap: 56px;
+  }
+
+
+  .events-column,
+  .leaderboard-column {
+    grid-row: auto;
+
+    grid-template-rows: auto 1fr;
+
+    row-gap: 24px;
+  }
+
 }
 
 
@@ -1426,6 +1568,32 @@
 
 
   /* =======================================================
+     EVENTS + LEADERBOARD
+     ======================================================= */
+
+  .events-leaderboard-grid {
+    row-gap: 44px;
+  }
+
+
+  .column-header {
+    text-align: center;
+  }
+
+
+  .column-header .btn {
+    width: 100%;
+  }
+
+
+  .events-panel {
+    padding: 14px;
+
+    border-radius: 16px;
+  }
+
+
+  /* =======================================================
      SPONSORS
      ======================================================= */
 
@@ -1447,52 +1615,6 @@
 
   .sponsors-section .sponsor-track {
     gap: 12px;
-  }
-
-
-  /* =======================================================
-     POINTS
-     ======================================================= */
-
-  .points-container {
-    gap: 30px;
-  }
-
-
-  .points-copy h2 {
-    font-size:
-      clamp(2rem, 10vw, 2.5rem);
-  }
-
-
-  .points-copy p {
-    font-size: 0.97rem;
-  }
-
-
-  .points-copy .btn {
-    width: 100%;
-  }
-
-
-  .points-card {
-    padding: 14px;
-
-    border-radius: 14px;
-  }
-
-
-  .points-card h3 {
-    font-size: 1.05rem;
-
-    margin-bottom: 12px;
-  }
-
-
-  .points-card iframe {
-    height: 480px;
-
-    border-radius: 8px;
   }
 
 

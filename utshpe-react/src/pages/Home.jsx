@@ -1,8 +1,8 @@
 import ImageSlideshow from "../components/ImageSlideshow";
-import EventCarousel from "../components/EventCarousel";
 import SponsorMarquee from "../components/SponsorMarquee";
 import UpcomingEvents from "../components/UpcomingEvents";
 import Leaderboard from "../components/Leaderboard";
+import ThisWeekCollage from "../components/ThisWeekCollage";
 import { Link } from "react-router-dom";
 
 import "../styles/home.css";
@@ -94,25 +94,69 @@ function Home() {
 
 
       {/* =====================================================
-          UPCOMING EVENTS
+          UPCOMING EVENTS + LEADERBOARD
           ===================================================== */}
 
       <section
         className="home-section events-section"
         id="events"
       >
-        <div className="centered-section-header">
-          <h2 className="home-section-title">
-            Upcoming Events
-          </h2>
 
-          <p className="home-section-description">
-            Stay connected with the UT SHPE familia and see what is
-            happening next.
-          </p>
+        <div className="events-leaderboard-grid">
+
+          {/* Upcoming Events */}
+
+          <div className="events-column">
+
+            <div className="column-header">
+
+              <h2 className="home-section-title">
+                Upcoming Events
+              </h2>
+
+              <p className="home-section-description">
+                Stay connected with the UT SHPE familia and see what is
+                happening next.
+              </p>
+
+            </div>
+
+
+            <div className="events-panel">
+              <UpcomingEvents />
+            </div>
+
+          </div>
+
+
+          {/* Leaderboard */}
+
+          <div className="leaderboard-column">
+
+            <div className="column-header">
+
+              <h2 className="home-section-title">
+                Leaderboard
+              </h2>
+
+              <p className="home-section-description">
+                Earn points at events, volunteering, and workshops
+                all semester long.
+              </p>
+
+              <Link to="/membership" className="btn">
+                Learn More
+              </Link>
+
+            </div>
+
+
+            <Leaderboard showHeader={false} />
+
+          </div>
+
         </div>
 
-        <UpcomingEvents />
       </section>
 
 
@@ -146,53 +190,10 @@ function Home() {
 
 
       {/* =====================================================
-          MEMBER POINTS
+          THIS WEEK IN SHPE
           ===================================================== */}
 
-      <section className="home-section points-section">
-
-        <div className="points-container">
-
-          {/* Description */}
-
-          <div className="points-copy">
-
-            <span className="eyebrow">
-              Get Involved
-            </span>
-
-            <h2>
-              Earn points.
-              <br />
-              Get involved.
-              <br />
-              Make an impact.
-            </h2>
-
-            <p>
-              Participate in UT SHPE events, volunteer opportunities,
-              professional development, and community activities to
-              earn points throughout the semester.
-            </p>
-
-            <Link to="/membership" className="btn">
-              Learn More
-            </Link>
-
-          </div>
-
-
-          {/* Leaderboard */}
-
-          <div className="points-card">
-
-            <Leaderboard />
-
-          </div>
-
-        </div>
-
-      </section>
+      <ThisWeekCollage />
 
 
       {/* =====================================================

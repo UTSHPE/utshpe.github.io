@@ -1,0 +1,304 @@
+/* =========================================================
+   THIS WEEK IN SHPE
+   ========================================================= */
+
+.this-week-section {
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   BENTO GRID
+
+   Desktop uses 6 tracks so every tile count from 3 to 6
+   divides evenly:
+
+     ┌───────────┬─────┐
+     │           │  2  │
+     │     1     ├─────┤
+     │           │  3  │
+     ├─────┬─────┼─────┤
+     │  4  │  5  │  6  │
+     └─────┴─────┴─────┘
+
+   With 4 tiles, tile 4 spans the full bottom row.
+   With 5 tiles, tiles 4 and 5 split it in half.
+   ========================================================= */
+
+.this-week-grid {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(6, minmax(0, 1fr));
+
+  grid-auto-rows: 220px;
+
+  gap: 14px;
+}
+
+
+.this-week-tile:nth-child(1) {
+  grid-column: span 4;
+  grid-row: span 2;
+}
+
+
+.this-week-tile:nth-child(2),
+.this-week-tile:nth-child(3),
+.this-week-tile:nth-child(n + 4) {
+  grid-column: span 2;
+}
+
+
+.this-week-grid[data-count="4"] .this-week-tile:nth-child(4) {
+  grid-column: span 6;
+}
+
+
+.this-week-grid[data-count="5"] .this-week-tile:nth-child(n + 4) {
+  grid-column: span 3;
+}
+
+
+/* =========================================================
+   TILE
+   ========================================================= */
+
+.this-week-tile {
+  position: relative;
+
+  margin: 0;
+
+  overflow: hidden;
+
+  border-radius: 16px;
+
+  background: #e9edf2;
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.10);
+
+  transition:
+    box-shadow 0.25s ease;
+}
+
+
+.this-week-tile:hover {
+  box-shadow:
+    0 14px 32px rgba(0, 0, 0, 0.16);
+}
+
+
+.this-week-tile img {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  /*
+    Always fill the tile. Portrait photos are cropped,
+    never letterboxed. Use `focus` in thisWeek.js to
+    control which part stays visible.
+  */
+  object-fit: cover;
+  object-position: center;
+
+  transition:
+    transform 0.5s ease;
+}
+
+
+.this-week-tile:hover img {
+  transform: scale(1.05);
+}
+
+
+/* =========================================================
+   CAPTION OVERLAY
+   ========================================================= */
+
+.this-week-caption {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 8px;
+
+  padding:
+    48px 18px 16px;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.78) 0%,
+      rgba(0, 0, 0, 0.45) 55%,
+      transparent 100%
+    );
+
+  color: #ffffff;
+
+  pointer-events: none;
+}
+
+
+.this-week-pillar {
+  display: inline-block;
+
+  padding: 4px 10px;
+
+  border-radius: 999px;
+
+  background: #e57200;
+
+  color: #ffffff;
+
+  font-size: 0.7rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.04em;
+
+  line-height: 1.3;
+}
+
+
+.this-week-caption-text {
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  line-height: 1.3;
+
+  text-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+
+.this-week-tile:nth-child(1) .this-week-caption-text {
+  font-size: 1.35rem;
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.this-week-actions {
+  display: flex;
+
+  justify-content: center;
+
+  margin-top: 40px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .this-week-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    grid-auto-rows: 210px;
+
+    gap: 12px;
+  }
+
+
+  /* Feature tile runs full width across the top. */
+
+  .this-week-tile:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+
+  .this-week-tile:nth-child(2),
+  .this-week-tile:nth-child(3),
+  .this-week-tile:nth-child(n + 4),
+  .this-week-grid[data-count="4"] .this-week-tile:nth-child(4),
+  .this-week-grid[data-count="5"] .this-week-tile:nth-child(n + 4) {
+    grid-column: span 1;
+  }
+
+
+  /*
+    An even tile count leaves an odd number after the
+    feature tile, so the last one fills the row.
+  */
+
+  .this-week-grid[data-count="4"] .this-week-tile:last-child,
+  .this-week-grid[data-count="6"] .this-week-tile:last-child {
+    grid-column: span 2;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .this-week-grid {
+    grid-template-columns: 1fr;
+
+    grid-auto-rows: 240px;
+  }
+
+
+  .this-week-tile:nth-child(n),
+  .this-week-grid[data-count] .this-week-tile:nth-child(n) {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+
+  .this-week-tile:nth-child(1) .this-week-caption-text {
+    font-size: 1rem;
+  }
+
+
+  .this-week-actions {
+    margin-top: 30px;
+  }
+
+
+  .this-week-actions .btn {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .this-week-tile img {
+    transition: none;
+  }
+
+
+  .this-week-tile:hover img {
+    transform: none;
+  }
+}
