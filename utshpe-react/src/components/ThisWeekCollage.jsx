@@ -46,17 +46,9 @@ function ThisWeekCollage() {
             />
 
             <figcaption className="this-week-caption">
-
-              {entry.pillar && (
-                <span className="this-week-pillar">
-                  {entry.pillar}
-                </span>
-              )}
-
               <span className="this-week-caption-text">
                 {entry.caption}
               </span>
-
             </figcaption>
           </figure>
         ))}
