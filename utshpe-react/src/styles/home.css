@@ -610,7 +610,8 @@
 
 
 .events-panel .events-list {
-  margin-bottom: 16px;
+  /* 12px + the list's 4px padding = 16px above the button */
+  margin-bottom: 12px;
 }
 
 
@@ -1621,7 +1622,7 @@
 
 
   .events-panel .events-list {
-    margin-bottom: 14px;
+    margin-bottom: 10px;
   }
 
 

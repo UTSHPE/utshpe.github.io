@@ -15,7 +15,7 @@ function ThisWeekCollage() {
       <div className="centered-section-header">
 
         <h2 className="home-section-title">
-          This Week in SHPE
+          Photos from the Familia!
         </h2>
 
         <p className="home-section-description">

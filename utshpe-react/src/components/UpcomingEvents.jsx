@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { supabase } from "../lib/supabase";
 import "../styles/upcoming-events.css";
 
@@ -10,6 +10,25 @@ function UpcomingEvents() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [showAll, setShowAll] = useState(false);
+
+  /*
+   * When expanded, the list keeps the height it had with
+   * DEFAULT_VISIBLE events and scrolls inside its own frame,
+   * so the card (and the leaderboard beside it) don't grow.
+   */
+  const listRef = useRef(null);
+  const [lockedHeight, setLockedHeight] = useState(null);
+
+  function toggleShowAll() {
+    if (showAll) {
+      setLockedHeight(null);
+      setShowAll(false);
+      return;
+    }
+
+    setLockedHeight(listRef.current?.offsetHeight ?? null);
+    setShowAll(true);
+  }
 
   useEffect(() => {
     async function fetchEvents() {
@@ -128,7 +147,13 @@ function UpcomingEvents() {
   return (
     <div className="upcoming-events">
 
-      <div className="events-list">
+      <div
+        ref={listRef}
+        className={`events-list${showAll ? " is-scrollable" : ""}`}
+        style={lockedHeight ? { maxHeight: lockedHeight } : undefined}
+        tabIndex={showAll ? 0 : undefined}
+        aria-label={showAll ? "Upcoming events, scrollable" : undefined}
+      >
         {visibleEvents.map((event) => (
           <article
             className="upcoming-event-card"
@@ -187,7 +212,7 @@ function UpcomingEvents() {
       {events.length > DEFAULT_VISIBLE && (
         <button
           className="events-expand-button"
-          onClick={() => setShowAll(!showAll)}
+          onClick={toggleShowAll}
         >
           {showAll
             ? "Show Less"
