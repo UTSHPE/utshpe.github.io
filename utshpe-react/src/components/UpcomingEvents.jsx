@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
 import "../styles/upcoming-events.css";
 
+// Events shown before "Show More Events" is clicked.
+const DEFAULT_VISIBLE = 4;
+
 function UpcomingEvents() {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -120,7 +123,7 @@ function UpcomingEvents() {
 
   const visibleEvents = showAll
     ? events.slice(0, 10)
-    : events.slice(0, 3);
+    : events.slice(0, DEFAULT_VISIBLE);
 
   return (
     <div className="upcoming-events">
@@ -181,7 +184,7 @@ function UpcomingEvents() {
         ))}
       </div>
 
-      {events.length > 3 && (
+      {events.length > DEFAULT_VISIBLE && (
         <button
           className="events-expand-button"
           onClick={() => setShowAll(!showAll)}

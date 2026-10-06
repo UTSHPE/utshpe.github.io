@@ -25,9 +25,13 @@ If the function is unavailable, the slideshow keeps showing the local images in
 
 How the photos are picked:
 
-- The pool is every public photo taken in the last 6 months. If fewer than 10
-  match (for example, the camera dates are wrong), the function also includes
-  photos uploaded in the last 6 months.
+- The pool is every public photo taken in the 2.5 weeks before this week's
+  Monday (00:00 Chicago time) and uploaded before that Monday. Photos uploaded
+  mid-week join the pool the following week, so the set never changes partway
+  through a week. If the camera dates are wrong, photos uploaded in that window
+  are included too.
+- If that still finds fewer than 10 photos, the window widens to 6 weeks, then
+  3 months, then 6 months.
 - 10 are chosen at random, seeded by the ISO week in Chicago time, so everyone
   sees the same set all week and it changes every Monday.
 - To keep a photo out of the slideshow, add the tag `nowebsite` to it on Flickr.

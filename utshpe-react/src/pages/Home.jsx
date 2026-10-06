@@ -7,6 +7,15 @@ import { Link } from "react-router-dom";
 
 import "../styles/home.css";
 
+function scrollToCalendar(event) {
+  const calendar = document.getElementById("calendar");
+
+  if (!calendar) return;
+
+  event.preventDefault();
+  calendar.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 function Home() {
   return (
     <main className="home-page">
@@ -102,57 +111,65 @@ function Home() {
         id="events"
       >
 
+        {/*
+          One 2-row grid: headers share the top row and the cards
+          share the bottom row, so both cards start on the same line.
+          DOM order (header, card, header, card) is the stacked order.
+        */}
+
         <div className="events-leaderboard-grid">
 
           {/* Upcoming Events */}
 
-          <div className="events-column">
+          <div className="column-header events-header">
 
-            <div className="column-header">
+            <h2 className="home-section-title">
+              Upcoming Events
+            </h2>
 
-              <h2 className="home-section-title">
-                Upcoming Events
-              </h2>
+            <p className="home-section-description">
+              Stay connected with the UT SHPE familia and see what is
+              happening next.
+            </p>
 
-              <p className="home-section-description">
-                Stay connected with the UT SHPE familia and see what is
-                happening next.
-              </p>
+            <a
+              href="#calendar"
+              className="btn btn-secondary"
+              onClick={scrollToCalendar}
+            >
+              View Calendar
+            </a>
 
-            </div>
+          </div>
 
 
-            <div className="events-panel">
-              <UpcomingEvents />
-            </div>
-
+          <div className="events-panel">
+            <UpcomingEvents />
           </div>
 
 
           {/* Leaderboard */}
 
-          <div className="leaderboard-column">
+          <div className="column-header leaderboard-header-area">
 
-            <div className="column-header">
+            <h2 className="home-section-title">
+              Leaderboard
+            </h2>
 
-              <h2 className="home-section-title">
-                Leaderboard
-              </h2>
+            <p className="home-section-description">
+              Earn points at events, volunteering, and workshops
+              all semester long.
+            </p>
 
-              <p className="home-section-description">
-                Earn points at events, volunteering, and workshops
-                all semester long.
-              </p>
+            <Link to="/membership" className="btn">
+              Learn More
+            </Link>
 
-              <Link to="/membership" className="btn">
-                Learn More
-              </Link>
-
-            </div>
+          </div>
 
 
+          <div className="leaderboard-card">
             <Leaderboard showHeader={false} />
-
           </div>
 
         </div>
@@ -200,7 +217,10 @@ function Home() {
           CALENDAR
           ===================================================== */}
 
-      <section className="home-section calendar-section">
+      <section
+        className="home-section calendar-section"
+        id="calendar"
+      >
 
         <div className="centered-section-header">
 

@@ -460,48 +460,66 @@
 
 
 /*
-  Upcoming events (left) and leaderboard (right).
-  Each column is a two-row subgrid (header, body) so the
-  headers line up and both bodies stretch to equal height.
+  Upcoming events (left) and leaderboard (right) in one 2-row
+  grid: both headers share the top row, both cards the bottom
+  row, so the cards always start on the same line.
 */
 
 .events-leaderboard-grid {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1280px;
 
   margin: 0 auto;
 
   display: grid;
 
   grid-template-columns:
-    minmax(0, 3fr)
-    minmax(0, 2fr);
+    minmax(0, 1.15fr)
+    minmax(0, 1fr);
 
-  grid-template-rows:
-    auto 1fr;
+  grid-template-areas:
+    "events-header leaderboard-header"
+    "events-card   leaderboard-card";
 
-  column-gap: 40px;
-  row-gap: 24px;
+  column-gap: 44px;
+  row-gap: 28px;
 
   align-items: stretch;
 }
 
 
-.events-column,
-.leaderboard-column {
-  min-width: 0;
-
-  display: grid;
-
-  grid-row: span 2;
-
-  grid-template-rows: subgrid;
+.events-header {
+  grid-area: events-header;
 }
 
 
-.leaderboard-column {
-  /* Lets the leaderboard adapt to its column width. */
-  container-type: inline-size;
+.leaderboard-header-area {
+  grid-area: leaderboard-header;
+}
+
+
+.events-panel {
+  grid-area: events-card;
+}
+
+
+.leaderboard-card {
+  grid-area: leaderboard-card;
+}
+
+
+/* =========================================================
+   COLUMN HEADERS
+   ========================================================= */
+
+.column-header {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
 }
 
 
@@ -511,21 +529,69 @@
 
 
 .column-header .home-section-description {
-  margin: 0;
+  max-width: 460px;
+
+  margin: 0 auto 22px;
 }
 
+
+/*
+  Buttons sit at the bottom of the header row, so they line
+  up even when the subtitles wrap to different line counts.
+*/
 
 .column-header .btn {
-  margin-top: 18px;
+  min-width: 180px;
+
+  margin-top: auto;
 }
 
 
-/* Events body */
+/* Outline variant of .btn, same height */
+
+.home-page .btn.btn-secondary {
+  background: #ffffff;
+
+  color: #003a70;
+
+  box-shadow:
+    inset 0 0 0 1px #003a70;
+}
+
+
+.home-page .btn.btn-secondary:hover {
+  background: #003a70;
+
+  color: #ffffff;
+}
+
+
+.home-page .btn.btn-secondary:focus-visible,
+.home-page .btn:focus-visible {
+  outline: 3px solid #bf5700;
+
+  outline-offset: 3px;
+}
+
+
+/* Smooth-scroll target; clears the fixed navbar. */
+
+.calendar-section {
+  scroll-margin-top: 64px;
+}
+
+
+/* =========================================================
+   EVENTS CARD
+   ========================================================= */
 
 .events-panel {
   min-width: 0;
 
-  padding: 22px;
+  display: flex;
+  flex-direction: column;
+
+  padding: 16px;
 
   background: #f7f8fa;
 
@@ -534,13 +600,49 @@
 
 
 .events-panel .upcoming-events {
+  flex: 1;
+
   max-width: none;
+
+  display: flex;
+  flex-direction: column;
 }
 
 
-/* Leaderboard body */
+.events-panel .events-list {
+  margin-bottom: 16px;
+}
 
-.leaderboard-column .leaderboard-section {
+
+.events-panel .upcoming-event-card {
+  gap: 14px;
+
+  padding: 14px;
+}
+
+
+.events-panel .event-title {
+  overflow-wrap: anywhere;
+}
+
+
+/* Pinned to the bottom of the card */
+
+.events-panel .events-expand-button {
+  margin: auto auto 0;
+}
+
+
+/* =========================================================
+   LEADERBOARD CARD
+   ========================================================= */
+
+.leaderboard-card {
+  min-width: 0;
+}
+
+
+.leaderboard-card .leaderboard-section {
   width: 100%;
   max-width: none;
 
@@ -551,196 +653,96 @@
 }
 
 
-.leaderboard-column .leaderboard-cta {
-  align-self: flex-start;
+.leaderboard-card .podium-grid,
+.leaderboard-card .leaderboard-status {
+  flex: none;
+}
+
+
+.leaderboard-card .row-points {
+  margin-left: 10px;
+}
+
+
+.leaderboard-card .leaderboard-cta {
+  flex: none;
+
+  align-self: center;
 
   margin-top: auto;
 }
 
 
 /*
-  Side-by-side only: fit the leaderboard into its column.
-  Once stacked (<= 900px), leaderboard.css handles mobile.
+  Side by side: the events card sets the row height. The
+  leaderboard is taken out of flow so it adds no height of
+  its own, then fills the row. Only the ranked list (4th
+  place and below) flexes and scrolls; the podium and the
+  CTA always stay visible.
 */
 
 @media (min-width: 901px) {
 
-  .leaderboard-column .leaderboard-section {
-    padding: 26px 22px;
+  .events-section {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+
+  .leaderboard-card {
+    position: relative;
+
+    /* Podium + CTA + a couple of rows, even with few events */
+    min-height: 520px;
+  }
+
+
+  .leaderboard-card .leaderboard-section {
+    position: absolute;
+    inset: 0;
+
+    padding: 26px 20px 22px;
 
     border-radius: 20px;
   }
 
 
-  .leaderboard-column .podium-grid {
+  .leaderboard-card .podium-grid {
     gap: 10px;
 
-    margin-bottom: 24px;
+    margin-bottom: 28px;
   }
 
 
-  .leaderboard-column .podium-card {
-    height: 220px;
+  /* Wider podium cards: less side padding so names truncate less */
 
-    padding: 24px 10px 18px;
+  .leaderboard-card .podium-card,
+  .leaderboard-card .podium-card.place-1 {
+    padding-left: 8px;
+    padding-right: 8px;
   }
 
 
-  .leaderboard-column .podium-card.place-1 {
-    transform: scale(1.04);
+  /* Same name size on all three so 1st place doesn't truncate first */
+
+  .leaderboard-card .place-1 .podium-name {
+    font-size: 1.02rem;
   }
 
 
-  .leaderboard-column .podium-card.place-1:hover {
-    transform: scale(1.04) translateY(-4px);
-  }
+  .leaderboard-card .leaderboard-list {
+    flex: 1 1 auto;
 
+    min-height: 0;
 
-  .leaderboard-column .podium-avatar {
-    width: 50px;
-    height: 50px;
-
-    font-size: 1rem;
-  }
-
-
-  .leaderboard-column .place-1 .podium-avatar {
-    width: 58px;
-    height: 58px;
-  }
-
-
-  .leaderboard-column .podium-name,
-  .leaderboard-column .place-1 .podium-name {
-    font-size: 0.95rem;
-  }
-
-
-  /*
-    Cap the ranked list so one long column doesn't
-    dwarf the other; the rest scrolls.
-  */
-
-  .leaderboard-column .leaderboard-list {
-    max-height: 340px;
-
+    overflow-x: hidden;
     overflow-y: auto;
 
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 
     padding-right: 6px;
   }
-
-
-  /*
-    Narrow leaderboard column (roughly 900-1150px viewports):
-    the 3-across podium gets too tight, so the top 3 become
-    wide rows that keep their podium colors.
-  */
-
-  @container (max-width: 440px) {
-
-    .leaderboard-column .podium-grid {
-      grid-template-columns: 1fr;
-
-      gap: 8px;
-    }
-
-
-    .leaderboard-column .podium-card,
-    .leaderboard-column .podium-card.place-1 {
-      height: auto;
-
-      display: grid;
-
-      grid-template-columns:
-        auto auto minmax(0, 1fr) auto;
-
-      grid-template-areas:
-        "rank avatar name points"
-        "rank avatar major points";
-
-      align-items: center;
-
-      column-gap: 12px;
-
-      padding: 12px 16px;
-
-      text-align: left;
-
-      transform: none;
-    }
-
-
-    /* Podium markup is ordered 2-1-3; list them 1-2-3. */
-
-    .leaderboard-column .podium-card.place-1 {
-      order: 1;
-    }
-
-
-    .leaderboard-column .podium-card.place-2 {
-      order: 2;
-    }
-
-
-    .leaderboard-column .podium-card.place-3 {
-      order: 3;
-    }
-
-
-    .leaderboard-column .podium-card.place-1:hover {
-      transform: translateY(-4px);
-    }
-
-
-    .leaderboard-column .podium-rank {
-      position: static;
-
-      grid-area: rank;
-    }
-
-
-    .leaderboard-column .podium-avatar,
-    .leaderboard-column .place-1 .podium-avatar {
-      grid-area: avatar;
-
-      width: 40px;
-      height: 40px;
-
-      margin: 0;
-
-      font-size: 0.85rem;
-    }
-
-
-    .leaderboard-column .podium-name,
-    .leaderboard-column .place-1 .podium-name {
-      grid-area: name;
-
-      height: auto;
-
-      margin: 0;
-    }
-
-
-    .leaderboard-column .podium-major {
-      grid-area: major;
-
-      height: auto;
-
-      margin: 0;
-
-      -webkit-line-clamp: 1;
-    }
-
-
-    .leaderboard-column .podium-points {
-      grid-area: points;
-    }
-  }
 }
-
 
 .events-grid {
   width: 100%;
@@ -1333,23 +1335,50 @@
 @media (max-width: 900px) {
 
   .events-leaderboard-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
 
-    grid-template-rows: none;
-
-    row-gap: 56px;
-  }
-
-
-  .events-column,
-  .leaderboard-column {
-    grid-row: auto;
-
-    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "events-header"
+      "events-card"
+      "leaderboard-header"
+      "leaderboard-card";
 
     row-gap: 24px;
   }
 
+
+  .leaderboard-header-area {
+    margin-top: 32px;
+  }
+
+
+  /* Header and bottom buttons: full width, capped and centered */
+
+  .column-header .btn,
+  .events-panel .events-expand-button,
+  .leaderboard-card .leaderboard-cta {
+    width: 100%;
+    max-width: 360px;
+
+    min-height: 46px;
+  }
+
+
+  .events-panel .events-expand-button {
+    margin-top: 0;
+  }
+
+
+  /* Keep the page from getting very long */
+
+  .leaderboard-card .leaderboard-list {
+    max-height: 420px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    padding-right: 4px;
+  }
 }
 
 
@@ -1571,25 +1600,53 @@
      EVENTS + LEADERBOARD
      ======================================================= */
 
-  .events-leaderboard-grid {
-    row-gap: 44px;
+  .column-header .home-section-title {
+    font-size:
+      clamp(1.7rem, 7.5vw, 2.2rem);
+
+    white-space: nowrap;
   }
 
 
-  .column-header {
-    text-align: center;
-  }
-
-
-  .column-header .btn {
-    width: 100%;
+  .column-header .home-section-description {
+    margin-bottom: 18px;
   }
 
 
   .events-panel {
-    padding: 14px;
+    padding: 12px;
 
     border-radius: 16px;
+  }
+
+
+  .events-panel .events-list {
+    margin-bottom: 14px;
+  }
+
+
+  .events-panel .upcoming-event-card {
+    gap: 12px;
+
+    padding: 12px;
+  }
+
+
+  .events-panel .event-date {
+    flex-basis: 46px;
+
+    width: 46px;
+    height: 46px;
+  }
+
+
+  .events-panel .event-date-day {
+    font-size: 1.1rem;
+  }
+
+
+  .events-panel .event-meta {
+    gap: 5px;
   }
 
 
