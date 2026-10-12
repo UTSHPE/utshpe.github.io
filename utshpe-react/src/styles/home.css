@@ -1126,6 +1126,19 @@
 }
 
 
+/* Shown when a logo image file is missing */
+
+.sponsors-section .sponsor-fallback {
+  color: #003a70;
+
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.25;
+
+  text-align: center;
+}
+
+
 /* =========================================================
    CALENDAR
    ========================================================= */

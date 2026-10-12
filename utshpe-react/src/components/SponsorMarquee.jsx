@@ -1,51 +1,45 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+
+/*
+  Logos only, no tiers. To add or remove a sponsor, edit this list.
+  Image files live in public/assets/images/sponsors/
+*/
+const SPONSOR_DIR = "/assets/images/sponsors";
 
 const sponsors = [
-  {
-    name: "Accenture",
-    image: "/assets/images/sponsors/Accenture_logo.png",
-  },
-  {
-    name: "Dell",
-    image: "/assets/images/sponsors/Dell_logo.png",
-  },
-  {
-    name: "ARM",
-    image: "/assets/images/sponsors/ARM_logo.png",
-  },
-  {
-    name: "BP",
-    image: "/assets/images/sponsors/BP_logo.png",
-  },
-  {
-    name: "Micron",
-    image: "/assets/images/sponsors/Micron_logo.png",
-  },
-  {
-    name: "Spectrum",
-    image: "/assets/images/sponsors/Spectrum_logo.png",
-  },
-  {
-    name: "Tesla",
-    image: "/assets/images/sponsors/Tesla_logo.png",
-  },
-  {
-    name: "Texas Instruments",
-    image: "/assets/images/sponsors/Texas_Instruments_logo.png",
-  },
-  {
-    name: "P&G",
-    image: "/assets/images/sponsors/PG_logo.png",
-  },
-  {
-    name: "Lockheed Martin",
-    image: "/assets/images/sponsors/lockheedmartin_logo.png",
-  },
-  {
-    name: "LPL Financial",
-    image: "/assets/images/sponsors/LPL_Financial_logo.png",
-  },
+  { name: "Micron", image: `${SPONSOR_DIR}/Micron_logo.png` },
+  { name: "Visa", image: `${SPONSOR_DIR}/Visa_logo.png` },
+  { name: "Texas Instruments", image: `${SPONSOR_DIR}/Texas_Instruments_logo.png` },
+  { name: "Lockheed Martin", image: `${SPONSOR_DIR}/lockheedmartin_logo.png` },
+  { name: "Harvest Midstream", image: `${SPONSOR_DIR}/Harvest_Midstream_logo.png` },
+  { name: "Crusoe", image: `${SPONSOR_DIR}/Crusoe_logo.png` },
+  { name: "Leonardo DRS", image: `${SPONSOR_DIR}/Leonardo_DRS_logo.png` },
+  { name: "Arm", image: `${SPONSOR_DIR}/ARM_logo.png` },
+  { name: "Dell", image: `${SPONSOR_DIR}/Dell_logo.png` },
+  { name: "PepsiCo", image: `${SPONSOR_DIR}/PepsiCo_logo.png` },
+  { name: "LCRA", image: `${SPONSOR_DIR}/LCRA_logo.png` },
+  { name: "Sandia National Laboratories", image: `${SPONSOR_DIR}/Sandia_Lab_logo.png` },
 ];
+
+/*
+  Shows the logo; if the image file is missing, shows the company
+  name as text instead of a broken-image icon.
+*/
+function SponsorLogo({ sponsor }) {
+  const [failed, setFailed] = useState(false);
+
+  if (failed) {
+    return <span className="sponsor-fallback">{sponsor.name}</span>;
+  }
+
+  return (
+    <img
+      src={sponsor.image}
+      alt={sponsor.name}
+      onError={() => setFailed(true)}
+    />
+  );
+}
 
 function SponsorMarquee() {
   const trackRef = useRef(null);
@@ -119,10 +113,7 @@ function SponsorMarquee() {
             className="sponsor"
             key={`${sponsor.name}-${index}`}
           >
-            <img
-              src={sponsor.image}
-              alt={sponsor.name}
-            />
+            <SponsorLogo sponsor={sponsor} />
           </div>
         ))}
       </div>

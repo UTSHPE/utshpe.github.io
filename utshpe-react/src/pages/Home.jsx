@@ -1,5 +1,6 @@
 import ImageSlideshow from "../components/ImageSlideshow";
 import SponsorMarquee from "../components/SponsorMarquee";
+import MonthlySpotlight from "../components/MonthlySpotlight";
 import UpcomingEvents from "../components/UpcomingEvents";
 import Leaderboard from "../components/Leaderboard";
 import ThisWeekCollage from "../components/ThisWeekCollage";
@@ -175,6 +176,13 @@ function Home() {
         </div>
 
       </section>
+
+
+      {/* =====================================================
+          OFFICER / CHAIR / MEMBER OF THE MONTH
+          ===================================================== */}
+
+      <MonthlySpotlight />
 
 
       {/* =====================================================

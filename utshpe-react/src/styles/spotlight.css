@@ -1,0 +1,210 @@
+/* =========================================================
+   OFFICER / CHAIR / MEMBER / SHPEtina OF THE MONTH
+   Matches the home page: white cards, light border, navy
+   headings, and the orange accent used across the site.
+   ========================================================= */
+
+.monthly-section {
+  background: #ffffff;
+}
+
+
+.monthly-eyebrow {
+  margin: 0 0 12px;
+
+  color: #bf5700;
+
+  font-size: 0.85rem;
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+
+.monthly-grid {
+  width: 100%;
+  max-width: 1280px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 24px;
+}
+
+
+/* Card */
+
+.monthly-card {
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #e6e6e6;
+  border-radius: 16px;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.monthly-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Photo: full-width portrait across the top of the card */
+
+.monthly-photo {
+  width: 100%;
+
+  aspect-ratio: 4 / 5;
+
+  overflow: hidden;
+
+  background: #e9edf2;
+}
+
+
+.monthly-photo img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center top;
+}
+
+
+/* Shown until a photo file is added */
+
+.monthly-photo-placeholder {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #003a70 0%,
+      #002f5d 55%,
+      #002442 100%
+    );
+}
+
+
+.monthly-photo-placeholder span {
+  color: rgba(255, 255, 255, 0.85);
+
+  font-size: 3.4rem;
+  font-weight: 800;
+
+  letter-spacing: -0.02em;
+}
+
+
+/* Text */
+
+.monthly-body {
+  padding: 22px 20px 26px;
+
+  text-align: center;
+}
+
+
+.monthly-label {
+  margin: 0 0 12px;
+
+  color: #bf5700;
+
+  font-size: 0.74rem;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+
+/* Small orange accent bar, same as the hero divider */
+
+.monthly-label::after {
+  content: "";
+
+  display: block;
+
+  width: 36px;
+  height: 3px;
+
+  margin: 12px auto 0;
+
+  border-radius: 999px;
+
+  background: #e57200;
+}
+
+
+.monthly-name {
+  margin: 0 0 6px;
+
+  color: #003a70;
+
+  font-size: 1.3rem;
+  font-weight: 750;
+  line-height: 1.2;
+
+  letter-spacing: -0.015em;
+}
+
+
+.monthly-major {
+  margin: 0;
+
+  color: #606060;
+
+  font-size: 0.98rem;
+  line-height: 1.4;
+}
+
+
+/* Tablet: 2 x 2 */
+
+@media (max-width: 1000px) {
+
+  .monthly-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    max-width: 700px;
+  }
+}
+
+
+/* Mobile: one card per row, shorter photo */
+
+@media (max-width: 640px) {
+
+  .monthly-grid {
+    grid-template-columns: minmax(0, 1fr);
+
+    max-width: 380px;
+
+    gap: 20px;
+  }
+
+
+  .monthly-photo {
+    aspect-ratio: 1 / 1;
+  }
+}
