@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
+import { spotlights, spotlightMonth } from "../data/spotlights";
 import "../styles/membership.css";
+
+const monthlySpotlights = ["Member of the Month", "Officer of the Month"]
+  .map((title) => spotlights.find((person) => person.title === title))
+  .filter(Boolean);
 
 const membershipImages = [
   "/assets/images/membership/membership1.jpg",
@@ -207,68 +212,30 @@ function Membership() {
         <section className="spotlights section" id="spotlights">
           <div className="spotlights-grid">
 
-            {/* Member of the Month */}
-            <article className="spotlight-card">
-              <div className="badge">
-                Member of the Month
-              </div>
+            {/* Member + Officer of the Month (edit in src/data/spotlights.js) */}
+            {monthlySpotlights.map((person, index) => (
+              <article className="spotlight-card" key={person.title}>
+                <div className={index === 0 ? "badge" : "badge alt"}>
+                  {person.title}
+                </div>
 
-              <img
-                src="/assets/images/membership/memberofmonth.png"
-                alt="Member of the Month"
-                className="spotlight-photo"
-              />
+                <img
+                  src={person.image}
+                  alt={person.name}
+                  className="spotlight-photo"
+                />
 
-              <div className="spotlight-body">
-                <h3 className="spotlight-name">
-                  Mayra Silva
-                </h3>
+                <div className="spotlight-body">
+                  <h3 className="spotlight-name">
+                    {person.name}
+                  </h3>
 
-                <p className="spotlight-meta">
-                  Civil Engineering • Class of 2029
-                </p>
-
-                <p className="spotlight-fact">
-                  <strong>Hometown:</strong> Dallas TX
-                </p>
-
-                <p className="spotlight-fact">
-                  <strong>Fun Fact:</strong> I have gone parasailing!
-                </p>
-              </div>
-            </article>
-
-            {/* Officer of the Month */}
-            <article className="spotlight-card">
-              <div className="badge alt">
-                Officer of the Month
-              </div>
-
-              <img
-                src="/assets/images/membership/officerofthemonth.png"
-                alt="Officer of the Month"
-                className="spotlight-photo"
-              />
-
-              <div className="spotlight-body">
-                <h3 className="spotlight-name">
-                  Yessenia Martin
-                </h3>
-
-                <p className="spotlight-meta">
-                  Leadership Director • Class of 2027
-                </p>
-
-                <p className="spotlight-fact">
-                  <strong>Hometown:</strong> Arlington TX
-                </p>
-
-                <p className="spotlight-fact">
-                  <strong>Fun Fact:</strong> I ran my first half marathon this
-                  year!
-                </p>
-              </div>
-            </article>
+                  <p className="spotlight-meta">
+                    {person.major} • {spotlightMonth}
+                  </p>
+                </div>
+              </article>
+            ))}
 
             <InstagramFeed />
 

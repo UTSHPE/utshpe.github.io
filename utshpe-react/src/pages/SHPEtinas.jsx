@@ -1,5 +1,10 @@
 import { useEffect, useRef, useState } from "react";
+import { spotlights, spotlightMonth } from "../data/spotlights";
 import "../styles/shpetinas.css";
+
+const shpetinaOfTheMonth = spotlights.find(
+  (person) => person.title === "SHPEtina of the Month"
+);
 
 function SHPEtinas() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -383,38 +388,29 @@ function SHPEtinas() {
         </article>
 
 
-        {/* SHPEtina of the Month */}
-        <aside className="shpetinas-month">
+        {/* SHPEtina of the Month (edit in src/data/spotlights.js) */}
+        {shpetinaOfTheMonth && (
+          <aside className="shpetinas-month">
 
-          <span className="shpetinas-badge">
-            SHPEtina of the Month
-          </span>
+            <span className="shpetinas-badge">
+              {shpetinaOfTheMonth.title}
+            </span>
 
-          <img
-            src="/assets/images/shpetinas/shpetinaofmonth.jpg"
-            alt="SHPEtina of the Month"
-          />
+            <img
+              src={shpetinaOfTheMonth.image}
+              alt={shpetinaOfTheMonth.name}
+            />
 
-          <h3 className="shpetinas-name">
-            Michelle Bustillos
-          </h3>
+            <h3 className="shpetinas-name">
+              {shpetinaOfTheMonth.name}
+            </h3>
 
-          <p className="shpetinas-meta">
-            Mechanical Engineering • Class of 2028
-          </p>
+            <p className="shpetinas-meta">
+              {shpetinaOfTheMonth.major} • {spotlightMonth}
+            </p>
 
-          <ul className="shpetinas-facts">
-            <li>
-              <strong>Hometown:</strong> Leveland, TX
-            </li>
-
-            <li>
-              <strong>Fun Fact:</strong> Loves storm chasing
-              but afraid of lightning
-            </li>
-          </ul>
-
-        </aside>
+          </aside>
+        )}
 
       </section>
 

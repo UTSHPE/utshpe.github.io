@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { sponsors } from "../data/sponsors";
 import "../styles/sponsorship.css";
 
 const sponsorImages = [
@@ -7,52 +8,6 @@ const sponsorImages = [
   "/assets/images/sponsors/Sponsorspage3.jpg",
 ];
 
-const sponsors = [
-  {
-    name: "ARM",
-    image: "/assets/images/sponsors/ARM_logo.png",
-  },
-  {
-    name: "Accenture",
-    image: "/assets/images/sponsors/Accenture_logo.png",
-  },
-  {
-    name: "BP",
-    image: "/assets/images/sponsors/BP_logo.png",
-  },
-  {
-    name: "Dell",
-    image: "/assets/images/sponsors/Dell_logo.png",
-  },
-  {
-    name: "LPL Financial",
-    image: "/assets/images/sponsors/LPL_Financial_logo.png",
-  },
-  {
-    name: "Micron",
-    image: "/assets/images/sponsors/Micron_logo.png",
-  },
-  {
-    name: "P&G",
-    image: "/assets/images/sponsors/PG_logo.png",
-  },
-  {
-    name: "Spectrum",
-    image: "/assets/images/sponsors/Spectrum_logo.png",
-  },
-  {
-    name: "Tesla",
-    image: "/assets/images/sponsors/Tesla_logo.png",
-  },
-  {
-    name: "Texas Instruments",
-    image: "/assets/images/sponsors/Texas_Instruments_logo.png",
-  },
-  {
-    name: "Lockheed Martin",
-    image: "/assets/images/sponsors/lockheedmartin_logo.png",
-  },
-];
 
 function SponsorSlideshow() {
   const [currentImage, setCurrentImage] = useState(0);
