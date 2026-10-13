@@ -159,7 +159,7 @@ function About() {
               <span className="stat-icon" aria-hidden="true">
                 <i className="fa-solid fa-people-group"></i>
               </span>
-              <h3>300+</h3>
+              <h3>450+</h3>
               <p>Active Members</p>
             </div>
 
