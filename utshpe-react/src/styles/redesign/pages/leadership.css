@@ -1,0 +1,14 @@
+/* Ported verbatim from design/pages/desktop/Leadership.html (style 3) by design/port-css.mjs. Do not edit by hand. */
+:where(body[data-page="leadership"]) .lh{padding:70px 56px 34px;display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:end}
+:where(body[data-page="leadership"]) .lh h1{font-family:var(--display);font-size:50px;line-height:1.1}
+:where(body[data-page="leadership"]) .lh p{font-size:18px;line-height:1.6;color:rgba(10,35,80,.8)}
+:where(body[data-page="leadership"]) .grp{display:flex;align-items:center;gap:14px;margin-bottom:36px;justify-content:center}
+:where(body[data-page="leadership"]) .grp h2{font-family:var(--display);font-size:38px;line-height:1.1}
+:where(body[data-page="leadership"]) .grp span{font-weight:700;font-size:14px;background:var(--navy);color:#fff;border-radius:999px;padding:5px 14px}
+:where(body[data-page="leadership"]) .hint{text-align:center;font-size:13px;color:rgba(10,35,80,.55);margin-top:34px}
+:where(body[data-page="leadership"]) .fgrid.four{max-width:1050px;margin:0 auto}
+:where(body[data-page="leadership"]) .ctaband{background:var(--peach)}
+:where(body[data-page="leadership"]) .band{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:20px}
+:where(body[data-page="leadership"]) .band .phd{min-height:300px}
+:where(body[data-page="leadership"]) .band .phd:first-child{grid-row:span 1}
+:where(body[data-page="leadership"]) .band p{font-size:13px;color:rgba(10,35,80,.6);margin-top:10px}

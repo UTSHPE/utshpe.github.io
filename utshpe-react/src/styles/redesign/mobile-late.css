@@ -1,0 +1,95 @@
+/* Ported verbatim from design/pages/mobile/*.html (<style id="mobile">, shared part 2) by design/port-css.mjs. Do not edit by hand. */
+/* ===== mobile fixes (match the desktop site, tidy spacing) ===== */
+@media (max-width:760px){
+  /* odd last card in a 2-up grid sits centered, not hanging left */
+  .fgrid>:last-child:nth-child(odd){grid-column:1/-1}
+  /* photo tiles: smaller captions, camera never covered */
+  .phd{overflow:hidden}
+  .phd svg{width:42px!important;height:42px!important;margin-top:-14px}
+  .phd span:not(.stk){left:10px!important;bottom:10px!important;max-width:calc(100% - 20px);font-size:9.5px!important;letter-spacing:.1em!important;padding:4px 9px!important;line-height:1.25}
+  .phd .stk{top:10px!important;right:10px!important;left:auto!important;bottom:auto!important;width:46px!important;height:46px!important;display:grid!important;place-items:center!important;padding:0!important;font-size:0!important}
+  .phd .stk svg{width:30px!important;height:30px!important;margin:0!important;position:static!important;display:block!important;opacity:1!important}
+  .bento>*:last-child:nth-child(even){grid-column:1/-1!important}
+  .bento{grid-auto-rows:128px!important}
+  .pc .lab{left:12px!important;bottom:12px!important;font-size:9px!important;padding:4px 9px!important}
+  .pc .dots{right:12px!important;bottom:14px!important;gap:5px!important}
+  .pc .dots i{width:16px!important}.pc .dots i.on{width:28px!important}
+  /* About: photos stack with room to breathe, no overlap */
+  .trio{flex-direction:column!important;gap:18px!important;padding:6px 20px 24px!important}
+  .trio .phd{width:100%!important;height:200px!important;margin:0!important;box-shadow:0 0 0 6px #fff!important}
+  .trio .phd:nth-child(1){transform:rotate(-1.6deg)!important}.trio .phd:nth-child(2){transform:rotate(1.2deg)!important}.trio .phd:nth-child(3){transform:rotate(-1deg)!important}
+  .trio-wrap{padding:6px 0 40px!important}
+  /* section spacing */
+  .sec{padding:44px 20px!important}
+  .ctaband{padding:52px 20px!important}
+  .foot .fi{padding:36px 20px 28px!important}
+  .air{height:12px!important}
+}
+.mcheck{display:none}
+@media (max-width:760px){
+  .nav{gap:8px}
+  .mcheck{display:inline-flex;align-items:center;margin-left:auto;background:#F26838;color:#0A2350!important;font:700 14px 'DM Sans',system-ui,sans-serif;padding:11px 16px;border-radius:12px;white-space:nowrap;text-decoration:none}
+}
+@media (max-width:760px){
+  .cd.today .n{flex:0 0 auto!important;width:28px!important;height:28px!important;line-height:28px!important;border-radius:50%!important;margin:0 auto 2px!important;padding:0!important}
+}
+
+/* ===== round 2 mobile changes ===== */
+@media (max-width:760px){
+  /* Home: events scroll sideways, four at a time (2 x 2 per page) */
+  .cards{display:grid!important;grid-auto-flow:column!important;grid-template-columns:none!important;grid-template-rows:auto auto!important;grid-auto-columns:calc((100% - 10px)/2)!important;overflow-x:auto!important;overflow-y:hidden!important;scroll-snap-type:x mandatory!important;scroll-behavior:smooth;gap:10px!important;padding:0 0 10px!important;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .cards::-webkit-scrollbar{display:none}
+  .cards .card{display:flex!important;scroll-snap-align:none}
+  .cards .card:nth-child(4n+1),.cards .card:nth-child(4n+2){scroll-snap-align:start}
+  .cards .card:nth-child(n+5){display:flex!important}
+  .cards .card:nth-child(1){grid-column:1!important;grid-row:1!important}
+  .cards .card:nth-child(2){grid-column:2!important;grid-row:1!important}
+  .cards .card:nth-child(3){grid-column:1!important;grid-row:2!important}
+  .cards .card:nth-child(4){grid-column:2!important;grid-row:2!important}
+  .cards .card:nth-child(5){grid-column:3!important;grid-row:1!important}
+  .cards .card:nth-child(6){grid-column:4!important;grid-row:1!important}
+  .cards .card:nth-child(7){grid-column:3!important;grid-row:2!important}
+  .cards .card:nth-child(8){grid-column:4!important;grid-row:2!important}
+  .cards .card:nth-child(9){grid-column:5!important;grid-row:1!important}
+  .cards .card:nth-child(10){grid-column:6!important;grid-row:1!important}
+  .cards .card:nth-child(11){grid-column:5!important;grid-row:2!important}
+  .cards .card:nth-child(12){grid-column:6!important;grid-row:2!important}
+  .cards .card:nth-child(13){grid-column:7!important;grid-row:1!important}
+  .cards .card:nth-child(14){grid-column:8!important;grid-row:1!important}
+  .cards .card:nth-child(15){grid-column:7!important;grid-row:2!important}
+  .cards .card:nth-child(16){grid-column:8!important;grid-row:2!important}
+  .evdots{display:flex;justify-content:center;gap:6px;margin-top:10px}
+  .evdots i{width:8px;height:8px;border-radius:50%;background:#B9C9D8;transition:background .2s,width .2s}
+  .evdots i.on{background:#0A2350;width:22px;border-radius:4px}
+  /* SHPEtinas: program highlights as a 2 x 2 grid, photo grid evened out */
+  .hl{grid-template-columns:1fr 1fr!important;gap:10px!important}
+  .hl .c{padding:16px 14px 18px!important;border-radius:20px!important}
+  .hl .no{font-size:28px!important}
+  .hl h3{font-size:16px!important;margin:10px 0 6px!important}
+  .hl p{font-size:12.5px!important;line-height:1.45}
+  .hl .ln{margin-top:12px!important}
+  /* Membership: Instagram posts scroll sideways */
+  .ig{display:flex!important;grid-template-columns:none!important;overflow-x:auto!important;gap:10px!important;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:none}
+  .ig::-webkit-scrollbar{display:none}
+  .ig a{flex:0 0 42%!important;scroll-snap-align:start;display:grid!important}
+  .ig>*:nth-child(n+4){display:grid!important}
+  /* About: tighter gap before Chapter documents */
+  section[style*="padding:20px 0 90px"]{padding:14px 0 18px!important}
+  section.sec[style*="padding-top:20px"]{padding-top:6px!important}
+  /* Office hours: same postcard design, shorter week (46px per hour instead of 72) */
+  .blk.tiny .face small{display:none!important}
+  .blk.tiny .face b{font-size:10px!important}
+  .ohl .grid .times{height:414px!important}
+  .ohl .grid .day{height:414px!important;grid-template-rows:repeat(18,23px)!important;background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 45px,#B9C9D8 45px,#B9C9D8 46px)!important}
+  .times span:nth-child(1){top:0px!important}
+  .times span:nth-child(2){top:46px!important}
+  .times span:nth-child(3){top:92px!important}
+  .times span:nth-child(4){top:138px!important}
+  .times span:nth-child(5){top:184px!important}
+  .times span:nth-child(6){top:230px!important}
+  .times span:nth-child(7){top:276px!important}
+  .times span:nth-child(8){top:322px!important}
+  .times span:nth-child(9){top:368px!important}
+  .times span:nth-child(10){top:414px!important}
+}
+

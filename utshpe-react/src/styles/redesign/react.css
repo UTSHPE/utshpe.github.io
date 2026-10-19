@@ -1,0 +1,13 @@
+/*
+ * Additions the design does not have, because it only shows placeholder tiles.
+ * Real photos fill the tile's exact box, under its caption chip and stickers.
+ */
+.phd>img.pimg,
+.fph>img.pimg,
+.pc .sl>img.pimg,
+.slides .sl>img.pimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit}
+
+/* the leftover stub pages (/resources, /contact, /coding-resources) inside the new chrome */
+.stub{padding:92px 56px;min-height:40vh}
+.stub h1{font-family:var(--display);font-size:46px;line-height:1.05}
+@media (max-width:760px){.stub{padding:46px 20px}.stub h1{font-size:28px}}

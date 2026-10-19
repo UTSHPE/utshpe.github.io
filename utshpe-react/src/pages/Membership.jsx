@@ -1,265 +1,91 @@
-import { useEffect, useState } from "react";
-import { spotlights, spotlightMonth } from "../data/spotlights";
-import "../styles/membership.css";
+import useBodyPage from "../hooks/useBodyPage";
+import { INSTAGRAM_URL, MEMBERSHIP_FORM_URL } from "../lib/constants";
+import { BL, CAM_IG, html, NV, OR, RD } from "../lib/design";
+import { spotlightMonth } from "../data/spotlights";
+import PhotoHero from "../components/redesign/PhotoHero";
+import PhotoTile from "../components/redesign/PhotoTile";
+import Sticker from "../components/redesign/Sticker";
+import { SpotGrid } from "../components/redesign/home/Spotlight";
 
-const monthlySpotlights = ["Member of the Month", "Officer of the Month"]
-  .map((title) => spotlights.find((person) => person.title === title))
-  .filter(Boolean);
-
-const membershipImages = [
-  "/assets/images/membership/membership1.jpg",
-  "/assets/images/membership/membership2.jpg",
-  "/assets/images/membership/membership3.jpg",
-  "/assets/images/membership/membership4.jpg",
-  "/assets/images/membership/membership5.jpg",
-  "/assets/images/membership/membership6.jpg",
-  "/assets/images/membership/membership7.jpg",
+const HERO_PHOTOS = [4, 2, 1, 3].map((n) => ({ src: `/assets/images/membership/membership${n}.jpg`, alt: "UT SHPE members" }));
+const WHY = [
+  ["#74ABC2", "Sponsored General Meetings"],
+  ["#F26838", "Professional development events"],
+  ["#D33E26", "Mentorship & leadership opportunities", true],
+  ["#1272B8", "Recruiting & company info sessions", true],
+  ["#F7B79A", "Study nights, socials, and outreach"],
 ];
-
-
-const instagramPosts = [
-  "https://www.instagram.com/p/DNg3R0MR3lX/?hl=en&img_index=1",
-  "https://www.instagram.com/p/DcrBpuKhV9z/?hl=en",
-  "https://www.instagram.com/p/Dcj2u90GdS2/?hl=en&img_index=1",
+const STEPS = [
+  ["#74ABC2", "Fill out the membership form", "Tell us a little about yourself.", ["heartenv", RD]],
+  ["#F26838", "Pay membership dues", "Cover your dues to become a member.", ["star", OR]],
+  ["#F7B79A", "Join our Slack and follow our Instagram", "Keep up with upcoming events!", ["guitar", BL]],
+  ["#9CC3D5", "Get involved!", "Come to a meeting and say hi.", ["boot", NV]],
 ];
+const IG_TONES = ["#CFE6EF", "#FBD3C0", "#DCEBF2", "#F4C5BD", "#FDE3D6"];
 
-function MembershipSlideshow() {
-  const [currentImage, setCurrentImage] = useState(0);
+/* a white frog waving "hi!" in the corner of the steps section */
+const N = "#0A2350";
+const FROG = '<svg width="150" height="120" viewBox="0 0 150 120"><g fill="#fff" stroke="' + N + '" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M56 48L62 66M66 46L72 64M94 48L88 66M84 46L78 64" fill="none"/><path d="M52 62Q75 54 98 62Q104 84 92 100Q75 106 58 100Q46 84 52 62Z"/><circle cx="56" cy="38" r="12"/><circle cx="94" cy="38" r="12"/><ellipse cx="75" cy="82" rx="16" ry="8" fill="#EAF3F8"/></g><circle cx="58" cy="39" r="3" fill="' + N + '"/><circle cx="92" cy="39" r="3" fill="' + N + '"/><g transform="translate(96 4)"><rect width="46" height="26" rx="13" fill="#fff" stroke="' + N + '" stroke-width="3"/><text x="23" y="18" text-anchor="middle" font-family="Mr Dafoe,cursive" font-size="20" fill="' + RD + '">hi!</text></g></svg>';
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % membershipImages.length);
-    }, 3500);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  return (
-    <div
-      className="hero-media slideshow-js"
-      aria-label="UT SHPE membership photos"
-    >
-      {membershipImages.map((image, index) => (
-        <img
-          key={image}
-          src={image}
-          alt={`UT SHPE membership event ${index + 1}`}
-          className={index === currentImage ? "active" : ""}
-        />
-      ))}
-    </div>
-  );
+function FormButton() {
+  return <a className="btn" href={MEMBERSHIP_FORM_URL} target="_blank" rel="noopener" data-form-link>Fill out the membership form</a>;
 }
 
-/*
- * Loads Instagram's embed.js once, then re-processes any
- * instagram-media blockquotes on the page whenever `deps` changes
- * (e.g. after the post list renders). Without this, React never
- * triggers Instagram's own auto-init and the blockquotes stay blank.
- */
-function useInstagramEmbed(deps) {
-  useEffect(() => {
-    const process = () => {
-      if (window.instgrm) {
-        window.instgrm.Embeds.process();
-      }
-    };
-
-    const existingScript = document.querySelector(
-      'script[src="https://www.instagram.com/embed.js"]'
-    );
-
-    if (existingScript) {
-      process();
-    } else {
-      const script = document.createElement("script");
-      script.src = "https://www.instagram.com/embed.js";
-      script.async = true;
-      script.onload = process;
-      document.body.appendChild(script);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, deps);
-}
-
-function InstagramFeed() {
-  useInstagramEmbed([instagramPosts.length]);
-
-  return (
-    <div className="ig-embed">
-      <h3 className="ig-title">
-        <i className="fa-brands fa-instagram" aria-hidden="true"></i>
-        Latest on Instagram
-      </h3>
-
-      {instagramPosts.length > 0 ? (
-        <div className="ig-post-grid">
-          {instagramPosts.map((permalink) => (
-            <blockquote
-              key={permalink}
-              className="instagram-media"
-              data-instgrm-permalink={permalink}
-              data-instgrm-version="14"
-            />
-          ))}
-        </div>
-      ) : (
-        <div className="ig-empty">
-          <p>
-            Add a few post links in <code>instagramPosts</code> to show
-            them here, or follow along in the meantime.
-          </p>
-          <a
-            href="https://www.instagram.com/utshpe/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ig-follow-link"
-          >
-            <i className="fa-brands fa-instagram" aria-hidden="true"></i>
-            @utshpe on Instagram
-          </a>
-        </div>
-      )}
-    </div>
-  );
-}
-
-function Membership() {
+export default function Membership() {
+  useBodyPage("membership");
   return (
     <>
-      <main className="membership-page">
+      <header className="sh">
+        <div><div className="kick">hello, future member</div><h1>Become a part of the UTSHPE Familia!</h1><p className="sub">Find your familia, grow your skills, get involved, and get plugged into opportunities across UT and beyond!</p><div style={{ marginTop: 26 }}><FormButton /></div></div>
+        <PhotoHero className="ph slim" photos={HERO_PHOTOS} />
+      </header>
+      <div className="air"></div>
 
-        {/* HERO */}
-        <section className="member-hero">
-          <div className="section hero-grid">
+      <section className="sec">
+        <div className="hd" data-r><div><div className="kick">what you get</div><h2>Why join</h2></div></div>
+        <div className="wj" data-r>
+          <div className="get">
+            {WHY.map(([c, t, light], i) => <div className="it" style={{ "--c": c }} key={t}><i style={light ? { color: "#fff" } : undefined}>{i + 1}</i>{t}</div>)}
+          </div>
+          <div className="stack" id="stack">
+            <PhotoTile tone="#CFE6EF" label="General meeting" cls="t1" src="/assets/images/membership/membership7.jpg" />
+            <PhotoTile tone="#FBD3C0" label="Socials" src="/assets/images/membership/membership6.jpg" />
+            <PhotoTile tone="#DCEBF2" label="Study night" src="/assets/images/membership/membership5.jpg" />
+          </div>
+        </div>
+      </section>
 
-            <div className="hero-copy">
-              <h1 className="member-subtitle">
-                Become a part of the UTSHPE Familia!
-              </h1>
-
-              <p className="member-subtitle">
-                Find your familia, grow your skills, get involved, and get
-                plugged into opportunities across UT and beyond!
-              </p>
-
-              <ul className="member-highlights">
-                <li>Sponsored General Meetings</li>
-                <li>Professional development events</li>
-                <li>Mentorship &amp; leadership opportunities</li>
-                <li>Recruiting &amp; company info sessions</li>
-                <li>Study nights, socials, and outreach</li>
-              </ul>
+      <section className="sec alt" style={{ position: "relative" }}>
+        <div className="hd" data-r><div><div className="kick">four easy steps</div><h2>How to Join UTSHPE</h2></div></div>
+        <div className="steps" data-r>
+          {STEPS.map(([c, h, p, [icon, color]], i) => (
+            <div className="st" style={{ "--c": c }} key={h}>
+              <div className="n">{i + 1}</div><h3>{h}</h3><p>{p}</p>
+              <Sticker name={icon} color={color} rot={i % 2 ? -8 : 8} style={{ right: 16, top: 16 }} />
             </div>
+          ))}
+        </div>
+        <div className="join" data-r><FormButton /></div>
+        <div className="dec" aria-hidden="true" style={{ right: 56, bottom: 26 }} dangerouslySetInnerHTML={html(FROG)} />
+      </section>
 
-            <MembershipSlideshow />
+      <section className="sec">
+        <div className="center" data-r style={{ textAlign: "center", marginBottom: 38 }}><div className="eyebrow" id="mm">{spotlightMonth}</div><div className="h2" style={{ marginTop: 6 }}>Members to know</div></div>
+        <SpotGrid id="mtk" />
+      </section>
 
-          </div>
-        </section>
+      <section className="sec alt">
+        <div className="hd" data-r><div><div className="kick">what's happening</div><h2>Latest on Instagram</h2></div><a className="btn" href={INSTAGRAM_URL} target="_blank" rel="noopener">Follow @utshpe</a></div>
+        <div className="ig" id="ig" data-r>
+          {IG_TONES.map((t, i) => <a key={i} href={INSTAGRAM_URL} target="_blank" rel="noopener" style={{ background: t }} dangerouslySetInnerHTML={html(CAM_IG + "<span>Post " + (i + 1) + "</span>")} />)}
+        </div>
+      </section>
 
-        {/* HOW TO JOIN */}
-        <section className="join-steps section" id="how-to-join">
-          <h2 className="h2">How to Join UTSHPE</h2>
-
-          <ol className="steps">
-            <li>
-              <span className="step-icon" aria-hidden="true">
-                <i className="fa-solid fa-file-signature"></i>
-              </span>
-
-              <h3>
-                1) Fill out the{" "}
-                <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSfpFsfzYCDaP52RhzU70rrBwR49V1JNfCJbOojF0uce5uLG3w/viewform"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  membership form
-                </a>
-              </h3>
-            </li>
-
-            <li>
-              <span className="step-icon" aria-hidden="true">
-                <i className="fa-solid fa-hand-holding-dollar"></i>
-              </span>
-
-              <h3>2) Pay membership dues</h3>
-            </li>
-
-            <li>
-              <span className="step-icon" aria-hidden="true">
-                <i className="fa-solid fa-comments"></i>
-              </span>
-
-              <h3>
-                3) Join our Slack and follow our Instagram to keep up with
-                upcoming events!
-              </h3>
-            </li>
-
-            <li>
-              <span className="step-icon" aria-hidden="true">
-                <i className="fa-solid fa-people-group"></i>
-              </span>
-
-              <h3>4) Get involved!</h3>
-            </li>
-          </ol>
-        </section>
-
-        {/* SPOTLIGHTS */}
-        <section className="spotlights section" id="spotlights">
-          <div className="spotlights-grid">
-
-            {/* Member + Officer of the Month (edit in src/data/spotlights.js) */}
-            {monthlySpotlights.map((person, index) => (
-              <article className="spotlight-card" key={person.title}>
-                <div className={index === 0 ? "badge" : "badge alt"}>
-                  {person.title}
-                </div>
-
-                <img
-                  src={person.image}
-                  alt={person.name}
-                  className="spotlight-photo"
-                />
-
-                <div className="spotlight-body">
-                  <h3 className="spotlight-name">
-                    {person.name}
-                  </h3>
-
-                  <p className="spotlight-meta">
-                    {person.major} • {spotlightMonth}
-                  </p>
-                </div>
-              </article>
-            ))}
-
-            <InstagramFeed />
-
-            {/* Points Leaderboard 
-            <aside className="ig-embed">
-              <h3 className="ig-title">
-                Points Leaderboard
-              </h3>
-
-              <iframe
-                src="https://script.google.com/macros/s/AKfycbyf5sua5ZE-7MxAZBWglR3zv1gu6vQkzEkb1qr1e9unAb7k5qu15DjEj79YyswheQNz/exec"
-                title="UT SHPE Points Leaderboard"
-                loading="lazy"
-                scrolling="yes"
-              />
-            </aside>
-            */}
-          </div>
-        </section>
-
-      </main>
-
+      <section className="ctaband peach">
+        <div className="kick">ready when you are</div><div className="h2">Join the Familia</div>
+        <p>Visit us at a general meeting, meet the team, and find your place.</p>
+        <FormButton />
+      </section>
     </>
   );
 }
-
-export default Membership;

@@ -1,0 +1,82 @@
+/* Ported verbatim from design/pages/desktop/About.html (style 3) by design/port-css.mjs. Do not edit by hand. */
+/* header: text + a fan of polaroids, bats cross once */
+:where(body[data-page="about"]) .ah{position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding:60px 56px 70px}
+:where(body[data-page="about"]) .ah h1{font-family:var(--display);font-size:56px;line-height:1.05}
+:where(body[data-page="about"]) .ah .sub{max-width:520px;font-size:18px;margin-top:14px;color:rgba(10,35,80,.8)}
+:where(body[data-page="about"]) .fan{position:relative;height:440px}
+:where(body[data-page="about"]) .fan .pol{opacity:0;animation:drop .9s cubic-bezier(.2,.9,.3,1.1) forwards}
+:where(body[data-page="about"]) .fan .pol:nth-child(1){left:10px;top:60px;--r:-7deg;animation-delay:.1s}
+:where(body[data-page="about"]) .fan .pol:nth-child(2){left:200px;top:6px;--r:4deg;animation-delay:.3s;z-index:2}
+:where(body[data-page="about"]) .fan .pol:nth-child(3){left:360px;top:110px;--r:-2deg;animation-delay:.5s;z-index:3}
+@keyframes drop{from{opacity:0;transform:translateY(-70px) rotate(calc(var(--r) + 14deg))}to{opacity:1;transform:rotate(var(--r))}}
+:where(body[data-page="about"]) .bf{position:absolute;left:0;top:30px;width:100%;height:120px;pointer-events:none}
+:where(body[data-page="about"]) .bf svg{position:absolute;left:-60px;animation:fly 9s linear 1.2s 1 forwards;opacity:0}
+@keyframes fly{0%{transform:translate(0,0);opacity:0}6%{opacity:.9}14%{transform:translate(230px,-22px)}28%{transform:translate(460px,14px)}42%{transform:translate(690px,-18px)}56%{transform:translate(920px,12px)}70%{transform:translate(1150px,-16px)}84%{transform:translate(1390px,10px)}94%{opacity:.9}100%{transform:translate(1620px,-6px);opacity:0}}
+@media (prefers-reduced-motion:reduce){:where(body[data-page="about"]) .fan .pol{animation:none;opacity:1;transform:rotate(var(--r))}:where(body[data-page="about"]) .bf{display:none}}
+/* mission + vision, offset */
+:where(body[data-page="about"]) .mv2{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch}
+:where(body[data-page="about"]) .mv{background:var(--mist);border-radius:30px;padding:30px 42px 44px;position:relative;overflow:hidden}
+:where(body[data-page="about"]) .mv.b{margin-top:0;background:var(--peach)}
+:where(body[data-page="about"]) .mv{display:flex;flex-direction:column}
+:where(body[data-page="about"]) .mtop{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+:where(body[data-page="about"]) .mv .lab{font-family:var(--script);font-size:44px;line-height:1;color:var(--red)}
+:where(body[data-page="about"]) .mv h2{font-family:var(--display);font-size:38px;line-height:1.1;margin:2px 0 14px}
+:where(body[data-page="about"]) .mv p{font-size:19px;line-height:1.6;max-width:560px}
+/* hovering a photo brings it in front of the others */
+:where(body[data-page="about"]) .fan .pol,:where(body[data-page="about"]) .trio .phd{transition:scale .3s ease,translate .3s ease,box-shadow .3s ease;cursor:pointer}
+:where(body[data-page="about"]) .trio .phd{position:relative}
+:where(body[data-page="about"]) .fan .pol:hover{z-index:20!important;scale:1.07;translate:0 -10px}
+:where(body[data-page="about"]) .trio .phd:hover{z-index:20!important;scale:1.07;translate:0 -14px;box-shadow:0 0 0 8px #fff,0 18px 34px rgba(10,35,80,.22)}
+/* photo trio */
+:where(body[data-page="about"]) .trio{display:flex;justify-content:center;padding:20px 56px 30px}
+:where(body[data-page="about"]) .trio .phd{width:380px;height:270px;margin:0 -16px;box-shadow:0 0 0 8px #fff}
+:where(body[data-page="about"]) .trio .phd:nth-child(1){transform:rotate(-3deg)}:where(body[data-page="about"]) .trio .phd:nth-child(2){transform:translateY(-14px) rotate(1.5deg);z-index:2}:where(body[data-page="about"]) .trio .phd:nth-child(3){transform:rotate(3deg)}
+:where(body[data-page="about"]) .cap2{text-align:center;font-family:var(--script);font-size:30px;color:var(--red);margin-top:22px}
+/* numbers on navy */
+:where(body[data-page="about"]) .numband{background:var(--navy);color:#fff;padding:84px 56px 70px}
+:where(body[data-page="about"]) .numband .kick{color:var(--orange)}:where(body[data-page="about"]) .numband h2{font-family:var(--display);font-size:46px}
+:where(body[data-page="about"]) .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:36px}
+:where(body[data-page="about"]) .stat{background:var(--navy2,#16316B);border-radius:26px;padding:34px 28px 30px}
+:where(body[data-page="about"]) .stat .n{font-family:var(--display);font-size:64px;line-height:1;color:#fff}
+:where(body[data-page="about"]) .stat .n sup{font-size:.55em;color:var(--orange);vertical-align:top;margin-left:2px}
+:where(body[data-page="about"]) .stat .l{font-size:15px;color:rgba(255,255,255,.8);margin-top:10px;font-weight:500}
+:where(body[data-page="about"]) .stat .ln{width:36px;height:4px;border-radius:2px;background:var(--c);margin-top:18px}
+:where(body[data-page="about"]) .strip{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:30px}
+:where(body[data-page="about"]) .strip .phd{height:150px;min-height:0}
+/* pillars with a photo */
+:where(body[data-page="about"]) .pil{display:grid;grid-template-columns:.8fr 1.6fr;gap:30px;align-items:stretch}
+:where(body[data-page="about"]) .pl{display:flex;flex-direction:column;gap:10px}
+:where(body[data-page="about"]) .pl button{font-family:var(--sans);text-align:left;font-weight:700;font-size:17px;border:0;background:var(--mist);color:var(--navy);padding:16px 20px;border-radius:18px;cursor:pointer;display:flex;align-items:center;gap:14px;transition:background .15s}
+:where(body[data-page="about"]) .pl button i{width:14px;height:14px;border-radius:50%;background:var(--c);flex:0 0 auto}
+:where(body[data-page="about"]) .pl button em{font-style:normal;margin-left:auto;font-family:var(--display);font-size:14px;color:rgba(10,35,80,.35)}
+:where(body[data-page="about"]) .pl button:hover{background:#E6EEF4}
+:where(body[data-page="about"]) .pl button.on{background:#fff;box-shadow:0 0 0 2px var(--navy)}
+:where(body[data-page="about"]) .pp{background:var(--mist);border-radius:30px;padding:36px 36px 36px 46px;position:relative;overflow:hidden;min-height:380px;display:grid;grid-template-columns:1fr 250px;gap:30px;align-items:center}
+:where(body[data-page="about"]) .pp:before{content:"";position:absolute;left:0;top:0;bottom:0;width:12px;background:var(--c)}
+:where(body[data-page="about"]) .pp .no{font-family:var(--display);font-size:84px;line-height:1;color:var(--c)}
+:where(body[data-page="about"]) .pp h3{font-family:var(--display);font-size:38px;line-height:1.1;margin:6px 0 14px}
+:where(body[data-page="about"]) .pp p{font-size:20px;line-height:1.5}
+:where(body[data-page="about"]) .pp .phd{height:290px;min-height:0}
+/* history, inside an inset panel */
+:where(body[data-page="about"]) .inset{margin:0 56px;background:var(--band);border-radius:44px;padding:76px 64px}
+:where(body[data-page="about"]) .hist{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+:where(body[data-page="about"]) .hist .yr{font-family:var(--display);font-size:150px;line-height:1;color:var(--orange);position:relative}
+:where(body[data-page="about"]) .hist .yr small{display:block;font-family:var(--script);font-size:46px;color:var(--red);margin-bottom:-10px}
+:where(body[data-page="about"]) .hph{position:relative;height:300px;margin-top:20px}
+:where(body[data-page="about"]) .hph .phd{position:absolute;box-shadow:0 0 0 8px #fff}
+:where(body[data-page="about"]) .hph .phd:nth-child(1){left:0;top:0;width:330px;height:230px;transform:rotate(-3deg)}
+:where(body[data-page="about"]) .hph .phd:nth-child(2){left:220px;top:110px;width:230px;height:170px;transform:rotate(4deg)}
+:where(body[data-page="about"]) .hist p{font-size:19px;line-height:1.65;max-width:620px}
+:where(body[data-page="about"]) .tl{position:relative;margin:26px 0 0 12px;padding-left:34px}
+:where(body[data-page="about"]) .tl:before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:4px;border-radius:2px;background:var(--orange);transform:scaleY(0);transform-origin:top;transition:transform 1.3s ease}
+:where(body[data-page="about"]) .tl.in:before{transform:scaleY(1)}
+:where(body[data-page="about"]) .tl div{position:relative;margin-bottom:22px}
+:where(body[data-page="about"]) .tl div:before{content:"";position:absolute;left:-42px;top:5px;width:20px;height:20px;border-radius:50%;background:#fff;border:4px solid var(--orange)}
+:where(body[data-page="about"]) .tl b{font-family:var(--display);font-size:22px;display:block}
+:where(body[data-page="about"]) .tl span{font-size:16px;color:rgba(10,35,80,.8)}
+/* documents, narrower */
+:where(body[data-page="about"]) .res{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;margin:0 auto}
+:where(body[data-page="about"]) .res a{display:flex;align-items:center;justify-content:space-between;background:var(--mist);border-radius:22px;padding:26px 28px;font-weight:700;font-size:19px;transition:transform .2s}
+:where(body[data-page="about"]) .res a:hover{transform:translateY(-4px)}
+:where(body[data-page="about"]) .res a span{font-family:var(--display);font-size:22px;color:var(--orange)}
+@media (prefers-reduced-motion:reduce){:where(body[data-page="about"]) .tl:before{transition:none;transform:none}}

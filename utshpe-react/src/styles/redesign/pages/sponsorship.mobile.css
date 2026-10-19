@@ -1,0 +1,14 @@
+/* Ported verbatim from design/pages/mobile/Sponsorship.html (<style id="mobile">, page block) by design/port-css.mjs. Do not edit by hand. */
+@media (max-width:760px){
+  :where(body[data-page="sponsorship"]) .sph{padding:40px 20px 28px!important}
+  :where(body[data-page="sponsorship"]) .bigimg{padding:0 20px 44px!important}
+  :where(body[data-page="sponsorship"]) .stamps{grid-template-columns:1fr 1fr!important;gap:14px!important}
+  :where(body[data-page="sponsorship"]) .stt{height:150px!important}
+  :where(body[data-page="sponsorship"]) .become{grid-template-columns:1fr!important;gap:26px!important;padding:32px 22px!important;border-radius:26px!important}
+  :where(body[data-page="sponsorship"]) .become p{font-size:17px!important}
+  :where(body[data-page="sponsorship"]) .become>*{min-width:0}
+  :where(body[data-page="sponsorship"]) .become .e{font-size:18px!important;overflow-wrap:anywhere}
+  :where(body[data-page="sponsorship"]) .become .acts .btn{flex:1 1 100%}
+  :where(body[data-page="sponsorship"]) .evg{grid-template-columns:1fr!important;grid-template-rows:200px 160px 160px!important;gap:14px!important}
+  :where(body[data-page="sponsorship"]) .evg>*{grid-row:auto!important;grid-column:auto!important}
+}

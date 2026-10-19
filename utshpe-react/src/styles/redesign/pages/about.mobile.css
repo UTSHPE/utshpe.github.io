@@ -1,0 +1,33 @@
+/* Ported verbatim from design/pages/mobile/About.html (<style id="mobile">, page block) by design/port-css.mjs. Do not edit by hand. */
+@media (max-width:760px){
+  :where(body[data-page="about"]) .fan{width:620px!important;height:440px!important;zoom:var(--fz,.55);margin:0 auto}
+  :where(body[data-page="about"]) .fan .pol{width:250px!important}
+  :where(body[data-page="about"]) .mv2{grid-template-columns:1fr!important}
+  :where(body[data-page="about"]) .mv{padding:26px 22px 30px!important;border-radius:24px!important}
+  :where(body[data-page="about"]) .mv .lab{font-size:36px!important}
+  :where(body[data-page="about"]) .mv p{font-size:17px!important}
+  :where(body[data-page="about"]) .trio{flex-direction:column;align-items:center;padding:10px 20px 20px!important}
+  :where(body[data-page="about"]) .trio .phd{width:92%!important;height:200px!important;margin:-8px 0!important}
+  :where(body[data-page="about"]) .numband{padding:56px 20px 50px!important}
+  :where(body[data-page="about"]) .stats,:where(body[data-page="about"]) .strip{grid-template-columns:1fr 1fr!important;gap:14px!important}
+  :where(body[data-page="about"]) .stats>*,:where(body[data-page="about"]) .strip>*,:where(body[data-page="about"]) .pil>*,:where(body[data-page="about"]) .pp>*,:where(body[data-page="about"]) .hist>*{min-width:0}
+  :where(body[data-page="about"]) .stat{padding:22px 16px 20px!important;border-radius:20px!important}
+  :where(body[data-page="about"]) .stat .n{font-size:40px!important}
+  :where(body[data-page="about"]) .stat .l{font-size:13px!important}
+  :where(body[data-page="about"]) .pil{grid-template-columns:1fr!important}
+  :where(body[data-page="about"]) .pp{grid-template-columns:1fr!important;padding:26px 22px!important;min-height:0!important}
+  :where(body[data-page="about"]) .pp .no{font-size:56px!important}
+  :where(body[data-page="about"]) .pp h3{font-size:28px!important}
+  :where(body[data-page="about"]) .pp p{font-size:17px!important}
+  :where(body[data-page="about"]) .pp .phd{height:200px!important}
+  :where(body[data-page="about"]) .inset{margin:0 12px!important;padding:44px 20px!important;border-radius:30px!important}
+  :where(body[data-page="about"]) .hist{grid-template-columns:1fr!important;gap:30px!important}
+  :where(body[data-page="about"]) .hist .yr{font-size:96px!important}
+  :where(body[data-page="about"]) .hist .yr small{font-size:34px!important}
+  :where(body[data-page="about"]) .hist p{font-size:17px!important;max-width:none!important}
+  :where(body[data-page="about"]) .tl{margin-left:14px!important}
+  :where(body[data-page="about"]) .tl b{font-size:19px!important}
+  :where(body[data-page="about"]) .hph{transform:scale(.72);transform-origin:0 0;height:210px!important;width:460px}
+  :where(body[data-page="about"]) .res{grid-template-columns:1fr!important;gap:12px!important}
+  :where(body[data-page="about"]) .res a{padding:20px 22px!important;font-size:17px!important}
+}

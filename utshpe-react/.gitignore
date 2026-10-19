@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# visual diff output (scripts/compare.mjs)
+compare-out

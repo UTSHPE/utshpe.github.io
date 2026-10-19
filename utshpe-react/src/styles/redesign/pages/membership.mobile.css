@@ -1,0 +1,21 @@
+/* Ported verbatim from design/pages/mobile/Membership.html (<style id="mobile">, page block) by design/port-css.mjs. Do not edit by hand. */
+@media (max-width:760px){
+  :where(body[data-page="membership"]) .ph.slim{height:220px!important;border-radius:24px!important}
+  :where(body[data-page="membership"]) .wj{grid-template-columns:1fr!important;gap:22px!important}
+  :where(body[data-page="membership"]) .wj .stack{height:auto!important;grid-template-rows:200px 140px!important}
+  :where(body[data-page="membership"]) .get .it{padding:18px 18px!important;font-size:17px!important;gap:14px!important}
+  :where(body[data-page="membership"]) .get .it i{width:38px!important;height:38px!important}
+  :where(body[data-page="membership"]) .steps{grid-template-columns:1fr 1fr!important;gap:10px!important}
+  :where(body[data-page="membership"]) .st{padding:16px 14px 16px!important;border-radius:18px!important}
+  :where(body[data-page="membership"]) .st .n{width:42px!important;height:42px!important;font-size:19px!important;margin-bottom:10px!important}
+  :where(body[data-page="membership"]) .st h3{font-size:15px!important}
+  :where(body[data-page="membership"]) .st p{font-size:12px!important;margin-top:4px!important}
+  :where(body[data-page="membership"]) .st .stk,:where(body[data-page="membership"]) .st>span{transform:scale(.62);transform-origin:100% 0}
+  :where(body[data-page="membership"]) .steps::before,:where(body[data-page="membership"]) .steps .ln,:where(body[data-page="membership"]) .steps .cn{display:none!important}
+  :where(body[data-page="membership"]) .join .btn{width:100%}
+  :where(body[data-page="membership"]) .two{grid-template-columns:1fr!important}
+  :where(body[data-page="membership"]) .ig{grid-template-columns:repeat(3,1fr)!important;gap:8px!important}
+  :where(body[data-page="membership"]) .ig a{border-radius:14px!important}
+  :where(body[data-page="membership"]) .ig a span{font-size:9px!important;left:8px!important;bottom:6px!important}
+  :where(body[data-page="membership"]) .ig>*:nth-child(n+4){display:none}
+}

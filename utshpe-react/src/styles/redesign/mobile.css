@@ -1,0 +1,80 @@
+/* Ported verbatim from design/pages/mobile/*.html (<style id="mobile">, shared part 1) by design/port-css.mjs. Do not edit by hand. */
+.mnav{display:none}
+@media (max-width:760px){
+  html,body{overflow-x:hidden}
+  body{min-width:0!important}
+
+  /* ---- nav: logo + menu button, links drop down ---- */
+  .nav{padding:10px 16px!important;position:sticky}
+  .nav .logo img{height:36px!important}
+  .mnav{display:grid;place-items:center;width:44px;height:44px;border:0;border-radius:12px;background:var(--mist);color:var(--navy);cursor:pointer;padding:0}
+  .mnav i,.mnav i::before,.mnav i::after{display:block;width:20px;height:2.5px;border-radius:2px;background:currentColor;position:relative;transition:transform .25s,opacity .2s}
+  .mnav i::before,.mnav i::after{content:"";position:absolute;left:0}
+  .mnav i::before{top:-7px}.mnav i::after{top:7px}
+  .nav.open .mnav i{background:transparent}
+  .nav.open .mnav i::before{transform:translateY(7px) rotate(45deg)}
+  .nav.open .mnav i::after{transform:translateY(-7px) rotate(-45deg)}
+  .nav .l{display:none!important;position:absolute;left:0;right:0;top:100%;background:#fff;flex-direction:column;align-items:stretch!important;gap:0!important;padding:6px 20px 20px;border-bottom:1px solid var(--rule);box-shadow:0 18px 30px rgba(10,35,80,.12)}
+  .nav.open .l{display:flex!important}
+  .nav .l a{padding:14px 2px;font-size:18px;border-bottom:1px solid var(--rule)}
+  .nav .l a.on{color:var(--orange)}
+  .nav .l a.on::after{display:none}
+  .nav .l a.btn{margin-top:16px;border-bottom:0;text-align:center;padding:15px 22px}
+
+  /* ---- shared section rhythm ---- */
+  .sec{padding:46px 16px!important}
+  .hd{flex-direction:column;align-items:flex-start!important;gap:14px;margin-bottom:26px!important}
+  .hd p{max-width:none!important}
+  .hd h2,.h2,.numband h2{font-size:28px!important;line-height:1.1!important}
+  .kick{font-size:24px}
+  .center .sub,.sub{font-size:16px!important}
+  .btn{max-width:100%}
+
+  /* inner-page headers */
+  .pg,.sh,.ah,.lh{grid-template-columns:1fr!important;gap:26px!important;padding:34px 20px 34px!important}
+  .pg h1,.sh h1,.ah h1,.lh h1,.sph h1{font-size:32px!important;line-height:1.1!important}
+  .pg .sub,.sh .sub,.ah .sub,.sph .sub{font-size:16px!important}
+  .pgs{justify-self:center}
+  .ph .ttl{left:14px!important;right:14px!important;bottom:14px!important;max-width:none!important;padding:16px 18px 18px!important;border-radius:18px!important}
+  .ph .ttl h1{font-size:26px!important}
+  .ph .dots{right:20px!important;top:16px!important;bottom:auto!important}
+  .ctaband{padding:60px 20px!important}
+  .ctaband p{font-size:16px!important}
+  .tour{padding:56px 20px!important}
+  .tour .tr{flex-wrap:wrap;gap:12px!important}
+  .tour a{width:calc(50% - 6px)!important}
+
+  /* flip postcards: 2-up grid, scaled to fit the screen */
+  .fgrid,.spots{display:grid!important;grid-template-columns:1fr 1fr!important;gap:12px!important;justify-items:center;max-width:none!important;margin-top:24px!important}
+  .fgrid .fc{zoom:.68}
+  .fgrid .fc.sm,.spots .fc.sm{zoom:.74}
+  .fgrid>:only-child{grid-column:1/-1}
+
+  /* photo grids */
+  .bento{grid-template-columns:1fr 1fr!important;grid-auto-rows:118px!important;gap:10px!important}
+  .bento>*{grid-column:auto!important;grid-row:auto!important;transform:none!important}
+  .bento>*:first-child,.bento .more{grid-column:1/-1!important}
+  .bento .more{font-size:22px!important}
+  .mosaic{grid-template-columns:1fr 1fr!important;grid-template-rows:150px 150px!important}
+  .phd .stk{transform:scale(.8)}
+  .pol{width:190px!important}
+
+  /* sponsors belt + doodles */
+  .lg{height:76px!important;min-width:150px!important;padding:0 20px!important}
+  .lg img{max-height:40px!important;max-width:120px!important}
+  .doodle{margin:0 20px!important;padding:24px 0!important}
+  .doodle svg{width:26px!important;height:26px!important}
+
+  /* footer */
+  .fi{padding:40px 16px 28px!important}
+  .fg{grid-template-columns:1fr 1fr!important;gap:26px 16px!important}
+  .fg>:first-child{grid-column:1/-1}
+  .fg .wish{font-size:38px!important}
+  .fsoc{grid-template-columns:repeat(3,42px)!important;gap:8px!important}
+  .fsoc a{width:42px!important;height:42px!important}
+  .fb{text-align:left}
+
+  /* decorative extras that only fit wide screens */
+  .dec{display:none!important}
+}
+

@@ -1,0 +1,104 @@
+/* Ported verbatim from design/pages/mobile/Home.html (<style id="mobile">, page block) by design/port-css.mjs. Do not edit by hand. */
+@media (max-width:760px){
+  /* hero: the whole postcard mural (letters + tower) shrinks to fit the screen width as a banner, copy sits below */
+  :where(body[data-page="home"]) .hero{height:auto!important;min-height:0}
+  :where(body[data-page="home"]) .stage{position:relative!important;width:auto!important;height:auto!important;transform:none!important;padding:calc(var(--mh,188px) + 26px) 20px 40px}
+  :where(body[data-page="home"]) .hero .hfr{position:absolute;left:0;right:0;top:0;height:var(--mh,188px);overflow:hidden}
+  :where(body[data-page="home"]) .hero .mur{left:0!important;top:0!important;transform-origin:0 0!important;transform:translate(calc(-66px * var(--mk,.27)),calc(-41px * var(--mk,.27))) scale(var(--mk,.27))!important}
+  :where(body[data-page="home"]) .wash{top:var(--mh,188px)!important;background:#C4E2F0!important}
+  :where(body[data-page="home"]) .wash::before{content:"";position:absolute;left:0;right:0;top:-34px;height:34px;background:linear-gradient(180deg,rgba(196,226,240,0),#C4E2F0)}
+  :where(body[data-page="home"]) .cover{display:none}
+  :where(body[data-page="home"]) .hl{position:relative!important;left:auto!important;top:auto!important;width:auto!important}
+  :where(body[data-page="home"]) .hl .kick,:where(body[data-page="home"]) .hl .ut,:where(body[data-page="home"]) .hl .rule{display:none!important}
+  :where(body[data-page="home"]) .hl .kick{font-size:12px!important;letter-spacing:.18em!important}
+  :where(body[data-page="home"]) .hl .ut{font-size:min(56px,13.6vw)!important;margin-top:6px!important;white-space:nowrap}
+  :where(body[data-page="home"]) .hl .ut::before{left:-4px!important;top:-7px!important}
+  :where(body[data-page="home"]) .hl .rule{margin:12px 0 18px!important}
+  :where(body[data-page="home"]) .hl .tg{font-size:min(29px,7.4vw)!important;line-height:1.2!important}
+  :where(body[data-page="home"]) .hl .tg em{font-size:40px!important;margin-left:6px!important}
+  :where(body[data-page="home"]) .hl .sb{width:auto!important;font-size:16px!important;line-height:1.65!important;margin-top:16px!important}
+  :where(body[data-page="home"]) .hl .bt{flex-wrap:wrap;gap:12px!important;margin-top:22px!important}
+  :where(body[data-page="home"]) .hl .bt .btn{flex:1 1 0;min-width:0;padding:15px 10px!important;white-space:nowrap;font-size:min(16px,4.1vw)!important;text-align:center}
+  :where(body[data-page="home"]) .hl .tags{font-size:12px!important;margin-top:20px!important}
+  :where(body[data-page="home"]) .pc{position:relative!important;right:auto!important;top:auto!important;width:auto!important;height:230px!important;margin:32px 10px 10px 0;box-shadow:12px 12px 0 var(--orange)!important;border-radius:24px!important}
+  :where(body[data-page="home"]) .pc .in{border-radius:16px!important}
+  :where(body[data-page="home"]) #intro .env{zoom:.76}
+
+  /* events: 2 x 2, all on screen */
+  :where(body[data-page="home"]) .cards{display:grid!important;grid-template-columns:1fr 1fr;gap:10px!important;overflow:visible!important;padding:0!important;margin:0!important;scroll-snap-type:none!important}
+  :where(body[data-page="home"]) .cards .card{flex:none!important;min-width:0!important;min-height:0!important;padding:14px 12px 14px!important;border-radius:18px!important}
+  :where(body[data-page="home"]) .card .tp{gap:6px!important}
+  :where(body[data-page="home"]) .card .tp svg{flex:0 0 46px!important;width:46px!important;height:auto!important}
+  :where(body[data-page="home"]) .card .k{font-size:9.5px!important;letter-spacing:.1em!important;margin-top:2px!important}
+  :where(body[data-page="home"]) .card .k i{width:7px!important;height:7px!important;margin-right:5px!important}
+  :where(body[data-page="home"]) .card h3{font-size:16px!important;padding-top:14px!important}
+  :where(body[data-page="home"]) .card .m{font-size:12px!important;margin-top:3px!important}
+  :where(body[data-page="home"]) .card .stk{display:none!important}
+  :where(body[data-page="home"]) .hd .rt{width:auto}
+  :where(body[data-page="home"]) .cards .card:nth-child(n+5){display:none!important}
+
+  /* leaderboard */
+  :where(body[data-page="home"]) .podium{gap:10px!important;margin-top:18px!important}
+  :where(body[data-page="home"]) .podium>*{min-width:0}
+  :where(body[data-page="home"]) .podium h4,:where(body[data-page="home"]) .podium .nm,:where(body[data-page="home"]) .podium .name{font-size:13px!important;line-height:1.25!important}
+  :where(body[data-page="home"]) .ped{font-size:32px!important}
+  :where(body[data-page="home"]) .lbrows{padding:10px 8px 14px!important}
+  :where(body[data-page="home"]) .lr{grid-template-columns:30px 1fr 74px!important;gap:10px!important;padding:8px 12px!important}
+  :where(body[data-page="home"]) .lr .e{display:none}
+  :where(body[data-page="home"]) .lr .rk{font-size:17px!important}
+  :where(body[data-page="home"]) .who{font-size:14px!important;gap:8px!important}
+  :where(body[data-page="home"]) .lbmore .btn{width:100%}
+
+  /* calendar: dots in the grid, tap a day to read it */
+  :where(body[data-page="home"]) .cal{padding:14px 12px 16px!important;border-radius:22px!important}
+  :where(body[data-page="home"]) .ct{flex-wrap:wrap;gap:8px!important}
+  :where(body[data-page="home"]) .ct .mo{order:-1;flex:1 1 100%;font-size:20px!important}
+  :where(body[data-page="home"]) .ct .vw{display:none}
+  :where(body[data-page="home"]) .dow div{font-size:10px!important;letter-spacing:.06em!important}
+  :where(body[data-page="home"]) .cd{min-height:58px!important;height:auto!important;padding:4px 2px!important;display:flex!important;flex-wrap:wrap;align-content:flex-start;justify-content:center;gap:3px;cursor:pointer}
+  :where(body[data-page="home"]) .cd .n{flex:1 1 100%;text-align:center;font-size:13px!important}
+  :where(body[data-page="home"]) .cd .ev{font-size:0!important;padding:0!important;width:auto}
+  :where(body[data-page="home"]) .cd .ev i{margin:0!important;width:7px!important;height:7px!important}
+  :where(body[data-page="home"]) .cd.sel{box-shadow:inset 0 0 0 2px var(--orange);border-radius:10px}
+  :where(body[data-page="home"]) .cday{margin-top:12px;background:#fff;border-radius:16px;padding:14px 16px}
+  :where(body[data-page="home"]) .cday b{display:block;font-size:15px;margin-bottom:6px}
+  :where(body[data-page="home"]) .cday div{display:flex;align-items:center;gap:8px;font-size:15px;padding:5px 0}
+  :where(body[data-page="home"]) .cday i{width:9px;height:9px;border-radius:50%;flex:none}
+  :where(body[data-page="home"]) .cday p{font-size:14px;color:rgba(10,35,80,.6)}
+  :where(body[data-page="home"]) .cf{flex-direction:column;align-items:flex-start!important;gap:6px}
+
+  /* office hours: the original airmail postcard, with the whole week fitted to the screen */
+  :where(body[data-page="home"]) .ohp{padding:8px!important;border-radius:24px!important}
+  :where(body[data-page="home"]) .ohc{border-radius:18px!important}
+  :where(body[data-page="home"]) .ohs{display:block!important;right:8px!important;top:10px!important;transform:scale(.46);transform-origin:100% 0}
+  :where(body[data-page="home"]) .ohh.mob{display:none!important}
+  :where(body[data-page="home"]) .ohl{padding:20px 12px 16px!important}
+  :where(body[data-page="home"]) .ohl .dear{font-size:38px!important}
+  :where(body[data-page="home"]) .ohl h3{font-size:23px!important;margin-top:6px!important}
+  :where(body[data-page="home"]) .ohl h3 em{display:block}
+  :where(body[data-page="home"]) .ohl p{font-size:14px!important}
+  :where(body[data-page="home"]) .ohl .grid{grid-template-columns:30px repeat(5,minmax(0,1fr))!important;gap:6px 3px!important;padding:8px 0 12px!important;overflow:visible!important}
+  :where(body[data-page="home"]) .grid .hh{font-size:12px!important;padding-bottom:4px!important}
+  :where(body[data-page="home"]) .grid .hh .fl{display:none}:where(body[data-page="home"]) .grid .hh .ab{display:inline!important}
+  :where(body[data-page="home"]) .times span{font-size:9.5px!important;left:0!important;white-space:nowrap}
+  :where(body[data-page="home"]) .times small{display:none}
+  :where(body[data-page="home"]) .day{border-radius:8px!important}
+  :where(body[data-page="home"]) .blk .face{border-radius:7px!important;padding:1px 0!important}
+  :where(body[data-page="home"]) .blk .face b{font-size:min(11.5px,2.7vw)!important;line-height:1.1;max-width:100%;overflow:hidden;text-overflow:clip;white-space:nowrap;letter-spacing:-.02em}
+  :where(body[data-page="home"]) .blk .face small{font-size:9px!important;line-height:1.1}
+  :where(body[data-page="home"]) .blk .back b,:where(body[data-page="home"]) .blk .back small,:where(body[data-page="home"]) .blk .back span,:where(body[data-page="home"]) .blk .back div{font-size:8.5px!important;line-height:1.15!important}
+  :where(body[data-page="home"]) .ohl .grid+div .btn{width:100%}
+}
+:where(body[data-page="home"]) .ohh.mob{display:none}
+:where(body[data-page="home"]) .grid .hh .ab{display:none}
+
+/* Home header on phones: mural banner, finished with the airmail stripe along its bottom edge */
+@media (max-width:760px){
+  :where(body[data-page="home"]) .hero .hfr{overflow:hidden;height:calc(var(--mh,188px) + 5px)!important}
+  :where(body[data-page="home"]) .hero .stage{padding-top:calc(var(--mh,188px) + 31px)!important}
+  :where(body[data-page="home"]) .wash::before{display:none!important}
+  :where(body[data-page="home"]) .hero .hfr::before{content:"";position:absolute;left:0;right:0;top:0;height:7px;z-index:4;background:repeating-linear-gradient(-45deg,#D33E26 0 14px,#fff 14px 22px,#1272B8 22px 36px,#fff 36px 44px)}
+  :where(body[data-page="home"]) .hero .hfr::after{content:"";position:absolute;left:0;right:0;bottom:0;height:7px;z-index:4;background:repeating-linear-gradient(-45deg,#D33E26 0 14px,#fff 14px 22px,#1272B8 22px 36px,#fff 36px 44px)}
+  :where(body[data-page="home"]) .wash{top:calc(var(--mh,188px) + 5px)!important;background:#C4E2F0!important}
+}
+

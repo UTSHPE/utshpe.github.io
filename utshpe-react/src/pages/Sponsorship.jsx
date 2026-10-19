@@ -1,135 +1,55 @@
-import { useEffect, useState } from "react";
+import useBodyPage from "../hooks/useBodyPage";
+import { SPONSOR_PACKET_URL } from "../lib/constants";
 import { sponsors } from "../data/sponsors";
-import "../styles/sponsorship.css";
+import PhotoTile from "../components/redesign/PhotoTile";
+import { SponsorLogo } from "../components/redesign/SponsorBelt";
 
-const sponsorImages = [
-  "/assets/images/sponsors/Sponsorpage.jpg",
-  "/assets/images/sponsors/Sponsorspage2.jpg",
-  "/assets/images/sponsors/Sponsorspage3.jpg",
-];
+/* stamp backgrounds and inner-border colors cycle every four sponsors */
+const F = ["#EAF3F8", "#FDEEE6", "#DCEBF2", "#FBD3C0"], BC = ["#1272B8", "#E0743A", "#16316B", "#C9531F"];
 
-
-function SponsorSlideshow() {
-  const [currentImage, setCurrentImage] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((previous) => (previous + 1) % sponsorImages.length);
-    }, 8000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <div
-      className="sponsor-slideshow"
-      aria-label="Sponsor event photos"
-    >
-      {sponsorImages.map((image, index) => (
-        <img
-          key={image}
-          src={image}
-          alt={`UT SHPE sponsor event ${index + 1}`}
-          className={index === currentImage ? "active" : ""}
-        />
-      ))}
-    </div>
-  );
-}
-
-function Sponsorship() {
+export default function Sponsorship() {
+  useBodyPage("sponsorship");
   return (
     <>
+      <header className="sh">
+        <div><div className="kick">with gratitude</div><h1>Thank You to Our Sponsors!</h1>
+          <p className="sub">A special thank you to all companies who have supported us this year! Your commitment in empowering Hispanics in STEM is one-of-a-kind and will provide lots of opportunities for our members. Your support represents the hope and the desire for a better future. Our chapter and leadership team gratefully appreciate you for believing in us!</p></div>
+        <div className="mosaic" id="mosaic">
+          <PhotoTile tone="#CFE6EF" label="Sponsor event" cls="t1" src="/assets/images/sponsors/Sponsorpage.jpg" />
+          <PhotoTile tone="#FBD3C0" label="Sponsor social" src="/assets/images/sponsors/Sponsorspage2.jpg" />
+          <PhotoTile tone="#DCEBF2" label="Company visit" src="/assets/images/sponsors/Sponsorspage3.jpg" />
+        </div>
+      </header>
+      <div className="air"></div>
 
-      <main className="sponsor-page">
-        {/* Hero / Thank You Section */}
-        <section className="section sponsor-hero">
-          <div className="hero-left card-blue">
-            <span className="hero-icon" aria-hidden="true">
-              <i className="fa-solid fa-handshake"></i>
-            </span>
+      <section className="sec">
+        <div className="hd" data-r><div><div className="kick">our collection</div><h2>Our Sponsors</h2></div></div>
+        <div className="stamps" id="stamps" data-r>
+          {sponsors.map((s, i) => (
+            <div className="stt" key={s.name} style={{ background: F[i % 4], "--bc": BC[i % 4] }}><SponsorLogo sponsor={s} /><b>{s.name}</b></div>
+          ))}
+        </div>
+      </section>
 
-            <h2 className="hero-title">
-              Thank You to Our Sponsors!
-            </h2>
+      <section className="sec alt">
+        <div className="hd" data-r><div><div className="kick">in the room</div><h2>Sponsor events</h2></div></div>
+        <div className="evg" id="evg" data-r>
+          <PhotoTile tone="#CFE6EF" label="Sponsor event 1" cls="t1" src="/assets/images/aboutus/ProfessionalDevelopment.png" />
+          <PhotoTile tone="#FBD3C0" label="Sponsor event 2" src="/assets/images/this-week/company-info-session.jpg" />
+          <PhotoTile tone="#DCEBF2" label="Sponsor event 3" src="/assets/images/Home_Page/slideshow2.jpg" />
+        </div>
+      </section>
 
-            <p className="hero-text">
-              A special thank you to all companies who have supported us
-              this year! Your commitment in empowering Hispanics in STEM is
-              one-of-a-kind and will provide lots of opportunities for our
-              members. Your support represents the hope and the desire for
-              a better future. Our chapter and leadership team gratefully
-              appreciate you for believing in us!
-            </p>
+      <section className="sec">
+        <div className="become" data-r>
+          <div>
+            <div className="kick">write to us</div><div className="h2">Become a Sponsor Today</div>
+            <p>Become a sponsor by contacting our Corporate Director at utshpe@gmail.com. Your support helps UT SHPE students drive toward their goals. We're happy to answer any questions you have, including specific event donations.</p>
+            <div className="acts"><a className="btn" href={SPONSOR_PACKET_URL} target="_blank" rel="noopener">View Corporate Sponsorship Packet (PDF)</a><a className="btn soft" href="mailto:utshpe@gmail.com">Email the Corporate Director</a></div>
           </div>
-
-          <div className="hero-right">
-            <SponsorSlideshow />
-          </div>
-        </section>
-
-        {/* Sponsors */}
-        <section className="section all-sponsors">
-          <h2 className="section-title">
-            Our Sponsors
-          </h2>
-
-          <div className="sponsor-grid">
-            {sponsors.map((sponsor) => (
-              <article
-                className="logo-card"
-                key={sponsor.name}
-              >
-                <img
-                  src={sponsor.image}
-                  alt={`${sponsor.name} logo`}
-                />
-              </article>
-            ))}
-          </div>
-        </section>
-
-        {/* Become a Sponsor */}
-        <section className="section cta-sponsor">
-          <div className="cta-card">
-            <span className="cta-icon" aria-hidden="true">
-              <i className="fa-solid fa-star"></i>
-            </span>
-
-            <h2 className="cta-title">
-              Become a Sponsor Today
-            </h2>
-
-            <hr className="cta-rule" />
-
-            <p className="cta-text">
-              Become a sponsor by contacting our Corporate Director at{" "}
-              <a
-                className="cta-link"
-                href="mailto:utshpe@gmail.com"
-              >
-                utshpe@gmail.com
-              </a>
-              . Your support helps UT SHPE students drive toward their
-              goals. We’re happy to answer any questions you have,
-              including specific event donations.
-            </p>
-
-            <a
-              className="btn-csp"
-              href="/assets/files/UT SHPE 26-27 Corporate Solicitation Packet.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="fa-solid fa-file-pdf"></i>
-              View Corporate Sponsorship Packet (PDF)
-            </a>
-          </div>
-        </section>
-      </main>
-
+          <div className="card"><div className="l">To</div><div className="e">utshpe@gmail.com</div><div className="s">Corporate Director, UT SHPE</div><span className="pm">Postmarked: Austin, Texas</span></div>
+        </div>
+      </section>
     </>
   );
 }
-
-export default Sponsorship;

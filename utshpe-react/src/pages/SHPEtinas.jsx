@@ -1,421 +1,85 @@
-import { useEffect, useRef, useState } from "react";
-import { spotlights, spotlightMonth } from "../data/spotlights";
-import "../styles/shpetinas.css";
+import { useState } from "react";
+import useBodyPage from "../hooks/useBodyPage";
+import { FLICKR_URL } from "../lib/constants";
+import { PINK_TONES, shuffle } from "../lib/design";
+import { shpetinasCommittee } from "../data/shpetinasCommittee";
+import { spotlightMonth, spotlights } from "../data/spotlights";
+import FlipCard from "../components/redesign/FlipCard";
+import SpotCard from "../components/redesign/SpotCard";
+import PhotoTile from "../components/redesign/PhotoTile";
 
-const shpetinaOfTheMonth = spotlights.find(
-  (person) => person.title === "SHPEtina of the Month"
-);
+const MOSAIC_TONES = ["#F8CFE0", "#FBD3C0", "#FDE3D6", "#F4C5BD", "#F9D9E6"];
+const MOSAIC = [
+  ["SHPEtinas social", "t1", "/assets/images/shpetinas/shpetinasmain.JPG"],
+  ["Workshop", "", "/assets/images/shpetinas/shpetinaslideshow3.JPG"],
+  ["Sisterhood", "", "/assets/images/shpetinas/shpetinaslideshow4.JPG"],
+];
+const GALLERY = [
+  ["#F8CFE0", "Brunch", "w2 h2r t1", "/assets/images/shpetinas/shpetinaslideshow1.JPG"],
+  ["#FBD3C0", "Workshop", "", "/assets/images/shpetinas/shpetinaslideshow2.JPG"],
+  ["#F9D9E6", "Mentor match", "h2r t2", "/assets/images/shpetinas/shpetinaslideshow6.jpg"],
+  ["#F4C5BD", "Social", "", "/assets/images/shpetinas/shpetinaslideshow5.jpg"],
+  ["#FDE3D6", "Volunteering", "w2", "/assets/images/shpetinas/shpetinaslideshow4.JPG"],
+  ["#F6C4D6", "Sisterhood night", "", "/assets/images/shpetinas/shpetinasmain.JPG"],
+];
+const HIGHLIGHTS = [
+  ["#F4A3C4", "Mentorship Network", "Connect with mentors and peer support systems."],
+  ["#F26838", "Leadership Workshops", "Grow professional and leadership skills."],
+  ["#E0709C", "Recognition Program", "Celebrate achievements and academic excellence."],
+  ["#F7A672", "Sisterhood", "Lasting friendships and community."],
+];
 
-function SHPEtinas() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const touchStartX = useRef(null);
-  const touchEndX = useRef(null);
-
-  const eventImages = [
-    {
-      src: "/assets/images/shpetinas/shpetinaslideshow1.JPG",
-      alt: "SHPEtinas Event 1",
-    },
-    {
-      src: "/assets/images/shpetinas/shpetinaslideshow2.JPG",
-      alt: "SHPEtinas Event 2",
-    },
-    {
-      src: "/assets/images/shpetinas/shpetinaslideshow3.JPG",
-      alt: "SHPEtinas Event 3",
-    },
-    {
-      src: "/assets/images/shpetinas/shpetinaslideshow4.JPG",
-      alt: "SHPEtinas Event 4",
-    },
-    {
-      src: "/assets/images/shpetinas/shpetinaslideshow5.jpg",
-      alt: "SHPEtinas Event 5",
-    },
-  ];
-
-  // TODO: fill in each member's major below (currently blank placeholders)
-  const committee = [
-    {
-      name: "Natalia Martinez",
-      role: "SHPEtina Director",
-      major: "Civil Engineering",
-      image: "/assets/images/shpetinas/natalia.jpg",
-      alt: "SHPEtina Director",
-    },
-    {
-      name: "Camila Hueyotenco",
-      role: "Social Co-Chair",
-      major: "Electrical and Computer Engineering",
-      image: "/assets/images/shpetinas/camila.jpg",
-      alt: "Social Co-Chair",
-    },
-    {
-      name: "Mayra Silva",
-      role: "Finance Coordination Chair",
-      major: "Civil Engineering",
-      image: "/assets/images/shpetinas/marya.jpg",
-      alt: "Finance Coordination Chair",
-    },
-    {
-      name: "Lourdes Ybarra",
-      role: "SHPEtina Social Co-Chair",
-      major: "Civil Engineering",
-      image: "/assets/images/shpetinas/lourdes.jpg",
-      alt: "SHPEtina Social Co-Chair",
-    },
-    {
-      name: "Natalie Gamboa",
-      role: "Personal Relations Chair",
-      major: "Mechanical Engineering",
-      image: "/assets/images/shpetinas/natalie.jpg",
-      alt: "Personal Relations Chair",
-    },
-    {
-      name: "Alexis Rodriguez",
-      role: "SHPEtina Philanthropy Chair",
-      major: "Mechanical Engineering",
-      image: "/assets/images/shpetinas/alexis.jpg",
-      alt: "SHPEtina Philanthropy Chair",
-    },
-  ];
-
-  /*
-   * Automatically advance the slideshow every 3.5 seconds.
-   */
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((previous) => (previous + 1) % eventImages.length);
-    }, 3500);
-
-    return () => clearInterval(timer);
-  }, [eventImages.length]);
-
-  /*
-   * Touch/swipe support.
-   */
-  const handleTouchStart = (event) => {
-    touchStartX.current = event.touches[0].clientX;
-    touchEndX.current = null;
-  };
-
-  const handleTouchMove = (event) => {
-    touchEndX.current = event.touches[0].clientX;
-  };
-
-  const handleTouchEnd = () => {
-    if (
-      touchStartX.current === null ||
-      touchEndX.current === null
-    ) {
-      return;
-    }
-
-    const distance =
-      touchEndX.current - touchStartX.current;
-
-    if (Math.abs(distance) > 40) {
-      if (distance < 0) {
-        // Swipe left
-        setCurrentSlide(
-          (previous) => (previous + 1) % eventImages.length
-        );
-      } else {
-        // Swipe right
-        setCurrentSlide(
-          (previous) =>
-            (previous - 1 + eventImages.length) %
-            eventImages.length
-        );
-      }
-    }
-
-    touchStartX.current = null;
-    touchEndX.current = null;
-  };
-
+export default function SHPEtinas() {
+  useBodyPage("shpetinas");
+  const [tones] = useState(() => shuffle(MOSAIC_TONES));
+  const shpetina = spotlights[3];
   return (
-    <main className="shpetinas-page">
+    <>
+      <header className="sh">
+        <div><div className="kick">SHPE at UT Austin</div><h1>SHPEtinas</h1><p className="sub">Accelerating and affirming Latina representation at every level of STEM leadership.</p></div>
+        <div className="mosaic" id="mosaic">
+          {MOSAIC.map(([label, cls, src], i) => <PhotoTile key={label} tone={tones[i]} label={label} cls={cls} src={src} />)}
+        </div>
+      </header>
+      <div className="air"></div>
 
-      {/* =========================
-          HERO
-      ========================== */}
-      <section className="shpetinas-hero">
-        <div className="shpetinas-hero-wrap">
+      <section className="sec" id="crew">
+        <div className="hd" data-r><div><div className="kick">meet the crew</div><h2>SHPEtinas Committee</h2></div></div>
+        <div className="fgrid" id="com" data-r>
+          {shpetinasCommittee.map((c, i) => <FlipCard key={c.name} name={c.name} role={c.role} major={c.major} i={i + 1} pron="" year={c.year} src={c.image} focus={c.focus} linkedin={c.linkedin} email={c.email} tones={PINK_TONES} />)}
+        </div>
+      </section>
 
-          <div className="shpetinas-hero-title">
-            <span className="shpetinas-eyebrow">SHPE at UT Austin</span>
-            <h1>SHPEtinas</h1>
+      <section className="sec alt">
+        <div className="about" data-r>
+          <div><div className="kick">who we are</div><div className="h2">About SHPEtinas</div>
+            <p>The SHPEtinas program exists to accelerate and affirm Latina representation at every level of STEM leadership by recognizing the unique perspectives of our members. As the program expands, we remain grounded in our core mission: empowering women, fostering meaningful connections, and providing unwavering support.</p></div>
+          <div className="tags">
+            <div className="tag" style={{ "--c": "#F4A3C4" }}><i>1</i>Fostering Connections</div>
+            <div className="tag" style={{ "--c": "#F26838" }}><i>2</i>Empowering Women</div>
+            <div className="tag" style={{ "--c": "#E0709C" }}><i style={{ color: "#fff" }}>3</i>Providing Support</div>
           </div>
+        </div>
+      </section>
 
-          <div className="shpetinas-hero-img">
-            <img
-              src="/assets/images/shpetinas/shpetinasmain.JPG"
-              alt="SHPEtinas group at UT Austin"
-            />
+      <section className="sec">
+        <div className="hd" data-r><div><div className="kick">what you'll find</div><h2>Program Highlights</h2></div></div>
+        <div className="hlw" data-r>
+          <div className="mon"><div className="eyebrow" id="mm">{spotlightMonth}</div><div className="mt">SHPEtina of the Month</div>
+            <div className="fgrid" id="mon"><SpotCard label="SHPEtina of the Month" i={3} name={shpetina.name} major={shpetina.major} year={shpetina.year} src={shpetina.image} focus={shpetina.focus} tones={PINK_TONES} /></div>
           </div>
-
-        </div>
-      </section>
-
-
-      {/* =========================
-          ABOUT + PROGRAM HIGHLIGHTS
-      ========================== */}
-      <section id="about" className="shpetinas-about-split">
-
-        {/* About */}
-        <div className="shpetinas-pink-panel">
-
-          <span className="shpetinas-panel-icon" aria-hidden="true">
-            <i className="fa-solid fa-heart"></i>
-          </span>
-
-          <h2>About SHPEtinas</h2>
-
-          <p className="shpetinas-big-about">
-            The SHPEtinas program exists to accelerate and affirm Latina
-            representation at every level of STEM leadership by recognizing
-            the unique perspectives of our members. As the program expands,
-            we remain grounded in our core mission: empowering women,
-            fostering meaningful connections, and providing unwavering support.
-          </p>
-
-          <div className="shpetinas-chips">
-            <span className="shpetinas-chip">
-              Fostering Connections
-            </span>
-
-            <span className="shpetinas-chip">
-              Empowering Women
-            </span>
-
-            <span className="shpetinas-chip">
-              Providing Support
-            </span>
+          <div className="hl">
+            {HIGHLIGHTS.map(([c, h, p], i) => <div className="c" style={{ "--c": c }} key={h}><div className="no">{"0" + (i + 1)}</div><h3>{h}</h3><p>{p}</p><div className="ln"></div></div>)}
           </div>
-
         </div>
-
-
-        {/* Program Highlights */}
-        <aside className="shpetinas-highlights-card">
-
-          <h3>Program Highlights</h3>
-
-          <ul className="shpetinas-highlight-list">
-
-            <li>
-              <i
-                className="fa-solid fa-user-group"
-                aria-hidden="true"
-              />
-
-              <div>
-                <strong>Mentorship Network</strong>
-                <br />
-                Connect with mentors and peer support systems.
-              </div>
-            </li>
-
-            <li>
-              <i
-                className="fa-solid fa-chalkboard-user"
-                aria-hidden="true"
-              />
-
-              <div>
-                <strong>Leadership Workshops</strong>
-                <br />
-                Grow professional and leadership skills.
-              </div>
-            </li>
-
-            <li>
-              <i
-                className="fa-solid fa-award"
-                aria-hidden="true"
-              />
-
-              <div>
-                <strong>Recognition Program</strong>
-                <br />
-                Celebrate achievements and academic excellence.
-              </div>
-            </li>
-
-            <li>
-              <i
-                className="fa-solid fa-heart"
-                aria-hidden="true"
-              />
-
-              <div>
-                <strong>Sisterhood</strong>
-                <br />
-                Lasting friendships and community.
-              </div>
-            </li>
-
-          </ul>
-
-        </aside>
-
       </section>
 
-
-      {/* =========================
-          COMMITTEE
-      ========================== */}
-      <section className="shpetinas-section shpetinas-committee">
-
-        <h2 className="shpetinas-h2">
-          <i className="fa-solid fa-people-group" aria-hidden="true"></i>
-          SHPEtinas Committee
-        </h2>
-
-        <div className="shpetinas-rule" />
-
-        <div className="shpetinas-committee-grid">
-
-          {committee.map((member) => (
-            <article
-              className="shpetinas-card"
-              key={member.name}
-            >
-              <img
-                className="shpetinas-card-photo"
-                src={member.image}
-                alt={member.alt}
-              />
-
-              <div className="shpetinas-card-pad">
-                <h3>{member.name}</h3>
-                <p className="shpetinas-role">
-                  {member.role}
-                </p>
-                {member.major && (
-                  <span className="shpetinas-major-badge">
-                    <i className="fa-solid fa-graduation-cap" aria-hidden="true" />
-                    {member.major}
-                  </span>
-                )}
-              </div>
-            </article>
-          ))}
-
+      <section className="sec alt">
+        <div className="hd" data-r><div><div className="kick">together</div><h2>Our Events</h2></div><a className="btn" href={FLICKR_URL} target="_blank" rel="noopener">See more photos</a></div>
+        <div className="bento" id="gal" data-r>
+          {GALLERY.map(([tone, label, cls, src]) => <PhotoTile key={label} tone={tone} label={label} cls={cls} src={src} />)}
         </div>
-
       </section>
-
-
-      {/* =========================
-          EVENTS
-      ========================== */}
-      <section
-        id="events"
-        className="shpetinas-section shpetinas-events"
-      >
-
-        <h2 className="shpetinas-h2">
-          <i className="fa-solid fa-images" aria-hidden="true"></i>
-          Our Events
-        </h2>
-
-        <div className="shpetinas-rule" />
-
-        <div
-          className="shpetinas-event-slider"
-          aria-label="Event photos slideshow"
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-        >
-
-          {eventImages.map((image, index) => (
-            <img
-              key={image.src}
-              src={image.src}
-              alt={image.alt}
-              className={
-                index === currentSlide
-                  ? "is-active"
-                  : ""
-              }
-            />
-          ))}
-
-        </div>
-
-        {/* Slideshow indicators */}
-        <div className="shpetinas-slide-indicators">
-          {eventImages.map((_, index) => (
-            <button
-              key={index}
-              type="button"
-              className={
-                index === currentSlide
-                  ? "active"
-                  : ""
-              }
-              aria-label={`Show event ${index + 1}`}
-              onClick={() => setCurrentSlide(index)}
-            />
-          ))}
-        </div>
-
-      </section>
-
-
-      {/* =========================
-          PROMO SECTION
-      ========================== */}
-      <section className="shpetinas-promo-split">
-
-        {/* Merchandise */}
-        <article className="shpetinas-tshirt-card">
-
-          <h3 className="shpetinas-tshirt-title">
-            <i className="fa-solid fa-shirt" aria-hidden="true"></i>
-            Our Merch
-          </h3>
-
-          <img
-            src="/assets/images/shpetinas/shpetinamerch.png"
-            alt="SHPEtinas shirt design"
-          />
-
-        </article>
-
-
-        {/* SHPEtina of the Month (edit in src/data/spotlights.js) */}
-        {shpetinaOfTheMonth && (
-          <aside className="shpetinas-month">
-
-            <span className="shpetinas-badge">
-              {shpetinaOfTheMonth.title}
-            </span>
-
-            <img
-              src={shpetinaOfTheMonth.image}
-              alt={shpetinaOfTheMonth.name}
-            />
-
-            <h3 className="shpetinas-name">
-              {shpetinaOfTheMonth.name}
-            </h3>
-
-            <p className="shpetinas-meta">
-              {shpetinaOfTheMonth.major} • {spotlightMonth}
-            </p>
-
-          </aside>
-        )}
-
-      </section>
-
-    </main>
+    </>
   );
 }
-
-export default SHPEtinas;

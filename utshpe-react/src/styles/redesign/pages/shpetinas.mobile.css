@@ -1,0 +1,9 @@
+/* Ported verbatim from design/pages/mobile/SHPEtinas.html (<style id="mobile">, page block) by design/port-css.mjs. Do not edit by hand. */
+@media (max-width:760px){
+  :where(body[data-page="shpetinas"]) .about{grid-template-columns:1fr!important;gap:30px!important}
+  :where(body[data-page="shpetinas"]) .about p{font-size:17px!important}
+  :where(body[data-page="shpetinas"]) .tag{font-size:19px!important;padding:18px 20px!important}
+  :where(body[data-page="shpetinas"]) .hlw{grid-template-columns:1fr!important}
+  :where(body[data-page="shpetinas"]) .hl{grid-template-columns:1fr!important}
+  :where(body[data-page="shpetinas"]) .mon{padding:22px 18px!important}
+}

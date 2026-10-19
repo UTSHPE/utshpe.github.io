@@ -1,227 +1,49 @@
-import "../styles/leadership.css";
+import useBodyPage from "../hooks/useBodyPage";
+import { boardOfDirectors, executiveBoard } from "../data/leadership";
+import FlipCard from "../components/redesign/FlipCard";
+import { photo } from "../lib/constants";
 
-const executiveBoard = [
-  {
-    name: "Genesis Aguirre",
-    pronouns: "She/Her",
-    role: "President",
-    major: "Civil Engineering",
-    image: "/assets/images/Leadership/Genesis.png",
-    linkedin: "https://www.linkedin.com/in/genesis-aguirre-0aa25424b/",
-    email: "Gda494@my.utexas.edu",
-  },
-  {
-    name: "Alberto Rayon Cardenas",
-    pronouns: "He/Him",
-    role: "Vice President External",
-    major: "Mechanical Engineering",
-    image: "/assets/images/Leadership/Alberto.png",
-    linkedin: "https://www.linkedin.com/in/jimenacasas29/",
-    email: "Jc89832@utexas.edu",
-  },
-  {
-    name: "Julieta Rodriguez",
-    pronouns: "She/Her",
-    role: "Vice President Internal",
-    major: "Computer Science",
-    image: "/assets/images/Leadership/Julieta.png",
-    linkedin: "https://www.linkedin.com/in/julieta-r/",
-    email: "julietarod@utexas.edu",
-  },
-  {
-    name: "Elysha Orozco",
-    pronouns: "She/Her",
-    role: "Secretary",
-    major: "Petroleum Engineering",
-    image: "/assets/images/Leadership/Elysha.png",
-    linkedin: "https://www.linkedin.com/in/elysha-orozco/",
-    email: "Elo436@my.utexas.edu",
-  },
-  {
-    name: "Xitlali Cardenas",
-    pronouns: "She/Her",
-    role: "Treasurer",
-    major: "Computer Science",
-    image: "/assets/images/Leadership/Xitlali.png",
-    linkedin: "https://www.linkedin.com/in/cardenasxitlali/",
-    email: "xitlalicardenas@utexas.edu",
-  },
-];
-
-const boardOfDirectors = [
-  {
-    name: "David Jasso",
-    pronouns: "He/Him",
-    role: "Academic Director",
-    major: "Chemical Engineering",
-    image: "/assets/images/Leadership/David.png",
-    linkedin: "https://www.linkedin.com/in/david-jasso-b980342b2/",
-    email: "davidjass0999@gmail.com",
-  },
-  {
-    name: "Chris Garcia",
-    pronouns: "He/Him",
-    role: "Chapter Director",
-    major: "Civil Engineering",
-    image: "/assets/images/Leadership/Chris.png",
-    linkedin: "https://www.linkedin.com/in/garciachris26/",
-    email: "garcia.chris226@utexas.edu",
-  },
-  {
-    name: "Alejandro Ontiveros",
-    pronouns: "He/Him",
-    role: "Community Outreach Director",
-    major: "Electrical & Computer Engineering",
-    image: "/assets/images/Leadership/Alejandro.png",
-    linkedin: "https://www.linkedin.com/in/alejandro-ontiveros13/",
-    email: "alejonti13@gmail.com",
-  },
-  {
-    name: "Yessenia Martin",
-    pronouns: "She/Her",
-    role: "Leadership Director",
-    major: "Computer Science",
-    image: "/assets/images/Leadership/Yessenia.png",
-    linkedin: "https://www.linkedin.com/in/yessenia-martin/",
-    email: "yesseniamartin@utexas.edu",
-  },
-  {
-    name: "Alexandra Galindo",
-    pronouns: "She/Her",
-    role: "Professional Director",
-    major: "Electrical & Computer Engineering",
-    image: "/assets/images/Leadership/Alexandra.png",
-    linkedin: "https://www.linkedin.com/in/galindo3553/",
-    email: "agalindo3553@utexas.edu",
-  },
-  {
-    name: "Evelyn Flores",
-    pronouns: "She/Her",
-    role: "SHPEtina Director",
-    major: "Aerospace Engineering",
-    image: "/assets/images/Leadership/Evelyn.png",
-    linkedin: "https://www.linkedin.com/in/evelyn-sugei-flores/",
-    email: "eveelynnflores902@gmail.com",
-  },
-  {
-    name: "Kevin Contreras",
-    pronouns: "He/Him",
-    role: "Technical Director",
-    major: "Mechanical Engineering",
-    image: "/assets/images/Leadership/Kevin.png",
-    linkedin: "https://www.linkedin.com/in/kevinscontreras/",
-    email: "kevinscontreras@utexas.edu",
-  },
-];
-
-function OfficerCard({ officer }) {
-  return (
-    <article className="officer-card">
-      <img
-        src={officer.image}
-        alt={`${officer.name} - ${officer.role}`}
-      />
-
-      <div className="officer-body">
-        <h3 className="officer-name">{officer.name}</h3>
-
-        <p className="officer-pronouns">
-          {officer.pronouns}
-        </p>
-
-        <p className="officer-role">
-          {officer.role}
-        </p>
-
-        <p className="officer-major">
-          {officer.major}
-        </p>
-
-        <div className="officer-socials">
-          <a
-            href={officer.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`${officer.name} LinkedIn`}
-          >
-            <i className="fa-brands fa-linkedin"></i>
-          </a>
-
-          <a
-            href={`mailto:${officer.email}`}
-            aria-label={`Email ${officer.name}`}
-          >
-            <i className="fa-solid fa-envelope"></i>
-          </a>
-        </div>
-      </div>
-    </article>
-  );
+/* the design offsets each group's tone/stamp index: exec board from 0, directors from 2 */
+function Cards({ people, offset }) {
+  return people.map((p, i) => (
+    <FlipCard key={p.name} name={p.name} role={p.role} major={p.major} i={i + offset} pron={p.pronouns} year={p.year} src={p.image} focus={p.focus} linkedin={p.linkedin} email={p.email} />
+  ));
 }
 
-function Leadership() {
+const TOGETHER = [
+  ["#CFE6EF", "LeaderSHPE retreat", "/assets/images/Leadership/Leadershipteam.png"],
+  ["#FBD3C0", "Officer social", "/assets/images/membership/membership2.jpg"],
+  ["#DCEBF2", "Service day", "/assets/images/aboutus/ChapterOutreach.jpg"],
+];
+
+export default function Leadership() {
+  useBodyPage("leadership");
   return (
-    <main className="leader-page">
-      {/* Hero */}
-      <section className="leader-hero">
-        <img
-          src="/assets/images/Leadership/Leadershipteam.png"
-          alt="UT SHPE Leadership Team"
-        />
+    <>
+      <header className="lh">
+        <div><div className="kick">meet the crew</div><h1>Meet UT-SHPE's 2026-2027 LeaderSHPE Team!</h1></div>
+        <p>These are the amazing, determined individuals who make up our leaderSHPE team! Each of them carries vital responsibilities that sustain our chapter's vision and mission, and they lead by example with perseverance, dedication, and a passion for service.</p>
+      </header>
+
+      <section className="sec" style={{ paddingTop: 44 }}>
+        <div className="grp" data-r><h2>Executive Board</h2></div>
+        <div className="fgrid" id="ex" data-r><Cards people={executiveBoard} offset={0} /></div>
       </section>
 
-      {/* Introduction */}
-      <section className="leader-intro section">
-        <h1 className="leader-title">
-          Meet UT-SHPE's 2025-2026 LeaderSHPE Team!
-        </h1>
-
-        <div
-          className="leader-rule"
-          aria-hidden="true"
-        ></div>
-
-        <p className="leader-text">
-          These are the amazing, determined individuals who make up our
-          leaderSHPE team! Each of them carries vital responsibilities
-          that sustain our chapter's vision and mission, and they lead by
-          example with perseverance, dedication, and a passion for service.
-        </p>
+      <section className="sec alt">
+        <div className="grp" data-r><h2>Board of Directors</h2></div>
+        <div className="fgrid four" id="bd" data-r><Cards people={boardOfDirectors} offset={2} /></div>
       </section>
 
-      {/* Executive Board */}
-      <section className="leader-section section">
-        <h2 className="leader-h2">
-          Executive Board
-        </h2>
-
-        <div className="leader-grid executive-grid">
-          {executiveBoard.map((officer) => (
-            <OfficerCard
-              key={officer.name}
-              officer={officer}
-            />
+      <section className="sec">
+        <div className="hd" data-r><div><div className="kick">in action</div><h2>The team together</h2></div></div>
+        <div className="band" data-r>
+          {/* the design's band tiles are bare (no camera, no caption chip); the caption sits below */}
+          {TOGETHER.map(([tone, cap, src]) => (
+            <div key={cap}><div className="phd" style={{ background: tone }}>{photo(src) ? <img className="pimg" src={photo(src)} alt={cap} loading="lazy" /> : null}</div><p>{cap}</p></div>
           ))}
         </div>
       </section>
-
-      {/* Board of Directors */}
-      <section className="leader-section section">
-        <h2 className="leader-h2">
-          Board of Directors
-        </h2>
-
-        <div className="leader-grid bod">
-          {boardOfDirectors.map((officer) => (
-            <OfficerCard
-              key={officer.name}
-              officer={officer}
-            />
-          ))}
-        </div>
-      </section>
-    </main>
+    </>
   );
 }
-
-export default Leadership;
