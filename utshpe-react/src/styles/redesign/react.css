@@ -20,6 +20,14 @@
 /* slides keep their own layer, so a cross-fade never has to re-raster the photo */
 .pc .sl,.slides .sl{will-change:opacity}
 
+/*
+ * Every photo tile gets the photo grid's hover (.bento .phd:hover in base.css): lift 4px and
+ * straighten. Header mosaics, sponsor events, team band, membership stack, pillar and history photos.
+ */
+.mosaic .phd,.evg .phd,.band .phd,.stack .phd,.pp .phd,.hph .phd{transition:transform .25s}
+.mosaic .phd:hover,.evg .phd:hover,.band .phd:hover,.stack .phd:hover,.pp .phd:hover,.hph .phd:hover{transform:translateY(-4px) rotate(0)!important}
+@media (prefers-reduced-motion:reduce){.mosaic .phd,.evg .phd,.band .phd,.stack .phd,.pp .phd,.hph .phd{transition:none}}
+
 /* the leftover stub pages (/resources, /contact, /coding-resources) inside the new chrome */
 .stub{padding:92px 56px;min-height:40vh}
 .stub h1{font-family:var(--display);font-size:46px;line-height:1.05}
