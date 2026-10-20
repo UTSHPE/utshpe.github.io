@@ -93,7 +93,7 @@ export default function Membership() {
             const r = responsive(post.image);
             return (
               <a key={i} href={href} target="_blank" rel="noopener" style={{ background: t }} aria-label={label}>
-                <img className="pimg" src={r.src} srcSet={r.srcSet} sizes={r.srcSet ? "auto, (max-width:760px) 42vw, 20vw" : undefined} alt="" loading="lazy" decoding="async" />
+                <img className="pimg" src={r.src} srcSet={r.srcSet} sizes={r.srcSet ? "auto, (max-width:760px) 42vw, 20vw" : undefined} alt="" loading="lazy" decoding="async" style={post.focus ? { objectPosition: post.focus } : undefined} />
               </a>
             );
           })}

@@ -437,5 +437,44 @@
    960,
    1024
   ]
+ },
+ "/assets/images/instagram/post1.jpg": {
+  "w": 404,
+  "h": 720,
+  "widths": [
+   404
+  ]
+ },
+ "/assets/images/instagram/post2.jpg": {
+  "w": 640,
+  "h": 825,
+  "widths": [
+   480,
+   640
+  ]
+ },
+ "/assets/images/instagram/post3.jpg": {
+  "w": 640,
+  "h": 802,
+  "widths": [
+   480,
+   640
+  ]
+ },
+ "/assets/images/instagram/post4.jpg": {
+  "w": 640,
+  "h": 800,
+  "widths": [
+   480,
+   640
+  ]
+ },
+ "/assets/images/instagram/post5.jpg": {
+  "w": 640,
+  "h": 800,
+  "widths": [
+   480,
+   640
+  ]
  }
 }
