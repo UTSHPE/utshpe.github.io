@@ -1,13 +1,18 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
+import { whenIntroDone } from "../lib/intro";
 
 const DEFAULT_ALT = "UT SHPE photo";
 
 // Shown immediately, and kept if Flickr fails or returns nothing.
-export const LOCAL_PHOTOS = [1, 2, 3, 4, 5, 6].map((n) => ({
-  src: `/assets/images/Home_Page/slideshow${n}.jpg`,
-  alt: DEFAULT_ALT,
-}));
+export const LOCAL_PHOTOS = [
+  "/assets/images/Home_Page/slideshow1.jpg",
+  "/assets/images/Home_Page/slideshow2.jpg",
+  "/assets/images/Home_Page/slideshow3.jpg",
+  "/assets/images/Home_Page/slideshow4.jpg",
+  "/assets/images/Home_Page/slideshow5.jpg",
+  "/assets/images/Home_Page/slideshow6.jpg",
+].map((src) => ({ src, alt: DEFAULT_ALT }));
 
 // Resolves true once the image is downloaded and decoded, false if it fails.
 export function preload(src) {
@@ -33,7 +38,8 @@ export default function useFlickrPhotos() {
 
   useEffect(() => {
     let cancelled = false;
-    fetchFlickrPhotos()
+    // the hero card starts on the local photos; Flickr can wait until the intro is over
+    whenIntroDone().then(fetchFlickrPhotos)
       .then(async (list) => {
         if (!list.length) return console.warn("Flickr slideshow returned no photos; using local images.");
         if (!(await preload(list[0].src)) || cancelled) return;

@@ -7,7 +7,12 @@ import PhotoTile from "../components/redesign/PhotoTile";
 import Sticker from "../components/redesign/Sticker";
 import { SpotGrid } from "../components/redesign/home/Spotlight";
 
-const HERO_PHOTOS = [4, 2, 1, 3].map((n) => ({ src: `/assets/images/membership/membership${n}.jpg`, alt: "UT SHPE members" }));
+const HERO_PHOTOS = [
+  "/assets/images/membership/membership4.jpg",
+  "/assets/images/membership/membership2.jpg",
+  "/assets/images/membership/membership1.jpg",
+  "/assets/images/membership/membership3.jpg",
+].map((src) => ({ src, alt: "UT SHPE members" }));
 const WHY = [
   ["#74ABC2", "Sponsored General Meetings"],
   ["#F26838", "Professional development events"],

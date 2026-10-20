@@ -91,7 +91,20 @@ function startIntro(refs) {
     const rm = document.querySelector(".hero .mur").getBoundingClientRect(); m.style.transform = "translate(" + (rm.left - hr.left) + "px," + (rm.top - hr.top) + "px) scale(" + (rm.width / 1514) + ")"; bd.style.opacity = "0";
     intro.classList.add("go2");
   }
-  raf = requestAnimationFrame(fly);
+  // Take off once the page has booted (fonts shaped, mural decoded), so the flight doesn't
+  // share the main thread with first-load work; never wait more than 1.2s.
+  plane.style.opacity = 0;
+  const letters = document.querySelector(".hero .gsi");
+  const ready = Promise.all([
+    document.fonts ? document.fonts.ready : null,
+    letters && letters.decode ? letters.decode().catch(() => {}) : null,
+  ]);
+  Promise.race([ready, new Promise((r) => setTimeout(r, 1200))]).then(() => {
+    if (done) return;
+    raf = requestAnimationFrame(() => {
+      raf = requestAnimationFrame((ts) => { if (done) return; plane.style.opacity = ""; fly(ts); });
+    });
+  });
 
   return {
     finish,

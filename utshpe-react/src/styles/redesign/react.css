@@ -7,6 +7,19 @@
 .pc .sl>img.pimg,
 .slides .sl>img.pimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit}
 
+/*
+ * Performance. The hero mural ships as prerendered layers (design/render-mural.mjs) with the
+ * design's saturate/contrast filter baked in, so the live filter goes; the sky color is set
+ * inline from src/data/mural.json.
+ */
+.mur{filter:none}
+.mur>img.gsi{position:relative;z-index:1;display:block;width:100%;height:auto}
+.cl{background-repeat:repeat-x;background-size:50% 100%}
+/* looping animations rest while they are off screen (usePauseOffscreen) */
+.hero.paused .cl,.belt.paused .track{animation-play-state:paused}
+/* slides keep their own layer, so a cross-fade never has to re-raster the photo */
+.pc .sl,.slides .sl{will-change:opacity}
+
 /* the leftover stub pages (/resources, /contact, /coding-resources) inside the new chrome */
 .stub{padding:92px 56px;min-height:40vh}
 .stub h1{font-family:var(--display);font-size:46px;line-height:1.05}

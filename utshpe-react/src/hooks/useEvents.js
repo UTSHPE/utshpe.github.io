@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
+import { whenIntroDone } from "../lib/intro";
 
 /*
  * All live events, fetched once and shared by Upcoming Events and the calendar.
@@ -9,7 +10,8 @@ let request = null;
 
 function fetchEvents() {
   if (!request) {
-    request = supabase
+    // the cards and calendar sit under the landing intro; render them once it's over
+    request = whenIntroDone().then(() => supabase
       .from("events")
       .select("id, title, location, event_type, secondary_event_type, calendar_start, calendar_end, is_open")
       .is("deleted_at", null)
@@ -17,7 +19,7 @@ function fetchEvents() {
       .then(({ data, error }) => {
         if (error) throw error;
         return data || [];
-      });
+      }));
     request.catch(() => { request = null; });
   }
   return request;

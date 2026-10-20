@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
+import { whenIntroDone } from "../lib/intro";
 
 /* Moved from the old components/Leaderboard.jsx; the ranking logic is unchanged. */
 const TOP_N = 15;
@@ -201,7 +202,8 @@ export default function useLeaderboard() {
   useEffect(() => {
     let cancelled = false;
 
-    fetchLeaderboard()
+    // paging through every sign-in is heavy; wait until the landing intro is over
+    whenIntroDone().then(fetchLeaderboard)
       .then((data) => {
         if (cancelled) return;
 

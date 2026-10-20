@@ -1,0 +1,17 @@
+{
+  "width": 1514,
+  "height": 800.25,
+  "sky": "#64BEE2",
+  "letters": {
+    "760": "letters-760.webp",
+    "1514": "letters-1514.webp",
+    "3028": "letters-3028.webp",
+    "4542": "letters-4542.webp"
+  },
+  "clouds": {
+    "760": "clouds-760.webp",
+    "1514": "clouds-1514.webp",
+    "3028": "clouds-3028.webp",
+    "4542": "clouds-4542.webp"
+  }
+}

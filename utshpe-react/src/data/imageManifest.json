@@ -1,0 +1,441 @@
+{
+ "/assets/images/this-week/carne-asada.jpg": {
+  "w": 1600,
+  "h": 1200,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/this-week/company-info-session.jpg": {
+  "w": 1600,
+  "h": 1200,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/this-week/general-meeting.jpg": {
+  "w": 1600,
+  "h": 1067,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/this-week/intramural-sports.jpg": {
+  "w": 1600,
+  "h": 1200,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/this-week/technical-workshop.jpg": {
+  "w": 1600,
+  "h": 1200,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/spotlight/chair-of-the-month.jpg": {
+  "w": 1356,
+  "h": 1356,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/spotlight/member-of-the-month.jpg": {
+  "w": 537,
+  "h": 607,
+  "widths": [
+   480,
+   537
+  ]
+ },
+ "/assets/images/spotlight/officer-of-the-month.jpg": {
+  "w": 2858,
+  "h": 2972,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/spotlight/shpetina-of-the-month.png": {
+  "w": 686,
+  "h": 640,
+  "widths": [
+   480,
+   686
+  ]
+ },
+ "/assets/images/aboutus/Aboutpic1.jpg": {
+  "w": 1024,
+  "h": 768,
+  "widths": [
+   480,
+   960,
+   1024
+  ]
+ },
+ "/assets/images/aboutus/Aboutpic2.jpg": {
+  "w": 1024,
+  "h": 683,
+  "widths": [
+   480,
+   960,
+   1024
+  ]
+ },
+ "/assets/images/aboutus/Academic.jpg": {
+  "w": 1024,
+  "h": 683,
+  "widths": [
+   480,
+   960,
+   1024
+  ]
+ },
+ "/assets/images/aboutus/Chapter.jpg": {
+  "w": 1024,
+  "h": 683,
+  "widths": [
+   480,
+   960,
+   1024
+  ]
+ },
+ "/assets/images/aboutus/ChapterOutreach.jpg": {
+  "w": 3625,
+  "h": 3024,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/aboutus/Leadership.jpg": {
+  "w": 1024,
+  "h": 683,
+  "widths": [
+   480,
+   960,
+   1024
+  ]
+ },
+ "/assets/images/aboutus/ProfessionalDevelopment.png": {
+  "w": 4032,
+  "h": 3024,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/aboutus/technicaldevelopment.png": {
+  "w": 2338,
+  "h": 1309,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/membership/membership1.jpg": {
+  "w": 1024,
+  "h": 683,
+  "widths": [
+   480,
+   960,
+   1024
+  ]
+ },
+ "/assets/images/membership/membership2.jpg": {
+  "w": 1024,
+  "h": 683,
+  "widths": [
+   480,
+   960,
+   1024
+  ]
+ },
+ "/assets/images/membership/membership3.jpg": {
+  "w": 1024,
+  "h": 768,
+  "widths": [
+   480,
+   960,
+   1024
+  ]
+ },
+ "/assets/images/membership/membership4.jpg": {
+  "w": 4032,
+  "h": 3024,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/membership/membership5.jpg": {
+  "w": 4032,
+  "h": 3024,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/membership/membership6.jpg": {
+  "w": 1024,
+  "h": 768,
+  "widths": [
+   480,
+   960,
+   1024
+  ]
+ },
+ "/assets/images/membership/membership7.jpg": {
+  "w": 1024,
+  "h": 768,
+  "widths": [
+   480,
+   960,
+   1024
+  ]
+ },
+ "/assets/images/Leadership/Alexandra.png": {
+  "w": 1536,
+  "h": 1483,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/Leadership/Leadershipteam.png": {
+  "w": 1536,
+  "h": 993,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/Leadership/Yessenia.png": {
+  "w": 1536,
+  "h": 1522,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/shpetinas/alexis.jpg": {
+  "w": 2306,
+  "h": 1536,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/shpetinas/camila.jpg": {
+  "w": 2306,
+  "h": 1536,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/shpetinas/lourdes.jpg": {
+  "w": 2306,
+  "h": 1536,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/shpetinas/marya.jpg": {
+  "w": 2306,
+  "h": 1536,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/shpetinas/natalia.jpg": {
+  "w": 4000,
+  "h": 2664,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/shpetinas/natalie.jpg": {
+  "w": 4000,
+  "h": 2664,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/shpetinas/shpetinaslideshow1.JPG": {
+  "w": 2048,
+  "h": 1536,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/shpetinas/shpetinaslideshow2.JPG": {
+  "w": 2048,
+  "h": 1152,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/shpetinas/shpetinaslideshow3.JPG": {
+  "w": 4032,
+  "h": 2268,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/shpetinas/shpetinaslideshow4.JPG": {
+  "w": 2592,
+  "h": 1728,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/shpetinas/shpetinaslideshow5.jpg": {
+  "w": 2306,
+  "h": 1536,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/shpetinas/shpetinaslideshow6.jpg": {
+  "w": 1024,
+  "h": 768,
+  "widths": [
+   480,
+   960,
+   1024
+  ]
+ },
+ "/assets/images/shpetinas/shpetinasmain.JPG": {
+  "w": 2306,
+  "h": 1536,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/sponsors/Sponsorpage.jpg": {
+  "w": 1024,
+  "h": 768,
+  "widths": [
+   480,
+   960,
+   1024
+  ]
+ },
+ "/assets/images/sponsors/Sponsorspage2.jpg": {
+  "w": 1024,
+  "h": 768,
+  "widths": [
+   480,
+   960,
+   1024
+  ]
+ },
+ "/assets/images/sponsors/Sponsorspage3.jpg": {
+  "w": 1024,
+  "h": 768,
+  "widths": [
+   480,
+   960,
+   1024
+  ]
+ },
+ "/assets/images/Home_Page/slideshow1.jpg": {
+  "w": 2048,
+  "h": 1536,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/Home_Page/slideshow2.jpg": {
+  "w": 1024,
+  "h": 768,
+  "widths": [
+   480,
+   960,
+   1024
+  ]
+ },
+ "/assets/images/Home_Page/slideshow3.jpg": {
+  "w": 1024,
+  "h": 768,
+  "widths": [
+   480,
+   960,
+   1024
+  ]
+ },
+ "/assets/images/Home_Page/slideshow4.jpg": {
+  "w": 1024,
+  "h": 768,
+  "widths": [
+   480,
+   960,
+   1024
+  ]
+ },
+ "/assets/images/Home_Page/slideshow5.jpg": {
+  "w": 1024,
+  "h": 683,
+  "widths": [
+   480,
+   960,
+   1024
+  ]
+ },
+ "/assets/images/Home_Page/slideshow6.jpg": {
+  "w": 1024,
+  "h": 768,
+  "widths": [
+   480,
+   960,
+   1024
+  ]
+ }
+}

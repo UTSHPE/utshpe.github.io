@@ -2,6 +2,7 @@ import useBodyPage from "../hooks/useBodyPage";
 import { boardOfDirectors, executiveBoard } from "../data/leadership";
 import FlipCard from "../components/redesign/FlipCard";
 import { photo } from "../lib/constants";
+import { TileImage } from "../components/redesign/PhotoTile";
 
 /* the design offsets each group's tone/stamp index: exec board from 0, directors from 2 */
 function Cards({ people, offset }) {
@@ -40,7 +41,7 @@ export default function Leadership() {
         <div className="band" data-r>
           {/* the design's band tiles are bare (no camera, no caption chip); the caption sits below */}
           {TOGETHER.map(([tone, cap, src]) => (
-            <div key={cap}><div className="phd" style={{ background: tone }}>{photo(src) ? <img className="pimg" src={photo(src)} alt={cap} loading="lazy" /> : null}</div><p>{cap}</p></div>
+            <div key={cap}><div className="phd" style={{ background: tone }}>{photo(src) ? <TileImage src={photo(src)} alt={cap} /> : null}</div><p>{cap}</p></div>
           ))}
         </div>
       </section>

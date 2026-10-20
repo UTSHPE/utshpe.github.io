@@ -17,11 +17,6 @@ export default function Home() {
   return (
     <>
       <Intro />
-      {/* the hand-drawn wobble used by the mural, its clouds and the UT Tower */}
-      <svg width="0" height="0" style={{ position: "absolute" }} aria-hidden="true"><defs>
-        <filter id="wob" x="-8%" y="-8%" width="116%" height="116%"><feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="2" seed="6" result="n" /><feDisplacementMap in="SourceGraphic" in2="n" scale="4" xChannelSelector="R" yChannelSelector="G" /></filter>
-      </defs></svg>
-
       <HeroPostcard />
       <div className="air"></div>
 

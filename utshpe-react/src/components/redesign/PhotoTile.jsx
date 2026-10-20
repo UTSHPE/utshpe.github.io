@@ -1,4 +1,15 @@
 import { photo } from "../../lib/constants";
+import { responsive } from "../../lib/images";
+
+/*
+ * A right-sized photo filling its tile, decoded off the main thread. Tile widths vary, so
+ * "auto" lets the browser size the lazy image by its layout; the rest is the fallback.
+ */
+const TILE_SIZES = "auto, (max-width:760px) 100vw, 50vw";
+export function TileImage({ src, alt, focus, sizes = TILE_SIZES, lazy = true }) {
+  const r = responsive(src);
+  return <img className="pimg" src={r.src} srcSet={r.srcSet} sizes={r.srcSet ? sizes : undefined} alt={alt} loading={lazy ? "lazy" : undefined} decoding="async" style={focus ? { objectPosition: focus } : undefined} />;
+}
 
 /* The design's S.cam, as JSX so a tile can also hold children (stickers). */
 export function Cam() {
@@ -19,7 +30,7 @@ export default function PhotoTile({ tone, label, cls, style, src, alt, focus, ch
   const img = photo(src);
   return (
     <div className={"phd " + (cls || "")} style={{ background: tone, ...style }}>
-      {img ? <img className="pimg" src={img} alt={alt ?? label ?? ""} loading="lazy" style={focus ? { objectPosition: focus } : undefined} /> : <Cam />}
+      {img ? <TileImage src={img} alt={alt ?? label ?? ""} focus={focus} /> : <Cam />}
       {label ? <span>{label}</span> : null}
       {children}
     </div>
