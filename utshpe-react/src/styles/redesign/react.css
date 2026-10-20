@@ -53,7 +53,7 @@
  * (the full name is the event's tooltip).
  */
 .dow,.cg{grid-template-columns:repeat(7,minmax(0,1fr))}
-.cd{min-width:0}
+.cd{min-width:0;overflow:hidden}
 .ev>span{min-width:0;overflow:hidden;text-overflow:ellipsis}
 
 /* the leftover stub pages (/resources, /contact, /coding-resources) inside the new chrome */
