@@ -8,9 +8,10 @@ import PhotoTile from "../components/redesign/PhotoTile";
 /* the polaroid fan: three of these, shuffled each visit (tones shuffle separately, as in the design) */
 const FAN_TONES = ["#CFE6EF", "#FBD3C0", "#DCEBF2", "#F4C5BD", "#FDE3D6"];
 const FAN_PHOTOS = [
-  { label: "General meeting", src: "/assets/images/aboutus/Aboutpic2.jpg" },
+  // GM #4, Oct 7 2026, from the UT SHPE Flickr
+  { label: "General meeting", src: "/assets/images/aboutus/gm4-2026-10-07.jpg", focus: "center 55%" },
   { label: "Carne asada", src: "/assets/images/this-week/carne-asada.jpg" },
-  { label: "Tech talk", src: "/assets/images/Home_Page/slideshow5.jpg" },
+  { label: "Friendship", src: "/assets/images/Home_Page/slideshow5.jpg" },
   { label: "Volunteer day", src: "/assets/images/aboutus/ChapterOutreach.jpg" },
   { label: "Build nights", src: "/assets/images/membership/membership5.jpg" },
 ];
@@ -121,7 +122,7 @@ export default function About() {
         <div className="bf" aria-hidden="true" id="bf" dangerouslySetInnerHTML={html(bats)} />
         <div><div className="kick">a little about us</div><h1>About UT SHPE</h1><p className="sub">The Society of Hispanic Professional Engineers at UT Austin: a chapter built on community, mentorship, and opportunity.</p></div>
         <div className="fan" id="fan" ref={fanRef}>
-          {fan.map((f) => <div className="pol" key={f.label}><PhotoTile tone={f.tone} src={f.src} alt={f.label} /><p>{f.label}</p></div>)}
+          {fan.map((f) => <div className="pol" key={f.label}><PhotoTile tone={f.tone} src={f.src} alt={f.label} focus={f.focus} /><p>{f.label}</p></div>)}
         </div>
       </header>
       <div className="air"></div>
