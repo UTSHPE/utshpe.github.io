@@ -5,15 +5,20 @@
     <link rel="icon" type="image/png" href="/assets/images/SHPE_logo.png" />
     <link rel="apple-touch-icon" href="/assets/images/SHPE_logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- light only: in Dark Mode, Safari otherwise tints the status bar area dark behind the white nav -->
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#ffffff" />
+    <style>html{background:#fff}</style>
     <title>UT SHPE</title>
-    <script type="module" crossorigin src="/assets/index-BSHELqpi.js"></script>
+    <script type="module" crossorigin src="/assets/index-LJp28oxL.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index--kWrdyj0.css">
   </head>
   <body>
     <!-- the home hero is a 1440px-wide postcard scaled to the page: --k = page width / 1440 -->
     <script>(function(){function k(){document.documentElement.style.setProperty('--k',(document.documentElement.clientWidth/1440).toFixed(4))}k();addEventListener('resize',k)})()</script>
-    <!-- the landing intro plays once per session on the home page (?intro forces it); decided before first paint -->
-    <script>try{if(location.pathname==='/'&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&(!sessionStorage.getItem('introSeen')||location.search.indexOf('intro')>-1))document.documentElement.classList.add('introing','hideL')}catch(e){}</script>
-    <div id="root"></div>
+    <!-- the landing intro plays on every load of the home page; decided before first paint. A page restored
+         from the back/forward cache (Safari reopening a tab) reloads so it plays then too -->
+    <script>try{if(location.pathname==='/'&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('introing','hideL')}catch(e){}addEventListener('pageshow',function(e){if(e.persisted&&location.pathname==='/')location.reload()})</script>
+    <div id="root"></div>
   </body>
 </html>
