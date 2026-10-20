@@ -123,15 +123,6 @@
    1280
   ]
  },
- "/assets/images/aboutus/gm4-2026-10-07.jpg": {
-  "w": 1024,
-  "h": 683,
-  "widths": [
-   480,
-   960,
-   1024
-  ]
- },
  "/assets/images/aboutus/Leadership.jpg": {
   "w": 1024,
   "h": 683,
@@ -148,6 +139,15 @@
    480,
    960,
    1280
+  ]
+ },
+ "/assets/images/aboutus/gm4-2026-10-07.jpg": {
+  "w": 1024,
+  "h": 683,
+  "widths": [
+   480,
+   960,
+   1024
   ]
  },
  "/assets/images/aboutus/technicaldevelopment.png": {
@@ -222,9 +222,54 @@
    1024
   ]
  },
- "/assets/images/Leadership/Alexandra.png": {
-  "w": 1536,
-  "h": 1483,
+ "/assets/images/Leadership/Adam-2026.jpg": {
+  "w": 3456,
+  "h": 5184,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/Leadership/Alex-2026.jpg": {
+  "w": 3456,
+  "h": 5184,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/Leadership/Carlos-2026.jpg": {
+  "w": 3456,
+  "h": 5184,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/Leadership/Clarissa-2026.jpg": {
+  "w": 3456,
+  "h": 5184,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/Leadership/Eliana-2026.jpg": {
+  "w": 3456,
+  "h": 5184,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/Leadership/Jake-2026.jpg": {
+  "w": 3456,
+  "h": 5184,
   "widths": [
    480,
    960,
@@ -240,9 +285,54 @@
    1280
   ]
  },
- "/assets/images/Leadership/Yessenia.png": {
-  "w": 1536,
-  "h": 1522,
+ "/assets/images/Leadership/Mia-2026.jpg": {
+  "w": 3456,
+  "h": 5184,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/Leadership/Natalia-2026.jpg": {
+  "w": 3456,
+  "h": 5184,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/Leadership/Nathan-2026.jpg": {
+  "w": 3426,
+  "h": 5139,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/Leadership/Sophia-2026.jpg": {
+  "w": 3456,
+  "h": 5184,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/Leadership/Yessenia-2026.jpg": {
+  "w": 3456,
+  "h": 5184,
+  "widths": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/assets/images/Leadership/Zoe-2026.jpg": {
+  "w": 3456,
+  "h": 5184,
   "widths": [
    480,
    960,
