@@ -80,7 +80,7 @@ export default function Calendar() {
             return (
               <div key={d.getTime()} className={cls} onClick={mobile ? () => setPicked({ view: viewKey, date: d }) : undefined}>
                 <span className="n">{label(d)}</span>
-                {dayEvents(d).map((e, i) => <div key={i} className="ev" title={e.text}><i style={{ background: e.color }}></i>{e.text}</div>)}
+                {dayEvents(d).map((e, i) => <div key={i} className="ev" title={e.text}><i style={{ background: e.color }}></i><span>{e.text}</span></div>)}
               </div>
             );
           })}

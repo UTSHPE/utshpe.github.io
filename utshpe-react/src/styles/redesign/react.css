@@ -16,6 +16,9 @@
 .mur{filter:none}
 .mur>img.gsi{position:relative;z-index:1;display:block;width:100%;height:auto}
 .cl{background-repeat:repeat-x;background-size:50% 100%}
+/* the intro's postcard holds a copy of the mural; the design's rule for the card's little logo
+   (#intro .env .cardp img{height:50px}) must not squash the mural image */
+#intro .env .cardp .mm .mur>img.gsi{height:auto;margin-bottom:0}
 /* looping animations rest while they are off screen (usePauseOffscreen) */
 .hero.paused .cl,.belt.paused .track{animation-play-state:paused}
 /* slides keep their own layer, so a cross-fade never has to re-raster the photo */
@@ -43,6 +46,15 @@
 @media (hover:none){
   .fc:hover:not(.flip) .flp,.fc:focus:not(.flip) .flp,.blk:hover:not(.flip) .flp{transform:none}
 }
+
+/*
+ * Calendar: real event names are long, and the design's 1fr columns grew to fit them,
+ * so days stopped lining up under their weekday. Equal columns; long names end in "…"
+ * (the full name is the event's tooltip).
+ */
+.dow,.cg{grid-template-columns:repeat(7,minmax(0,1fr))}
+.cd{min-width:0}
+.ev>span{min-width:0;overflow:hidden;text-overflow:ellipsis}
 
 /* the leftover stub pages (/resources, /contact, /coding-resources) inside the new chrome */
 .stub{padding:92px 56px;min-height:40vh}
