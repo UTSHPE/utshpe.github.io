@@ -28,6 +28,13 @@
 .mosaic .phd:hover,.evg .phd:hover,.band .phd:hover,.stack .phd:hover,.pp .phd:hover,.hph .phd:hover{transform:translateY(-4px) rotate(0)!important}
 @media (prefers-reduced-motion:reduce){.mosaic .phd,.evg .phd,.band .phd,.stack .phd,.pp .phd,.hph .phd{transition:none}}
 
+/*
+ * Event cards: real titles and locations are longer than the design's, so the bottom text
+ * wraps short of the corner sticker (54px at right:18px) instead of running under it.
+ * Phones hide the sticker, so they keep the full width.
+ */
+@media (min-width:761px){.cards .card h3,.cards .card .m{padding-right:56px}}
+
 /* the leftover stub pages (/resources, /contact, /coding-resources) inside the new chrome */
 .stub{padding:92px 56px;min-height:40vh}
 .stub h1{font-family:var(--display);font-size:46px;line-height:1.05}
