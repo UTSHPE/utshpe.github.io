@@ -74,11 +74,6 @@ export const CAM_IG = '<svg viewBox="0 0 48 48"><rect x="4" y="10" width="40" he
 
 export const SIL = '<svg viewBox="0 0 300 330" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><circle cx="150" cy="124" r="52" fill="#16316B" opacity=".9"/><path d="M42 330C48 240 96 204 150 204s102 36 108 126Z" fill="#16316B" opacity=".9"/></svg>';
 
-/* the mini stamp in a flip card's photo corner; spotlight cards use the smaller size */
-export function miniStamp(i, small) {
-  return '<svg class="fst" width="' + (small ? 40 : 46) + '" height="' + (small ? 49 : 56) + '" viewBox="0 0 46 56" aria-hidden="true"><rect width="46" height="56" fill="#fff"/><image href="' + SYMBOL + '" x="7" y="8" width="32" height="31"/><text x="23" y="50" text-anchor="middle" font-family="Archivo Black,sans-serif" font-size="6.5" fill="#16316B">' + ("0" + (i + 1)).slice(-2) + '</text><rect x="1.5" y="1.5" width="43" height="53" fill="none" stroke="#DCE6EE" stroke-width="3" stroke-dasharray="0 5" stroke-linecap="round"/></svg>';
-}
-
 export const LINKEDIN_TILE = '<svg viewBox="0 0 24 24" width="34" height="34"><rect width="24" height="24" rx="4" fill="#fff"/><circle cx="6.6" cy="6.6" r="1.7" fill="#16316B"/><rect x="5.1" y="9.6" width="3" height="9" fill="#16316B"/><path d="M10.4 9.6h2.8v1.3c.5-.9 1.6-1.5 3-1.5 2.6 0 3.2 1.7 3.2 4v5.2h-3v-4.5c0-1-.1-2-1.4-2s-1.6.9-1.6 1.9v4.6h-3z" fill="#16316B"/></svg>';
 export const MAIL_TILE = '<svg viewBox="0 0 28 24" width="40" height="34"><rect x="1" y="3" width="26" height="18" rx="4" fill="#fff"/><path d="M3.5 7l10.5 7.5L24.5 7" fill="none" stroke="#16316B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 

@@ -13,7 +13,7 @@ export default function FlipCard({ name, role, major, i, pron, year, src, focus,
     <div className={"fc" + (flip ? " flip" : "")} tabIndex={0} aria-label={name + ", " + role + ". Hover or focus to flip."} onClick={onClick}>
       <div className="flp">
         <div className="ff"><div className="pane">
-          <div className="fph" style={{ background: tone }} dangerouslySetInnerHTML={html(photoCorner(src, i, false, focus))} />
+          <div className="fph" style={{ background: tone }} dangerouslySetInnerHTML={html(photoCorner(src, focus))} />
           <div className="ftx"><h3>{name}</h3>{pron ? <div className="pr">{pron}</div> : null}<div className="rl">{role}</div></div>
         </div></div>
         <div className="ff fbk"><div className="pane">

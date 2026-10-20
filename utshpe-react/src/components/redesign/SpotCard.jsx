@@ -9,7 +9,7 @@ export default function SpotCard({ label, i, name, major, year, src, focus, tone
     <div className={"fc sm" + (flip ? " flip" : "")} tabIndex={0} aria-label={label + (has ? ": " + name : "") + ". Hover or focus to flip."} onClick={onClick}>
       <div className="flp">
         <div className="ff"><div className="pane">
-          <div className="fph" style={{ background: tone }} dangerouslySetInnerHTML={html(photoCorner(src, i, true, focus))} />
+          <div className="fph" style={{ background: tone }} dangerouslySetInnerHTML={html(photoCorner(src, focus))} />
           <div className="ftx"><div className="sl2">{label}</div><h3 className={"g0" + (has ? " on" : "")}>{name || "Name"}</h3><div className="hint0"><span className="hv">Hover to learn more</span><span className="tp">Tap to learn more</span></div></div>
         </div></div>
         <div className="ff fbk"><div className="pane np">
