@@ -4,7 +4,7 @@ import { SYMBOL } from "../../../lib/design";
 const ROUTE = "M-60 780C150 810 330 650 480 610C650 565 930 540 930 380C930 240 720 215 625 320C560 395 640 500 720 450";
 
 /*
- * Landing intro (first visit per session, or ?intro): a paper plane flies in along a
+ * Landing intro (every load of the home page): a paper plane flies in along a
  * dotted trail and lands as a sealed envelope; it opens, the postcard is pulled out
  * and grows into the hero. index.html adds `introing hideL` to <html> before first
  * paint; this runs the timeline, ported from the design with the same numbers.
@@ -21,7 +21,6 @@ function startIntro(refs) {
 
   function finish() {
     if (done) return; done = true; timers.forEach(clearTimeout); cancelAnimationFrame(raf);
-    try { sessionStorage.setItem("introSeen", "1"); } catch { /* storage blocked */ }
     root.classList.remove("introing", "hideL"); intro.style.display = "none";
     const ex = document.getElementById("exp");
     if (ex) {
