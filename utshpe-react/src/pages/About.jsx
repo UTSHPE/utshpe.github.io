@@ -168,8 +168,8 @@ export default function About() {
             <div>
               <div className="yr"><small>founded in</small>1982</div>
               <div className="hph" id="hph">
-                <PhotoTile tone="#CFE6EF" label="Then" src="/assets/images/Home_Page/slideshow1.jpg" />
-                <PhotoTile tone="#FBD3C0" label="Now" src="/assets/images/aboutus/Aboutpic2.jpg" />
+                <PhotoTile tone="#CFE6EF" alt="Then" src="/assets/images/Home_Page/slideshow1.jpg" />
+                <PhotoTile tone="#FBD3C0" alt="Now" src="/assets/images/aboutus/Aboutpic2.jpg" />
               </div>
             </div>
             <div><div className="kick">our history</div><div className="h2" style={{ marginBottom: 14 }}>Our History</div>
