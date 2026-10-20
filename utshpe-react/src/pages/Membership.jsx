@@ -1,4 +1,5 @@
 import useBodyPage from "../hooks/useBodyPage";
+import useInstagramPosts from "../hooks/useInstagramPosts";
 import { INSTAGRAM_URL, MEMBERSHIP_FORM_URL } from "../lib/constants";
 import { BL, CAM_IG, html, NV, OR, RD } from "../lib/design";
 import { spotlightMonth } from "../data/spotlights";
@@ -38,6 +39,7 @@ function FormButton() {
 
 export default function Membership() {
   useBodyPage("membership");
+  const igPosts = useInstagramPosts(IG_TONES.length);
   return (
     <>
       <header className="sh">
@@ -82,7 +84,16 @@ export default function Membership() {
       <section className="sec alt">
         <div className="hd" data-r><div><div className="kick">what's happening</div><h2>Latest on Instagram</h2></div><a className="btn" href={INSTAGRAM_URL} target="_blank" rel="noopener">Follow @utshpe</a></div>
         <div className="ig" id="ig" data-r>
-          {IG_TONES.map((t, i) => <a key={i} href={INSTAGRAM_URL} target="_blank" rel="noopener" style={{ background: t }} dangerouslySetInnerHTML={html(CAM_IG + "<span>Post " + (i + 1) + "</span>")} />)}
+          {IG_TONES.map((t, i) => {
+            const post = igPosts[i];
+            // the newest posts from the instagram-feed function; placeholders until they load
+            if (!post) return <a key={i} href={INSTAGRAM_URL} target="_blank" rel="noopener" style={{ background: t }} dangerouslySetInnerHTML={html(CAM_IG + "<span>Post " + (i + 1) + "</span>")} />;
+            return (
+              <a key={post.id} href={post.permalink} target="_blank" rel="noopener" style={{ background: t }} aria-label={"Instagram post: " + (post.caption.split("\n")[0].slice(0, 120) || "open on Instagram")}>
+                <img className="pimg" src={post.image} alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer" />
+              </a>
+            );
+          })}
         </div>
       </section>
 
