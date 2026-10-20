@@ -21,6 +21,8 @@ const GALLERY = [
   ["#F4C5BD", "Social", "", "/assets/images/shpetinas/shpetinaslideshow5.jpg"],
   ["#FDE3D6", "Volunteering", "w2", "/assets/images/shpetinas/shpetinaslideshow4.JPG"],
   ["#F6C4D6", "Sisterhood night", "", "/assets/images/shpetinas/shpetinasmain.JPG"],
+  // fills the slot under Mentor match
+  ["#F8CFE0", "Workshop table", "", "/assets/images/shpetinas/shpetinaslideshow3.JPG"],
 ];
 const HIGHLIGHTS = [
   ["#F4A3C4", "Mentorship Network", "Connect with mentors and peer support systems."],
@@ -77,7 +79,8 @@ export default function SHPEtinas() {
       <section className="sec alt">
         <div className="hd" data-r><div><div className="kick">together</div><h2>Our Events</h2></div><a className="btn" href={FLICKR_URL} target="_blank" rel="noopener">See more photos</a></div>
         <div className="bento" id="gal" data-r>
-          {GALLERY.map(([tone, label, cls, src]) => <PhotoTile key={label} tone={tone} label={label} cls={cls} src={src} />)}
+          {/* no visible captions here; the descriptions stay as alt text */}
+          {GALLERY.map(([tone, label, cls, src]) => <PhotoTile key={label} tone={tone} alt={label} cls={cls} src={src} />)}
         </div>
       </section>
     </>
