@@ -13,7 +13,7 @@ import { chromium } from "playwright-core";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const PUB = path.join(ROOT, "public");
-const DIRS = ["this-week", "spotlight", "aboutus", "membership", "Leadership", "shpetinas", "sponsors", "Home_Page"];
+const DIRS = ["this-week", "spotlight", "aboutus", "membership", "Leadership", "shpetinas", "sponsors", "Home_Page", "instagram"];
 const WIDTHS = [480, 960, 1280]; // the widest photo tile is ~660 CSS px, so 1280 covers 2x screens
 const SKIP = /icon|logo/i; // small graphics stay as they are
 

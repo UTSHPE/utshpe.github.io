@@ -1,5 +1,6 @@
 import useBodyPage from "../hooks/useBodyPage";
-import useInstagramPosts from "../hooks/useInstagramPosts";
+import { instagramPosts } from "../data/instagram";
+import { responsive } from "../lib/images";
 import { INSTAGRAM_URL, MEMBERSHIP_FORM_URL } from "../lib/constants";
 import { BL, CAM_IG, html, NV, OR, RD } from "../lib/design";
 import { spotlightMonth } from "../data/spotlights";
@@ -39,7 +40,6 @@ function FormButton() {
 
 export default function Membership() {
   useBodyPage("membership");
-  const igPosts = useInstagramPosts(IG_TONES.length);
   return (
     <>
       <header className="sh">
@@ -84,13 +84,16 @@ export default function Membership() {
       <section className="sec alt">
         <div className="hd" data-r><div><div className="kick">what's happening</div><h2>Latest on Instagram</h2></div><a className="btn" href={INSTAGRAM_URL} target="_blank" rel="noopener">Follow @utshpe</a></div>
         <div className="ig" id="ig" data-r>
+          {/* the five newest posts, listed by hand in src/data/instagram.js */}
           {IG_TONES.map((t, i) => {
-            const post = igPosts[i];
-            // the newest posts from the instagram-feed function; placeholders until they load
-            if (!post) return <a key={i} href={INSTAGRAM_URL} target="_blank" rel="noopener" style={{ background: t }} dangerouslySetInnerHTML={html(CAM_IG + "<span>Post " + (i + 1) + "</span>")} />;
+            const post = instagramPosts[i] || {};
+            const href = post.url || INSTAGRAM_URL;
+            const label = post.caption ? "Instagram post: " + post.caption : post.url ? "Instagram post " + (i + 1) : undefined;
+            if (!post.image) return <a key={i} href={href} target="_blank" rel="noopener" style={{ background: t }} aria-label={label} dangerouslySetInnerHTML={html(CAM_IG + "<span>Post " + (i + 1) + "</span>")} />;
+            const r = responsive(post.image);
             return (
-              <a key={post.id} href={post.permalink} target="_blank" rel="noopener" style={{ background: t }} aria-label={"Instagram post: " + (post.caption.split("\n")[0].slice(0, 120) || "open on Instagram")}>
-                <img className="pimg" src={post.image} alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer" />
+              <a key={i} href={href} target="_blank" rel="noopener" style={{ background: t }} aria-label={label}>
+                <img className="pimg" src={r.src} srcSet={r.srcSet} sizes={r.srcSet ? "auto, (max-width:760px) 42vw, 20vw" : undefined} alt="" loading="lazy" decoding="async" />
               </a>
             );
           })}
