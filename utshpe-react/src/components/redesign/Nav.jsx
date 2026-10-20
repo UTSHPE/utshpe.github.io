@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { LEADERBOARD_URL, MEMBERSHIP_FORM_URL } from "../../lib/constants";
+import { CHECKIN_URL, MEMBERSHIP_FORM_URL } from "../../lib/constants";
 
 const PAGES = [
   ["About Us", "/about"],
@@ -36,7 +36,7 @@ export default function Nav() {
         ))}
         <a className="btn" href={MEMBERSHIP_FORM_URL} target="_blank" rel="noopener" onClick={close}>Join</a>
       </div>
-      <a className="mcheck" href={LEADERBOARD_URL} target="_blank" rel="noopener">Check in</a>
+      <a className="mcheck" href={CHECKIN_URL} target="_blank" rel="noopener">Check in</a>
       <button className="mnav" type="button" aria-label="Menu" aria-expanded={open ? "true" : "false"} onClick={() => setOpen((o) => !o)}><i></i></button>
     </nav>
   );
