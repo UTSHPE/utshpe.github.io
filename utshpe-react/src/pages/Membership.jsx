@@ -54,8 +54,8 @@ export default function Membership() {
           </div>
           <div className="stack" id="stack">
             <PhotoTile tone="#CFE6EF" label="General meeting" cls="t1" src="/assets/images/membership/membership7.jpg" />
-            <PhotoTile tone="#FBD3C0" label="Socials" src="/assets/images/membership/membership6.jpg" />
-            <PhotoTile tone="#DCEBF2" label="Study night" src="/assets/images/membership/membership5.jpg" />
+            <PhotoTile tone="#FBD3C0" label="Socials" src="/assets/images/this-week/intramural-sports.jpg" />
+            <PhotoTile tone="#DCEBF2" label="Build night" src="/assets/images/membership/membership5.jpg" />
           </div>
         </div>
       </section>

@@ -40,7 +40,7 @@ export default function SHPEtinas() {
       <header className="sh">
         <div><div className="kick">SHPE at UT Austin</div><h1>SHPEtinas</h1><p className="sub">Accelerating and affirming Latina representation at every level of STEM leadership.</p></div>
         <div className="mosaic" id="mosaic">
-          {MOSAIC.map(([label, cls, src], i) => <PhotoTile key={label} tone={tones[i]} label={label} cls={cls} src={src} />)}
+          {MOSAIC.map(([label, cls, src], i) => <PhotoTile key={label} tone={tones[i]} alt={label} cls={cls} src={src} />)}
         </div>
       </header>
       <div className="air"></div>

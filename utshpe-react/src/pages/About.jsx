@@ -10,14 +10,14 @@ const FAN_TONES = ["#CFE6EF", "#FBD3C0", "#DCEBF2", "#F4C5BD", "#FDE3D6"];
 const FAN_PHOTOS = [
   { label: "General meeting", src: "/assets/images/aboutus/Aboutpic2.jpg" },
   { label: "Carne asada", src: "/assets/images/this-week/carne-asada.jpg" },
-  { label: "Tech talk", src: "/assets/images/this-week/technical-workshop.jpg" },
+  { label: "Tech talk", src: "/assets/images/Home_Page/slideshow5.jpg" },
   { label: "Volunteer day", src: "/assets/images/aboutus/ChapterOutreach.jpg" },
-  { label: "Study night", src: "/assets/images/membership/membership5.jpg" },
+  { label: "Build nights", src: "/assets/images/membership/membership5.jpg" },
 ];
 const PILLAR_TONES = ["#CFE6EF", "#FBD3C0", "#F4C5BD", "#DCEBF2", "#FDE3D6", "#CFE6EF"];
 
 const STATS = [
-  [300, "#74ABC2", "Active Members"],
+  [450, "#74ABC2", "Active Members"],
   [210, "#F26838", "Average General Meeting Attendance"],
   [35, "#D33E26", "Social & Networking Events Each Year"],
   [30, "#1272B8", "Corporate Workshops and Tech Events"],
@@ -82,7 +82,7 @@ function Timeline() {
   return (
     <div className={"tl" + (on ? " in" : "")} id="tl" ref={ref}>
       <div><b>1982</b><span>Founded as a subcommittee of Pi Sigma Pi.</span></div>
-      <div><b>Today</b><span>A 300+ member chapter serving students, industry, and Austin.</span></div>
+      <div><b>Today</b><span>A 450+ member chapter serving students, industry, and Austin.</span></div>
     </div>
   );
 }
@@ -143,7 +143,7 @@ export default function About() {
         <div className="trio" data-r id="trio">
           <PhotoTile tone="#CFE6EF" label="Meeting" src="/assets/images/membership/membership7.jpg" />
           <PhotoTile tone="#FBD3C0" label="Social" src="/assets/images/aboutus/Aboutpic1.jpg" />
-          <PhotoTile tone="#DCEBF2" label="Workshop" src="/assets/images/this-week/company-info-session.jpg" />
+          <PhotoTile tone="#DCEBF2" label="Sponsored events" src="/assets/images/this-week/company-info-session.jpg" />
         </div>
         <div className="cap2" data-r>the familia, up close</div>
       </section>
@@ -173,7 +173,7 @@ export default function About() {
               </div>
             </div>
             <div><div className="kick">our history</div><div className="h2" style={{ marginBottom: 14 }}>Our History</div>
-              <p>UT SHPE was founded in 1982 as a subcommittee of the organization Pi Sigma Pi. Today our 300+ member chapter is known for building a thriving Hispanic community of mathematicians, scientists, and engineers. Our chapter is known for leadership, technical development, chapter growth, academic development, professional development, and our community outreach throughout Austin. Today we continue that mission, supporting students, connecting with industry, and giving back through service.</p>
+              <p>UT SHPE was founded in 1982 as a subcommittee of the organization Pi Sigma Pi. Today our 450+ member chapter is known for building a thriving Hispanic community of mathematicians, scientists, and engineers. Our chapter is known for leadership, technical development, chapter growth, academic development, professional development, and our community outreach throughout Austin. Today we continue that mission, supporting students, connecting with industry, and giving back through service.</p>
               <Timeline />
             </div>
           </div>
