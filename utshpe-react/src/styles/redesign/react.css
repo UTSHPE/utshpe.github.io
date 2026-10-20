@@ -36,6 +36,14 @@
  */
 @media (min-width:761px){.cards .card h3,.cards .card .m{padding-right:56px}}
 
+/*
+ * Touch screens: a tap leaves the card focused and "hovered", which kept it flipped after a
+ * second tap. There, only the tap toggle (.flip) turns cards and office-hour blocks over.
+ */
+@media (hover:none){
+  .fc:hover:not(.flip) .flp,.fc:focus:not(.flip) .flp,.blk:hover:not(.flip) .flp{transform:none}
+}
+
 /* the leftover stub pages (/resources, /contact, /coding-resources) inside the new chrome */
 .stub{padding:92px 56px;min-height:40vh}
 .stub h1{font-family:var(--display);font-size:46px;line-height:1.05}
