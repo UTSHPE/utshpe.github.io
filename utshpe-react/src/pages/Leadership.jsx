@@ -39,9 +39,9 @@ export default function Leadership() {
       <section className="sec">
         <div className="hd" data-r><div><div className="kick">in action</div><h2>The team together</h2></div></div>
         <div className="band" data-r>
-          {/* the design's band tiles are bare (no camera, no caption chip); the caption sits below */}
+          {/* bare photo tiles; the descriptions are alt text only (no visible captions) */}
           {TOGETHER.map(([tone, cap, src]) => (
-            <div key={cap}><div className="phd" style={{ background: tone }}>{photo(src) ? <TileImage src={photo(src)} alt={cap} /> : null}</div><p>{cap}</p></div>
+            <div key={cap}><div className="phd" style={{ background: tone }}>{photo(src) ? <TileImage src={photo(src)} alt={cap} /> : null}</div></div>
           ))}
         </div>
       </section>

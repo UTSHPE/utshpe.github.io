@@ -15,9 +15,9 @@ export default function Sponsorship() {
         <div><div className="kick">with gratitude</div><h1>Thank You to Our Sponsors!</h1>
           <p className="sub">A special thank you to all companies who have supported us this year! Your commitment in empowering Hispanics in STEM is one-of-a-kind and will provide lots of opportunities for our members. Your support represents the hope and the desire for a better future. Our chapter and leadership team gratefully appreciate you for believing in us!</p></div>
         <div className="mosaic" id="mosaic">
-          <PhotoTile tone="#CFE6EF" label="Sponsor event" cls="t1" src="/assets/images/sponsors/Sponsorpage.jpg" />
-          <PhotoTile tone="#FBD3C0" label="Sponsor social" src="/assets/images/sponsors/Sponsorspage2.jpg" />
-          <PhotoTile tone="#DCEBF2" label="Company visit" src="/assets/images/sponsors/Sponsorspage3.jpg" />
+          <PhotoTile tone="#CFE6EF" alt="Sponsor event" cls="t1" src="/assets/images/sponsors/Sponsorpage.jpg" />
+          <PhotoTile tone="#FBD3C0" alt="Sponsor social" src="/assets/images/sponsors/Sponsorspage2.jpg" />
+          <PhotoTile tone="#DCEBF2" alt="Company visit" src="/assets/images/sponsors/Sponsorspage3.jpg" />
         </div>
       </header>
       <div className="air"></div>
@@ -34,9 +34,9 @@ export default function Sponsorship() {
       <section className="sec alt">
         <div className="hd" data-r><div><div className="kick">in the room</div><h2>Sponsor events</h2></div></div>
         <div className="evg" id="evg" data-r>
-          <PhotoTile tone="#CFE6EF" label="Sponsor event 1" cls="t1" src="/assets/images/aboutus/ProfessionalDevelopment.png" />
-          <PhotoTile tone="#FBD3C0" label="Sponsor event 2" src="/assets/images/this-week/company-info-session.jpg" />
-          <PhotoTile tone="#DCEBF2" label="Sponsor event 3" src="/assets/images/Home_Page/slideshow2.jpg" />
+          <PhotoTile tone="#CFE6EF" alt="Sponsor event 1" cls="t1" src="/assets/images/aboutus/ProfessionalDevelopment.png" />
+          <PhotoTile tone="#FBD3C0" alt="Sponsor event 2" src="/assets/images/this-week/company-info-session.jpg" />
+          <PhotoTile tone="#DCEBF2" alt="Sponsor event 3" src="/assets/images/Home_Page/slideshow2.jpg" />
         </div>
       </section>
 

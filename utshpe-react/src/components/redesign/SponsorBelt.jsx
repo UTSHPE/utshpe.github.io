@@ -2,11 +2,14 @@ import { useRef, useState } from "react";
 import { sponsors } from "../../data/sponsors";
 import usePauseOffscreen from "../../hooks/usePauseOffscreen";
 
-/* a logo, or its name as a wordmark if the image fails (the design's .lgi error listener) */
+/*
+ * A logo, or its name as a wordmark if the image fails (the design's .lgi error listener).
+ * Not lazy: in the belt most logos sit clipped off to the side, where lazy images never load.
+ */
 export function SponsorLogo({ sponsor }) {
   const [failed, setFailed] = useState(false);
   if (failed) return <span className="wm">{sponsor.name}</span>;
-  return <img className="lgi" src={sponsor.image} alt={sponsor.name} loading="lazy" onError={() => setFailed(true)} />;
+  return <img className="lgi" src={sponsor.image} alt={sponsor.name} decoding="async" onError={() => setFailed(true)} />;
 }
 
 /* the sponsor marquee: every logo twice, so the 46s loop is seamless */
