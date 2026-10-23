@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { prefersReducedMotion } from "./useReducedMotion";
 
 /*
  * The design's scroll reveal: body.rv hides every [data-r] until it first scrolls
@@ -8,7 +7,7 @@ import { prefersReducedMotion } from "./useReducedMotion";
  */
 export default function useReveal() {
   useEffect(() => {
-    if (prefersReducedMotion() || !("IntersectionObserver" in window)) return;
+    if (!("IntersectionObserver" in window)) return;
     document.body.classList.add("rv");
     const io = new IntersectionObserver((es) => {
       es.forEach((e) => {

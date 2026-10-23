@@ -5,7 +5,6 @@ import { MEMBERSHIP_FORM_URL, photo } from "../../../lib/constants";
 import { responsive } from "../../../lib/images";
 import mural from "../../../data/mural.json";
 import useFlickrPhotos from "../../../hooks/useFlickrPhotos";
-import useReducedMotion from "../../../hooks/useReducedMotion";
 import usePauseOffscreen from "../../../hooks/usePauseOffscreen";
 
 const T = ["#FBD3C0", "#CFE6EF", "#DCEBF2", "#F4C5BD"];
@@ -26,19 +25,17 @@ function PhotoCard() {
   const flickr = useFlickrPhotos();
   const n = T.length;
   const [cur, setCur] = useState(() => Math.floor(Math.random() * n));
-  const reduced = useReducedMotion();
   const imgs = useRef([]);
 
   // advance only once the next photo is decoded, so the fade never waits on it
   useEffect(() => {
-    if (reduced) return;
     let live = true;
     const t = setTimeout(() => {
       const next = (cur + 1) % n, el = imgs.current[next];
       (el && el.decode ? el.decode() : Promise.resolve()).catch(() => {}).then(() => { if (live) setCur(next); });
     }, SLIDE_MS);
     return () => { live = false; clearTimeout(t); };
-  }, [cur, reduced, n]);
+  }, [cur, n]);
 
   const photos = T.map((_, i) => photo(flickr[i]?.src) && flickr[i]);
   const real = photos.some(Boolean);

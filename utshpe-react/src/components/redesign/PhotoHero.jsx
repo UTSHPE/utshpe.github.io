@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { CAM_THIN, html } from "../../lib/design";
 import { photo } from "../../lib/constants";
 import { responsive } from "../../lib/images";
-import useReducedMotion from "../../hooks/useReducedMotion";
 
 const T = ["#CFE6EF", "#FBD3C0", "#DCEBF2", "#F4C5BD"];
 const SLIDE_MS = 5000;
@@ -15,19 +14,18 @@ export default function PhotoHero({ className = "ph", photos = [] }) {
   const n = T.length;
   const [cur, setCur] = useState(() => Math.floor(Math.random() * n));
   const [hover, setHover] = useState(false);
-  const reduced = useReducedMotion();
   const imgs = useRef([]);
 
   // advance only once the next photo is decoded, so the fade never waits on it
   useEffect(() => {
-    if (reduced || hover) return;
+    if (hover) return;
     let live = true;
     const t = setTimeout(() => {
       const next = (cur + 1) % n, el = imgs.current[next];
       (el && el.decode ? el.decode() : Promise.resolve()).catch(() => {}).then(() => { if (live) setCur(next); });
     }, SLIDE_MS);
     return () => { live = false; clearTimeout(t); };
-  }, [cur, hover, reduced, n]);
+  }, [cur, hover, n]);
 
   return (
     <div className={className} id="ph" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>

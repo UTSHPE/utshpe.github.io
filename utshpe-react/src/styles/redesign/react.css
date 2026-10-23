@@ -30,7 +30,21 @@
  */
 .mosaic .phd,.evg .phd,.band .phd,.stack .phd,.pp .phd,.hph .phd{transition:transform .25s}
 .mosaic .phd:hover,.evg .phd:hover,.band .phd:hover,.stack .phd:hover,.pp .phd:hover,.hph .phd:hover{transform:translateY(-4px) rotate(0)!important}
-@media (prefers-reduced-motion:reduce){.mosaic .phd,.evg .phd,.band .phd,.stack .phd,.pp .phd,.hph .phd{transition:none}}
+
+/*
+ * The site animates even with the device's Reduce Motion setting on. The design's
+ * prefers-reduced-motion rules (in the generated files) are undone here, value for value.
+ */
+@media (prefers-reduced-motion:reduce){
+  .belt .track{animation:belt 46s linear infinite}
+  .belt{overflow-x:hidden}
+  .fc .flp{transition:transform .7s cubic-bezier(.3,.7,.2,1)}
+  :where(body[data-page="about"]) .fan .pol{opacity:0;transform:none;animation:drop .9s cubic-bezier(.2,.9,.3,1.1) forwards}
+  :where(body[data-page="about"]) .bf{display:block}
+  :where(body[data-page="about"]) .tl:before{transition:transform 1.3s ease;transform:scaleY(0)}
+  :where(body[data-page="about"]) .tl.in:before{transform:scaleY(1)}
+  :where(body[data-page="home"]) .cl{animation:drift 90s linear infinite;transform:none}
+}
 
 /*
  * Event cards: real titles and locations are longer than the design's, so the bottom text

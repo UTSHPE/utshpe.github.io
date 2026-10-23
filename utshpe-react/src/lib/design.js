@@ -56,11 +56,11 @@ export const brand = {
 };
 
 /* a bat whose wings really flap: each wing swings from the shoulder, the body bobs */
-export function flapBat(w, color, dur, style, reduced) {
+export function flapBat(w, color, dur, style) {
   dur = dur || 0.32;
   const lw = "M0 0C-6-8-16-11-27-6C-22-4-21 0-19 5C-15 1-11 2-8 7C-6 4-3 3 0 4Z", rw = "M0 0C6-8 16-11 27-6C22-4 21 0 19 5C15 1 11 2 8 7C6 4 3 3 0 4Z";
-  const an = (v) => (reduced ? "" : '<animateTransform attributeName="transform" type="rotate" values="' + v + '" dur="' + dur + 's" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .6 1;.4 0 .6 1"/>');
-  const bob = reduced ? "" : '<animateTransform attributeName="transform" type="translate" values="0 1.5;0 -2;0 1.5" dur="' + dur + 's" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .6 1;.4 0 .6 1"/>';
+  const an = (v) => '<animateTransform attributeName="transform" type="rotate" values="' + v + '" dur="' + dur + 's" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .6 1;.4 0 .6 1"/>';
+  const bob = '<animateTransform attributeName="transform" type="translate" values="0 1.5;0 -2;0 1.5" dur="' + dur + 's" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .6 1;.4 0 .6 1"/>';
   return '<svg width="' + w + '" height="' + Math.round(w * 0.5) + '" viewBox="-30 -14 60 28" style="' + (style || "") + '" aria-hidden="true"><g fill="' + color + '"><g>' + bob +
     '<g transform="translate(-1.8 1)"><path d="' + lw + '">' + an("28;-34;28") + '</path></g><g transform="translate(1.8 1)"><path d="' + rw + '">' + an("-28;34;-28") + "</path></g>" +
     '<ellipse cx="0" cy="3.4" rx="3.4" ry="5.2"/><path d="M-2.8 -.6L-2.2 -5L-.6 -1ZM2.8 -.6L2.2 -5L.6 -1Z"/></g></g></svg>';

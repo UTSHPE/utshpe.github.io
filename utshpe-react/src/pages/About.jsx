@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import useBodyPage from "../hooks/useBodyPage";
-import useReducedMotion from "../hooks/useReducedMotion";
 import { flapBat, html, shuffle } from "../lib/design";
 import { pillars } from "../data/pillars";
 import PhotoTile from "../components/redesign/PhotoTile";
@@ -108,13 +107,12 @@ function Pillars() {
 
 export default function About() {
   useBodyPage("about");
-  const reduced = useReducedMotion();
   const fanRef = useRef(null);
   useFanZoom(fanRef);
   const [fan] = useState(() => { const t = shuffle(FAN_TONES), l = shuffle(FAN_PHOTOS); return [0, 1, 2].map((i) => ({ tone: t[i], ...l[i] })); });
 
   let bats = "";
-  for (let i = 0; i < 6; i++) bats += flapBat(54 - i * 4, "#16316B", 0.26 + i * 0.025, "top:" + (i % 3) * 30 + "px;animation-delay:" + (1.2 + i * 0.35) + "s", reduced);
+  for (let i = 0; i < 6; i++) bats += flapBat(54 - i * 4, "#16316B", 0.26 + i * 0.025, "top:" + (i % 3) * 30 + "px;animation-delay:" + (1.2 + i * 0.35) + "s");
 
   return (
     <>
