@@ -37,6 +37,7 @@ export const spotlights = [
     major: "Petroleum and Geosystems Engineering",
     year: "3rd Year",
     image: "/assets/images/spotlight/member-of-the-month.jpg",
+    focus: "center 25%",
   },
   {
     title: "SHPEtina of the Month",
