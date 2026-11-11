@@ -14,34 +14,34 @@
  * Shown on Home, Membership ("Members to know") and SHPEtinas (the SHPEtina entry).
  */
 
-export const spotlightMonth = "October 2026";
+export const spotlightMonth = "November 2026";
 
 export const spotlights = [
   {
     title: "Officer of the Month",
-    name: "Adam Flores",
-    major: "Chemical Engineering",
+    name: "Jake Medina",
+    major: "Electrical and Computer Engineering",
     year: "3rd Year",
     image: "/assets/images/spotlight/officer-of-the-month.jpg",
   },
   {
     title: "Chair of the Month",
-    name: "Anthony Cardozo",
-    major: "Computer Science",
+    name: "Erick Nunez",
+    major: "Mechanical Engineering",
     year: "2nd Year",
     image: "/assets/images/spotlight/chair-of-the-month.jpg",
   },
   {
     title: "Member of the Month",
-    name: "Sofia Madrigal",
-    major: "Computational Engineering",
-    year: "1st Year",
+    name: "Abraham Ramos",
+    major: "Petroleum and Geosystems Engineering",
+    year: "3rd Year",
     image: "/assets/images/spotlight/member-of-the-month.jpg",
   },
   {
     title: "SHPEtina of the Month",
-    name: "Harshil Goyal",
-    major: "Computer Science",
+    name: "Samantha Acevedo",
+    major: "Electrical and Computer Engineering",
     year: "1st Year",
     image: "/assets/images/spotlight/shpetina-of-the-month.png",
   },

@@ -45,37 +45,34 @@
   ]
  },
  "/assets/images/spotlight/chair-of-the-month.jpg": {
-  "w": 1356,
-  "h": 1356,
+  "w": 927,
+  "h": 1026,
   "widths": [
    480,
-   960,
-   1280
+   927
   ]
  },
  "/assets/images/spotlight/member-of-the-month.jpg": {
-  "w": 537,
-  "h": 607,
-  "widths": [
-   480,
-   537
-  ]
- },
- "/assets/images/spotlight/officer-of-the-month.jpg": {
-  "w": 2858,
-  "h": 2972,
+  "w": 3024,
+  "h": 4032,
   "widths": [
    480,
    960,
    1280
   ]
  },
- "/assets/images/spotlight/shpetina-of-the-month.png": {
-  "w": 686,
-  "h": 640,
+ "/assets/images/spotlight/officer-of-the-month.jpg": {
+  "w": 374,
+  "h": 374,
   "widths": [
-   480,
-   686
+   374
+  ]
+ },
+ "/assets/images/spotlight/shpetina-of-the-month.png": {
+  "w": 337,
+  "h": 449,
+  "widths": [
+   337
   ]
  },
  "/assets/images/aboutus/Aboutpic1.jpg": {
@@ -123,6 +120,15 @@
    1280
   ]
  },
+ "/assets/images/aboutus/gm4-2026-10-07.jpg": {
+  "w": 1024,
+  "h": 683,
+  "widths": [
+   480,
+   960,
+   1024
+  ]
+ },
  "/assets/images/aboutus/Leadership.jpg": {
   "w": 1024,
   "h": 683,
@@ -139,15 +145,6 @@
    480,
    960,
    1280
-  ]
- },
- "/assets/images/aboutus/gm4-2026-10-07.jpg": {
-  "w": 1024,
-  "h": 683,
-  "widths": [
-   480,
-   960,
-   1024
   ]
  },
  "/assets/images/aboutus/technicaldevelopment.png": {
